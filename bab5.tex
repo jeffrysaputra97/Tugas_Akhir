@@ -1,0 +1,31 @@
+%-----------------------------------------------------------------------------%
+\chapter{PENUTUP}
+%-----------------------------------------------------------------------------%
+
+%
+\vspace{4.5pt}
+\noindent Bab ini berisi kesimpulan yang dilandasi oleh penelitian dan pengujian yang telah dilakukan, serta dilengkapi dengan saran yang dapat untuk perkembangan ke depan.
+
+\section{Kesimpulan}
+\noindent Kesimpulan dari sistem pendeteksi dan pelacakan manusia pada video RGB-D adalah:
+\begin{enumerate}
+\item Informasi pada citra kedalaman memungkinkan untuk mengenali manusia pada kondisi pencahayaan relatif redup.
+\item Penggunaan data belajar yang berkualitas dengan sudut pandang yang baik akan meningkatkan akurasi pada tahap mendeteksi manusia.
+\item Penerapan metode \textit{median filtering} sebagai tahap \textit{preprocessing} belum tentu meningkatkan akurasi deteksi, tergantung pada \textit{dataset} yang digunakan. Hasil akurasi tertinggi dengan menggunakan \textit{median filtering}, pada \textit{dataset outdoor} memiliki akurasi lebih tinggi sekitar 1\%, sementara pada \textit{dataset clothing store} hasil akurasi lebih rendah sekitar 2\% daripada tanpa menggunakan \textit{median filtering}.
+\item Metode \textit{Convolutional Neural Network} dapat mengenali manusia walaupun citra berukuran kecil yaitu 48 $\times$ 64 piksel.
+\item Hasil akurasi \textit{Convolutional Neural Network} dipengaruhi oleh penentuan arsitektur metode. Akurasi tertinggi dari hasil pelatihan metode \textit{Convolutional Neural Network} pada \textit{dataset outdoor 56} adalah 99,7\%, akurasi tertinggi pada pengujian \textit{dataset outdoor 31} adalah 90,4\%, dan pada \textit{dataset outdoor 54} adalah 89,38\%. Sementara akurasi tertinggi dari hasil pelatihan pada \textit{dataset clothing store} adalah 89,58\% dan akurasi tertinggi pada pengujian adalah 81,13\%.
+\item Akurasi yang dihasilkan prediksi Kalman \textit{filter} dipengaruhi oleh nilai $r_{k}$ dan jumlah iterasi adaptasi yang dilakukan sebelum melakukan prediksi. Hasil akurasi tertinggi dari pengujian adalah 58,17\% dengan melakukan iterasi adaptasi sebanyak 3 kali dan prediksi sebanyak 2 kali.
+\item Bila dibandingkan pengujian gabungan \textit{Cascade Classifier} dan \textit{Convolutional Neural Network} dengan pengujian keseluruhan \textit{Cascade Classifier}, \textit{Convolutional Neural Network}, dan Kalman \textit{filter}, pengujian gabungan \textit{Cascade Classifier} dan \textit{Convolutional Neural Network} menghasilkan rata-rata akurasi lebih tinggi 1,33\%, rata-rata \textit{precision} lebih rendah 1,11\%, dan rata-rata \textit{recall} lebih tinggi 4,44\% daripada pengujian keseluruhan dengan menambahkan Kalman \textit{filter}. 
+\item Untuk pengujian keseluruhan menggunakan \textit{Cascade Classifier}, \textit{Convolutional Neural Network}, dan Kalman \textit{filter} menghasilkan rata-rata akurasi sebesar 77,7\%, rata-rata \textit{precision} sebesar 79,44\%, dan rata-rata \textit{recall} 91,11\% dengan waktu proses rata-rata per citra adalah 5,388 milidetik.
+\item Efisiensi dari Kalman \textit{filter} pada pengujian menggunakan \textit{median filter} mempercepat komputasi 14,41\% sementara pada pengujian tanpa menggunakan \textit{median filter} mempercepat komputasi hingga 41,71\%
+\end{enumerate}
+
+\subsection{Saran}
+\noindent Saran untuk pengembangan sistem pendeteksi dan pelacakan manusia pada video RGB-D adalah:
+\begin{enumerate}
+\item Untuk mendeteksi dan melacak manusia menggunakan informasi citra kedalaman sebaiknya memiliki sudut pandang yang frontal dari depan atau dari atas sehingga citra memiliki kualitas yang lebih baik.
+\item Daripada menggunakan data belajar negatif dengan posisi acak, sebaiknya menggunakan data belajar negatif yang mencakup keseluruhan daerah pada citra.
+\item Metode \textit{Convolutional Neural Network} dapat dikembangkan agar dapat mengenali lokasi manusia secara langsung dan memiliki waktu proses yang lebih cepat seperti menggunakan metode \textit{Spatial Pyramid Pooling Network} (SPP-Net), Fast R-CNN, Faster R-CNN, \textit{You Look Only Once} (YOLO), \textit{Single Shot MultiBox Detector} (SSD), atau \textit{Multi Task Cascaded Neural Network} (MTCNN) \cite{20}.
+\end{enumerate}
+
+\newpage

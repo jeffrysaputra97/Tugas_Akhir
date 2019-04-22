@@ -1,0 +1,104 @@
+%-----------------------------------------------------------------------------%
+\chapter{PENDAHULUAN}
+%-----------------------------------------------------------------------------%
+
+\vspace{4.5pt}
+
+\section{Latar Belakang} \label{sec:latar_belakang}
+\noindent \textit{Computer Vision} atau disebut juga Penglihatan Komputer adalah sebuah cabang ilmu komputer yang mempelajari bagaimana komputer dapat memiliki kemampuan untuk dapat menginterpretasikan suatu kondisi melalui sebuah citra dan dapat bekerja selayaknya seperti penglihatan manusia. Terdapat beberapa tahapan dalam \textit{computer vision} yang digunakan untuk persepsi visual, seperti akuisisi citra, pengolahan citra, formasi citra, ekstraksi dan pencocokan fitur, segmentasi, deteksi dan pengenalan objek, dan lain sebagainya. Deteksi objek adalah metode untuk mendeteksi suatu objek dan digunakan untuk mencari objek-objek dari suatu citra. Dalam aplikasi sistem kecerdasan untuk transportasi, objek dapat berupa mobil, bagian dari mobil (logo, plat nomor kendaraan), ataupun rambu-rambu lalu lintas.
+
+\noindent Sistem kecerdasan untuk transportasi merupakan bidang yang saat ini sedang berkembang dengan pesat dalam ranah \textit{computer vision} \cite{tabrizi}. Penerapannya pun semakin nyata dalam kehidupan manusia sehari-hari. Sistem navigasi satelit, sistem pengenalan rambu lalu lintas, sistem parkir otomatis, pengenalan plat kendaraan, dan keamanan kendaraan merupakan contoh dari aplikasi sistem kecerdasan untuk transportasi. Pengenalan plat nomor kendaraan memegang beberapa peranan penting dalam bidang transportasi, diantaranya untuk sistem pembayaran elektronik, dan penegakan hukum \cite{gou2014}.
+
+\noindent Walaupun sistem pengenalan plat nomor kendaraan sudah memiliki sejarah penelitian yang panjang, hal ini tetap saja memiliki tantangan. Hal ini disebabkan banyak faktor yang mempengaruhi hasil akhir dari pengenalan plat nomor, contohnya adalah kondisi pencahayaan yang tidak merata, kondisi tulisan karakter pada plat nomor yang kurang jelas, dan lain sebagainya \cite{gou2014}.
+
+\noindent Secara umum, sistem pengenalan plat nomor kendaraan dibagi kedalam tiga bagian utama: deteksi area plat nomor kendaraan, segmentasi karakter, dan pengenalan karakter. Gou et al. menerapkan ketiga hal tersebut dengan menggunakan metode \textit{Extremal Region} untuk mendeteksi lokasi plat nomor kendaraan sekaligus mendapatkan area dari karakter plat nomor kendaraan tersebut kemudian melakukan pengenalan karakter menggunakan \textit{Restricted Boltzmann Machines} \cite{gou2016}.
+
+\noindent Penelitian lain menggunakan \textit{Maximally Stable Extremal Region} untuk mendeteksi area karakter dari plat nomor kendaraan kemudian dilanjutkan dengan metode \textit{Histogram of Oriented Gradient} untuk mendapatkan fitur dari masing-masing karakter dan menggunakan metode \textit{Extreme Learning Machine} untuk melakukan proses pengenalan karakter \cite{gou2014}.
+
+\noindent Penelitian lain menggunakan metode morfologi citra untuk deteksi plat kendaraan dan menggunakan \textit{K-Nearest Neighbors} untuk melakukan klasifikasi terhadap karakter dan \textit{Support Vector Machine} untuk melakukan klasifikasi terhadap karakter yang memiliki kemiripan (e.g: pasangan B dengan 8, 5 dengan S, 4 dengan A, dsb) \cite{tabrizi}.
+
+\noindent Penelitian lain menggunakan metode \textit{Hough Transform} untuk mendeteksi lokasi plat kendaraan kemudian dilanjutkan dengan metode \textit{Template Matching} untuk mengenali karakter dari plat nomor tersebut \cite{rasheed}. 
+
+\noindent Penelitian ini menggunakan metode  \textit{Hough Transform} untuk mendeteksi plat nomor kendaraan, kemudian karakter-karakter pada plat kendaraan akan disegmentasi dengan menghitung grafik horizontal pita, kemudian dilanjutkan dengan menggunakan metode \textit{Histogram of Oriented Gradient} untuk mengambil fitur dari karakter-karakter dari citra hasil segmentasi dan terakhir akan diklasifikasikan dengan menggunakan metode \textit{Support Vector Machine}.
+
+%\noindent Penelitian ini metode \textit{Convolutional Neural Network} dengan Kalman \textit{filter} untuk melakukan deteksi serta melacak manusia. Metode CNN telah mencakup proses utama dari ekstraksi fitur hingga klasifikasi dan telah terbukti kelebihannya untuk mengklasifikasi banyak fitur kompleks secara bersamaan. Metode \textit{neural network} dapat menyesuaikan dengan berbagai macam kasus namun membutuhkan waktu untuk pelatihan. Bila dibandingkan dengan \textit{Artificial Neural Network} (ANN) atau \textit{Multilayer Perceptron} (MLP) konvensional, pada bidang \textit{computer vision}, CNN memiliki performa yang lebih cepat hingga 2 kali lipat, karena CNN memiliki perbedaan metode yang tidak terdapat pada ANN/MLP untuk memproses banyak data besar, seperti teknik \textit{weight sharing} dan \textit{subsampling}/\textit{pooling}. Sementara metode Kalman \textit{filter} dipilih karena dapat meningkatkan efisiensi komputasi untuk melacak manusia.
+
+\noindent Pada tahapan pengujian akan dilakukan dua macam pengujian akurasi, yaitu akurasi deteksi plat kendaraan dan akurasi pengenalan karakter plat nomor kendaraan. Perhitungan akurasi ini masing-masing akan menggunakan \textit{confusion matrix}.\\
+
+\section{Rumusan Masalah}
+\noindent Berdasarkan latar belakang di atas penulis merumuskan masalah sebagai berikut:
+\begin{enumerate}[nolistsep,leftmargin=0.5cm]
+\item Berapa akurasi pendeteksian plat nomor kendaraan dengan menggunakan metode \textit{Hough Transform} ?
+\item Berapa akurasi pengenalan plat nomor kendaraan jika menggunakan metode \textit{Support Vector Machine} yang ekstraksi fiturnya menggunakan metode \textit{Histogram of Oriented Gradient} ? \\
+\end{enumerate}
+
+\section{Tujuan Penelitian}
+\noindent Berdasarkan rumusan masalah di atas, tujuan penelitian Tugas Akhir ini adalah sebagai berikut:
+\begin{enumerate}[nolistsep,leftmargin=0.5cm]
+\item Mengimplementasi metode untuk pendeteksian plat nomor kendaraan dan implementasi metode untuk ekstraksi fitur pada pengenalan karakter plat nomor kendaraan dalam bentuk program.\\
+%\item Menguji akurasi penggunaan \textit{Convolutional Neural Network} untuk mendeteksi manusia.
+%\item Menguji akurasi proses dari penggunaan metode Kalman \textit{filter} untuk melacak manusia.
+%\item Membuat sebuah aplikasi yang dapat mendeteksi dan melacak manusia melalui kamera RGB-D.\\
+\end{enumerate}
+
+\section{Batasan Masalah}
+\noindent Dalam penelitian ini, peneliti akan membatasi masalah yang akan diteliti antara lain:
+\begin{enumerate}[nolistsep,leftmargin=0.5cm]
+\item Plat kendaraan yang akan dideteksi adalah plat nomor kendaraan Indonesia.
+\item Plat kendaraan Indonesia yang akan dideteksi adalah plat nomor kendaraan pribadi (plat hitam dengan tulisan putih), plat nomor kendaraan umum (plat kuning dengan tulisan hitam), dan plat nomor kendaraan dinas negara (plat merah dengan tulisan putih).\\ 
+%\item Mendeteksi dan melacak manusia melalui tubuh manusia bagian atas, yaitu sekitar daerah bahu hingga ke ujung atas kepala.
+%\item Masukan berupa sekumpulan citra RGB-D statis yang ditangkap secara berurutan (video).
+%\item Dalam arsitektur metode \textit{Convolutional Neural Network} hanya digunakan 1 buah \textit{kernel} dalam setiap lapisan.\\
+\end{enumerate}
+
+\section{Kontribusi Penelitian}
+\noindent Kontribusi yang diberikan dari penelitian ini adalah:
+
+\begin{enumerate}[nolistsep,leftmargin=0.5cm]
+\item Membuat penerapan metode \textit{Hough Transform} untuk pendeteksian plat nomor kendaraan.
+\item Membuat penerapan metode \textit{Histogram of Oriented Gradient} untuk proses ekstraksi fitur pada proses pengenalan karakter pada plat nomor kendaraan.\\
+%\item Melakukan analisis pengaruh \textit{Convolutional Neural Network} terhadap akurasi dari aplikasi deteksi dan melacak manusia.
+%\item Melakukan analisis pengaruh Kalman \textit{filter} terhadap akurasi dan efisiensi komputasi dari aplikasi deteksi dan melacak manusia. \\
+\end{enumerate}
+
+\section{Metode Penelitian}
+\noindent Metode penelitian yang dilakukan dalam penelitian ini adalah sebagai berikut:
+\begin{enumerate}[nolistsep,leftmargin=0.5cm]
+\item Studi Literatur \\
+Penulisan ini dimulai dengan studi kepustakaan yaitu mengumpulkan bahan-bahan referensi baik dari buku, artikel, \textit{paper}, jurnal, makalah mengenai sistem pengenalan plat nomor kendaraan.
+\item Data sampling \\
+Data sampling yang akan digunakan berupa citra kendaraan yang berasal dari Universitas Telkom yang bernama \textit{Tel-U Vehicle License Plate Data-set V1.0}. Dataset ini merupakan dataset yang disusun oleh akademisi Universitas Telkom untuk keperluan penelitian mengenai plat nomor kendaraan.
+\item Analisis Masalah \\
+Pada tahap ini dilakukan analisis permasalahan yang ada, batasan yang dimiliki dan kebutuhan yang diperlukan.
+\item Perancangan dan Implementasi Algoritme \\
+Pada tahap ini dilakukan pendefinisian beberapa aturan dalam teknik \textit{preprocessing} citra, serta perancangan pada algoritme yang akan dipakai untuk menyelesaikan masalah berdasarkan metode yang telah dipilih.
+\item Pengujian \\
+Pada tahap ini dilakukan pengujian terhadap aplikasi yang telah dibangun.
+\item Dokumentasi \\
+Pada tahap ini dilakukan pendokumentasian hasil analisis dan implementasi secara tertulis dalam bentuk laporan skripsi. \\
+\end{enumerate}
+
+\section{Sistematika Pembahasan}
+\noindent Pada penelitian ini peneliti menyusun berdasarkan sistematika penulisan sebagai berikut: \\[0.5cm]
+\noindent \textbf{BAB I \hspace{1cm} PENDAHULUAN}
+\begin{addmargin}[2.35cm]{0em}
+Pendahuluan yang berisi latar belakang, rumusan masalah, tujuan penelitian, batasan masalah, kontribusi penelitian, serta metode penelitian.
+\end{addmargin}
+\noindent \textbf{BAB II \hspace{0.8cm} LANDASAN TEORI}
+\begin{addmargin}[2.35cm]{0em}
+Landasan Teori yang berisi penjelasan dasar teori yang mendukung penelitian ini.
+\end{addmargin}
+\noindent \textbf{BAB III \hspace{0.7cm} ANALISIS DAN PERANCANGAN}
+\begin{addmargin}[2.35cm]{0em}
+Analisis dan Perancangan yang berisi analisis berupa algoritme yang digunakan.
+\end{addmargin}
+\noindent \textbf{BAB IV \hspace{0.7cm} IMPLEMENTASI DAN PENGUJIAN}
+\begin{addmargin}[2.35cm]{0em}
+Implementasi dan Pengujian yang berisi implementasi pengujian dengan berbagai data testing beserta hasilnya.
+\end{addmargin}
+\noindent \textbf{BAB V \hspace{0.8cm} KESIMPULAN DAN SARAN}
+\begin{addmargin}[2.35cm]{0em}
+Penutup yang berisi kesimpulan dari penelitian dan saran untuk penelitian lebih lanjut di masa mendatang.
+\end{addmargin}
+
+\newpage
