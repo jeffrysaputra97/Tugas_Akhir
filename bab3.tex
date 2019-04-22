@@ -102,7 +102,7 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
-		\framebox[\textwidth]{\includegraphics[width=8cm]{images/FlowchartTesting.jpg}}
+		\framebox[\textwidth]{\includegraphics[width=8cm]{images/FlowchartTesting.png}}
 		\captionof{figure}{\textit{Flowchart Testing} Sistem Pendeteksi dan Pelacakan Manusia\\}
 		\label{fig:FlowchartTesting}
 	\end{minipage}
@@ -179,25 +179,7 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 \end{adjustbox}\\
 
 \subsubsection{\textit{Grayscale}}
-\noindent Proses pertama adalah mengubah citra masukan menjadi citra \textit{grayscale}, tujuan dari \textit{grayscaling} citra adalah untuk menghilangkan informasi warna dari setiap piksel citra. Untuk menghitung nilai derajat keabuan setiap piksel, diperoleh dengan rumus:
-
-\begin{table}[H]
-	\begin{adjustbox}{width=1\textwidth}
-		\begin{tabular}{|p{13.55cm}|}
-			\hline
-			\begin{equation}\nonumber
-			\begin{aligned}
-			\textit{grayvalue} 	&= 0.299 R + 0.587 G + 0.114 B&& \\
-			\end{aligned}
-			\end{equation}\\
-			\hline
-		\end{tabular}
-	\end{adjustbox}
-	\captionof{figure}{Persamaan untuk mencari \textit{grayscale value}\\}
-	\label{fig:PersamaanGrayscale}
-\end{table}
-
-\noindent dimana R, G, B adalah nilai \textit{red}, \textit{green}, \textit{blue} dari masing-masing piksel citra.
+\noindent Proses pertama adalah mengubah citra masukan menjadi citra \textit{grayscale}, tujuan dari \textit{grayscaling} citra adalah untuk menghilangkan informasi warna dari setiap piksel citra. Untuk menghitung nilai derajat keabuan setiap piksel, diperoleh dengan menggunakan persamaan \ref{eq:grayscale}.
 
 \noindent Di bawah merupakan contoh matriks citra asli dengan 3 \textit{channel} warna yaitu \textit{Red}, \textit{Green}, dan \textit{Blue} berukuran 5 $\times$ 5 piksel yang diambil dengan menggunakan \textit{image tools} dari aplikasi \textit{MatLab} \\
 
@@ -209,7 +191,7 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 	\end{minipage}
 \end{adjustbox} \\
 
-\noindent Dengan menggunakan persamaan \ref{fig:PersamaanGrayscale}, maka nilai matriks citra \textit{grayscale} pada titik (3,3) akan menjadi sebagai berikut:
+\noindent Dengan menggunakan persamaan \ref{eq:grayscale}, maka nilai matriks citra \textit{grayscale} pada titik (3,3) akan menjadi sebagai berikut:
 \begin{table}[H]
 	\begin{adjustbox}{width=1\textwidth}
 		\begin{tabular}{|p{13.55cm}|}
@@ -241,14 +223,14 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
 		\framebox[\textwidth]{\includegraphics[width=3cm]{images/FlowchartDeteksiPlat.jpg}}
-		\captionof{figure}{Flowchart Deteksi Tepi Canny\\}
+		\captionof{figure}{\textit{Flowchart} Deteksi Tepi Canny\\}
 		\label{fig:FlowchartCannyDetector}
 	\end{minipage}
 \end{adjustbox}\\
 
 \noindent Hal pertama yang dilakukan untuk deteksi tepi Canny adalah dengan melakukan \textit{smoothing} pada citra dengan menggunakan turunan pertama pertama dari \textit{Gauss} dengan besar \textit{kernel} 3 $\times$ 3 dan nilai dari $\sigma$ = 1 untuk menghilangkan \textit{noise}.
 
-\begin{gather}
+\begin{gather*}
 \textit{Matriks Gauss Kernel}
 =
 \begin{bmatrix}
@@ -257,7 +239,7 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 0.077847 & 0.123317 & 0.077847
 \end{bmatrix}
 \label{eq:MatriksGaussKernel}
-\end{gather} 
+\end{gather*} 
 
 \noindent\textit{Kernel} seperti pada persamaan \ref{eq:MatriksGaussKernel} dikonvolusikan ke dalam citra untuk mendapatkan sebuah nilai baru. Sebagai contoh apabila diambil area pada sebuah citra sebesar 5 $\times$ 5 piksel seperti pada gambar \ref{fig:MatriksCitra} yang kemudian dikonvolusikan menggunakan \textit{kernel} pada persamaan \ref{eq:MatriksGaussKernel}.
 
@@ -383,9 +365,9 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 \noindent Tahap setelah perhitungan gradien adalah \textit{non-maximum suppression}, tahap ini membandingkan apakah gradien tersebut paling maksimum diantara tetangganya dan di atas nilai atas \textit{threshold} yang sudah ditentukan. Jika nilai gradien di titik tersebut lebih besar dari \textit{high threshold} dan merupakan nilai maksimum dari gradien-gradien tetangganya, maka nilai tersebut merupakan nilai tepi. Nilai tepi hasil \textit{non-maximum suppression} digunakan untuk menghitung \textit{Hysterysis thresholding}. Cara yang digunakan adalah dengan menentukan jika titik tersebut bukan tepi periksa titik selanjutnya, selain itu lihat apakah gradien lebih besar dari batas \textit{low threshold}. Cara ini diulang sampai tidak ada lagi perubahan.\\
 
 \subsubsection{\textit{Hough Transform}}
-\noindent Metode \textit{Hough Transform} yang digunakan adalah untuk identifikasi garis lurus. Dalam ekstraksi fitur \textit{Hough Transform} perlu mespesifikasikan \textit{accumulator space} untuk menyimpan nilai \textit{voting}. Spesifikasi \textit{accumulator space} ditentukan berdasarkan ukuran citra input. Dalam contoh ini digunakan citra input berukuran 5 $\times$ 6 piksel yang merupakan hasil proses deteksi tepi pada tahapan sebelumnya. Berikut spesifikasi matriks \textit{accumulator space} yang digunakan sebagai contoh:
+\noindent Metode \textit{Hough Transform} yang digunakan adalah untuk identifikasi garis lurus. Dalam ekstraksi fitur \textit{Hough Transform} perlu menspesifikasikan \textit{accumulator space} untuk menyimpan nilai \textit{voting}. Spesifikasi \textit{accumulator space} ditentukan berdasarkan ukuran citra input. Dalam contoh ini digunakan citra input berukuran 5 $\times$ 6 piksel yang merupakan hasil proses deteksi tepi pada tahapan sebelumnya. Berikut spesifikasi matriks \textit{accumulator space} yang digunakan sebagai contoh:
 \begin{enumerate}
-\item Rentang nilai \textit{rho} dapat dicari dengan (\textit{width} dan \textit{height} masing-masing dikurang 1 karena koordinat x dan y dimulai dari 0,0):
+\item Rentang nilai \textit{rho} dapat dicari dengan (\textit{width} dan \textit{height} masing-masing dikurang 1 karena koordinat x dan y dimulai dari 0,0), sehingga dengan menggunakan persamaan \ref{eq:PersamaanRho}, perhitungannya menjadi:
 \begin{equation*}
 	D = \sqrt{(5-1)^2 + (6-1)^2} = 6,403
 \end{equation*}

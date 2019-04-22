@@ -2,9 +2,27 @@
 \babel@toc {bahasa}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Kerangka Pemikiran\relax }}{2-2}% 
-\contentsline {figure}{\numberline {2.2}{\ignorespaces \textit {Flowchart Training} Sistem Pengenalan Plat Nomor Kendaraan \relax }}{2-3}% 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces \textit {Flowchart Testing} Sistem Pendeteksi dan Pelacakan Manusia \relax }}{2-5}% 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Contoh citra karakter yang digunakan untuk tahap \textit {training} \relax }}{2-7}% 
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Contoh citra karakter yang tidak digunakan \relax }}{2-7}% 
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Skema Alur Pendeteksian Plat \relax }}{2-7}% 
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Contoh \textit {Hyperplane} pada SVM\relax }}{2-9}% 
+\contentsline {figure}{\numberline {2.2}{\ignorespaces \textit {Confusion Matrix untuk Dua Kelas} \cite {16}\relax }}{2-11}% 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Kerangka Pemikiran\relax }}{3-2}% 
+\contentsline {figure}{\numberline {3.2}{\ignorespaces \textit {Flowchart Training} Sistem Pengenalan Plat Nomor Kendaraan \relax }}{3-3}% 
+\contentsline {figure}{\numberline {3.3}{\ignorespaces \textit {Flowchart Testing} Sistem Pendeteksi dan Pelacakan Manusia \relax }}{3-5}% 
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Contoh citra karakter yang digunakan untuk tahap \textit {training} \relax }}{3-7}% 
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Contoh citra karakter yang tidak digunakan \relax }}{3-7}% 
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Skema Alur Pendeteksian Plat \relax }}{3-7}% 
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Matriks Citra Asal berukuran 5 $\times $ 5 \relax }}{3-8}% 
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Matriks Citra Hasil Grayscale \relax }}{3-9}% 
+\contentsline {figure}{\numberline {3.9}{\ignorespaces \textit {Flowchart} Deteksi Tepi Canny \relax }}{3-9}% 
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Matriks citra ukuran 5 $\times $ 5 \relax }}{3-10}% 
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Matriks citra ukuran 5 $\times $ 5 hasil konvolusi \relax }}{3-11}% 
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Perhitungan gradien dan arah \relax }}{3-11}% 
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Matriks citra hasil perhitungan gradien \relax }}{3-11}% 
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Matriks citra hasil \textit {preprocessing} \relax }}{3-18}% 
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Matriks hasil Perhitungan Gradien sumbu X \relax }}{3-18}% 
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Matriks hasil Perhitungan Gradien sumbu Y \relax }}{3-19}% 
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Matriks hasil Perhitungan \textit {Magnitude} \relax }}{3-19}% 
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Matriks hasil Perhitungan Arah \relax }}{3-19}% 
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Contoh hasil \textit {Histogram of Oriented Gradient} untuk sel yang memiliki piksel dengan koordinat (2,5)\relax }}{3-20}% 
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Matriks hasil Perhitungan Histogram untuk seluruh sel \relax }}{3-21}% 
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Matriks hasil Normalisasi \relax }}{3-22}% 

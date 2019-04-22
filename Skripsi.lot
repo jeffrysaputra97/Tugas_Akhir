@@ -1,3 +1,14 @@
 \babel@toc {bahasa}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces \textit {State of the Art}\relax }}{2-13}% 
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Inisialisasi matriks \textit {Accumulator Space} \relax }}{3-13}% 
+\contentsline {table}{\numberline {3.2}{\ignorespaces Nilai \textit {voting} koordinat (0,0) disimpan di matriks \textit {Accumulator Space} \relax }}{3-15}% 
+\contentsline {table}{\numberline {3.3}{\ignorespaces Matriks \textit {Accumulator Space} dan nilai \textit {voting} yang disimpan \relax }}{3-15}% 
+\contentsline {table}{\numberline {3.4}{\ignorespaces Koordinat (0,0) memiliki nilai di atas \textit {threshold} \relax }}{3-16}% 
+\contentsline {table}{\numberline {3.5}{\ignorespaces Memeriksa \textit {neighbour} dari koordinat (0,0) \relax }}{3-16}% 
+\contentsline {table}{\numberline {3.6}{\ignorespaces \textit {Peak} yang belum terurut \relax }}{3-17}% 
+\contentsline {table}{\numberline {3.7}{\ignorespaces \textit {Peak} terurut secara \textit {descending} berdasarkan jumlah \textit {voting} \relax }}{3-17}% 
+\contentsline {table}{\numberline {3.8}{\ignorespaces Tiga \textit {peaks} yang terpilih \relax }}{3-17}% 
+\contentsline {table}{\numberline {3.9}{\ignorespaces Memeriksa \textit {neighbour} dari koordinat (0,0) \relax }}{3-17}% 

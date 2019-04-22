@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.13)  22 APR 2019 17:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.13)  22 APR 2019 21:06
 entering extended mode
 **./Skripsi.tex
 (Skripsi.tex
@@ -1273,6 +1273,58 @@ Package pdftex.def Info: images/ithb.jpg  used on input line 15.
 {C:/Users/jeffr/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./images/it
 hb.jpg>])
 \c@savepage=\count333
+ (Skripsi.toc
+LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 2.
+
+
+("C:\Users\jeffr\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1ptmcm.fd
+"
+File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 2.
+
+
+("C:\Users\jeffr\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omlptmcm.fd
+"
+File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+psycm on input line 2.
+
+
+("C:\Users\jeffr\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omxpsycm.fd
+"
+File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 2.
+
+("C:\Users\jeffr\AppData\Local\Programs\MiKTeX 2.9\tex/latex/stmaryrd\ustmry.fd
+") [1
+
+])
+\tf@toc=\write4
+\openout4 = `Skripsi.toc'.
+
+ [2] (Skripsi.lot)
+\tf@lot=\write5
+\openout5 = `Skripsi.lot'.
+
+ [3
+
+] (Skripsi.lof
+
+LaTeX Warning: Citation `16' on page iv undefined on input line 6.
+
+)
+\tf@lof=\write6
+\openout6 = `Skripsi.lof'.
+
+ [4
+
+]
 \openout2 = `bab1.aux'.
 
  (bab1.tex
@@ -1297,34 +1349,7 @@ This may cause the page layout to be inconsistent, however.
 
  (bab2.tex
 Bab II.
-LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 15
-.
-("C:\Users\jeffr\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1ptmcm.fd
-"
-File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
-)
-LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 15
-.
-
-("C:\Users\jeffr\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omlptmcm.fd
-"
-File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
-)
-LaTeX Font Info:    Try loading font information for OMX+psycm on input line 15
-.
-
-("C:\Users\jeffr\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omxpsycm.fd
-"
-File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
-LaTeX Font Info:    Try loading font information for U+stmry on input line 15.
-
-("C:\Users\jeffr\AppData\Local\Programs\MiKTeX 2.9\tex/latex/stmaryrd\ustmry.fd
-") [1
+[1
 
 
 
@@ -1339,7 +1364,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 147.
  [5] [6] [7]
-<images/svm.jpeg, id=52, 641.39626pt x 401.5pt>
+<images/svm.jpeg, id=65, 641.39626pt x 401.5pt>
 File: images/svm.jpeg Graphic file (type jpg)
 <use images/svm.jpeg>
 Package pdftex.def Info: images/svm.jpeg  used on input line 277.
@@ -1370,7 +1395,7 @@ Overfull \hbox (2.28003pt too wide) in paragraph at lines 360--370
 
 LaTeX Warning: Citation `16' on page 2-11 undefined on input line 372.
 
-<images/ConfusionMatrixForBinaryClassification.jpg, id=63, 213.04594pt x 182.93
+<images/ConfusionMatrixForBinaryClassification.jpg, id=76, 213.04594pt x 182.93
 344pt>
 File: images/ConfusionMatrixForBinaryClassification.jpg Graphic file (type jpg)
 
@@ -1393,7 +1418,7 @@ Underfull \vbox (badness 10000) detected at line 590
 
  (bab3.tex
 Bab III.
-<images/KerangkaPemikiran.png, id=80, 654.64575pt x 389.65575pt>
+<images/KerangkaPemikiran.png, id=92, 654.64575pt x 389.65575pt>
 File: images/KerangkaPemikiran.png Graphic file (type png)
 <use images/KerangkaPemikiran.png>
 Package pdftex.def Info: images/KerangkaPemikiran.png  used on input line 23.
@@ -1403,333 +1428,328 @@ Package pdftex.def Info: images/KerangkaPemikiran.png  used on input line 23.
 
 
 ]
-<images/FlowchartTraining.jpg, id=84, 536.0025pt x 332.24126pt>
+<images/FlowchartTraining.jpg, id=97, 536.0025pt x 332.24126pt>
 File: images/FlowchartTraining.jpg Graphic file (type jpg)
 <use images/FlowchartTraining.jpg>
 Package pdftex.def Info: images/FlowchartTraining.jpg  used on input line 38.
 (pdftex.def)             Requested size: 341.43306pt x 211.63496pt.
  [2 <./images/KerangkaPemikiran.png>] [3 <./images/FlowchartTraining.jpg>]
-<images/FlowchartTesting.jpg, id=91, 374.39874pt x 964.60374pt>
-File: images/FlowchartTesting.jpg Graphic file (type jpg)
-<use images/FlowchartTesting.jpg>
-Package pdftex.def Info: images/FlowchartTesting.jpg  used on input line 105.
+<images/FlowchartTesting.png, id=104, 374.39874pt x 964.60374pt>
+File: images/FlowchartTesting.png Graphic file (type png)
+<use images/FlowchartTesting.png>
+Package pdftex.def Info: images/FlowchartTesting.png  used on input line 105.
 (pdftex.def)             Requested size: 227.62204pt x 586.44984pt.
 
-[4] [5 <./images/FlowchartTesting.jpg>]
-<images/CitraDatasetPakai.PNG, id=99, 251.13824pt x 125.268pt>
+[4] [5 <./images/FlowchartTesting.png>]
+<images/CitraDatasetPakai.PNG, id=113, 251.13824pt x 125.268pt>
 File: images/CitraDatasetPakai.PNG Graphic file (type png)
 <use images/CitraDatasetPakai.PNG>
 Package pdftex.def Info: images/CitraDatasetPakai.PNG  used on input line 155.
 (pdftex.def)             Requested size: 227.62204pt x 113.54295pt.
  [6]
-<images/CitraDatasetTakPakai.PNG, id=104, 400.49625pt x 128.8815pt>
+<images/CitraDatasetTakPakai.PNG, id=117, 400.49625pt x 128.8815pt>
 File: images/CitraDatasetTakPakai.PNG Graphic file (type png)
 <use images/CitraDatasetTakPakai.PNG>
 Package pdftex.def Info: images/CitraDatasetTakPakai.PNG  used on input line 16
 3.
 (pdftex.def)             Requested size: 341.43306pt x 109.88017pt.
-<images/FlowchartDeteksiPlat.png, id=105, 743.77875pt x 462.72874pt>
+<images/FlowchartDeteksiPlat.png, id=118, 743.77875pt x 462.72874pt>
 File: images/FlowchartDeteksiPlat.png Graphic file (type png)
 <use images/FlowchartDeteksiPlat.png>
 Package pdftex.def Info: images/FlowchartDeteksiPlat.png  used on input line 17
 5.
 (pdftex.def)             Requested size: 369.88582pt x 230.12112pt.
-
-
-Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 196.
-See the caption package documentation for explanation.
-
-[7 <./images/CitraDatasetPakai.PNG> <./images/CitraDatasetTakPakai.PNG> <./imag
-es/FlowchartDeteksiPlat.png>]
-<images/CitraMatriksAsal.PNG, id=112, 304.13625pt x 304.7385pt>
+ [7 <./images/CitraDatasetPakai.PNG> <./images/CitraDatasetTakPakai.PNG> <./ima
+ges/FlowchartDeteksiPlat.png>]
+<images/CitraMatriksAsal.PNG, id=126, 304.13625pt x 304.7385pt>
 File: images/CitraMatriksAsal.PNG Graphic file (type png)
 <use images/CitraMatriksAsal.PNG>
-Package pdftex.def Info: images/CitraMatriksAsal.PNG  used on input line 206.
+Package pdftex.def Info: images/CitraMatriksAsal.PNG  used on input line 188.
 (pdftex.def)             Requested size: 227.62204pt x 228.07901pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 207.
-<images/CitraMatriksGrayscale.PNG, id=113, 140.9265pt x 141.52875pt>
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 189.
+<images/CitraMatriksGrayscale.PNG, id=127, 140.9265pt x 141.52875pt>
 File: images/CitraMatriksGrayscale.PNG Graphic file (type png)
 <use images/CitraMatriksGrayscale.PNG>
 Package pdftex.def Info: images/CitraMatriksGrayscale.PNG  used on input line 2
-32.
+14.
 (pdftex.def)             Requested size: 170.71652pt x 171.45114pt.
- [8 <./images/CitraMatriksAsal.PNG>]
-<images/FlowchartDeteksiPlat.jpg, id=118, 121.45375pt x 362.35374pt>
+
+[8 <./images/CitraMatriksAsal.PNG>]
+<images/FlowchartDeteksiPlat.jpg, id=132, 121.45375pt x 362.35374pt>
 File: images/FlowchartDeteksiPlat.jpg Graphic file (type jpg)
 <use images/FlowchartDeteksiPlat.jpg>
-Package pdftex.def Info: images/FlowchartDeteksiPlat.jpg  used on input line 24
-3.
+Package pdftex.def Info: images/FlowchartDeteksiPlat.jpg  used on input line 22
+5.
 (pdftex.def)             Requested size: 85.35826pt x 254.66324pt.
  [9 <./images/CitraMatriksGrayscale.PNG> <./images/FlowchartDeteksiPlat.jpg>]
 
 Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 280.
+(caption)                 on input line 262.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 335.
+(caption)                 on input line 317.
 See the caption package documentation for explanation.
 
 [10]
 
 Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 356.
+(caption)                 on input line 338.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 379.
+(caption)                 on input line 361.
 See the caption package documentation for explanation.
 
 [11]
-<images/AccumulatorSpace.PNG, id=130, 195.73125pt x 215.00325pt>
+<images/AccumulatorSpace.PNG, id=143, 195.73125pt x 215.00325pt>
 File: images/AccumulatorSpace.PNG Graphic file (type png)
 <use images/AccumulatorSpace.PNG>
-Package pdftex.def Info: images/AccumulatorSpace.PNG  used on input line 404.
+Package pdftex.def Info: images/AccumulatorSpace.PNG  used on input line 386.
 (pdftex.def)             Requested size: 170.71652pt x 187.53685pt.
  [12] [13 <./images/AccumulatorSpace.PNG>]
-<images/AccumulatorSpace1.PNG, id=138, 196.93575pt x 220.4235pt>
+<images/AccumulatorSpace1.PNG, id=152, 196.93575pt x 220.4235pt>
 File: images/AccumulatorSpace1.PNG Graphic file (type png)
 <use images/AccumulatorSpace1.PNG>
-Package pdftex.def Info: images/AccumulatorSpace1.PNG  used on input line 464.
+Package pdftex.def Info: images/AccumulatorSpace1.PNG  used on input line 446.
 (pdftex.def)             Requested size: 170.71652pt x 191.08748pt.
  [14]
-<images/AccumulatorSpace2.PNG, id=142, 197.538pt x 219.219pt>
+<images/AccumulatorSpace2.PNG, id=156, 197.538pt x 219.219pt>
 File: images/AccumulatorSpace2.PNG Graphic file (type png)
 <use images/AccumulatorSpace2.PNG>
-Package pdftex.def Info: images/AccumulatorSpace2.PNG  used on input line 474.
+Package pdftex.def Info: images/AccumulatorSpace2.PNG  used on input line 456.
 (pdftex.def)             Requested size: 170.71652pt x 189.4579pt.
-<images/AccumulatorSpace3.PNG, id=143, 195.129pt x 218.61674pt>
+<images/AccumulatorSpace3.PNG, id=157, 195.129pt x 218.61674pt>
 File: images/AccumulatorSpace3.PNG Graphic file (type png)
 <use images/AccumulatorSpace3.PNG>
-Package pdftex.def Info: images/AccumulatorSpace3.PNG  used on input line 485.
+Package pdftex.def Info: images/AccumulatorSpace3.PNG  used on input line 467.
 (pdftex.def)             Requested size: 170.71652pt x 191.26915pt.
 
-Overfull \hbox (29.39955pt too wide) in paragraph at lines 481--489
+Overfull \hbox (29.39955pt too wide) in paragraph at lines 463--471
 [] 
  []
 
 [15 <./images/AccumulatorSpace1.PNG> <./images/AccumulatorSpace2.PNG>]
-<images/AccumulatorSpace4.PNG, id=149, 215.00325pt x 216.20775pt>
+<images/AccumulatorSpace4.PNG, id=163, 215.00325pt x 216.20775pt>
 File: images/AccumulatorSpace4.PNG Graphic file (type png)
 <use images/AccumulatorSpace4.PNG>
-Package pdftex.def Info: images/AccumulatorSpace4.PNG  used on input line 494.
+Package pdftex.def Info: images/AccumulatorSpace4.PNG  used on input line 476.
 (pdftex.def)             Requested size: 170.71652pt x 171.67319pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 510.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 492.
 
-Overfull \hbox (29.39955pt too wide) in paragraph at lines 489--515
+Overfull \hbox (29.39955pt too wide) in paragraph at lines 471--497
 [] 
  []
 
 [16 <./images/AccumulatorSpace3.PNG> <./images/AccumulatorSpace4.PNG>]
 File: images/AccumulatorSpace4.PNG Graphic file (type png)
 <use images/AccumulatorSpace4.PNG>
-Package pdftex.def Info: images/AccumulatorSpace4.PNG  used on input line 555.
+Package pdftex.def Info: images/AccumulatorSpace4.PNG  used on input line 537.
 (pdftex.def)             Requested size: 170.71652pt x 171.67319pt.
 
-Overfull \hbox (29.39955pt too wide) in paragraph at lines 550--559
+Overfull \hbox (29.39955pt too wide) in paragraph at lines 532--541
 [] 
  []
 
 [17]
 
 Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 587.
+(caption)                 on input line 569.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 622.
+(caption)                 on input line 604.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 648.
+(caption)                 on input line 630.
 See the caption package documentation for explanation.
 
 [18]
 
 Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 681.
+(caption)                 on input line 663.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 707.
+(caption)                 on input line 689.
 See the caption package documentation for explanation.
 
 [19]
-<images/HistogramOfOrientedGradient.PNG, id=165, 363.759pt x 219.219pt>
+<images/HistogramOfOrientedGradient.PNG, id=179, 363.759pt x 219.219pt>
 File: images/HistogramOfOrientedGradient.PNG Graphic file (type png)
 <use images/HistogramOfOrientedGradient.PNG>
 Package pdftex.def Info: images/HistogramOfOrientedGradient.PNG  used on input 
-line 722.
+line 704.
 (pdftex.def)             Requested size: 341.43306pt x 205.76816pt.
 
-Overfull \hbox (29.39955pt too wide) in paragraph at lines 717--727
+Overfull \hbox (29.39955pt too wide) in paragraph at lines 699--709
 [] 
  []
 
 
 Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 743.
+(caption)                 on input line 725.
 See the caption package documentation for explanation.
 
 [20 <./images/HistogramOfOrientedGradient.PNG>]
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 762--762
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 744--744
 []|\OT1/ptm/m/n/10.95 0.0184| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 762--762
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 744--744
 []|\OT1/ptm/m/n/10.95 0.0736| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 762--762
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 744--744
 []|\OT1/ptm/m/n/10.95 0.0368| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 762--762
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 744--744
 []|\OT1/ptm/m/n/10.95 0.0368| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 764--764
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 746--746
 []|\OT1/ptm/m/n/10.95 0.0139| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 764--764
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 746--746
 []|\OT1/ptm/m/n/10.95 0.6674| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 764--764
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 746--746
 []|\OT1/ptm/m/n/10.95 0.0508| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 764--764
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 746--746
 []|\OT1/ptm/m/n/10.95 0.0228| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 764--764
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 746--746
 []|\OT1/ptm/m/n/10.95 0.7367| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 766--766
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 748--748
 []|\OT1/ptm/m/n/10.95 0.0097| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 766--766
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 748--748
 []|\OT1/ptm/m/n/10.95 0.4637| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 766--766
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 748--748
 []|\OT1/ptm/m/n/10.95 0.0353| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 766--766
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 748--748
 []|\OT1/ptm/m/n/10.95 0.0158| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 766--766
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 748--748
 []|\OT1/ptm/m/n/10.95 0.5118| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 768--768
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 750--750
 []|\OT1/ptm/m/n/10.95 0.5118| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 768--768
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 750--750
 []|\OT1/ptm/m/n/10.95 0.0290| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 768--768
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 750--750
 []|\OT1/ptm/m/n/10.95 0.5084| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 770--770
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 752--752
 []|\OT1/ptm/m/n/10.95 0.5307| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 770--770
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 752--752
 []|\OT1/ptm/m/n/10.95 0.0301| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 770--770
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 752--752
 []|\OT1/ptm/m/n/10.95 0.5271| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 772--772
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 754--754
 []|\OT1/ptm/m/n/10.95 0.0218| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 772--772
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 754--754
 []|\OT1/ptm/m/n/10.95 0.4823| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 772--772
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 754--754
 []|\OT1/ptm/m/n/10.95 0.0504| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 772--772
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 754--754
 []|\OT1/ptm/m/n/10.95 0.0159| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 772--772
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 754--754
 []|\OT1/ptm/m/n/10.95 0.4511| 
  []
 
 
 Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 776.
+(caption)                 on input line 758.
 See the caption package documentation for explanation.
 
 [21] [22])
 \openout2 = `pustaka.aux'.
 
- (pustaka.tex [1
+ (pustaka.tex [5
 
 
 
-]) [2] (Skripsi.aux (sampul.aux) (bab1.aux) (bab2.aux) (bab3.aux) (pustaka.aux)
+]) [6] (Skripsi.aux (sampul.aux) (bab1.aux) (bab2.aux) (bab3.aux) (pustaka.aux)
 )
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 29242 strings out of 492946
- 562903 string characters out of 3126266
- 720261 words of memory out of 3000000
- 32485 multiletter control sequences out of 15000+200000
+ 29253 strings out of 492946
+ 563125 string characters out of 3126266
+ 720260 words of memory out of 3000000
+ 32487 multiletter control sequences out of 15000+200000
  590464 words of font info for 135 fonts, out of 3000000 for 9000
  1228 hyphenation exceptions out of 8191
- 64i,20n,102p,1296b,739s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,19n,102p,1296b,739s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/jeffr/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
 }<C:/Users/jeffr/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmex10.pfb><C:/Users/jeffr/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
@@ -1741,9 +1761,9 @@ Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/jeffr/AppD
 ata/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/jeffr
 /AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/j
 effr/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Skripsi.pdf (44 pages, 490535 bytes).
+Output written on Skripsi.pdf (48 pages, 477120 bytes).
 PDF statistics:
- 215 PDF objects out of 1000 (max. 8388607)
+ 228 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  103 words of extra memory for PDF output out of 10000 (max. 10000000)
 

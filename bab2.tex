@@ -16,7 +16,7 @@ Bab ini menjelaskan teori-teori yang berkaitan mengenai teori penunjang dan jurn
 
 \subsection{Pengolahan Citra}
 \noindent Pengolahan citra dapat didefinisikan sebagai suatu bidang yang menggunakan citra sebagai masukan, lalu masukan tersebut diolah sehingga menghasilkan citra kembali. Berdasarkan definisi tersebut, perhitungan rata-rata dari suatu citra yang menghasilkan sebuah angka tidak termasuk pengolahan citra \cite{gonzalez}.\\
-\noindent Terdapat satu paradigma yang mengategorikan 3 jenis proses komputasi dalam pengolahan citra, yaitu tingkat rendah, tingkat sedang, dan tingkat tinggi. Proses tingkat rendah mencakup operasi yang sangat sederhana seperti \textit{image preprocessing} untuk mengurangi \textit{noise}, meningkatkan kontras, dan mempertajam citra. Proses tingkat sedang meliputi segmentasi untuk membagi daerah citra menjadi \textit{region} atau objek. Sedangkan proses tingkat tinggi memampukan komputer untuk mengerti seperti pengenalan objek dan analisis citra \cite{gonzalez}. \\
+\noindent Terdapat satu paradigma yang mengkategorikan 3 jenis proses komputasi dalam pengolahan citra, yaitu tingkat rendah, tingkat sedang, dan tingkat tinggi. Proses tingkat rendah mencakup operasi yang sangat sederhana seperti \textit{image preprocessing} untuk mengurangi \textit{noise}, meningkatkan kontras, dan mempertajam citra. Proses tingkat sedang meliputi segmentasi untuk membagi daerah citra menjadi \textit{region} atau objek. Sedangkan proses tingkat tinggi memampukan komputer untuk mengerti seperti pengenalan objek dan analisis citra \cite{gonzalez}. \\
 
 \subsection{Pengabuan Citra}
 \noindent Citra RGB yaitu citra berwarna memiliki ukuran yang lebih besar dibandingkan dengan citra \textit{grayscale}. Untuk mempercepat proses komputasi pada citra, maka citra RGB perlu diubah menjadi citra \textit{grayscale} dengan skala keabuan 256. Persamaan pengabuan citra dapat dilihat pada persamaan \ref{eq:grayscale}.
@@ -88,7 +88,7 @@ $\theta$ = sudut derajat; $0^\circ$ $\leq$ $\theta$ $\leq$ $180^\circ$
 \end{table}
 
 \noindent Dimana:\\
-D = jarak diagonal dari gambar
+D = jarak diagonal dari citra
 
 \noindent Karena citra yang digunakan berbentuk persegi panjang maka jarak diagonal memenuhi persamaan berikut:
 
@@ -105,9 +105,9 @@ D = jarak diagonal dari gambar
 \end{table}
 
 \noindent Dimana:\\
-D = jarak diagonal dari gambar\\
-N = ukuran \textit{width} dari gambar\\
-M = ukuran \textit{height} dari gambar
+D = jarak diagonal dari citra\\
+N = ukuran \textit{width} dari citra\\
+M = ukuran \textit{height} dari citra
 
 \noindent Sehingga rentang nilai \textit{rho} yang digunakan dalam penelitian ini adalah:
 
@@ -124,12 +124,12 @@ M = ukuran \textit{height} dari gambar
 \end{table}
 
 \noindent Dimana:\\
-N = ukuran \textit{width} dari gambar\\
-M = ukuran \textit{height} dari gambar
+N = ukuran \textit{width} dari citra\\
+M = ukuran \textit{height} dari citra
 
 \noindent Setelah proses perhitungan \textit{voting} dalam \textit{accumulator space} selesai, yang dilakukan selanjutnya adalah memilih \textit{peak} terbaik yang terdapat dalam \textit{accumulator space}. Nilai \textit{peak} yang tinggi memberikan indikasi yang baik dari garis \cite{oechsle}. Berdasarkan R. Varun, \textit{et al}. (2015), diketahui \textit{local maxima} dari \textit{accumulator space} dipertimbangkan sebagai \textit{peak} yang menonjol. Jumlah \textit{peak} merupakan hal yang krusial. Jumlah \textit{peak} yang terlalu sedikit atau terlalu banyak dapat mempengaruhi kinerja sistem.
 
-\noindent Algoritma pencarian \textit{peak} menerapkan nilai \textit{threshold} dan pencarian lokal yang berdasarkan dari ukuran \textit{neighbourhood} (NS). Nilai \textit{threshold} untuk membatasi nilai \textit{voting} untuk mempertimbangkan \textit{peak} yang menonjol. Nilai NS bernilai 1 atau lebih. Algoritma pencarian \textit{peak} tersebut dapat menghindari hasil ganda untuk sebuah garis \cite{oechsle}.
+\noindent Algoritme pencarian \textit{peak} menerapkan nilai \textit{threshold} dan pencarian lokal yang berdasarkan dari ukuran \textit{neighbourhood} (NS). Nilai \textit{threshold} untuk membatasi nilai \textit{voting} untuk mempertimbangkan \textit{peak} yang menonjol. Nilai NS bernilai 1 atau lebih. Algoritme pencarian \textit{peak} tersebut dapat menghindari hasil ganda untuk sebuah garis \cite{oechsle}.
 
 \noindent Serangkaian \textit{peaks} yang diekstrak oleh metode \textit{Hough Transform} akan menghasilkan beragam nilai \textit{theta}. Intensitas kemunculan dari setiap nilai \textit{theta} akan dihitung dan dijadikan fitur yang mewakili sebuah citra plat nomor.
 
@@ -243,7 +243,7 @@ $V_{i}$ = bobot vektor hasil \textit{L2-Norm} yang merepresentasikan nilai setia
 $i$ = nilai \textit{counter} dari 1 sampai N\\
 $N$ = jumlah total nilai total \textit{bin} yang digunakan dalam proses normalisasi
 
-\noindent Untuk algoritma rumus normalisasi \textit{L2-Hys} merupakan algoritma mengikuti dari \textit{L2-Norm}, namun dengan membatasi nilai maksimal hasil normalisasi sebesar 0,2.
+\noindent Untuk algoritme rumus normalisasi \textit{L2-Hys} merupakan algoritme mengikuti dari \textit{L2-Norm}, namun dengan membatasi nilai maksimal hasil normalisasi sebesar 0,2.
 
 \noindent Adapun proses normalisasi blok akan dilakukan dalam \textit{sliding window} yang akan bergerak melakukan proses dengan pergeseran sebesar 1$\times$ ukuran sel secara vertikal dan horizontal. Proses ini kemudian akan bersifat \textit{overlapping} untuk beberapa sel yang dinormalisasi sehingga menimbulkan informasi yang redundan, namun akurasi yang dihasilkan justru semakin meningkat karenanya. Terakhir, hasil dari normalisasi tiap blok akan digabungkan menjadi 1 fitur vektor besar.\\
 
