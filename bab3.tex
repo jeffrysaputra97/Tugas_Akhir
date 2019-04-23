@@ -218,17 +218,26 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 \end{adjustbox} \\
 
 \subsubsection{Deteksi Tepi Canny}
-\noindent Pada bagian ini menjelaskan urutan langkah kerja pada proses Deteksi Tepi Canny. Gambar \ref{fig:FlowchartCannyDetector} adalah \textit{flowchart} Deteksi Tepi Canny.
+\noindent Proses deteksi tepi dapat dilakukan terhadap sebuah citra biner. Pada penelitian ini, metode \textit{Canny Edge Detection} digunakan untuk mendapatkan tepian. Berikut adalah algoritme dari metode \textit{Canny Edge Detection} untuk mendapatkan tepian.
 
-\begin{adjustbox}{width=1\textwidth}
-	\noindent\begin{minipage}{\linewidth}
-		\framebox[\textwidth]{\includegraphics[width=3cm]{images/FlowchartDeteksiPlat.jpg}}
-		\captionof{figure}{\textit{Flowchart} Deteksi Tepi Canny\\}
-		\label{fig:FlowchartCannyDetector}
-	\end{minipage}
-\end{adjustbox}\\
+\begin{enumerate}[leftmargin=16pt]
+\item Citra masukkan diperhalus dengan menggunakan \textit{Gaussian Filter} untuk membuang derau.
+\item Lakukan operasi perhitungan gradien menggunakan operator Sobel, Prewitt, atau Robert untuk mendapatkan tepian yang tebal.
+\item Untuk menipiskan tepian yang didapat dari operasi sebelumnya maka teknik \textit{Non-Maxima Suppression} dilakukan dengan mencari nilai maksimum pada tepian.
+\item Buat 2 nilai \textit{threshold} yaitu \textit{high threshold} dan \textit{low threshold} untuk menentukan piksel mana yang masuk dalam kategori tepian kuat, tepian lemah, dan bukan tepian. Jika nilai dari piksel tersebut di atas \textit{high threshold}, maka piksel tersebut masuk ke dalam kategori tepian kuat, apabila nilai piksel berada di antara batas \textit{high threshold} dan \textit{low threshold}, maka piksel tersebut masuk ke dalam kategori tepian lemah, selebihnya akan masuk ke dalam kategori bukan tepian.
+\item Tahapan terakhir adalah \textit{Edge Linking} untuk menghubungkan tepian lemah dengan tepian kuat. Apabila piksel tepian lemah memiliki tetangga piksel (terhubung), maka piksel tersebut akan menjadi tepian.
+\end{enumerate}
+%\noindent Pada bagian ini menjelaskan urutan langkah kerja pada proses Deteksi Tepi Canny. Gambar \ref{fig:FlowchartCannyDetector} adalah \textit{flowchart} Deteksi Tepi Canny.
+%
+%\begin{adjustbox}{width=1\textwidth}
+%	\noindent\begin{minipage}{\linewidth}
+%		\framebox[\textwidth]{\includegraphics[width=3cm]{images/FlowchartDeteksiPlat.jpg}}
+%		\captionof{figure}{\textit{Flowchart} Deteksi Tepi Canny\\}
+%		\label{fig:FlowchartCannyDetector}
+%	\end{minipage}
+%\end{adjustbox}\\
 
-\noindent Hal pertama yang dilakukan untuk deteksi tepi Canny adalah dengan melakukan \textit{smoothing} pada citra dengan menggunakan turunan pertama pertama dari \textit{Gauss} dengan besar \textit{kernel} 3 $\times$ 3 dan nilai dari $\sigma$ = 1 untuk menghilangkan \textit{noise}.
+\noindent Berdasarkan algoritme yang sudah dijabarkan, hal pertama yang dilakukan untuk deteksi tepi Canny adalah dengan melakukan \textit{smoothing} pada citra dengan menggunakan turunan pertama pertama dari \textit{Gauss} dengan besar \textit{kernel} 3 $\times$ 3 dan nilai dari $\sigma$ = 1 untuk menghilangkan \textit{noise}.
 
 \begin{gather*}
 \textit{Matriks Gauss Kernel}
@@ -241,7 +250,7 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 \label{eq:MatriksGaussKernel}
 \end{gather*} 
 
-\noindent\textit{Kernel} seperti pada persamaan \ref{eq:MatriksGaussKernel} dikonvolusikan ke dalam citra untuk mendapatkan sebuah nilai baru. Sebagai contoh apabila diambil area pada sebuah citra sebesar 5 $\times$ 5 piksel seperti pada gambar \ref{fig:MatriksCitra} yang kemudian dikonvolusikan menggunakan \textit{kernel} pada persamaan \ref{eq:MatriksGaussKernel}.
+\noindent\textit{Kernel} seperti pada persamaan Matriks \textit{Gauss Kernel} di atas dikonvolusikan ke dalam citra untuk mendapatkan sebuah nilai baru. Sebagai contoh apabila diambil area pada sebuah citra sebesar 5 $\times$ 5 piksel seperti pada gambar \ref{fig:MatriksCitra} yang kemudian dikonvolusikan menggunakan \textit{kernel} pada persamaan \ref{eq:MatriksGaussKernel}.
 
 \begin{table}[H]
 	\centering
@@ -706,7 +715,7 @@ Lakukan proses tersebut untuk setiap sel sehingga masing-masing sel akan mempuny
 		\label{fig:HasilHOG}
 	\end{minipage}
 \end{adjustbox}
-\item Kemudian untuk setiap blok, akan dilakukan normalisasi dengan menggabungkan hasil histogram dari setiap sel dalam bloknya. Adapun proses normalisasi dapat menggunakan 4 algoritma yaitu, \textit{L1-Norm}, \textit{L1-Sqrt}, \textit{L2-Norm}, dan \textit{L2-Hys}. Pada penelitian ini, penulis menggunakan algoritma normalisasi \textit{L2-Norm} karena berdasarkan penelitian sebelumnya, hasil yang didapat lebih baik dari algoritma lainnya. Persamaan algoritma untuk proses normalisasi menggunakan \textit{L2-Norm} didapat dengan menggunakan persamaan \ref{eq:L2-Norm}. Di bawah adalah contoh perhitungan normalisasi untuk blok pertama:
+\item Kemudian untuk setiap blok, akan dilakukan normalisasi dengan menggabungkan hasil histogram dari setiap sel dalam bloknya. Adapun proses normalisasi dapat menggunakan 4 algoritme yaitu, \textit{L1-Norm}, \textit{L1-Sqrt}, \textit{L2-Norm}, dan \textit{L2-Hys}. Pada penelitian ini, penulis menggunakan algoritme normalisasi \textit{L2-Norm} karena berdasarkan penelitian sebelumnya, hasil yang didapat lebih baik dari algoritme lainnya. Persamaan algoritme untuk proses normalisasi menggunakan \textit{L2-Norm} didapat dengan menggunakan persamaan \ref{eq:L2-Norm}. Di bawah adalah contoh perhitungan normalisasi untuk blok pertama:
 \begin{table}[H]
 	\centering
 	\begin{small}
@@ -760,6 +769,9 @@ Lakukan proses normalisasi untuk setiap blok dengan menggeser secara horizontal 
 \end{table}
 Matriks inilah yang akan dijadikan sebagai masukan bagi metode \textit{Machine Learning} yang akan digunakan dalam penelitian ini.
 \end{enumerate}
+
+\subsection{\textit{Support Vector Machine}}
+\noindent \textit{HOG descriptor} yang dihasilkan dari perhitungan metode \textit{Histogram of Oriented Gradient} akan digunakan sebagai masukan \textit{Support Vector Machine}. \textit{Support Vector Machine} yang akan digunakan dalam penelitian menggunakan \textit{library} dari Weka SVM. \textit{Support Vector Machine} termasuk dalam algoritme \textit{supervised learning}. Konsep dasar dari metode ini adalah untuk menemukan sebuah \textit{separating hyperplane} (bidang) yang dapat memisahkan dua kelas sebagai keputusan klasifikasi. Dalam penelitian ini karakter yang akan dikenali adalah huruf A sampai dengan Z dan angka dari 0 sampai dengan 9.
 %\noindent Tabel \ref{tbl:filteredDataset} merupakan rincian jumlah citra pada masing-masing \textit{dataset} setelah dilakukan pemilihan.
 %\begin{table}[H]
 %	\centering

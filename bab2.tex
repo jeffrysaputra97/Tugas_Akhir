@@ -369,7 +369,7 @@ $N$ = jumlah total nilai total \textit{bin} yang digunakan dalam proses normalis
 \vspace{4.5pt}
 
 \subsection{\textit{Confusion Matrix}}
-\noindent \textit{Confusion Matrix} merupakan metode pengukuran untuk mengevaluasi hasil klasifikasi. Dengan melakukan klasifikasi sebanyak $C$ kelas, dihasilkan \textit{confusion matrix} $M$ berukuran $C \times C$, di mana elemen $M_{ij}$ dalam matriks menunjukkan jumlah sampel yang salah diklasifikasikan, sementara $M_{ii}$ adalah jumlah sampel yang hasil klasifikasinya adalah benar. \textit{Confusion matrix} pada gambar \ref{fig:ConfusionMatrix} digunakan pada kasus klasifikasi dua buah kelas sehingga membentuk matriks berukuran $2 \times 2$ \cite{16}.
+\noindent \textit{Confusion Matrix} merupakan metode pengukuran untuk mengevaluasi hasil klasifikasi. Dengan melakukan klasifikasi sebanyak $C$ kelas, dihasilkan \textit{confusion matrix} $M$ berukuran $C \times C$, di mana elemen $M_{ij}$ dalam matriks menunjukkan jumlah sampel yang salah diklasifikasikan, sementara $M_{ii}$ adalah jumlah sampel yang hasil klasifikasinya adalah benar. \textit{Confusion matrix} pada gambar \ref{fig:ConfusionMatrix} digunakan pada kasus klasifikasi dua buah kelas sehingga membentuk matriks berukuran $2 \times 2$ \cite{markham}.
 
 \begin{adjustbox}{width=1\textwidth}
 \noindent\begin{minipage}{\linewidth}
@@ -532,7 +532,7 @@ Dan perhitungan \textit{recall} atau disebut juga sebagai sensitivitas dapat dih
 \noindent Pada bagian ini akan dijelaskan mengenai perbandingan dari berbagai penelitian terkait metode deteksi dan pengenalan plat nomor mobil. \\
 
 \subsection{\textit{State of the Art}}
-\noindent Terdapat beberapa metode lain yang memiliki ruang lingkup yang mirip dengan penelitian ini khususnya mengenai deteksi dan pengenalan plat nomor mobil. Tabel \ref{tbl:StateoftheArt} \textit{State of the Art} akan menjelaskan perbedaan-perbedaan metode yang telah dipelajari oleh penulis dari jurnal.\\
+\noindent Terdapat beberapa metode lain yang memiliki ruang lingkup yang mirip dengan penelitian ini khususnya mengenai deteksi dan pengenalan plat nomor mobil. Tabel \ref{tbl:StateoftheArt} \textit{State of the Art} akan menjelaskan perbedaan-perbedaan metode dari jurnal terkait.\\
 \\
 \\
 \\
@@ -584,6 +584,12 @@ Rasheed, S., Naeem, A., Ishaq, O. (2012, October). Automated number plate recogn
 	\item \textit{Hough Transform}
 	\item \textit{Morphological Process}
 	\item \textit{Template Matching}
+\end{enumerate}\\
+\hline
+Nugroho, A., Wardhani, K.R.R. (2011). Aplikasi Sistem Pembaca Plat Nomor Mobil Menggunakan Pengolahan Citra dan Metode Learning Vector Quantization. & Apakah dengan menerapkan pengolahan citra untuk deteksi plat kendaraan dan metode \textit{Learning Vector Quantization} untuk pengenalan karakter dapat menghasilkan akurasi yang baik ? &
+\begin{enumerate}[wide, labelwidth=!, labelindent=0pt, topsep=0pt]
+	\item \textit{Pengolahan Citra}
+	\item \textit{Learning Vector Machine}
 \end{enumerate}
 \label{tbl:StateoftheArt}\\
 \hline
@@ -599,16 +605,41 @@ Rasheed, S., Naeem, A., Ishaq, O. (2012, October). Automated number plate recogn
 
 \noindent Pada referensi ketiga \cite{tabrizi} digabungkan metode klasifikasi \textit{K-Nearest Neighbours} dengan metode klasifikasi \textit{Support Vector Machine}. \textit{K-Nearest Neighbours} digunakan karena sifatnya yang mudah dipelajari, bersifat tangguh terhadap data yang memiliki derau dan efektif jika jumlah yang dimiliki berjumlah banyak. Sedangkan metode \textit{Support Vector Machine} digunakan untuk karakter-karakter yang memiliki kemiripan karakteristik, sehingga akurasi dari pengenalan karakter dapat meningkat.
 
-\noindent Pada referensi keempat \cite{rasheed} menggunakan \textit{Hough Transform} untuk mendeteksi lokasi plat kendaraan dan menghasilkan akurasi yang baik, yaitu sekitar 94\% untuk plat nomor yang terdeteksi dan dengan menggunakan metode \textit{Template Matching} menghasilkan akurasi pengenalan karakter plat nomor kendaraan sebesar 90\%.
+\noindent Pada referensi keempat \cite{rasheed} menggunakan \textit{Hough Transform} untuk mendeteksi lokasi plat kendaraan dan menghasilkan akurasi yang baik, yaitu sekitar 94\% untuk plat nomor yang terdeteksi dan dengan menggunakan metode \textit{Template Matching} menghasilkan akurasi pengenalan karakter plat nomor kendaraan sebesar 90\%.\\
 
-%\section{Tinjauan Objek}
-%\noindent Pada bagian ini akan diulas mengenai objek-objek yang terkait dengan deteksi dan pelacakan manusia.\\
+\noindent Pada referensi kelima \cite{nugroho} menggunakan metode pengolahan citra untuk mencari kandidat-kandidat pita dengan menghitung grafik vertikal gambar untuk mendapatkan lokasi plat nomor kendaraan, kemudian setiap karakter dari plat nomor yang didapatkan disegmentasi dengan cara menghitung grafik horizontal gambar, kemudian untuk metode klasifikasi karakter yang digunakan adalah \textit{Learning Vector Quantization}.
 
-%\subsection{Manusia}
-%\noindent Berdasarkan pengertian dari Kamus Besar Bahasa Indonesia, manusia adalah makhluk yang berakal budi (mampu menguasai makhluk lain). Dalam bidang taksonomi, manusia yang akan dideteksi dan dilacak merupakan manusia modern atau \textit{homo sapiens}. Dan dalam perkembangannya, manusia memiliki beberapa tahap kehidupan yaitu balita, anak-anak, remaja, dewasa, dan usia lanjut. \\
+\section{Tinjauan Objek}
+\noindent Pada bagian ini akan diulas mengenai objek-objek yang terkait dengan deteksi dan pengenalan plat nomor kendaraan.\\
 
-%\subsection{Struktur Tubuh Manusia}
-%\noindent Secara umum, tubuh manusia terdiri atas kepala, leher, batang tubuh, sepasang lengan, dan sepasang kaki. Pada penelitian ini untuk meningkatkan akurasi pendeteksian manusia maka digunakan bagian tubuh atas saja yaitu mulai dari bahu hingga bagian kepala manusia. \\
+\subsection{Tanda Nomor Kendaraan Bermotor}
+\noindent Tanda Nomor Kendaraan Bermotor (disingkat TNKB) disebut juga sebagai plat nomor atau nomor polisi adalah plat aluminium tanda kendaraan bermotor di Indonesia yang telah didaftarkan pada Kantor Bersama Samsat.
+
+\begin{adjustbox}{width=1\textwidth}
+\noindent\begin{minipage}{\linewidth}
+	\centering\includegraphics[width=12cm]{images/plat_nomor_example.png}
+	\captionof{figure}{Contoh dari plat nomor kendaraan Indonesia}
+	\label{fig:ContohPlatNomorIndonesia}
+\end{minipage}
+\end{adjustbox}\\
+
+\subsection{Spesifikasi Teknis}
+\noindent Plat nomor kendaraan Indonesia terdiri dari cetakan tulisan dua baris, pada baris pertama terdapat tiga hal yang diinformasikan, yaitu kode wilayah(huruf), nomor polisi(angka), dan kode/seri akhir wilayah(huruf). Sedangkan baris kedua menunjukkan bulan dan tahun masa berlaku, masing-masing dua digit. Contohnya pada gambar \ref{fig:ContohPlatNomorIndonesia} angka yang terdapat di baris keduanya adalah 10.21. Hal tersebut menandakan bahwa plat nomor tersebut akan habis masa berlakunya pada bulan Oktober tahun 2021.
+
+\noindent Bahan baku dari plat nomor adalah aluminium dengan ketebalan 1mm. Ukuran plat nomor untuk kendaraan bermotor roda dua dan roda tiga adalah 250 $\times$ 105 mm, sedangkan untuk kendaraan bermotor roda empat atau lebih adalah 395 $\times$ 135 mm. Terdapat cetakan garis lurus pembatas selebar 5mm di antara ruang nomor polisi dengan ruang angka masa berlaku (untuk plat nomor lama), sedangkan semenjak tahun 2011 di sekitar plat nomor terdapat garis putih dan tidak ada garis pemisah antara nomor polisi dan masa berlaku.
+
+\noindent Pada tahun 2014 terjadi perubahan tampilan pada plat nomor untuk kendaraan bermotor roda empat. Plat nomor kini sedikit lebih panjang dari sebelumnya (5 cm lebih panjang) untuk memberi ruang pada kode/seri akhir wilayah yang dulunya berjumlah dua digit menjadi tiga digit.\\
+
+\subsection{Jenis TNKB}
+\noindent Jenis dari TNKB di Indonesia dibedakan berdasarkan warna dari TNKB tersebut, warna TNKB yang ditetapkan di Indonesia adalah sebagai berikut:
+\begin{enumerate}
+\item Kendaraan pribadi dan sewa: warna dasar hitam dengan tulisan berwarna putih.
+\item Kendaraan umum: warna dasar kuning dengan tulisan hitam.
+\item Kendaraan milik pemerintah: warna dasar merah dengan tulisan berwarna putih.
+\item Kendaraan bermotor sementara: warna dasar putih dengan tulisan berwarna merah.
+\item Kendaraan korps diplomatik negara asing: warna dasar putih/merah dengan tulisan berwarna hitam.
+\item Kendaraan staf operasional korps diplomatik negara asing: warna dasar hitam dengan tulisan berwarna putih serta terdiri dari lima angka dan kode angka negara yang dicetak lebih kecil dengan format sub-bagian.
+\end{enumerate}
 
 %\subsubsection{Pendeteksian dan Pelacakan Manusia}
 %\noindent Pada bagian ini akan dijelaskan beberapa teori mengenai deteksi manusia dan pelacakan manusia.\\
