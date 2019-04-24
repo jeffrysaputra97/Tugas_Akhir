@@ -19,7 +19,7 @@ Bab ini menjelaskan teori-teori yang berkaitan mengenai teori penunjang dan jurn
 \noindent Terdapat satu paradigma yang mengkategorikan 3 jenis proses komputasi dalam pengolahan citra, yaitu tingkat rendah, tingkat sedang, dan tingkat tinggi. Proses tingkat rendah mencakup operasi yang sangat sederhana seperti \textit{image preprocessing} untuk mengurangi \textit{noise}, meningkatkan kontras, dan mempertajam citra. Proses tingkat sedang meliputi segmentasi untuk membagi daerah citra menjadi \textit{region} atau objek. Sedangkan proses tingkat tinggi memampukan komputer untuk mengerti seperti pengenalan objek dan analisis citra \cite{gonzalez}. \\
 
 \subsection{Pengabuan Citra}
-\noindent Citra RGB yaitu citra berwarna memiliki ukuran yang lebih besar dibandingkan dengan citra \textit{grayscale}. Untuk mempercepat proses komputasi pada citra, maka citra RGB perlu diubah menjadi citra \textit{grayscale} dengan skala keabuan 256. Persamaan pengabuan citra dapat dilihat pada persamaan \ref{eq:grayscale}.
+\noindent Citra RGB yaitu citra berwarna memiliki ukuran yang lebih besar dibandingkan dengan citra \textit{grayscale}. Untuk mempercepat proses komputasi pada citra, maka citra RGB perlu diubah menjadi citra \textit{grayscale} dengan skala keabuan 256. Persamaan pengabuan citra dapat dilihat pada persamaan \ref{eq:grayscale} dengan \textit{R} melambangkan intensitas warna merah, \textit{G} untuk intensitas warna hijau, dan \textit{B} untuk intensitas warna biru. 
 
 \begin{table}[H]
 	\begin{adjustbox}{width=1\textwidth}
@@ -34,7 +34,7 @@ Bab ini menjelaskan teori-teori yang berkaitan mengenai teori penunjang dan jurn
 	\end{adjustbox}
 \end{table}
 
-\noindent Persamaan \ref{eq:grayscale} menyimpulkan bahwa persentase warna hijau yang paling besar karena manusia cenderung lebih sensitif terhadap perubahan warna hijau yang memiliki panjang gelombang sekitar 500-570 nm, merah, lalu biru \cite{ragb}. Persamaan \ref{eq:grayscale} merupakan rekomendasi dari \textit{International Telecommunication Union Radiocommunication Sector}.\\
+\noindent Persamaan \ref{eq:grayscale} menyimpulkan bahwa persentase warna hijau yang paling besar karena manusia cenderung lebih sensitif terhadap perubahan warna hijau yang memiliki panjang gelombang sekitar 500-570 nm, merah, lalu biru \cite{ragb}, dan merupakan rekomendasi dari \textit{International Telecommunication Union Radiocommunication Sector}.\\
 
 \subsection{Deteksi Tepi}
 \noindent Tepian memiliki arti yaitu terjadinya perubahan intensitas secara signifikan pada sebuah citra. Deteksi tepi yang digunakan pada penelitian ini adalah dengan menggunakan operator \textit{Canny} untuk mendapatkan tepian citra sebesar 1 piksel. Proses deteksi tepi Canny memiliki tahapan sebagai berikut:
@@ -43,11 +43,11 @@ Bab ini menjelaskan teori-teori yang berkaitan mengenai teori penunjang dan jurn
 	Pada tahapan pertama citra dihaluskan dengan \textit{Gaussian filter} untuk mengurangi derau yang dapat menghasilkan detail yang mengganggu.
 	\item Menghitung Gradien \\
 	Untuk menghitung gradien yang dapat menghasilkan tepian yang masih tebal dengan beberapa operator, diantaranya adalah Sobel, Prewitt, atau Robert.
-	\item \textit{Non-maxima Supression}
+	\item \textit{Non-maxima Supression} \\
 	Tahapan ini digunakan untuk menipiskan tepian tebal yang diperoleh dari operasi sebelumnya dengan cara mencari nilai maksimum di tepian.
 	\item \textit{Double Thresholding} \\
 	Dari hasil \textit{non-maxima supression} bisa ditemukan tepian yang belum sempurna, sehingga perlu dilakukan \textit{thresholding} untuk menghilangkan derau yang tidak diinginkan. Caranya adalah dengan menetapkan 2 nilai \textit{threshold} yaitu \textit{high threshold} dan \textit{low threshold} untuk menentukan apakah piksel tersebut akan masuk dalam \textit{threshold} untuk dijadikan tepian. Piksel yang nilainya berada di atas \textit{high threshold} akan menjadi tepian kuat, sebaliknya jika di bawah \textit{low threshold} akan dijadikan sebagai \textit{background}.
-	\item \textit{Edge Tracking}
+	\item \textit{Edge Tracking} \\
 	Tahapan terakhir yaitu \textit{Edge Tracking} atau \textit{Edge Linking} digunakan untuk menghubungkan tepian kuat dan tepian lemah yang nilai pikselnya berada diantara \textit{high threshold} dan \textit{low threshold}. Ketika tepian lemah yang tidak terhubung dengan tepian kuat maka piksel tersebut akan dianggap sebagai \textit{background}. Hasil akhir dari deteksi tepi Canny adalah tepian halus yang memiliki lebar sebesar 1 piksel.\\
 \end{enumerate} 
 
@@ -373,8 +373,8 @@ $N$ = jumlah total nilai total \textit{bin} yang digunakan dalam proses normalis
 
 \begin{adjustbox}{width=1\textwidth}
 \noindent\begin{minipage}{\linewidth}
-	\framebox[\textwidth]{\includegraphics[width=6cm]{images/ConfusionMatrixForBinaryClassification.jpg}}
-	\captionof{figure}{\textit{Confusion Matrix untuk Dua Kelas} \cite{16}}
+	\framebox[\textwidth]{\includegraphics[width=8cm]{images/ConfusionMatrixForBinaryClassification.png}}
+	\captionof{figure}{\textit{Confusion Matrix untuk Dua Kelas} \cite{markham}}
 	\label{fig:ConfusionMatrix}
 \end{minipage}
 \end{adjustbox}
@@ -421,112 +421,42 @@ Dan perhitungan \textit{recall} atau disebut juga sebagai sensitivitas dapat dih
 	\end{adjustbox}
 \end{table}
 
-%\section{Pustaka}
-%\noindent Berikut adalah penjelasan dari \textit{library} yang digunakan di dalam penelitian. \\
-
-%\subsection{BufferedImage}
-%\noindent BufferedImage merupakan \textit{subclass} yang menyatakan citra dengan data \textit{buffer} citra yang dapat diakses. Pada \textit{subclass} tersebut terdapat informasi seperti jenis \textit{color model} dan raster yang digunakan pada citra. Pada tabel \ref{tbl:BufferedImage} dijelaskan mengenai \textit{method} dari \textit{subclass} BufferedImage yang digunakan.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%	\begin{longtable}{ |p{3cm}|p{5.5cm}|p{4cm}| }
-%		\caption{Tabel BufferedImage.java} \label{tbl:BufferedImage}\\
-%		\hline
-%		\textbf{Nama \textit{Method}} & \textbf{Definisi} & \textbf{Atribut}\\
-%		\endfirsthead
-%		\multicolumn{3}{c}{\textbf{\tablename~\thetable} Tabel BufferedImage.java (Lanjutan)}\\
-%		\hline
-%		\textbf{Nama \textit{Method}} & \textbf{Definisi} & \textbf{Atribut}\\
-%		\endhead
-%		\hline
-%		public BufferedImage(int width, int height, int imageType) & Konstruktor yang membentuk sebuah objek BufferedImage di mana objek tersebut memiliki ukuran lebar dan panjang serta \textit{color model} yang telah ditentukan. & width = lebar citra \newline height = tinggi citra \newline imageType = jenis \textit{color model} yang digunakan citra \\
-%		\hline
-%		public BufferedImage getSubimage(int x, int y, int w, int h) &
-%		Fungsi akan mengembalikan citra yang telah dipotong berdasarkan posisi persegi panjang yang ditentukan. & x = koordinat x awal,\newline y = koordinat y awal,\newline w = lebar persegi panjang,\newline h = tinggi persegi panjang.\\
-%		\hline
-%		public Graphics2D createGraphics() &
-%		Fungsi yang akan mengembalikan objek Graphics2D setelah objek tersebut dibuat, objek akan digunakan untuk menggambar ke objek BufferedImage. & -\\
-%		\hline
-%		public int getRGB(int x, int y) &
-%		Fungsi untuk mendapatkan nilai RGB dari suatu piksel pada citra. & x = koordinat piksel x,\newline y = koordinat piksel y.\\
-%		\hline
-%		public int getWidth() & Fungsi untuk mendapatkan informasi lebar dari citra. & -\\
-%		\hline
-%		public int getHeight() & Fungsi untuk mendapatkan informasi tinggi dari citra. & -\\
-%		\hline
-%	\end{longtable}
-%\end{small}
-%\endgroup
-
-%\subsection{Graphics2D}
-%\noindent Graphics2D merupakan \textit{class} yang menyediakan pengaturan yang lebih banyak seperti geometri, transformasi, warna, dan \textit{layout}. Pada tabel \ref{tbl:Graphics2D} dijelaskan mengenai \textit{method} dari \textit{class} Graphics2D yang digunakan.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%	\begin{longtable}{ |p{3cm}|p{5.5cm}|p{4cm}| }
-%		\caption{Tabel Graphics2D.java} \label{tbl:Graphics2D}\\
-%		\hline
-%		\textbf{Nama \textit{Method}} & \textbf{Definisi} & \textbf{Atribut}\\
-%		\endfirsthead
-%		\multicolumn{3}{c}{\textbf{\tablename~\thetable} Tabel Graphics2D.java (Lanjutan)}\\
-%		\hline
-%		\textbf{Nama \textit{Method}} & \textbf{Definisi} & \textbf{Atribut}\\
-%		\endhead
-%		\hline
-%		public abstract boolean drawImage(Image img, int x, int y, int width, ImageObserver observer); & Fungsi untuk membuat sebuah citra dengan perubahan yang telah ditentukan. Bila hasil pengembalian adalah bernilai \textit{true} berarti citra berhasil dimuat dan diproses, semetara bila nilai \textit{false} berarti citra sedang dimuat. & img = citra yang diproses \newline x = koordinat x,\newline y = koordinat y,\newline observer = \textit{interface} yang akan dinotifikasi mengenai informasi citra yang telah dikonstruksi. \\
-%		\hline
-%		public abstract void dispose(); & Fungsi untuk membuang informasi yang berkenaan dengan citra dan membebaskan alokasi sumber daya yang digunakannya. Setelah dilakukan fungsi ini, objek Graphics yang bersangkutan tidak akan dapat digunakan kembali. & -\\
-%		\hline
-%		public abstract void setColor(Color c) & Fungsi untuk menentukan jenis warna yang akan digunakan. & c = warna dalam bentuk RGB dengan tipe data Color.\\
-%		\hline
-%		public void drawRect(int x, int y, int width, int height) & Fungsi untuk menggambar 4 garis pada persegi panjang dalam citra. & x = koordinat x awal,\newline y = koordinat y awal,\newline width = lebar persegi panjang,\newline height = tinggi persegi panjang.\\
-%		\hline
-%	\end{longtable}
-%\end{small}
-%\endgroup
-
-%\subsection{\textit{Library} OpenCV}
-%\noindent OpenCV (\textit{Open Source Computer Vision}) adalah salah satu \textit{library open source} yang fokus dalam \textit{real-time computer vision} dan mendukung \textit{deep learning}. Pada awal mulanya, dikembangkan oleh Intel lalu didukung oleh Willow Garage dan sekarang dipelihara oleh Itseez. OpenCV dapat digunakan secara gratis untuk kepentingan akademik atau penggunaan secara komersial. Jenis \textit{interface}-nya beragam mulai dari C, C++, Python, hingga Java dan mendukung sistem operasi Windows, Linux, Mac OS, iOS, ataupun Android. Dengan berbagai macam algoritme yang telah dioptimasi, OpenCV dapat digunakan dalam berbagai bidang serta telah digunakan lebih dari 47 ribu orang dan telah diunduh lebih dari 14 juta kali.\\
-%\noindent Dalam penelitian ini, OpenCV digunakan untuk mendeteksi dan melacak manusia. Fungsi-fungsi yang digunakan dalam penelitian ini dijelaskan pada tabel \ref{tbl:OpenCV}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} yang Digunakan} \label{tbl:OpenCV}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} yang Digunakan (Lanjutan)}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & Cascade-\newline Classifier & String & filename & - & Konstruktor dari \textit{class} CascadeClassifier untuk memuat berkas xml.\\
-%	\hline
-%	2 & detect-\newline MultiScale & Mat,\newline MatOfRect,\newline double,\newline int,\newline int,\newline Size,\newline Size & image,\newline objects,\newline scaleFactor,\newline min-\newline Neighbors,\newline flags,\newline minSize,\newline maxSize & - & Fungsi dari \textit{class} Cascade Classifier untuk mendeteksi lokasi objek berdasarkan ketentuan faktor skala, banyak tetangga, dan ukuran minimum, maksimum yang digunakan. Hasil disimpan pada parameter objects yang memiliki tipe data MatOfRect.\\
-%	\hline
-%	3 & MatOfRect & - & - & - & Konstruktor dari class MatOfRect untuk melakukan inisialisasi.\\
-%	\hline
-%	4 & Imgcodecs.\newline imread & String & filename & Mat & Memuat citra berdasarkan alamat berkas.\\
-%	\hline
-%	5 & Imgcodecs.\newline imwrite & String,\newline Mat & filename,\newline img & boolean & Menyimpan berkas citra pada alamat yang ditentukan.\\
-%	\hline
-%	6 & Imgproc.\newline rectangle & Mat,\newline Point,\newline Point,\newline Scalar & img,\newline pt1,\newline pt2,\newline color & - & Menggambar persegi panjang pada citra berdasarkan posisi dan warna yang ditentukan.\\
-%	\hline
-%	7 & Point & double,\newline double & x,\newline y & - & Konstruktor dari \textit{class} Point.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
+\subsection{Penggunaan \textit{Library}}
+\noindent Berikut adalah penjelasan dari \textit{library} yang digunakan di dalam penelitian. \\
+\subsubsection{OpenCV}
+\noindent\textit{Library} yang digunakan adalah OpenCV untuk proses \textit{pre-processing} citra. OpenCV merupakan \textit{library open-source} yang banyak digunakan untuk penelitian terkait proses pengolahan citra dan \textit{computer vision}. 
+\begin{small}
+	\begin{longtable}{| p {0.5cm} | p {6cm} | p {6cm} |}
+		\caption{Tabel fungsi \textit{Library} OpenCV} \\
+		\hline
+		\textbf{No}  & \textbf{\textit{Function}}  & \textbf{Deskripsi} \\
+		\hline
+		\endfirsthead
+		\endhead
+		1 & Imgcodecs.imread(String filename) & Mengambil citra dari \textit{path} yang diisikan ke parameter.\\
+		\hline
+		2 & Imgproc.cvtColor(Mat src, Mat dst, int code) & Mengubah jenis warna pada citra sesuai yang diinginkan. Parameter fungsi ini terdiri dari Mat asal, Mat tujuan, dan \textit{code}. \textit{Code} digunakan untuk memilih tipe konversi citra tersebut, misal \textit{grayscale}.\\
+		\hline
+		3 & Imgproc.Canny(Mat image,Mat edges,double threshold1, double threshold2) & Fungsi ini digunakan untuk mendeteksi tepian pada citra menggunakan Canny.\\
+		\hline
+	\end{longtable}
+\end{small}
+\subsubsection{Weka}
+\noindent Weka adalah kumpulan dari algoritme pembelajaran mesin yang digunakan untuk menyelesaikan permasalahan \textit{data mining}. \textit{Library} ini berbasis bahasa pemrograman Java dan dapat berjalan di hampir seluruh platform. Dalam penelitian ini, \textit{library} Weka digunakan untuk melakukan proses klasifikasi menggunakan metode \textit{Support Vector Machine}.
+\begin{small}
+	\begin{longtable}{| p {0.5cm} | p {6cm} | p {6cm} |}
+		\caption{Tabel fungsi \textit{Library} Weka} \\
+		\hline
+		\textbf{No}  & \textbf{\textit{Function}}  & \textbf{Deskripsi} \\
+		\hline
+		\endfirsthead
+		\endhead
+		1 & libsvm.setOptions(String options) & Mengkonfigurasi \textit{classifier} yang akan digunakan.\\
+		\hline
+		2 & libsvm.buildClassifier(Instances insts) & Membangun \textit{classifier} sesuai dengan konfigurasi yang digunakan dan dataset yang diberikan.\\
+		\hline
+	\end{longtable}
+\end{small}
 
 \section{Tinjauan Studi}
 \noindent Pada bagian ini akan dijelaskan mengenai perbandingan dari berbagai penelitian terkait metode deteksi dan pengenalan plat nomor mobil. \\
@@ -537,7 +467,10 @@ Dan perhitungan \textit{recall} atau disebut juga sebagai sensitivitas dapat dih
 \\
 \\
 \\
-
+\\
+\\
+\\
+\\
 \begingroup
 \setlength{\LTleft}{-20cm plus -1fill}
 \setlength{\LTright}{\LTleft}
@@ -605,9 +538,9 @@ Nugroho, A., Wardhani, K.R.R. (2011). Aplikasi Sistem Pembaca Plat Nomor Mobil M
 
 \noindent Pada referensi ketiga \cite{tabrizi} digabungkan metode klasifikasi \textit{K-Nearest Neighbours} dengan metode klasifikasi \textit{Support Vector Machine}. \textit{K-Nearest Neighbours} digunakan karena sifatnya yang mudah dipelajari, bersifat tangguh terhadap data yang memiliki derau dan efektif jika jumlah yang dimiliki berjumlah banyak. Sedangkan metode \textit{Support Vector Machine} digunakan untuk karakter-karakter yang memiliki kemiripan karakteristik, sehingga akurasi dari pengenalan karakter dapat meningkat.
 
-\noindent Pada referensi keempat \cite{rasheed} menggunakan \textit{Hough Transform} untuk mendeteksi lokasi plat kendaraan dan menghasilkan akurasi yang baik, yaitu sekitar 94\% untuk plat nomor yang terdeteksi dan dengan menggunakan metode \textit{Template Matching} menghasilkan akurasi pengenalan karakter plat nomor kendaraan sebesar 90\%.\\
+\noindent Pada referensi keempat \cite{rasheed} menggunakan \textit{Hough Transform} untuk mendeteksi lokasi plat kendaraan dan menghasilkan akurasi yang baik, yaitu sekitar 94\% untuk plat nomor yang terdeteksi dan dengan menggunakan metode \textit{Template Matching} menghasilkan akurasi pengenalan karakter plat nomor kendaraan sebesar 90\%.
 
-\noindent Pada referensi kelima \cite{nugroho} menggunakan metode pengolahan citra untuk mencari kandidat-kandidat pita dengan menghitung grafik vertikal gambar untuk mendapatkan lokasi plat nomor kendaraan, kemudian setiap karakter dari plat nomor yang didapatkan disegmentasi dengan cara menghitung grafik horizontal gambar, kemudian untuk metode klasifikasi karakter yang digunakan adalah \textit{Learning Vector Quantization}.
+\noindent Pada referensi kelima \cite{nugroho} menggunakan metode pengolahan citra untuk mencari kandidat-kandidat pita dengan menghitung grafik vertikal gambar untuk mendapatkan lokasi plat nomor kendaraan, kemudian setiap karakter dari plat nomor yang didapatkan disegmentasi dengan cara menghitung grafik horizontal gambar, kemudian untuk metode klasifikasi karakter yang digunakan adalah \textit{Learning Vector Quantization}.\\
 
 \section{Tinjauan Objek}
 \noindent Pada bagian ini akan diulas mengenai objek-objek yang terkait dengan deteksi dan pengenalan plat nomor kendaraan.\\

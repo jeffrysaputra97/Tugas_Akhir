@@ -102,7 +102,7 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
-		\framebox[\textwidth]{\includegraphics[width=8cm]{images/FlowchartTesting.png}}
+		\framebox[\textwidth]{\includegraphics[width=7cm]{images/FlowchartTesting.png}}
 		\captionof{figure}{\textit{Flowchart Testing} Sistem Pendeteksi dan Pelacakan Manusia\\}
 		\label{fig:FlowchartTesting}
 	\end{minipage}
@@ -238,7 +238,6 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 %\end{adjustbox}\\
 
 \noindent Berdasarkan algoritme yang sudah dijabarkan, hal pertama yang dilakukan untuk deteksi tepi Canny adalah dengan melakukan \textit{smoothing} pada citra dengan menggunakan turunan pertama pertama dari \textit{Gauss} dengan besar \textit{kernel} 3 $\times$ 3 dan nilai dari $\sigma$ = 1 untuk menghilangkan \textit{noise}.
-
 \begin{gather*}
 \textit{Matriks Gauss Kernel}
 =
@@ -250,7 +249,7 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 \label{eq:MatriksGaussKernel}
 \end{gather*} 
 
-\noindent\textit{Kernel} seperti pada persamaan Matriks \textit{Gauss Kernel} di atas dikonvolusikan ke dalam citra untuk mendapatkan sebuah nilai baru. Sebagai contoh apabila diambil area pada sebuah citra sebesar 5 $\times$ 5 piksel seperti pada gambar \ref{fig:MatriksCitra} yang kemudian dikonvolusikan menggunakan \textit{kernel} pada persamaan \ref{eq:MatriksGaussKernel}.
+\noindent\textit{Kernel} seperti pada persamaan Matriks \textit{Gauss Kernel} di atas dikonvolusikan ke dalam citra untuk mendapatkan sebuah nilai baru. Sebagai contoh apabila diambil area pada sebuah citra sebesar 5 $\times$ 5 piksel seperti pada gambar \ref{fig:MatriksCitra} yang kemudian dikonvolusikan menggunakan \textit{Gauss Kernel}.
 
 \begin{table}[H]
 	\centering
@@ -331,13 +330,31 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 
 \begin{table}[H]
 	\begin{adjustbox}{width=1\textwidth}
-		\begin{tabular}{|p{20cm}|}
+		\begin{tabular}{|p{15cm}|}
 			\hline
 			\begin{equation}\nonumber
 			\begin{aligned}
-			G_{x} &= (-1 * 77) + (0 * 97) + (1 * 108) + (-2 * 97) + (0 * 127) + (2 * 162) + (-1 * 123) + (0 * 112) + (1 * 151) = 188 \\
-			G_{y} &= (-1 * 77) + (-2 * 97) + (-1 * 108) + (0 * 97) + (0 * 127) + (0 * 162) + (1 * 123) + (2 * 112) + (1 * 151) = 118 \\
+			G_{x} &= (-1 * 77) + (0 * 97) + (1 * 108) \\
+			 	  &+ (-2 * 97) + (0 * 127) + (2 * 162) \\ 
+			 	  &+ (-1 * 123) + (0 * 112) + (1 * 151)\\
+			G_{x} &= 188\\
+			\end{aligned}
+			\end{equation}\\
+			\begin{equation}\nonumber
+			\begin{aligned}
+			G_{y} &= (-1 * 77) + (-2 * 97) + (-1 * 108) \\
+				  &+ (0 * 97) + (0 * 127) + (0 * 162) \\
+				  &+ (1 * 123) + (2 * 112) + (1 * 151) \\
+			G_{y} &= 118\\
+			\end{aligned}
+			\end{equation}\\
+			\begin{equation}\nonumber
+			\begin{aligned}
 			m &= \sqrt{G_{x}^2 + G_{y}^2} = \sqrt{188^2 + 118^2} = 221.716 \\
+			\end{aligned}
+			\end{equation}\\
+			\begin{equation}\nonumber
+			\begin{aligned}
 			\theta &= arctan(\frac{118}{188}) = 32.122 \\
 			\end{aligned}
 			\end{equation}\\
@@ -538,15 +555,38 @@ Setelah mendapatkan sejumlah nilai \textit{peak} potensial kemudian \textit{peak
 	\end{small}
 	\label{tab:ChosenPeak}
 \end{table}
-\item Setelah mendapatkan sejumlah \textit{peaks} yang diinginkan berikutnya adalah menghitung intensitas kemunculan dari setiap nilai \textit{theta} (rentang niali \textit{theta} yang digunakan adalah 0-180 derajat). Misalkan hasil perhitungan intensitas kemunculan tersebut adalah:\\
+\item Setelah mendapatkan sejumlah \textit{peaks} yang diinginkan berikutnya adalah menghitung intensitas kemunculan dari setiap nilai \textit{theta} (rentang niali \textit{theta} yang digunakan adalah 0-180 derajat). Misalkan hasil perhitungan intensitas kemunculan tersebut adalah:
+\begin{table}[H]
+	\centering
+	\captionof{table}{Intensitas kemunculan dari setiap nilai \textit{theta}\\}
+	\begin{small}
+		\begin{tabular}{|p{2cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|}
+			\hline
+			\textbf{Theta} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & \dots & 180\\
+			\hline
+			\textbf{Intensitas Kemunculan} & 0 & 1 & 0 & 1 & 0 & 0 & 1 & \dots &0\\
+			\hline
+		\end{tabular}
+	\end{small}
+	\label{tab:ChosenPeak}
+\end{table}
+\noindent Keluaran dari metode \textit{Hough Transform} ini adalah kumpulan nilai \textit{rho} dan \textit{theta} yang nantinya akan digunakan untuk mencari seluruh kandidat garis. Dari kandidat garis tersebut akan didapatkan garis vertikal dan garis horizontal, dengan menggunakan perhitungan \textit{Euclidean Distance} seluruh garis vertikal akan dikelompokkan dan diperiksa manakah dari kelompok garis yang memiliki koordinat titik awal dan titik akhir yang hampir sama. Kemudian titik awal dan titik akhir dari kedua garis tersebut akan digabungkan menjadi bentuk persegi panjang dan area tersebut yang akan disebut dengan area plat kendaraan.\\
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\includegraphics[width=11cm]{images/SeleksiKandidatGaris.PNG}
+		\captionof{figure}{Seleksi Kandidat Garis\\}
+		\label{fig:SeleksiKandidatGaris}
+	\end{minipage}
+\end{adjustbox}\\
 \\
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
-		\captionof{table}{Memeriksa \textit{neighbour} dari koordinat (0,0)\\}
-		\centering\includegraphics[width=6cm]{images/AccumulatorSpace4.PNG}
-		%\label{tab:AccumulatorSpaceNeighbourCheck}
+		\centering\includegraphics[width=11cm]{images/AreaPlatKendaraan.PNG}
+		\captionof{figure}{Penentuan Area Plat Kendaraan\\}
+		\label{fig:Penentuan Area Plat Kendaraan}
 	\end{minipage}
 \end{adjustbox}\\
+\\
 \end{enumerate}
 
 \subsection{\textit{Histogram of Oriented Gradient}}
