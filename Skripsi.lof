@@ -8,7 +8,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Kerangka Pemikiran\relax }}{3-2}% 
 \contentsline {figure}{\numberline {3.2}{\ignorespaces \textit {Flowchart Training} Sistem Pengenalan Plat Nomor Kendaraan \relax }}{3-3}% 
-\contentsline {figure}{\numberline {3.3}{\ignorespaces \textit {Flowchart Testing} Sistem Pendeteksi dan Pelacakan Manusia \relax }}{3-4}% 
+\contentsline {figure}{\numberline {3.3}{\ignorespaces \textit {Flowchart Testing} Sistem Deteksi dan Pengenalan Plat Nomor \relax }}{3-4}% 
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Contoh citra karakter yang digunakan untuk tahap \textit {training} \relax }}{3-6}% 
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Contoh citra karakter yang tidak digunakan \relax }}{3-6}% 
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Skema Alur Pendeteksian Plat \relax }}{3-6}% 
