@@ -37,7 +37,7 @@ Bab ini menjelaskan teori-teori yang berkaitan mengenai teori penunjang dan jurn
 \noindent Persamaan \ref{eq:grayscale} menyimpulkan bahwa persentase warna hijau yang paling besar karena manusia cenderung lebih sensitif terhadap perubahan warna hijau yang memiliki panjang gelombang sekitar 500-570 nm, merah, lalu biru \cite{ragb}, dan merupakan rekomendasi dari \textit{International Telecommunication Union Radiocommunication Sector}.\\
 
 \subsection{Deteksi Tepi}
-\noindent Tepian memiliki arti yaitu terjadinya perubahan intensitas secara signifikan pada sebuah citra. Deteksi tepi yang digunakan pada penelitian ini adalah dengan menggunakan operator \textit{Canny} untuk mendapatkan tepian citra sebesar 1 piksel. Proses deteksi tepi Canny memiliki tahapan sebagai berikut:
+\noindent Tepian memiliki arti yaitu terjadinya perubahan intensitas secara signifikan pada sebuah citra. Deteksi tepi ini digunakan untuk mendapatkan informasi bentuk dari citra masukan. Deteksi tepi yang digunakan pada penelitian ini adalah dengan menggunakan operator \textit{Canny} untuk mendapatkan tepian citra sebesar 1 piksel. Proses deteksi tepi Canny memiliki tahapan sebagai berikut:
 \begin{enumerate}
 	\item Penghalusan \\
 	Pada tahapan pertama citra dihaluskan dengan \textit{Gaussian filter} untuk mengurangi derau yang dapat menghasilkan detail yang mengganggu.
@@ -127,7 +127,7 @@ M = ukuran \textit{height} dari citra
 N = ukuran \textit{width} dari citra\\
 M = ukuran \textit{height} dari citra
 
-\noindent Setelah proses perhitungan \textit{voting} dalam \textit{accumulator space} selesai, yang dilakukan selanjutnya adalah memilih \textit{peak} terbaik yang terdapat dalam \textit{accumulator space}. Nilai \textit{peak} yang tinggi memberikan indikasi yang baik dari garis \cite{oechsle}. Berdasarkan R. Varun, \textit{et al}. (2015), diketahui \textit{local maxima} dari \textit{accumulator space} dipertimbangkan sebagai \textit{peak} yang menonjol. Jumlah \textit{peak} merupakan hal yang krusial. Jumlah \textit{peak} yang terlalu sedikit atau terlalu banyak dapat mempengaruhi kinerja sistem.
+\noindent Setelah proses perhitungan \textit{voting} dalam \textit{accumulator space} selesai, yang dilakukan selanjutnya adalah memilih \textit{peak} terbaik yang terdapat dalam \textit{accumulator space}. Nilai \textit{peak} yang tinggi memberikan indikasi yang baik dari garis \cite{oechsle}. Berdasarkan R. Varun, \textit{et al}., diketahui \textit{local maxima} dari \textit{accumulator space} dipertimbangkan sebagai \textit{peak} yang menonjol. Jumlah \textit{peak} merupakan hal yang krusial. Jumlah \textit{peak} yang terlalu sedikit atau terlalu banyak dapat mempengaruhi kinerja sistem.
 
 \noindent Algoritme pencarian \textit{peak} menerapkan nilai \textit{threshold} dan pencarian lokal yang berdasarkan dari ukuran \textit{neighbourhood} (NS). Nilai \textit{threshold} untuk membatasi nilai \textit{voting} untuk mempertimbangkan \textit{peak} yang menonjol. Nilai NS bernilai 1 atau lebih. Algoritme pencarian \textit{peak} tersebut dapat menghindari hasil ganda untuk sebuah garis \cite{oechsle}.
 
@@ -302,6 +302,7 @@ $N$ = jumlah total nilai total \textit{bin} yang digunakan dalam proses normalis
 \renewcommand{\arraystretch}{1} 
 \begin{tabularx}{\textwidth}{lll}
 	Dimana: \\
+	$sign(x)$ & = & Fungsi \textit{signum}\\
 	$l$ & = & Banyaknya kelas citra\\
 	$\alpha_i$ & = & Nilai alpha ke $i$\\
 	$y_i$ & = & Nilai kelas citra ke $i$\\
@@ -487,6 +488,12 @@ Dan perhitungan \textit{recall} atau disebut juga sebagai sensitivitas dapat dih
 \endhead
 
 \hline
+Nugroho, A., Wardhani, K.R.R. (2011). Aplikasi Sistem Pembaca Plat Nomor Mobil Menggunakan Pengolahan Citra dan Metode Learning Vector Quantization. & Apakah dengan menerapkan pengolahan citra untuk deteksi plat kendaraan dan metode \textit{Learning Vector Quantization} untuk pengenalan karakter dapat menghasilkan akurasi yang baik ? &
+\begin{enumerate}[wide, labelwidth=!, labelindent=0pt, topsep=0pt]
+	\item \textit{Pengolahan Citra}
+	\item \textit{Learning Vector Machine}
+\end{enumerate}\\
+\hline
  Gou, C., Wang, K., Yao, Y., Li, Z. (2016). Vehicle license plate recognition based on extremal regions and restricted Boltzmann machines. \emph{IEEE Transactions on Intelligent Transportation Systems, 17}(4), 1096-1107. & Apakah dengan menerapkan pendeteksian plat nomor dengan \textit{Extremal Region} dan pengenalan karakter plat nomor menggunakan \textit{Hybrid Discriminative Restricted Boltzmann Machine} dapat meningkatkan akurasi pendeteksian dan pengenalan dalam berbagai kondisi cuaca dan \textit{background} yang kompleks? & 
 \begin{enumerate}[wide, labelwidth=!, labelindent=0pt, topsep=0pt]
 \item \textit{Extremal Region}
@@ -517,12 +524,6 @@ Rasheed, S., Naeem, A., Ishaq, O. (2012, October). Automated number plate recogn
 	\item \textit{Hough Transform}
 	\item \textit{Morphological Process}
 	\item \textit{Template Matching}
-\end{enumerate}\\
-\hline
-Nugroho, A., Wardhani, K.R.R. (2011). Aplikasi Sistem Pembaca Plat Nomor Mobil Menggunakan Pengolahan Citra dan Metode Learning Vector Quantization. & Apakah dengan menerapkan pengolahan citra untuk deteksi plat kendaraan dan metode \textit{Learning Vector Quantization} untuk pengenalan karakter dapat menghasilkan akurasi yang baik ? &
-\begin{enumerate}[wide, labelwidth=!, labelindent=0pt, topsep=0pt]
-	\item \textit{Pengolahan Citra}
-	\item \textit{Learning Vector Machine}
 \end{enumerate}
 \label{tbl:StateoftheArt}\\
 \hline
@@ -532,15 +533,15 @@ Nugroho, A., Wardhani, K.R.R. (2011). Aplikasi Sistem Pembaca Plat Nomor Mobil M
  
 \subsection{Pembahasan Penelitian Terkait}
 \noindent Terdapat beberapa metode yang dapat khususnya untuk mendeteksi plat nomor dan mengenali karakter pada plat nomor.
-\noindent Pada referensi pertama \cite{gou2016} menggunakan metode \textit{Extremal Region} sebagai proses untuk mendapatkan daerah-daerah karakter dari suatu plat nomor, kemudian \textit{Extremal Region} yang didapat diseleksi dengan menggunakan \textit{AdaBoost} sehingga bisa didapatkan daerah karakter plat nomor yang sesuai dengan kriteria yang diinginkan, dari daerah-daerah karakter yang didapatkan barulah kandidat plat nomor yang benar bisa didapatkan. Proses selanjutnya adalah pengambilan fitur karakter dengan menggunakan metode \textit{Histogram of Oriented Gradient} sehingga didapatkan fitur vektor dari setiap karakter pada plat nomor, yang nantinya akan menjadi masukkan bagi metode klasifikasi \textit{Hybrid Discriminative Restricted Boltzmann Machine}.
+\noindent Pada referensi pertama \cite{nugroho} menggunakan metode pengolahan citra untuk mencari kandidat-kandidat pita dengan menghitung histogram gambar untuk mendapatkan lokasi plat nomor kendaraan, kemudian setiap karakter dari plat nomor yang didapatkan disegmentasi dengan cara menghitung grafik horizontal gambar, kemudian untuk metode klasifikasi karakter yang digunakan adalah \textit{Learning Vector Quantization}.
 
-\noindent Pada referensi kedua \cite{gou2014} menggunakan metode \textit{Maximally Stable Extremal Region} untuk memilih kandidat daerah karakter yang nantinya akan menentukan lokasi dari plat nomor berdasarkan letak geometris dari kandidat-kandidat karakter tersebut. Setelah lokasi plat nomor didapatkan, \textit{HOG Descriptor} dari setiap karakter diambil dengan menggunakan metode \textit{Histogram of Oriented Gradient} dan setiap karakternya akan dikenali menggunakan metode \textit{neural network} bernama \textit{Extreme Learning Machine}.
+\noindent Pada referensi kedua \cite{gou2016} menggunakan metode \textit{Extremal Region} sebagai proses untuk mendapatkan daerah-daerah karakter dari suatu plat nomor, kemudian \textit{Extremal Region} yang didapat diseleksi dengan menggunakan \textit{AdaBoost} sehingga bisa didapatkan daerah karakter plat nomor yang sesuai dengan kriteria yang diinginkan, dari daerah-daerah karakter yang didapatkan barulah kandidat plat nomor yang benar bisa didapatkan. Proses selanjutnya adalah pengambilan fitur karakter dengan menggunakan metode \textit{Histogram of Oriented Gradient} sehingga didapatkan fitur vektor dari setiap karakter pada plat nomor, yang nantinya akan menjadi masukkan bagi metode klasifikasi \textit{Hybrid Discriminative Restricted Boltzmann Machine}.
 
-\noindent Pada referensi ketiga \cite{tabrizi} digabungkan metode klasifikasi \textit{K-Nearest Neighbours} dengan metode klasifikasi \textit{Support Vector Machine}. \textit{K-Nearest Neighbours} digunakan karena sifatnya yang mudah dipelajari, bersifat tangguh terhadap data yang memiliki derau dan efektif jika jumlah yang dimiliki berjumlah banyak. Sedangkan metode \textit{Support Vector Machine} digunakan untuk karakter-karakter yang memiliki kemiripan karakteristik, sehingga akurasi dari pengenalan karakter dapat meningkat.
+\noindent Pada referensi ketiga \cite{gou2014} menggunakan metode \textit{Maximally Stable Extremal Region} untuk memilih kandidat daerah karakter yang nantinya akan menentukan lokasi dari plat nomor berdasarkan letak geometris dari kandidat-kandidat karakter tersebut. Setelah lokasi plat nomor didapatkan, \textit{HOG Descriptor} dari setiap karakter diambil dengan menggunakan metode \textit{Histogram of Oriented Gradient} dan setiap karakternya akan dikenali menggunakan metode \textit{neural network} bernama \textit{Extreme Learning Machine}.
 
-\noindent Pada referensi keempat \cite{rasheed} menggunakan \textit{Hough Transform} untuk mendeteksi lokasi plat kendaraan dan menghasilkan akurasi yang baik, yaitu sekitar 94\% untuk plat nomor yang terdeteksi dan dengan menggunakan metode \textit{Template Matching} menghasilkan akurasi pengenalan karakter plat nomor kendaraan sebesar 90\%.
+\noindent Pada referensi keempat \cite{tabrizi} digabungkan metode klasifikasi \textit{K-Nearest Neighbours} dengan metode klasifikasi \textit{Support Vector Machine}. \textit{K-Nearest Neighbours} digunakan karena sifatnya yang mudah dipelajari, bersifat tangguh terhadap data yang memiliki derau dan efektif jika jumlah yang dimiliki berjumlah banyak. Sedangkan metode \textit{Support Vector Machine} digunakan untuk karakter-karakter yang memiliki kemiripan karakteristik, sehingga akurasi dari pengenalan karakter dapat meningkat.
 
-\noindent Pada referensi kelima \cite{nugroho} menggunakan metode pengolahan citra untuk mencari kandidat-kandidat pita dengan menghitung histogram gambar untuk mendapatkan lokasi plat nomor kendaraan, kemudian setiap karakter dari plat nomor yang didapatkan disegmentasi dengan cara menghitung grafik horizontal gambar, kemudian untuk metode klasifikasi karakter yang digunakan adalah \textit{Learning Vector Quantization}.\\
+\noindent Pada referensi kelima \cite{rasheed} menggunakan \textit{Hough Transform} untuk mendeteksi lokasi plat kendaraan dan menghasilkan akurasi yang baik, yaitu sekitar 94\% untuk plat nomor yang terdeteksi dan dengan menggunakan metode \textit{Template Matching} menghasilkan akurasi pengenalan karakter plat nomor kendaraan sebesar 90\%.\\
 
 \section{Tinjauan Objek}
 \noindent Pada bagian ini akan diulas mengenai objek-objek yang terkait dengan deteksi dan pengenalan plat nomor kendaraan.\\
@@ -556,7 +557,6 @@ Nugroho, A., Wardhani, K.R.R. (2011). Aplikasi Sistem Pembaca Plat Nomor Mobil M
 \end{minipage}
 \end{adjustbox}\\
 
-\subsection{Spesifikasi Teknis}
 \noindent Plat nomor kendaraan Indonesia terdiri dari cetakan tulisan dua baris, pada baris pertama terdapat tiga hal yang diinformasikan, yaitu kode wilayah(huruf), nomor polisi(angka), dan kode/seri akhir wilayah(huruf). Sedangkan baris kedua menunjukkan bulan dan tahun masa berlaku, masing-masing dua digit. Contohnya pada gambar \ref{fig:ContohPlatNomorIndonesia} angka yang terdapat di baris keduanya adalah 10.21. Hal tersebut menandakan bahwa plat nomor tersebut akan habis masa berlakunya pada bulan Oktober tahun 2021.
 
 \noindent Bahan baku dari plat nomor adalah aluminium dengan ketebalan 1mm. Ukuran plat nomor untuk kendaraan bermotor roda dua dan roda tiga adalah 250 $\times$ 105 mm, sedangkan untuk kendaraan bermotor roda empat atau lebih adalah 395 $\times$ 135 mm. Terdapat cetakan garis lurus pembatas selebar 5mm di antara ruang nomor polisi dengan ruang angka masa berlaku (untuk plat nomor lama), sedangkan semenjak tahun 2011 di sekitar plat nomor terdapat garis putih dan tidak ada garis pemisah antara nomor polisi dan masa berlaku.
@@ -564,16 +564,38 @@ Nugroho, A., Wardhani, K.R.R. (2011). Aplikasi Sistem Pembaca Plat Nomor Mobil M
 \noindent Pada tahun 2014 terjadi perubahan tampilan pada plat nomor untuk kendaraan bermotor roda empat. Plat nomor kini sedikit lebih panjang dari sebelumnya (5 cm lebih panjang) untuk memberi ruang pada kode/seri akhir wilayah yang dulunya berjumlah dua digit menjadi tiga digit.\\
 
 \subsection{Jenis TNKB}
-\noindent Jenis dari TNKB di Indonesia dibedakan berdasarkan warna dari TNKB tersebut, warna TNKB yang ditetapkan di Indonesia adalah sebagai berikut:
+\noindent Jenis dari TNKB di Indonesia dibedakan berdasarkan warna dari TNKB tersebut, warna TNKB yang ditetapkan di Indonesia adalah sebagai berikut \cite{polri}:
 \begin{enumerate}
 \item Kendaraan pribadi dan sewa: warna dasar hitam dengan tulisan berwarna putih.
 \item Kendaraan umum: warna dasar kuning dengan tulisan hitam.
 \item Kendaraan milik pemerintah: warna dasar merah dengan tulisan berwarna putih.
 \item Kendaraan bermotor sementara: warna dasar putih dengan tulisan berwarna merah.
 \item Kendaraan korps diplomatik negara asing: warna dasar putih/merah dengan tulisan berwarna hitam.
-\item Kendaraan staf operasional korps diplomatik negara asing: warna dasar hitam dengan tulisan berwarna putih serta terdiri dari lima angka dan kode angka negara yang dicetak lebih kecil dengan format sub-bagian.
+\item Kendaraan staf operasional korps diplomatik negara asing: warna dasar hitam dengan tulisan berwarna putih serta terdiri dari lima angka dan kode angka negara yang dicetak lebih kecil dengan format sub-bagian.\\
 \end{enumerate}
 
+\subsection{\textit{Dataset Tel-U Vehicle Data-set V1.0}}
+\noindent \textit{Dataset Tel-U Vehicle Data-set V1.0} merupakan \textit{dataset} untuk penelitian pendeteksian plat nomor kendaraan yang berasal dari Universitas Telkom. Universitas Telkom menyediakan \textit{dataset} ini secara gratis dan dapat digunakan untuk umum.
+
+\noindent Dalam \textit{dataset} ini terdapat 228 citra kendaraan dengan plat nomor kendaraan yang diambil dari bagian depan kendaraan. Pengambilan citra dilakukan dari beragam posisi, sudut, jarak, dan pencahayaan.
+
+\begin{table}[H]
+	\small
+	\begin{adjustbox}{width=1\textwidth}
+		\begin{tabular}{| p {14cm} |}
+			\hline
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=14cm]{images/PengambilanCitra.png}
+			\end{figure} \\
+			\hline
+		\end{tabular}
+	\end{adjustbox}
+	\captionof{figure}{Ilustrasi proses pengambilan citra \textit{dataset}}
+	\label{fig:IlustrasiProsesPengambilanCitraDataset}
+\end{table}
+
+\noindent Citra dalam \textit{dataset} ini diambil dengan menggunakan kamera DSLR Canon EOS 500 D dan Canon EOS 550 D dengan resolusi 15 dan 18 megapiksel. Citra kemudian diubah resolusinya menjadi 1024 $\times$ 640 piksel.
 %\subsubsection{Pendeteksian dan Pelacakan Manusia}
 %\noindent Pada bagian ini akan dijelaskan beberapa teori mengenai deteksi manusia dan pelacakan manusia.\\
 

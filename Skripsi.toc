@@ -11,7 +11,7 @@
 \contentsline {chapter}{\numberline {I}PENDAHULUAN}{1-1}% 
 \contentsline {section}{\numberline {1.1\hspace {0,3cm}}Latar Belakang}{1-1}% 
 \contentsline {section}{\numberline {1.2\hspace {0,3cm}}Rumusan Masalah}{1-2}% 
-\contentsline {section}{\numberline {1.3\hspace {0,3cm}}Tujuan Penelitian}{1-3}% 
+\contentsline {section}{\numberline {1.3\hspace {0,3cm}}Tujuan Penelitian}{1-2}% 
 \contentsline {section}{\numberline {1.4\hspace {0,3cm}}Batasan Masalah}{1-3}% 
 \contentsline {section}{\numberline {1.5\hspace {0,3cm}}Kontribusi Penelitian}{1-3}% 
 \contentsline {section}{\numberline {1.6\hspace {0,3cm}}Metodologi Penelitian}{1-3}% 
@@ -35,8 +35,8 @@
 \contentsline {subsection}{\numberline {2.2.2}Pembahasan Penelitian Terkait}{2-16}% 
 \contentsline {section}{\numberline {2.3\hspace {0,3cm}}Tinjauan Objek}{2-17}% 
 \contentsline {subsection}{\numberline {2.3.1}Tanda Nomor Kendaraan Bermotor}{2-17}% 
-\contentsline {subsection}{\numberline {2.3.2}Spesifikasi Teknis}{2-17}% 
-\contentsline {subsection}{\numberline {2.3.3}Jenis TNKB}{2-18}% 
+\contentsline {subsection}{\numberline {2.3.2}Jenis TNKB}{2-18}% 
+\contentsline {subsection}{\numberline {2.3.3}\textit {Dataset Tel-U Vehicle Data-set V1.0}}{2-19}% 
 \contentsline {chapter}{\numberline {III}ANALISIS DAN PERANCANGAN SISTEM}{3-1}% 
 \contentsline {section}{\numberline {3.1\hspace {0,3cm}}Analisis Masalah}{3-1}% 
 \contentsline {section}{\numberline {3.2\hspace {0,3cm}}Kerangka Pemikiran}{3-1}% 

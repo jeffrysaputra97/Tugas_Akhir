@@ -5,6 +5,7 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Contoh \textit {Hyperplane} pada SVM\relax }}{2-9}% 
 \contentsline {figure}{\numberline {2.2}{\ignorespaces \textit {Confusion Matrix untuk Dua Kelas} \cite {markham}\relax }}{2-11}% 
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Contoh dari plat nomor kendaraan Indonesia\relax }}{2-17}% 
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Ilustrasi proses pengambilan citra \textit {dataset}\relax }}{2-19}% 
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Kerangka Pemikiran\relax }}{3-2}% 
 \contentsline {figure}{\numberline {3.2}{\ignorespaces \textit {Flowchart Training} Sistem Pengenalan Plat Nomor Kendaraan \relax }}{3-3}% 
@@ -13,7 +14,7 @@
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Contoh citra karakter yang tidak digunakan \relax }}{3-6}% 
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Skema Alur Pendeteksian Plat \relax }}{3-6}% 
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Matriks Citra Asal berukuran 5 $\times $ 5 \relax }}{3-7}% 
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Matriks Citra Hasil Grayscale \relax }}{3-8}% 
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Matriks Citra Hasil \textit {Grayscale} \relax }}{3-8}% 
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Matriks citra ukuran 5 $\times $ 5 \relax }}{3-9}% 
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Matriks citra ukuran 5 $\times $ 5 hasil konvolusi \relax }}{3-10}% 
 \contentsline {figure}{\numberline {3.11}{\ignorespaces Perhitungan gradien dan arah \relax }}{3-10}% 
