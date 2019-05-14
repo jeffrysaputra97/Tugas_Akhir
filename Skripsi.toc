@@ -23,13 +23,14 @@
 \contentsline {subsection}{\numberline {2.1.3}Pengabuan Citra}{2-2}% 
 \contentsline {subsection}{\numberline {2.1.4}Deteksi Tepi}{2-2}% 
 \contentsline {subsection}{\numberline {2.1.5}\textit {Hough Transform}}{2-3}% 
-\contentsline {subsection}{\numberline {2.1.6}Fitur pada Citra}{2-5}% 
-\contentsline {subsection}{\numberline {2.1.7}\textit {Histogram of Oriented Gradient}}{2-5}% 
-\contentsline {subsection}{\numberline {2.1.8}\textit {Support Vector Machine}}{2-8}% 
-\contentsline {subsection}{\numberline {2.1.9}\textit {Confusion Matrix}}{2-11}% 
-\contentsline {subsection}{\numberline {2.1.10}Penggunaan \textit {Library}}{2-12}% 
-\contentsline {subsubsection}{\numberline {2.1.10.1\hspace {-0,35cm}}OpenCV}{2-12}% 
-\contentsline {subsubsection}{\numberline {2.1.10.2\hspace {-0,35cm}}Weka}{2-13}% 
+\contentsline {subsection}{\numberline {2.1.6}Segmentasi}{2-5}% 
+\contentsline {subsection}{\numberline {2.1.7}Fitur pada Citra}{2-5}% 
+\contentsline {subsection}{\numberline {2.1.8}\textit {Histogram of Oriented Gradient}}{2-5}% 
+\contentsline {subsection}{\numberline {2.1.9}\textit {Support Vector Machine}}{2-8}% 
+\contentsline {subsection}{\numberline {2.1.10}\textit {Confusion Matrix}}{2-11}% 
+\contentsline {subsection}{\numberline {2.1.11}Penggunaan \textit {Library}}{2-12}% 
+\contentsline {subsubsection}{\numberline {2.1.11.1\hspace {-0,35cm}}OpenCV}{2-12}% 
+\contentsline {subsubsection}{\numberline {2.1.11.2\hspace {-0,35cm}}Weka}{2-13}% 
 \contentsline {section}{\numberline {2.2\hspace {0,3cm}}Tinjauan Studi}{2-13}% 
 \contentsline {subsection}{\numberline {2.2.1}\textit {State of the Art}}{2-13}% 
 \contentsline {subsection}{\numberline {2.2.2}Pembahasan Penelitian Terkait}{2-16}% 
@@ -49,6 +50,7 @@
 \contentsline {subsubsection}{\numberline {3.4.2.1\hspace {-0,35cm}}\textit {Grayscale}}{3-6}% 
 \contentsline {subsubsection}{\numberline {3.4.2.2\hspace {-0,35cm}}Deteksi Tepi Canny}{3-8}% 
 \contentsline {subsubsection}{\numberline {3.4.2.3\hspace {-0,35cm}}\textit {Hough Transform}}{3-11}% 
-\contentsline {subsection}{\numberline {3.4.3}\textit {Histogram of Oriented Gradient}}{3-17}% 
-\contentsline {subsection}{\numberline {3.4.4}\textit {Support Vector Machine}}{3-21}% 
+\contentsline {subsection}{\numberline {3.4.3}Tahapan Segmentasi Karakter}{3-17}% 
+\contentsline {subsection}{\numberline {3.4.4}\textit {Histogram of Oriented Gradient}}{3-17}% 
+\contentsline {subsection}{\numberline {3.4.5}\textit {Support Vector Machine}}{3-22}% 
 \contentsline {chapter}{DAFTAR REFERENSI}{v}% 

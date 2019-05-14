@@ -90,7 +90,7 @@ $\theta$ = sudut derajat; $0^\circ$ $\leq$ $\theta$ $\leq$ $180^\circ$
 \noindent Dimana:\\
 D = jarak diagonal dari citra
 
-\noindent Karena citra yang digunakan berbentuk persegi panjang maka jarak diagonal memenuhi persamaan berikut:
+\noindent Karena citra yang digunakan berbentuk persegi panjang maka jarak diagonal memenuhi persamaan berikut \cite{rectangle}:
 
 \begin{table}[H]
 	\begin{adjustbox}{width=1\textwidth}
@@ -133,7 +133,10 @@ M = ukuran \textit{height} dari citra
 
 \noindent Serangkaian \textit{peaks} yang diekstrak oleh metode \textit{Hough Transform} akan menghasilkan beragam nilai \textit{theta}. Intensitas kemunculan dari setiap nilai \textit{theta} akan dihitung dan dijadikan fitur yang mewakili sebuah citra plat nomor.
 
-\noindent Dari penjelasan di atas maka \textit{output} dari proses ekstraksi fitur dengan metode \textit{Hough Transform} adalah intensitas kemunculan dari setiap nilai \textit{theta} yang didapat dari keseluruhan \textit{peak} yang terpilih. Karena rentang nilai \textit{theta} adalah 0 - 180 derajat maka ukuran fitur yang diekstrak adalah 181.\\ 
+\noindent Dari penjelasan di atas maka \textit{output} dari proses ekstraksi fitur dengan metode \textit{Hough Transform} adalah intensitas kemunculan dari setiap nilai \textit{theta} yang didapat dari keseluruhan \textit{peak} yang terpilih. Karena rentang nilai \textit{theta} adalah 0 - 180 derajat maka ukuran fitur yang diekstrak adalah 181.\\
+
+\subsection{Segmentasi}
+\noindent Segmentasi merupakan proses pembagian daerah dalam suatu citra untuk dipisahkan ke dalam segmen-segmen tertentu. Tujuan utama dari proses segmentasi adalah menyederhanakan dan/atau mengubah representasi gambar menjadi sesuatu yang memiliki arti tertentu dan lebih mudah dianalisis. Segmentasi gambar secara umum digunakan untuk mengenali objek dan batas-batas (garis) dalam gambar.\\ 
 
 \subsection{Fitur pada Citra}
 \noindent Dalam sistem pengenalan objek, fitur merupakan hal yang penting. Fitur merupakan atribut yang menonjol atau karakteristik yang dapat membedakan antara satu objek dengan objek lainnya. Fitur pada sebuah citra dapat digunakan untuk proses segmentasi dan klasifikasi. Sebuah objek dapat dibedakan berdasarkan fitur internal dan fitur eksternal. Fitur internal didapatkan berdasarkan komposisi piksel yang membentuk suatu wilayah (\textit{region}), sedangkan fitur eksternal membahas mengenai batas wilayah (\textit{region boundary}) dari sebuah objek. Contoh fitur internal adalah fitur tekstur, fitur dasar geometri, momen, histogram, dan \textit{Euler Number}. Fitur eksternal adalah \textit{Chain codes}, \textit{signatures}, dan \textit{Fourier descriptors} untuk menggambarkan bentuk dari objek (\textit{shape descriptor}) \cite{gonzalez}.\\
