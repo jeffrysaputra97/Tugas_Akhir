@@ -148,7 +148,7 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 \noindent Pada bagian ini dilakukan analisis tahapan proses dengan melakukan perhitungan manual.\\
 
 \subsection{\textit{Dataset}}
-\noindent Dari \textit{The Chars 74K image dataset} untuk tahap \textit{training} akan digunakan citra karakter angka dari 0 sampai dengan 9 dan karakter huruf kapital A sampai dengan Z. Terlihat contoh citra karakter yang ditunjukan pada gambar \ref{fig:ContohCitraDatasetPakai} merupakan contoh karakter angka dan huruf kapital yang akan dipakai. Sedangkan pada gambar \ref{fig:ContohCitraDatasetTakPakai}, gambar tersebut menunjukkan contoh citra karakter yang tidak akan dipakai, yaitu citra karakter tipis, miring, dan karakter huruf kecil. Tidak digunakannya karakter-karakter tersebut dikarenakan pada plat nomor Indonesia, karakter yang digunakan hanyalah karakter huruf kapital dan angka dalam bentuk tegak dan tebal.
+\noindent Untuk citra karakter yang akan digunakan pada tahap \textit{training} akan digunakan citra karakter yang sudah disegmentasi dari citra plat kendaraan. Karakter terdiri dari angka 0 sampai dengan 9 dan karakter huruf kapital dari A sampai dengan Z. Terlihat contoh citra karakter yang ditunjukan pada gambar \ref{fig:ContohCitraDatasetPakai} merupakan contoh karakter angka dan huruf kapital yang akan dipakai. Dalam kumpulan citra karakter yang dijadikan \textit{dataset}, tidak ada citra karakter tipis, karakter miring dan karakter huruf kecil. Tidak adanya jenis-jenis karakter tersebut dikarenakan pada plat nomor Indonesia, karakter yang digunakan hanyalah karakter huruf kapital dan angka dalam bentuk tegak dan tebal.
 
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
@@ -157,15 +157,7 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 		\label{fig:ContohCitraDatasetPakai}
 	\end{minipage}
 \end{adjustbox}
-
-\begin{adjustbox}{width=1\textwidth}
-	\noindent\begin{minipage}{\linewidth}
-		\framebox[\textwidth]{\includegraphics[width=12cm]{images/CitraDatasetTakPakai.PNG}}
-		\captionof{figure}{Contoh citra karakter yang tidak digunakan\\}
-		\label{fig:ContohCitraDatasetTakPakai}
-	\end{minipage}
-\end{adjustbox}\\
-
+\\
 
 \subsection{Tahap Pendeteksian Lokasi Plat Nomor}
 \noindent Skema alur dari tahap pendeteksian lokasi plat nomor adalah:
@@ -181,7 +173,7 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 \subsubsection{\textit{Grayscale}}
 \noindent Proses pertama adalah mengubah citra masukan menjadi citra \textit{grayscale}, tujuan dari \textit{grayscaling} citra adalah untuk menghilangkan informasi warna dari setiap piksel citra. Untuk menghitung nilai derajat keabuan setiap piksel, diperoleh dengan menggunakan persamaan \ref{eq:grayscale}.
 
-\noindent Di bawah merupakan contoh matriks citra asli dengan 3 \textit{channel} warna yaitu \textit{Red}, \textit{Green}, dan \textit{Blue} berukuran 5 $\times$ 5 piksel yang diambil dengan menggunakan \textit{image tools} dari aplikasi \textit{MatLab} \\
+\noindent Di bawah merupakan contoh matriks citra asli dengan 3 \textit{channel} warna yaitu \textit{Red}, \textit{Green}, dan \textit{Blue} berukuran 5 $\times$ 5 piksel. \\
 
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}

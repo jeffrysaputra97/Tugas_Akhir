@@ -538,11 +538,11 @@ Rasheed, S., Naeem, A., Ishaq, O. (2012, October). Automated number plate recogn
 \noindent Terdapat beberapa metode yang dapat khususnya untuk mendeteksi plat nomor dan mengenali karakter pada plat nomor.
 \noindent Pada referensi pertama \cite{nugroho} menggunakan metode pengolahan citra untuk mencari kandidat-kandidat pita dengan menghitung histogram gambar untuk mendapatkan lokasi plat nomor kendaraan, kemudian setiap karakter dari plat nomor yang didapatkan disegmentasi dengan cara menghitung grafik horizontal gambar, kemudian untuk metode klasifikasi karakter yang digunakan adalah \textit{Learning Vector Quantization}.
 
-\noindent Pada referensi kedua \cite{gou2016} menggunakan metode \textit{Extremal Region} sebagai proses untuk mendapatkan daerah-daerah karakter dari suatu plat nomor, kemudian \textit{Extremal Region} yang didapat diseleksi dengan menggunakan \textit{AdaBoost} sehingga bisa didapatkan daerah karakter plat nomor yang sesuai dengan kriteria yang diinginkan, dari daerah-daerah karakter yang didapatkan barulah kandidat plat nomor yang benar bisa didapatkan. Proses selanjutnya adalah pengambilan fitur karakter dengan menggunakan metode \textit{Histogram of Oriented Gradient} sehingga didapatkan fitur vektor dari setiap karakter pada plat nomor, yang nantinya akan menjadi masukkan bagi metode klasifikasi \textit{Hybrid Discriminative Restricted Boltzmann Machine}.
+\noindent Pada referensi kedua \cite{gou2016} menggunakan metode \textit{Extremal Region} sebagai proses untuk mendapatkan daerah-daerah karakter dari suatu plat nomor, kemudian \textit{Extremal Region} yang didapat diseleksi dengan menggunakan \textit{AdaBoost} sehingga bisa didapatkan daerah karakter plat nomor yang sesuai dengan kriteria yang diinginkan, dari daerah-daerah karakter yang didapatkan barulah kandidat plat nomor yang benar bisa didapatkan. Proses selanjutnya adalah pengambilan fitur karakter dengan menggunakan metode \textit{Histogram of Oriented Gradient} sehingga didapatkan fitur vektor dari setiap karakter pada plat nomor, yang nantinya akan menjadi masukkan bagi metode klasifikasi \textit{Hybrid Discriminative Restricted Boltzmann Machine}. Penelitian ini menghasilkan akurasi 98,2\% untuk pengenalan karakternya.
 
-\noindent Pada referensi ketiga \cite{gou2014} menggunakan metode \textit{Maximally Stable Extremal Region} untuk memilih kandidat daerah karakter yang nantinya akan menentukan lokasi dari plat nomor berdasarkan letak geometris dari kandidat-kandidat karakter tersebut. Setelah lokasi plat nomor didapatkan, \textit{HOG Descriptor} dari setiap karakter diambil dengan menggunakan metode \textit{Histogram of Oriented Gradient} dan setiap karakternya akan dikenali menggunakan metode \textit{neural network} bernama \textit{Extreme Learning Machine}.
+\noindent Pada referensi ketiga \cite{gou2014} menggunakan metode \textit{Maximally Stable Extremal Region} untuk memilih kandidat daerah karakter yang nantinya akan menentukan lokasi dari plat nomor berdasarkan letak geometris dari kandidat-kandidat karakter tersebut. Setelah lokasi plat nomor didapatkan, \textit{HOG Descriptor} dari setiap karakter diambil dengan menggunakan metode \textit{Histogram of Oriented Gradient} dan setiap karakternya akan dikenali menggunakan metode \textit{neural network} bernama \textit{Extreme Learning Machine}. Penelitian ini menghasilkan akurasi 97,90 \% untuk pengenalan karakternya.
 
-\noindent Pada referensi keempat \cite{tabrizi} digabungkan metode klasifikasi \textit{K-Nearest Neighbours} dengan metode klasifikasi \textit{Support Vector Machine}. \textit{K-Nearest Neighbours} digunakan karena sifatnya yang mudah dipelajari, bersifat tangguh terhadap data yang memiliki derau dan efektif jika jumlah yang dimiliki berjumlah banyak. Sedangkan metode \textit{Support Vector Machine} digunakan untuk karakter-karakter yang memiliki kemiripan karakteristik, sehingga akurasi dari pengenalan karakter dapat meningkat.
+\noindent Pada referensi keempat \cite{tabrizi} digabungkan metode klasifikasi \textit{K-Nearest Neighbours} dengan metode klasifikasi \textit{Support Vector Machine}. \textit{K-Nearest Neighbours} digunakan karena sifatnya yang mudah dipelajari, bersifat tangguh terhadap data yang memiliki derau dan efektif jika jumlah yang dimiliki berjumlah banyak. Sedangkan metode \textit{Support Vector Machine} digunakan untuk karakter-karakter yang memiliki kemiripan karakteristik, sehingga akurasi dari pengenalan karakter dapat meningkat. Penelitian ini menghasilkan akurasi 97,03\% untuk pengenalan karakternya.
 
 \noindent Pada referensi kelima \cite{rasheed} menggunakan \textit{Hough Transform} untuk mendeteksi lokasi plat kendaraan dan menghasilkan akurasi yang baik, yaitu sekitar 94\% untuk plat nomor yang terdeteksi dan dengan menggunakan metode \textit{Template Matching} menghasilkan akurasi pengenalan karakter plat nomor kendaraan sebesar 90\%.\\
 
@@ -563,6 +563,16 @@ Rasheed, S., Naeem, A., Ishaq, O. (2012, October). Automated number plate recogn
 \noindent Plat nomor kendaraan Indonesia terdiri dari cetakan tulisan dua baris, pada baris pertama terdapat tiga hal yang diinformasikan, yaitu kode wilayah(huruf), nomor polisi(angka), dan kode/seri akhir wilayah(huruf). Sedangkan baris kedua menunjukkan bulan dan tahun masa berlaku, masing-masing dua digit. Contohnya pada gambar \ref{fig:ContohPlatNomorIndonesia} angka yang terdapat di baris keduanya adalah 10.21. Hal tersebut menandakan bahwa plat nomor tersebut akan habis masa berlakunya pada bulan Oktober tahun 2021.
 
 \noindent Bahan baku dari plat nomor adalah aluminium dengan ketebalan 1mm. Ukuran plat nomor untuk kendaraan bermotor roda dua dan roda tiga adalah 250 $\times$ 105 mm, sedangkan untuk kendaraan bermotor roda empat atau lebih adalah 395 $\times$ 135 mm. Terdapat cetakan garis lurus pembatas selebar 5mm di antara ruang nomor polisi dengan ruang angka masa berlaku (untuk plat nomor lama), sedangkan semenjak tahun 2011 di sekitar plat nomor terdapat garis putih dan tidak ada garis pemisah antara nomor polisi dan masa berlaku.
+
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\includegraphics[width=12cm]{images/RasioPlat.png}
+		\captionof{figure}{Ilustrasi ukuran plat nomor untuk kendaraan roda empat Indonesia}
+		\label{fig:UkuranPlatNomorIndonesia}
+	\end{minipage}
+\end{adjustbox}\\
+
+\noindent Berdasarkan gambar \ref{fig:UkuranPlatNomorIndonesia}. Dengan ukuran panjang sebesar 395mm dan ukuran lebar sebesar 135mm. Maka dapat disimpulkan bahwa rasio untuk ukuran dari plat nomor Indonesia adalah 3:1 (panjang:lebar). Informasi dapat digunakan untuk proses pendeteksian plat kendaraan.
 
 \noindent Pada tahun 2014 terjadi perubahan tampilan pada plat nomor untuk kendaraan bermotor roda empat. Plat nomor kini sedikit lebih panjang dari sebelumnya (5 cm lebih panjang) untuk memberi ruang pada kode/seri akhir wilayah yang dulunya berjumlah dua digit menjadi tiga digit.\\
 
@@ -598,7 +608,8 @@ Rasheed, S., Naeem, A., Ishaq, O. (2012, October). Automated number plate recogn
 	\label{fig:IlustrasiProsesPengambilanCitraDataset}
 \end{table}
 
-\noindent Citra dalam \textit{dataset} ini diambil dengan menggunakan kamera DSLR Canon EOS 500 D dan Canon EOS 550 D dengan resolusi 15 dan 18 megapiksel. Citra kemudian diubah resolusinya menjadi 1024 $\times$ 640 piksel.
+\noindent Citra dalam \textit{dataset} ini diambil dengan menggunakan kamera DSLR Canon EOS 500 D dan Canon EOS 550 D dengan resolusi 15 dan 18 megapiksel. Citra kemudian diubah resolusinya menjadi 1024 $\times$ 640 piksel. Jenis plat nomor kendaraan yang ada di dalam \textit{dataset} ini adalah plat kendaraan bermotor pribadi(plat hitam dengan karakter putih).
+
 %\subsubsection{Pendeteksian dan Pelacakan Manusia}
 %\noindent Pada bagian ini akan dijelaskan beberapa teori mengenai deteksi manusia dan pelacakan manusia.\\
 

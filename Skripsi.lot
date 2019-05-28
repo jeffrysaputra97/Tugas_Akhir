@@ -14,3 +14,9 @@
 \contentsline {table}{\numberline {3.7}{\ignorespaces \textit {Peak} terurut secara \textit {descending} berdasarkan jumlah \textit {voting} \relax }}{3-16}% 
 \contentsline {table}{\numberline {3.8}{\ignorespaces Tiga \textit {peaks} yang terpilih \relax }}{3-16}% 
 \contentsline {table}{\numberline {3.9}{\ignorespaces Intensitas kemunculan dari setiap nilai \textit {theta} \relax }}{3-16}% 
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Daftar \textit {Method Class Gradient} \relax }}{4-2}% 
+\contentsline {table}{\numberline {4.2}{\ignorespaces Daftar \textit {Method Class GradientCell} \relax }}{4-3}% 
+\contentsline {table}{\numberline {4.3}{\ignorespaces Daftar \textit {Method Class HOG} \relax }}{4-3}% 
+\contentsline {table}{\numberline {4.4}{\ignorespaces Daftar \textit {Method Class SVM} \relax }}{4-4}% 
+\addvspace {10\p@ }
