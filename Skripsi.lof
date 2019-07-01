@@ -2,11 +2,11 @@
 \babel@toc {bahasa}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Contoh \textit {Hyperplane} pada SVM\relax }}{2-9}% 
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Contoh \textit {Hyperplane} pada SVM \cite {svm}\relax }}{2-9}% 
 \contentsline {figure}{\numberline {2.2}{\ignorespaces \textit {Confusion Matrix untuk Dua Kelas} \cite {markham}\relax }}{2-11}% 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Contoh dari plat nomor kendaraan Indonesia\relax }}{2-18}% 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Ilustrasi ukuran plat nomor untuk kendaraan roda empat Indonesia\relax }}{2-18}% 
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Ilustrasi proses pengambilan citra \textit {dataset}\relax }}{2-20}% 
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Contoh dari plat nomor kendaraan Indonesia\relax }}{2-19}% 
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Ilustrasi ukuran plat nomor untuk kendaraan roda empat Indonesia\relax }}{2-19}% 
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Ilustrasi proses pengambilan citra \textit {dataset}\relax }}{2-21}% 
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Kerangka Pemikiran\relax }}{3-2}% 
 \contentsline {figure}{\numberline {3.2}{\ignorespaces \textit {Flowchart Training} Sistem Pengenalan Plat Nomor Kendaraan \relax }}{3-3}% 

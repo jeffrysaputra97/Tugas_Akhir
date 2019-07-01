@@ -282,7 +282,7 @@ $N$ = jumlah total nilai total \textit{bin} yang digunakan dalam proses normalis
 			\hline
 		\end{tabular}
 	\end{adjustbox}
-	\captionof{figure}{Contoh \textit{Hyperplane} pada SVM}
+	\captionof{figure}{Contoh \textit{Hyperplane} pada SVM \cite{svm}}
 	\label{fig:hyperplanesvm}
 \end{table}
 
@@ -433,15 +433,29 @@ Dan perhitungan \textit{recall} atau disebut juga sebagai sensitivitas dapat dih
 	\begin{longtable}{| p {0.5cm} | p {6cm} | p {6cm} |}
 		\caption{Tabel fungsi \textit{Library} OpenCV} \\
 		\hline
-		\textbf{No}  & \textbf{\textit{Function}}  & \textbf{Deskripsi} \\
+		\textbf{No} & \textbf{\textit{Function}} & \textbf{Deskripsi}\\
 		\hline
 		\endfirsthead
+		
+		\multicolumn{3}{c}{\textbf{\tablename~\thetable} \textit{Tabel fungsi \textit{Library} OpenCV} (Lanjutan)}\\
+		\hline
+		\textbf{No} & \textbf{\textit{Function}} & \textbf{Deskripsi}\\
 		\endhead
 		1 & Imgcodecs.imread(String filename) & Mengambil citra dari \textit{path} yang diisikan ke parameter.\\
 		\hline
 		2 & Imgproc.cvtColor(Mat src, Mat dst, int code) & Mengubah jenis warna pada citra sesuai yang diinginkan. Parameter fungsi ini terdiri dari Mat asal, Mat tujuan, dan \textit{code}. \textit{Code} digunakan untuk memilih tipe konversi citra tersebut, misal \textit{grayscale}.\\
 		\hline
 		3 & Imgproc.Canny(Mat image,Mat edges,double threshold1, double threshold2) & Fungsi ini digunakan untuk mendeteksi tepian pada citra menggunakan Canny.\\
+		\hline
+		4 & Imgproc.GaussianBlur(Mat src, Mat dst, Size ksize, double sigmaX) & Melakukan \textit{Gaussian Filter} terhadap citra yang dimasukkan ke dalam parameter dengan ukuran \textit{kernel} dan nilai \textit{sigma} yang diberikan.\\
+		\hline
+		5 & Imgproc.threshold(Mat src, Mat dst, double thresh, double maxval, int type) & Melakukan \textit{thresholding} terhadap seluruh nilai piksel dari citra yang dijadikan masukkan dengan nilai \textit{threshold}, nilai maksimum, serta jenis metode \textit{thresholding} yang digunakan, misalnya metode \textit{thresholding} Otsu.\\
+		\hline
+		6 & Imgproc.findContours(Mat image, List<MatOfPoint> contours, Mat hierarchy, int mode, int method) & Melakukan pencarian kontur terhadap citra yang dijadikan masukkan.\\
+		\hline
+		7 & Imgproc.contourArea(Mat contour) & Melakukan perhitungan luas area dari kontur yang diberikan.\\
+		\hline
+		8 & Imgproc.imwrite(String filename, Mat img) & Menyimpan citra yang diisikan ke parameter ke \textit{path} yang dijadikan tujuan penyimpanan.\\
 		\hline
 	\end{longtable}
 \end{small}
@@ -451,13 +465,40 @@ Dan perhitungan \textit{recall} atau disebut juga sebagai sensitivitas dapat dih
 	\begin{longtable}{| p {0.5cm} | p {6cm} | p {6cm} |}
 		\caption{Tabel fungsi \textit{Library} Weka} \\
 		\hline
-		\textbf{No}  & \textbf{\textit{Function}}  & \textbf{Deskripsi} \\
+		\textbf{No} & \textbf{\textit{Function}} & \textbf{Deskripsi}\\
 		\hline
 		\endfirsthead
-		\endhead
-		1 & libsvm.setOptions(String options) & Mengkonfigurasi \textit{classifier} yang akan digunakan.\\
+		
+		\multicolumn{3}{c}{\textbf{\tablename~\thetable} \textit{Tabel fungsi \textit{Library} OpenCV} (Lanjutan)}\\
 		\hline
-		2 & libsvm.buildClassifier(Instances insts) & Membangun \textit{classifier} sesuai dengan konfigurasi yang digunakan dan dataset yang diberikan.\\
+		\textbf{No} & \textbf{\textit{Function}} & \textbf{Deskripsi}\\
+		\endhead
+		1 & libsvm.setOptions(String[] options) & Mengkonfigurasi dan menginisialisasi parameter dari \textit{classifier} yang akan digunakan.\\
+		\hline
+		2 & libsvm.buildClassifier(Instances insts) & Membangun \textit{classifier} dari dataset yang diberikan sesuai dengan konfigurasi dan parameter yang digunakan.\\
+		\hline
+		3 & libsvm.classifyInstance(Instance instance) & Melakukan prediksi kelas untuk data yang diberikan.\\
+		\hline
+	\end{longtable}
+\end{small}
+
+\subsubsection{JavaOCR}
+\noindent JavaOCR adalah \textit{library} berbasis Java untuk \textit{Image Processing} dan \textit{Character Recognition}. \textit{Library} ini memiliki \textit{GUI} sendiri dan dapat digunakan untuk pengembangan aplikasi \textit{Character Recognition} pada perangkat Android dikarenakan \textit{library} ini hanya membutuhkan \textit{memory} yang sedikit dan tidak memiliki ketergantungan terhadap \textit{library} lainnya. 
+\begin{small}
+	\begin{longtable}{| p {0.5cm} | p {6cm} | p {6cm} |}
+		\caption{Tabel fungsi \textit{Library} JavaOCR} \\
+		\hline
+		\textbf{No} & \textbf{\textit{Function}} & \textbf{Deskripsi}\\
+		\hline
+		\endfirsthead
+		
+		\multicolumn{3}{c}{\textbf{\tablename~\thetable} \textit{Tabel fungsi \textit{Library} JavaOCR} (Lanjutan)}\\
+		\hline
+		\textbf{No} & \textbf{\textit{Function}} & \textbf{Deskripsi}\\
+		\endhead
+		1 & LineExtractor.slice(File inputImage, File outputDir) & Melakukan pencarian batas atas dan batas bawah area karakter dari citra masukan dan melakukan \textit{cropping} terhadap citra tersebut dan kemudian hasil keluarannya akan berupa citra baru yang merupakan area karakter dari citra masukkan, apabila terdapat lebih dari satu kandidat area karakter, maka hasilnya akan menjadi beberapa citra area karakter yang terpisah.\\
+		\hline
+		2 & CharacterExtractor.slice(File inputImage, File outputDir, int width, int height) & Melakukan pencarian batas kiri dan batas kanan karakter dari citra masukan. Citra masukan berupa citra hasil keluaran dari \textit{function} \textit{LineExtractor.slice()}. Keluaran dari \textit{function} ini akan berupa citra karakter yang didapatkan dari citra masukan, apabila terdapat lebih dari satu karakter, maka hasilnya akan menjadi beberapa citra karakter yang terpisah.\\
 		\hline
 	\end{longtable}
 \end{small}
@@ -467,14 +508,6 @@ Dan perhitungan \textit{recall} atau disebut juga sebagai sensitivitas dapat dih
 
 \subsection{\textit{State of the Art}}
 \noindent Terdapat beberapa metode lain yang memiliki ruang lingkup yang mirip dengan penelitian ini khususnya mengenai deteksi dan pengenalan plat nomor mobil. Tabel \ref{tbl:StateoftheArt} \textit{State of the Art} akan menjelaskan perbedaan-perbedaan metode dari jurnal terkait.\\
-\\
-\\
-\\
-\\
-\\
-\\
-\\
-\\
 \begingroup
 \setlength{\LTleft}{-20cm plus -1fill}
 \setlength{\LTright}{\LTleft}
@@ -608,7 +641,7 @@ Rasheed, S., Naeem, A., Ishaq, O. (2012, October). Automated number plate recogn
 	\label{fig:IlustrasiProsesPengambilanCitraDataset}
 \end{table}
 
-\noindent Citra dalam \textit{dataset} ini diambil dengan menggunakan kamera DSLR Canon EOS 500 D dan Canon EOS 550 D dengan resolusi 15 dan 18 megapiksel. Citra kemudian diubah resolusinya menjadi 1024 $\times$ 640 piksel. Jenis plat nomor kendaraan yang ada di dalam \textit{dataset} ini adalah plat kendaraan bermotor pribadi(plat hitam dengan karakter putih).
+\noindent Citra dalam \textit{dataset} ini diambil dengan menggunakan kamera DSLR Canon EOS 500 D dan Canon EOS 550 D dengan resolusi 15 dan 18 megapiksel. Citra kemudian diubah resolusinya menjadi 1024 $\times$ 640 piksel. Jenis plat nomor kendaraan yang ada di dalam \textit{dataset} ini adalah plat kendaraan bermotor pribadi(plat hitam dengan karakter putih). Untuk penelitian ini, citra plat kendaraan yang akan digunakan adalah citra plat kendaraan bermotor yang diambil dengan posisi lurus dengan kendaraan dalam jarak kurang lebih satu meter dan kurang lebih 3 meter.
 
 %\subsubsection{Pendeteksian dan Pelacakan Manusia}
 %\noindent Pada bagian ini akan dijelaskan beberapa teori mengenai deteksi manusia dan pelacakan manusia.\\

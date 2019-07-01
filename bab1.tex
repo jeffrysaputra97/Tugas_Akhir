@@ -21,46 +21,38 @@
 
 \noindent Penelitian ini menggunakan metode  \textit{Hough Transform} untuk mendeteksi plat nomor kendaraan, kemudian karakter-karakter pada plat kendaraan akan disegmentasi dengan menghitung grafik horizontal pita, kemudian dilanjutkan dengan menggunakan metode \textit{Histogram of Oriented Gradient} untuk mengambil fitur dari karakter-karakter dari citra hasil segmentasi dan terakhir akan diklasifikasikan dengan menggunakan metode \textit{Support Vector Machine}.
 
-%\noindent Penelitian ini metode \textit{Convolutional Neural Network} dengan Kalman \textit{filter} untuk melakukan deteksi serta melacak manusia. Metode CNN telah mencakup proses utama dari ekstraksi fitur hingga klasifikasi dan telah terbukti kelebihannya untuk mengklasifikasi banyak fitur kompleks secara bersamaan. Metode \textit{neural network} dapat menyesuaikan dengan berbagai macam kasus namun membutuhkan waktu untuk pelatihan. Bila dibandingkan dengan \textit{Artificial Neural Network} (ANN) atau \textit{Multilayer Perceptron} (MLP) konvensional, pada bidang \textit{computer vision}, CNN memiliki performa yang lebih cepat hingga 2 kali lipat, karena CNN memiliki perbedaan metode yang tidak terdapat pada ANN/MLP untuk memproses banyak data besar, seperti teknik \textit{weight sharing} dan \textit{subsampling}/\textit{pooling}. Sementara metode Kalman \textit{filter} dipilih karena dapat meningkatkan efisiensi komputasi untuk melacak manusia.
-
-\noindent Pada tahapan pengujian akan dilakukan dua macam pengujian akurasi, yaitu akurasi deteksi plat kendaraan dan akurasi pengenalan karakter plat nomor kendaraan. Perhitungan akurasi ini masing-masing akan menggunakan \textit{confusion matrix}.\\
+\noindent Pada tahapan pengujian akan dilakukan dua macam pengujian akurasi yaitu akurasi pengenalan plat kendaraan dan akurasi pengenalan karakter plat nomor kendaraan. Perhitungan akurasi akan menggunakan \textit{confusion matrix}.\\
 
 \section{Rumusan Masalah}
 \noindent Berdasarkan latar belakang di atas rumusan masalah yang didapatkan adalah sebagai berikut:
 \begin{enumerate}[nolistsep,leftmargin=0.5cm]
-%\item Berapa akurasi pendeteksian plat nomor kendaraan dengan menggunakan metode \textit{Hough Transform} ?
-\item Berapa akurasi pengenalan plat nomor kendaraan jika menggunakan metode \textit{Histogram of Oriented Gradient} dan \textit{Support Vector Machine} ? \\
+\item Berapa akurasi pengenalan plat nomor kendaraan jika menggunakan metode \textit{Histogram of Oriented Gradient} dan \textit{Support Vector Machine} ?
+\item Faktor apa saja yang dapat mempengaruhi hasil dari \textit{Histogram of Oriented Gradient} dan \textit{Support Vector Machine} ? \\
 \end{enumerate}
 
 \section{Tujuan Penelitian}
 \noindent Berdasarkan rumusan masalah di atas, tujuan penelitian Tugas Akhir ini adalah sebagai berikut:
 \begin{enumerate}[nolistsep,leftmargin=0.5cm]
-\item Menguji akurasi pendeteksian plat nomor kendaraan dengan metode \textit{Hough Transform} dengan beragam rentang nilai \textit{theta}.
+%\item Menguji akurasi pendeteksian plat nomor kendaraan dengan metode \textit{Hough Transform} dengan beragam rentang nilai \textit{theta}.
 \item Menerapkan metode \textit{Histogram of Oriented Gradient} untuk ekstraksi fitur pada karakter.
+\item Menerapkan metode \textit{Support Vector Machine} untuk klasifikasi karakter pada sistem pengenalan plat nomor kendaraan.
+\item Menguji \textit{HOG descriptor} dengan beragam ukuran sel dan jumlah \textit{bin}. 
 \item Menguji akurasi pengenalan karakter pada plat nomor kendaraan dengan metode \textit{Support Vector Machine} dengan beragam nilai sigma.\\
-%\item Menguji akurasi penggunaan \textit{Convolutional Neural Network} untuk mendeteksi manusia.
-%\item Menguji akurasi proses dari penggunaan metode Kalman \textit{filter} untuk melacak manusia.
-%\item Membuat sebuah aplikasi yang dapat mendeteksi dan melacak manusia melalui kamera RGB-D.\\
 \end{enumerate}
 
 \section{Batasan Masalah}
 \noindent Dalam penelitian ini, peneliti akan membatasi masalah yang akan diteliti antara lain:
 \begin{enumerate}[nolistsep,leftmargin=0.5cm]
 \item Plat kendaraan yang akan dideteksi adalah plat nomor kendaraan Indonesia.
-\item Plat kendaraan Indonesia yang akan dideteksi adalah plat nomor kendaraan pribadi (plat hitam dengan tulisan putih).\\ 
-%\item Mendeteksi dan melacak manusia melalui tubuh manusia bagian atas, yaitu sekitar daerah bahu hingga ke ujung atas kepala.
-%\item Masukan berupa sekumpulan citra RGB-D statis yang ditangkap secara berurutan (video).
-%\item Dalam arsitektur metode \textit{Convolutional Neural Network} hanya digunakan 1 buah \textit{kernel} dalam setiap lapisan.\\
+\item Citra plat kendaraan diambil dalam keadaan lurus dengan kamera. Tidak miring ke kiri dan juga miring ke kanan.
+\item Plat kendaraan Indonesia yang akan dideteksi adalah plat nomor kendaraan pribadi (plat hitam dengan tulisan putih).\\
 \end{enumerate}
 
 \section{Kontribusi Penelitian}
 \noindent Kontribusi yang diberikan dari penelitian ini adalah:
-
 \begin{enumerate}[nolistsep,leftmargin=0.5cm]
-\item Membuat penerapan metode \textit{Hough Transform} untuk pendeteksian plat nomor kendaraan.
-\item Membuat penerapan metode \textit{Histogram of Oriented Gradient} untuk proses ekstraksi fitur pada proses pengenalan karakter pada plat nomor kendaraan.\\
-%\item Melakukan analisis pengaruh \textit{Convolutional Neural Network} terhadap akurasi dari aplikasi deteksi dan melacak manusia.
-%\item Melakukan analisis pengaruh Kalman \textit{filter} terhadap akurasi dan efisiensi komputasi dari aplikasi deteksi dan melacak manusia. \\
+\item Membuat penerapan metode \textit{Histogram of Oriented Gradient} untuk proses ekstraksi fitur pada proses pengenalan karakter pada plat nomor kendaraan.
+\item Menggabungkan metode \textit{Histogram of Oriented Gradient} dengan \textit{Support Vector Machine} untuk proses klasifikasi karakter.\\
 \end{enumerate}
 
 \section{Metodologi Penelitian}
