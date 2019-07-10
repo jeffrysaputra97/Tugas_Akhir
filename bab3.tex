@@ -102,7 +102,7 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 	\noindent\begin{minipage}{\linewidth}
 		\framebox[\textwidth]{\includegraphics[width=8cm]{images/CitraMatriksAsal.PNG}}
 		\captionof{figure}{Matriks Citra Asal berukuran 5 $\times$ 5\\}
-		\label{fig:MatriksCitraAsal}k
+		\label{fig:MatriksCitraAsal}
 	\end{minipage}
 \end{adjustbox} \\
 
@@ -138,379 +138,60 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 \begin{enumerate}[leftmargin=16pt]
 \item Citra masukkan adalah citra dari hasil \textit{grayscaling} pada tahapan sebelumnya.
 \item Citra masukkan diperhalus dengan menggunakan \textit{Gaussian Filter} untuk membuang derau.
-\item Lakukan operasi perhitungan gradien menggunakan operator Sobel, Prewitt, atau Robert untuk mendapatkan tepian yang tebal.
+\item Lakukan operasi perhitungan gradien menggunakan operator Sobel untuk mendapatkan tepian yang tebal.
 \item Untuk menipiskan tepian yang didapat dari operasi sebelumnya maka teknik \textit{Non-Maxima Suppression} dilakukan dengan mencari nilai maksimum pada tepian.
 \item Buat 2 nilai \textit{threshold} yaitu \textit{high threshold} dan \textit{low threshold} untuk menentukan piksel mana yang masuk dalam kategori tepian kuat, tepian lemah, dan bukan tepian. Jika nilai dari piksel tersebut di atas \textit{high threshold}, maka piksel tersebut masuk ke dalam kategori tepian kuat, apabila nilai piksel berada di antara batas \textit{high threshold} dan \textit{low threshold}, maka piksel tersebut masuk ke dalam kategori tepian lemah, selebihnya akan masuk ke dalam kategori bukan tepian.
 \item Tahapan terakhir adalah \textit{Edge Linking} untuk menghubungkan tepian lemah dengan tepian kuat. Apabila piksel tepian lemah memiliki tetangga piksel (terhubung), maka piksel tersebut akan menjadi tepian.
-
+\item Citra keluaran adalah citra biner yang merupakan hasil pendeteksian tepi.
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\framebox[\textwidth]{\includegraphics[width=13cm]{images/HasilCanny.png}}
+		\captionof{figure}{Contoh Citra hasil deteksi tepi \textit{Canny}\\}
+		\label{fig:HasilDeteksiTepi}
+	\end{minipage}
+\end{adjustbox}\\
 \end{enumerate}
-%\noindent Pada bagian ini menjelaskan urutan langkah kerja pada proses Deteksi Tepi Canny. Gambar \ref{fig:FlowchartCannyDetector} adalah \textit{flowchart} Deteksi Tepi Canny.
-%
-%\begin{adjustbox}{width=1\textwidth}
-%	\noindent\begin{minipage}{\linewidth}
-%		\framebox[\textwidth]{\includegraphics[width=3cm]{images/FlowchartDeteksiPlat.jpg}}
-%		\captionof{figure}{\textit{Flowchart} Deteksi Tepi Canny\\}
-%		\label{fig:FlowchartCannyDetector}
-%	\end{minipage}
-%\end{adjustbox}\\
-
-\noindent Berdasarkan algoritme yang sudah dijabarkan, hal pertama yang dilakukan untuk deteksi tepi Canny adalah dengan melakukan \textit{smoothing} pada citra dengan menggunakan turunan pertama pertama dari \textit{Gauss} dengan besar \textit{kernel} 3 $\times$ 3 dan nilai dari $\sigma$ = 1 untuk menghilangkan \textit{noise}.
-\begin{gather*}
-\textit{Matriks Gauss Kernel}
-=
-\begin{bmatrix}
-0.077847 & 0.123317 & 0.077847 \\
-0.123317 & 0.195346	& 0.123317 \\
-0.077847 & 0.123317 & 0.077847
-\end{bmatrix}
-\label{eq:MatriksGaussKernel}
-\end{gather*} 
-
-\noindent\textit{Kernel} seperti pada persamaan Matriks \textit{Gauss Kernel} di atas dikonvolusikan ke dalam citra untuk mendapatkan sebuah nilai baru. Sebagai contoh apabila diambil area pada sebuah citra sebesar 5 $\times$ 5 piksel seperti pada gambar \ref{fig:MatriksCitra} yang kemudian dikonvolusikan menggunakan \textit{Gauss Kernel}.
-
-\begin{table}[H]
-	\centering
-	\begin{small}
-		\begin{tabular}{|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|}
-			\hline
-			25 & 27 & 33 & 35 & 38 \\
-			\hline
-			28 & 32 & 36 & 27 & 27 \\
-			\hline
-			29 & 32 & 102 & 130 & 108 \\
-			\hline
-			27 & 59 & 107 & 137 & 162 \\
-			\hline
-			28 & 42 & 123 & 112 & 151 \\\hline
-		\end{tabular}
-	\end{small}
-	\captionof{figure}{Matriks citra ukuran 5 $\times$ 5\\}
-	\label{fig:MatriksCitra}
-\end{table}
-
-\noindent Maka pada elemen matriks (3,3) nilainya berubah menjadi:
-\begin{table}[H]
-	\begin{adjustbox}{width=1\textwidth}
-		\begin{tabular}{|p{13.55cm}|}
-			\hline
-			\begin{equation}\nonumber
-			\begin{aligned}
-			Matriks[3,3] &= (0.077847 * 102) + (0.123317 * 130) + (0.077847 * 108) \\
-						 &+ (0.123317 * 107) + (0.195346 * 137) + (0.123317 * 162) \\
-						 &+ (0.077847 * 123) + (0.123317 * 112) + (0.077847 * 151)\\
-			\end{aligned}
-			\end{equation}\\
-			\hline
-		\end{tabular}
-	\end{adjustbox}
-\end{table}
-
-\begin{table}[H]
-	\begin{adjustbox}{width=1\textwidth}
-		\begin{tabular}{|p{13.55cm}|}
-			\hline
-			\begin{equation}\nonumber
-			\begin{aligned}
-			Matriks[3,3] &= 127,45534 \approx 127
-			\end{aligned}
-			\end{equation}\\
-			\hline
-		\end{tabular}
-	\end{adjustbox}
-\end{table}
-
-\noindent Sehingga elemen matriks (3,3) berubah nilainya menjadi 127, perhitungan tersebut berlaku untuk semua elemen matriks sisanya, kecuali pada elemen matriks di tepian citra, sehingga seluruh tepian citra sebesar 1 piksel tidak berubah.
-
-\noindent Berdasarkan perhitungan di atas, didapatkan hasil matriks citra hasil konvolusi sebagai berikut:
-
-\begin{table}[H]
-	\centering
-	\begin{small}
-		\begin{tabular}{|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|}
-			\hline
-			25 & 27 & 33 & 35 & 38 \\
-			\hline
-			28 & 36 & 48 & 55 & 27 \\
-			\hline
-			29 & 49 & 77 & 97 & 108 \\
-			\hline
-			27 & 59 & 97 & 127 & 162 \\
-			\hline
-			28 & 42 & 123 & 112 & 151 \\\hline
-		\end{tabular}
-	\end{small}
-	\captionof{figure}{Matriks citra ukuran 5 $\times$ 5 hasil konvolusi\\}
-	\label{fig:MatriksCitraHasilKonvolusi}
-\end{table}
-
-\noindent Tahap selanjutnya adalah perhitungan gradien dengan menggunakan operator gradien sobel. Sebagai contoh dengan area yang sama seperti yang digunakan pada \textit{Gaussian Filter} pada titik(3,3), perhitungan gradien dilakukan sebagai berikut:
-
-\begin{table}[H]
-	\begin{adjustbox}{width=1\textwidth}
-		\begin{tabular}{|p{15cm}|}
-			\hline
-			\begin{equation}\nonumber
-			\begin{aligned}
-			G_{x} &= (-1 * 77) + (0 * 97) + (1 * 108) \\
-			 	  &+ (-2 * 97) + (0 * 127) + (2 * 162) \\ 
-			 	  &+ (-1 * 123) + (0 * 112) + (1 * 151)\\
-			G_{x} &= 188\\
-			\end{aligned}
-			\end{equation}\\
-			\begin{equation}\nonumber
-			\begin{aligned}
-			G_{y} &= (-1 * 77) + (-2 * 97) + (-1 * 108) \\
-				  &+ (0 * 97) + (0 * 127) + (0 * 162) \\
-				  &+ (1 * 123) + (2 * 112) + (1 * 151) \\
-			G_{y} &= 118\\
-			\end{aligned}
-			\end{equation}\\
-			\begin{equation}\nonumber
-			\begin{aligned}
-			m &= \sqrt{G_{x}^2 + G_{y}^2} = \sqrt{188^2 + 118^2} = 221.716 \\
-			\end{aligned}
-			\end{equation}\\
-			\begin{equation}\nonumber
-			\begin{aligned}
-			\theta &= arctan(\frac{118}{188}) = 32.122 \\
-			\end{aligned}
-			\end{equation}\\
-			\hline
-		\end{tabular}
-	\end{adjustbox}
-	\captionof{figure}{Perhitungan gradien dan arah\\}
-	\label{fig:PerhitunganGradiendanArah}
-\end{table}
-
-\noindent Dari hasil perhitungan di atas, didapatkan informasi bahwa titik (3,3) merupakan tepian yang memiliki arah $32.122^\circ$ dengan \textit{magnitude} sebesar 221.716. Jika \textit{gradient magnitude} lebih dari 255 maka piksel akan menjadi 255 dan jika \textit{gradient magnitude} kurang dari 0 maka piksel menjadi 0. Citra hasil setelah perhitungan gradien adalah sebagai berikut:
-\begin{table}[H]
-	\centering
-	\begin{small}
-		\begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
-			\hline
-			0 & 0 & 0 & 0 & 0 \\
-			\hline
-			0 & 134.141 & 197.325 & 239.217 & 0 \\
-			\hline
-			0 & 209.829 & 255 & 255 & 0 \\
-			\hline
-			0 & 255 & 255 & 221.716 & 0 \\
-			\hline
-			0 & 0 & 0 & 0 & 0 \\
-			\hline
-		\end{tabular}
-	\end{small}
-	\captionof{figure}{Matriks citra hasil perhitungan gradien\\}
-	\label{fig:MatriksCitraHasilPerhitunganGradien}
-\end{table}
-\noindent Tahap setelah perhitungan gradien adalah \textit{non-maximum suppression}, tahap ini membandingkan apakah gradien tersebut paling maksimum diantara tetangganya dan di atas nilai atas \textit{threshold} yang sudah ditentukan. Jika nilai gradien di titik tersebut lebih besar dari \textit{high threshold} dan merupakan nilai maksimum dari gradien-gradien tetangganya, maka nilai tersebut merupakan nilai tepi. Nilai tepi hasil \textit{non-maximum suppression} digunakan untuk menghitung \textit{Hysterysis thresholding}. Cara yang digunakan adalah dengan menentukan jika titik tersebut bukan tepi periksa titik selanjutnya, selain itu lihat apakah gradien lebih besar dari batas \textit{low threshold}. Cara ini diulang sampai tidak ada lagi perubahan.\\
 
 \subsubsection{\textit{Hough Transform}}
-\noindent Metode \textit{Hough Transform} yang digunakan adalah untuk identifikasi garis lurus. Dalam ekstraksi fitur \textit{Hough Transform} perlu menspesifikasikan \textit{accumulator space} untuk menyimpan nilai \textit{voting}. Spesifikasi \textit{accumulator space} ditentukan berdasarkan ukuran citra input. Dalam contoh ini digunakan citra input berukuran 5 $\times$ 6 piksel yang merupakan hasil proses deteksi tepi pada tahapan sebelumnya. Berikut spesifikasi matriks \textit{accumulator space} yang digunakan sebagai contoh:
+\noindent Metode \textit{Hough Transform} yang digunakan adalah untuk identifikasi garis lurus. Dalam ekstraksi fitur \textit{Hough Transform} perlu menspesifikasikan \textit{accumulator space} untuk menyimpan nilai \textit{voting}. Spesifikasi \textit{accumulator space} ditentukan berdasarkan ukuran citra input. Berikut adalah algoritme dari metode \textit{Hough Transform} untuk mendapatkan garis lurus:
 \begin{enumerate}
-\item Rentang nilai \textit{rho} dapat dicari dengan (\textit{width} dan \textit{height} masing-masing dikurang 1 karena koordinat x dan y dimulai dari 0,0), sehingga dengan menggunakan persamaan \ref{eq:PersamaanRho}, perhitungannya menjadi:
-\begin{equation*}
-	D = \sqrt{(5-1)^2 + (6-1)^2} = 6,403
-\end{equation*}
-Nilai D dibulatkan ke bawah, maka nilai D adalah 6. Karena nilai D yang didapat adalah 6 maka nilai \textit{rho} yang digunakan adalah:
-\begin{equation*}
-	-6 \leq \rho \leq 6
-\end{equation*}
-\item Nilai \textit{theta} yang digunakan adalah 0 hingga 180 derajat.
-\item Inisialisasi nilai 0 untuk setiap sel dalam matriks \textit{accumulator space}.
-\end{enumerate}
-\noindent Dari spesifikasi di atas maka keadaan awal matriks \textit{accumulator space} dapat dilihat pada tabel \ref{tab:AccumulatorSpace}. Setelah membuat matriks \textit{accumulator space}, selanjutnya menghitung voting dari setiap pasangan \textit{rho} dan \textit{theta}. Untuk menghitung nilai \textit{rho} dapat dilakukan dengan menggunakan persamaan \ref{eq:PersamaanRho}. Dalam metode \textit{Hough Transform} hanya akan melakukan pengecekan terhadap objek berwarna putih atau yang memiliki nilai 255.
-
+\item Citra masukan adalah citra biner hasil deteksi tepi pada tahapan sebelumnya.
+\item Matriks \textit{Accumulator Space} didefinisikan sebagai \textit{array} 2 dimensi dengan sumbu horizontal menunjukkan nilai sudut ($\theta$) yang digunakan dan sumbu vertikal adalah nilai-nilai dari $\rho$.\\
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
-		\captionof{table}{Inisialisasi matriks \textit{Accumulator Space}\\}
-		\centering\includegraphics[width=6cm]{images/AccumulatorSpace.PNG}
-		\label{tab:AccumulatorSpace}
+		\centering\framebox[8cm]{\includegraphics[width=8cm]{images/accumulatorspace.jpg}}
+		\captionof{figure}{Ilustrasi matriks \textit{Accumulator Space}\\}
+		\label{fig:MatriksAccumulatorSpace}
 	\end{minipage}
-\end{adjustbox}\\
-
-\noindent Pada tabel \ref{tab:AccumulatorSpace}, sumbu X menggambarkan \textit{theta} sedangkan sumbu Y menggambarkan \textit{rho}.
-
-\noindent Diasumsikan baris 1 dan kolom 1 adalah x = 0 dan y = 0. Misalkan dilakukan pengecekan untuk baris 1 kolom 1. Ternyata baris 1 kolom 1 memiliki nilai 255 (objek berwarna putih) karena itu dihitung nilai \textit{rho} untuk sudut 0 hingga 180 derajat. Berikut adalah uraiannya:
-\begin{enumerate}
-\item Untuk sudut 0 derajat:\\
-$\rho = x * \cos{\theta} + y * \sin{\theta}$\\
-$\rho = 0 * \cos{0} + 0 * \sin{0}$\\
-$\rho = 0 * 1 + 0 * 0$\\
-$\rho = 0$\\
-Tambahkan nilai \textit{voting} untuk \textit{rho} = 0 dengan \textit{theta} = 0 sebesar 1.
-\item Untuk sudut 1 derajat:\\
-$\rho = x * \cos{\theta} + y * \sin{\theta}$\\
-$\rho = 0 * \cos{1} + 0 * \sin{1}$\\
-$\rho = 0 * 0,99984 + 0 * 0,01745$\\
-$\rho = 0$\\
-Tambahkan nilai \textit{voting} untuk \textit{rho} = 0 dengan \textit{theta} = 1 sebesar 1.
-\item Untuk sudut 2 derajat:\\
-$\rho = x * \cos{\theta} + y * \sin{\theta}$\\
-$\rho = 0 * \cos{2} + 0 * \sin{2}$\\
-$\rho = 0 * 0,99939 + 0 * 0,03489$\\
-$\rho = 0$\\
-Tambahkan nilai \textit{voting} untuk \textit{rho} = 0 dengan \textit{theta} = 2 sebesar 1.
-\item Untuk sudut 3 derajat:\\
-$\rho = x * \cos{\theta} + y * \sin{\theta}$\\
-$\rho = 0 * \cos{3} + 0 * \sin{3}$\\
-$\rho = 0 * 0,99862 + 0 * 0,05233$\\
-$\rho = 0$\\
-Tambahkan nilai \textit{voting} untuk \textit{rho} = 0 dengan \textit{theta} = 3 sebesar 1.
-\item Untuk sudut 4 derajat:\\
-$\rho = x * \cos{\theta} + y * \sin{\theta}$\\
-$\rho = 0 * \cos{4} + 0 * \sin{4}$\\
-$\rho = 0 * 0,99756 + 0 * 0,06975$\\
-$\rho = 0$\\
-Tambahkan nilai \textit{voting} untuk \textit{rho} = 0 dengan \textit{theta} = 4 sebesar 1.
-\item Untuk sudut 5 derajat:\\
-$\rho = x * \cos{\theta} + y * \sin{\theta}$\\
-$\rho = 0 * \cos{5} + 0 * \sin{5}$\\
-$\rho = 0 * 0,99619 + 0 * 0,08715$\\
-$\rho = 0$\\
-Tambahkan nilai \textit{voting} untuk \textit{rho} = 0 dengan \textit{theta} = 5 sebesar 1.
-\item Untuk sudut 6 derajat:\\
-$\rho = x * \cos{\theta} + y * \sin{\theta}$\\
-$\rho = 0 * \cos{6} + 0 * \sin{6}$\\
-$\rho = 0 * 0,99452 + 0 * 0,10452$\\
-$\rho = 0$\\
-Tambahkan nilai \textit{voting} untuk \textit{rho} = 0 dengan \textit{theta} = 6 sebesar 1.
-\end{enumerate}
-
-\noindent Cara di atas diulang untuk 7 derajat hingga 180 derajat.
-
-\noindent Setelah menyelesaikan perhitungan untuk titik koordinat (0,0) maka berikut adalah perubahan yang ditunjukan oleh matriks \textit{accumulator space}:
-
-\begin{adjustbox}{width=1\textwidth}
-	\noindent\begin{minipage}{\linewidth}
-		\captionof{table}{Nilai \textit{voting} koordinat (0,0) disimpan di matriks \textit{Accumulator Space}\\}
-		\centering\includegraphics[width=6cm]{images/AccumulatorSpace1.PNG}
-		\label{tab:AccumulatorSpaceAfterVoting}
-	\end{minipage}
-\end{adjustbox}\\
-
-\noindent Proses di atas diulangi untuk semua piksel (nilai x dan y yang berbeda) dalam citra (hanya piksel yang bernilai 255 saja yang dihitung jaraknya). Jika sudah diterapkan untuk setiap kombinasi x dan y maka keluaran yang didapat adalah:
-
-\begin{adjustbox}{width=1\textwidth}
-	\noindent\begin{minipage}{\linewidth}
-		\captionof{table}{Matriks \textit{Accumulator Space} dan nilai \textit{voting} yang disimpan\\}
-		\centering\includegraphics[width=6cm]{images/AccumulatorSpace2.PNG}
-		\label{tab:AccumulatorSpaceAfterAllVoting}
-	\end{minipage}
-\end{adjustbox}\\
-
-\noindent Setelah mendapat matriks \textit{accumulator space} selanjutnya adalah mencari nilai \textit{Hough Peaks}. Untuk menentukan nilai \textit{Hough Peaks} diperlukan untuk menentukan nilai \textit{threshold}, \textit{neighbourhood}, dan jumlah \textit{peaks}. Misalkan dalam kasus ini ditentukan nilai \textit{threshold} = 3, neighbourhood = 1, dan \textit{peaks} = 3, maka:
-\begin{enumerate}
-\item Dicari nilai yang memiliki nilai \textit{vote} di atas nilai \textit{threshold}, maka nilai pertama yang diperiksa adalah (diberi warna oranye):\\
-\begin{adjustbox}{width=1\textwidth}
-	\noindent\begin{minipage}{\linewidth}
-		\captionof{table}{Koordinat (0,0) memiliki nilai di atas \textit{threshold}\\}
-		\centering\includegraphics[width=6cm]{images/AccumulatorSpace3.PNG}
-		\label{tab:AccumulatorSpaceFirstCheck}
-	\end{minipage}
-\end{adjustbox}\\
-\item Memeriksa \textit{neighbour} apakah terdapat nilai vote yang memiliki nilai \textit{vote} lebih tinggi, jika ada tetangganya yang memiliki nilai \textit{vote} lebih tinggi maka nilai tersebut ditolak dan sebaliknya jika tidak maka nilai tersebut dipilih sebagai peak:\\
-\\
-\begin{adjustbox}{width=1\textwidth}
-	\noindent\begin{minipage}{\linewidth}
-		\captionof{table}{Memeriksa \textit{neighbour} dari koordinat (0,0)\\}
-		\centering\includegraphics[width=6cm]{images/AccumulatorSpace4.PNG}
-		\label{tab:AccumulatorSpaceNeighbourCheck}
-	\end{minipage}
-\end{adjustbox}\\
-\\
-Karena tetangga dari (0,0) terdapat nilai \textit{vote} yang lebih tinggi dari 5 (nilai 9 pada (0,180)) maka nilai \textit{vote} pada (0,0) tidak diterima sebagai \textit{peak}. Cara di atas diulang hingga mendapatkan seluruh \textit{peak} potensial yang ada. Misalkan didapatkan 5 \textit{peak} potensial sebagai berikut:
-\begin{table}[H]
-	\centering
-	\captionof{table}{\textit{Peak} yang belum terurut\\}
-	\begin{small}
-		\begin{tabular}{|p{3cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|}
-			\hline
-			\textbf{Peak} & 1 & 2 & 3 & 4 & 5\\
-			\hline
-			\textbf{Jumlah Voting} & 6 & 9 & 5 & 4 & 4\\
-			\hline
-			\textbf{\textit{Theta}} & 1 & 3 & 6 & 3 & 10 \\
-			\hline
-		\end{tabular}
-	\end{small}
-	\label{tab:PeakUnsorted}
-\end{table}
-Setelah mendapatkan sejumlah nilai \textit{peak} potensial kemudian \textit{peak} potensial tersebut diurutkan dari nilai terbesar hingga terkecil (\textit{descending}) berdasarkan nilai \textit{voting}. Maka nilai dari pengurutan \textit{peaks} potensial tersebut adalah:
-\begin{table}[H]
-	\centering
-	\captionof{table}{\textit{Peak} terurut secara \textit{descending} berdasarkan jumlah \textit{voting}\\}
-	\begin{small}
-		\begin{tabular}{|p{3cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|}
-			\hline
-			\textbf{Peak} & 1 & 2 & 3 & 4 & 5\\
-			\hline
-			\textbf{Jumlah Voting} & 9 & 6 & 5 & 4 & 4\\
-			\hline
-			\textbf{\textit{Theta}} & 3 & 1 & 6 & 3 & 10 \\
-			\hline
-		\end{tabular}
-	\end{small}
-	\label{tab:PeakSorted}
-\end{table}
-\item Karena jumlah \textit{peaks} yang ditentukan adalah 3 maka ambil 3 \textit{peaks} dengan nilai \textit{voting} tiga tertinggi:
-\begin{table}[H]
-	\centering
-	\captionof{table}{Tiga \textit{peaks} yang terpilih\\}
-	\begin{small}
-		\begin{tabular}{|p{3cm}|p{1cm}|p{1cm}|p{1cm}|}
-			\hline
-			\textbf{Peak} & 1 & 2 & 3\\
-			\hline
-			\textbf{Jumlah Voting} & 9 & 6 & 5\\
-			\hline
-			\textbf{\textit{Theta}} & 3 & 1 & 6\\
-			\hline
-		\end{tabular}
-	\end{small}
-	\label{tab:ChosenPeak}
-\end{table}
-\item Setelah mendapatkan sejumlah \textit{peaks} yang diinginkan berikutnya adalah menghitung intensitas kemunculan dari setiap nilai \textit{theta} (rentang niali \textit{theta} yang digunakan adalah 0-180 derajat). Misalkan hasil perhitungan intensitas kemunculan tersebut adalah:
-\begin{table}[H]
-	\centering
-	\captionof{table}{Intensitas kemunculan dari setiap nilai \textit{theta}\\}
-	\begin{small}
-		\begin{tabular}{|p{2cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|}
-			\hline
-			\textbf{Theta} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & \dots & 180\\
-			\hline
-			\textbf{Intensitas Kemunculan} & 0 & 1 & 0 & 1 & 0 & 0 & 1 & \dots &0\\
-			\hline
-		\end{tabular}
-	\end{small}
-	\label{tab:ChosenPeak}
-\end{table}
-\noindent Keluaran dari metode \textit{Hough Transform} ini adalah kumpulan nilai \textit{rho} dan \textit{theta} yang nantinya akan digunakan untuk mencari seluruh kandidat garis. Dari kandidat garis tersebut akan didapatkan garis vertikal dan garis horizontal, dengan menggunakan perhitungan \textit{Euclidean Distance} seluruh garis vertikal akan dikelompokkan dan diperiksa manakah dari kelompok garis yang memiliki koordinat titik awal dan titik akhir yang hampir sama. Kemudian titik awal dan titik akhir dari kedua garis tersebut akan digabungkan menjadi bentuk persegi panjang dan area tersebut yang akan disebut dengan area plat kendaraan.\\
-\begin{adjustbox}{width=1\textwidth}
-	\noindent\begin{minipage}{\linewidth}
-		\centering\includegraphics[width=11cm]{images/SeleksiKandidatGaris.PNG}
-		\captionof{figure}{Seleksi Kandidat Garis\\}
-		\label{fig:SeleksiKandidatGaris}
-	\end{minipage}
-\end{adjustbox}\\
-\\
-\begin{adjustbox}{width=1\textwidth}
-	\noindent\begin{minipage}{\linewidth}
-		\centering\includegraphics[width=11cm]{images/AreaPlatKendaraan.PNG}
-		\captionof{figure}{Penentuan Area Plat Kendaraan\\}
-		\label{fig:Penentuan Area Plat Kendaraan}
-	\end{minipage}
-\end{adjustbox}\\
-\\
+\end{adjustbox}
+\item Untuk setiap nilai piksel dari citra biner hasil deteksi tepian, apabila nilai piksel tersebut adalah 0, piksel tersebut diabaikan. Jika nilai piksel tersebut tidak 0, maka lakukan perhitungan nilai $\rho$ untuk piksel tersebut dan lakukan \textit{voting} terhadap setiap nilai $\theta$ yang digunakan dengan menambahkan nilai pada matriks akumulator dengan koordinat ($\theta$, $\rho$) sebesar satu.
+\item Hasil dari perhitungan \textit{voting} akan dicari hasil-hasil \textit{voting} tertinggi untuk dijadikan kandidat garis melalui tahapan pencarian \textit{Hough Peaks}. Tahapan ini dilakukan dengan menentukan nilai \textit{threshold}, \textit{neighbourhood}, dan jumlah \textit{peaks} yang akan diambil.
+\item Hasil pencarian \textit{Hough Peaks} akan menghasilkan kumpulan nilai $\rho$ dan $\theta$, nilai ini kemudian diubah menjadi koordinat titik.
+\item Keluaran dari tahapan ini adalah \textit{array} yang berisi pasangan koordinat titik dari kandidat-kandidat titik yang didapat.\\
 \end{enumerate}
 
 \subsection{Tahapan Segmentasi Karakter}
-\noindent Pada tahapan segmentasi karakter, akan dilakukan dua tahapan, yaitu segmentasi vertikal untuk mendapatkan batas atas dan batas bawah daerah karakter, dan segmentasi horizontal untuk mendapatkan batas kiri dan batas kanan untuk setiap karakter.
+\noindent Setelah mendapatkan kandidat plat, maka berikutnya dilakukan segmentasi karakter untuk mendapatkan citra-citra karakter yang terdapat pada plat nomor kendaraan. Pada tahapan segmentasi karakter, akan dilakukan dua tahapan, yaitu segmentasi vertikal untuk mendapatkan batas atas dan batas bawah daerah karakter, dan segmentasi horizontal untuk mendapatkan batas kiri dan batas kanan untuk setiap karakter. Berikut adalah langkah-langkah dari proses segmentasi karakter:
+\begin{enumerate}
+\item Citra masukan adalah citra plat hasil tahapan deteksi plat kendaraan yang sudah dilakukan \textit{preprocessing} menjadi citra biner.
+\item Lakukan segmentasi vertikal untuk mendapatkan batas atas dan batas bawah dari area kandidat karakter.
+\item Lakukan segmentasi horizontal untuk mendapatkan batas kiri dan batas kanan dari setiap citra karakter.
+\item Setiap citra karakter yang didapatkan akan di-\textit{scaling} menjadi ukuran 32 $\times$ 32 piksel. Hal ini bertujuan untuk menjaga konsistensi ukuran citra karakter yang digunakan untuk proses \textit{training} dan proses \textit{testing}.
+\item Keluaran dari tahapan ini adalah citra-citra karakter yang terdapat pada plat nomor.
+\end{enumerate}
 
-\noindent Pada penelitian ini, tahapan segmentasi karakter akan menggunakan \textit{library} dari Java OCR.\\
+\noindent Pada penelitian ini, tahapan segmentasi karakter akan menggunakan \textit{library} dari Java OCR dan \textit{method} atau \textit{function} yang digunakan dapat dilihat pada tabel \ref{tbl:FunctionJavaOCR}.\\
+\\
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\includegraphics[width=14cm]{images/OutputSegmentasi.png}
+		\captionof{figure}{Contoh hasil keluaran dari tahapan segmentasi\\}
+		\label{fig:OutputSegmentasi}
+	\end{minipage}
+\end{adjustbox}\\
 
 \subsection{\textit{Histogram of Oriented Gradient}}
-\noindent Pada proses \textit{Histogram of Oriented Gradients}, masukan untuk proses ini berupa citra yang berasal dari hasil \textit{preprocessing}. Keluaran dari proses ini adalah matriks fitur vektor dari hasil perhitungan \textit{Histogram of Oriented Gradients}. Berikut merupakan langkah-langkah untuk menghitung matriks fitur vektor. Pada gambar dapat dilihat hasil dari proses \textit{resize} dan \textit{crop} citra \textit{grayscale} berukuran 8 $\times$ 4 piksel.
+\noindent Pada proses \textit{Histogram of Oriented Gradients}, masukan untuk proses ini berupa citra yang berasal dari hasil segmentasi. Keluaran dari proses ini adalah matriks fitur vektor dari hasil perhitungan \textit{Histogram of Oriented Gradients}. Berikut merupakan langkah-langkah untuk menghitung matriks fitur vektor. Pada gambar dapat dilihat hasil dari proses \textit{resize} dan \textit{crop} citra \textit{grayscale} berukuran 8 $\times$ 4 piksel.
 
 \begin{table}[H]
 	\centering
@@ -731,7 +412,7 @@ Setelah mendapatkan matriks \textit{HOG descriptor} di atas. Langkah berikutnya 
 \end{enumerate}
 
 \subsection{\textit{Support Vector Machine}}
-\noindent \textit{HOG descriptor} yang dihasilkan dari perhitungan metode \textit{Histogram of Oriented Gradient} akan digunakan sebagai masukan \textit{Support Vector Machine}. \textit{Support Vector Machine} yang akan digunakan dalam penelitian menggunakan \textit{library} dari Weka SVM. \textit{Support Vector Machine} termasuk dalam algoritme \textit{supervised learning}. Konsep dasar dari metode ini adalah untuk menemukan sebuah \textit{separating hyperplane} (bidang) yang dapat memisahkan dua kelas sebagai keputusan klasifikasi. Dalam penelitian ini karakter yang akan dikenali adalah huruf A sampai dengan Z dan angka dari 0 sampai dengan 9 sehingga akan terdapat 36 kelas untuk proses klasifikasi.
+\noindent Tahapan terakhir dari sistem deteksi dan pengenalan plat nomor kendaraan adalah klasifikasi karakter. Tahapan ini bertujuan untuk mengklasifikasikan fitur-fitur dari \textit{HOG descriptor} yang dihasilkan dari perhitungan metode \textit{Histogram of Oriented Gradient} agar dapat dikenali sebagai karakter. \textit{Support Vector Machine} yang akan digunakan dalam penelitian menggunakan \textit{library} dari Weka SVM. Untuk \textit{function} atau \textit{method} yang digunakan pada \textit{library} tersebut dapat dilihat pada tabel \ref{tbl:FunctionWeka}. \textit{Support Vector Machine} termasuk dalam algoritme \textit{supervised learning}. Konsep dasar dari metode ini adalah untuk menemukan sebuah \textit{separating hyperplane} (bidang) yang dapat memisahkan dua kelas sebagai keputusan klasifikasi. Dalam penelitian ini karakter yang akan dikenali adalah huruf A sampai dengan Z dan angka dari 0 sampai dengan 9 sehingga akan terdapat 36 kelas untuk proses klasifikasi.
 %\noindent Tabel \ref{tbl:filteredDataset} merupakan rincian jumlah citra pada masing-masing \textit{dataset} setelah dilakukan pemilihan.
 %\begin{table}[H]
 %	\centering

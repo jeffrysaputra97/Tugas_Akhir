@@ -1087,25 +1087,47 @@
 \noindent Adapun untuk nilai sigma pada metode \textit{SVM} yang digunakan dalam kombinasi adalah 0.01, 0.1, dan 1.\\
 \subsubsection{Pengujian dengan Ukuran Sel 2}
 \noindent Pada bagian ini, pengujian akan dilakukan dengan menggunakan ukuran sel berukuran 2 $\times$ 2 piksel dan ukuran blok 2 $\times$ 2 sel (4 $\times$ 4 piksel). Jumlah bin yang akan digunakan adalah 4, 6, 9, dan 18. Sedangkan untuk nilai sigma pada metode \textit{SVM} yang akan digunakan adalah 0.01, 0.1, dan 1. Berikut adalah hasil pengujian untuk setiap kombinasi parameter tersebut:
-\begin{longtable}[c]{|c|c|c|}
+%\begin{longtable}[c]{|c|c|c|c|c|}
+%	\caption{Hasil Pengujian dengan ukuran sel 2 $\times$ 2 piksel}
+%	\label{tab:HasilPengujianSel2}\\
+%	\hline
+%	\multicolumn{3}{|c|}{Parameter} &                                &                                \\ \cline{1-3}
+%	CellSize   & NumBins   & Sigma  & \multirow{-2}{*}{CRR}          & \multirow{-2}{*}{OVR}          \\ \hline
+%	\endhead
+%	%
+%	2          & 4         & 0.01   & {\color[HTML]{FE0000} 58.52\%} & {\color[HTML]{FE0000} 10.34\%} \\ \hline
+%	2          & 4         & 0.1    & 26.13\%                        & 0\%                            \\ \hline
+%	2          & 4         & 1      & 18.18\%                        & 0\%                            \\ \hline
+%	2          & 6         & 0.01   & 50\%                           & 6.89\%                         \\ \hline
+%	2          & 6         & 0.1    & 25.56\%                        & 0\%                            \\ \hline
+%	2          & 6         & 1      & 18.18\%                        & 0\%                            \\ \hline
+%	2          & 9         & 0.01   & 48.29\%                        & 3.44\%                         \\ \hline
+%	2          & 9         & 0.1    & 25\%                           & 0\%                            \\ \hline
+%	2          & 9         & 1      & 18.18\%                        & 0\%                            \\ \hline
+%	2          & 18        & 0.01   & 44.88\%                        & 3.44\%                         \\ \hline
+%	2          & 18        & 0.1    & 25\%                           & 0\%                            \\ \hline
+%	2          & 18        & 1      & 18.18\%                        & 0\%                            \\ \hline
+%\end{longtable}
+\begin{longtable}[c]{|c|c|c|c|c|}
 	\caption{Hasil Pengujian dengan ukuran sel 2 $\times$ 2 piksel}
 	\label{tab:HasilPengujianSel2}\\
 	\hline
-	\begin{tabular}[c]{@{}c@{}}Parameter\\ (CellSize, NumBins, Sigma)\end{tabular} & CRR     & OVR     \\ \hline
+	\multicolumn{3}{|c|}{Parameter} &                                &                                \\ \cline{1-3}
+	CellSize   & NumBins   & Sigma  & \multirow{-2}{*}{CRR}          & \multirow{-2}{*}{OVR}          \\ \hline
 	\endhead
 	%
-	(2, 4, 0.01)                                                                   & {\color[HTML]{FE0000} 58.52\%} & {\color[HTML]{FE0000} 10.34\%} \\ \hline
-	(2, 4, 0.1)                                                                    & 26.13\% & 0\%     \\ \hline
-	(2, 4, 1)                                                                      & 18.18\% & 0\%     \\ \hline
-	(2, 6, 0.01)                                                                   & 50\%    & 6.89\%  \\ \hline
-	(2, 6, 0.1)                                                                    & 25.56\% & 0\%     \\ \hline
-	(2, 6, 1)                                                                      & 18.18\% & 0\%     \\ \hline
-	(2, 9, 0.01)                                                                   & 48.29\% & 3.44\%  \\ \hline
-	(2, 9, 0.1)                                                                    & 25\%    & 0\%     \\ \hline
-	(2, 9, 1)                                                                      & 18.18\% & 0\%     \\ \hline
-	(2, 18, 0.01)                                                                  & 44.88\% & 3.44\%  \\ \hline
-	(2, 18, 0.1)                                                                   & 25\%    & 0\%     \\ \hline
-	(2, 18, 1)                                                                     & 18.18\% & 0\%     \\ \hline
+	2          & 4         & 0.01   & {\color[HTML]{FE0000} 61.53\%} & {\color[HTML]{FE0000} 14.28\%} \\ \hline
+	2          & 4         & 0.1    & 28.67\%                        & 0\%                            \\ \hline
+	2          & 4         & 1      & 20.27\%                        & 0\%                            \\ \hline
+	2          & 6         & 0.01   & 53.84\%                           & 9.52\%                         \\ \hline
+	2          & 6         & 0.1    & 27.97\%                        & 0\%                            \\ \hline
+	2          & 6         & 1      & 20.27\%                        & 0\%                            \\ \hline
+	2          & 9         & 0.01   & 52.44\%                        & 4.76\%                         \\ \hline
+	2          & 9         & 0.1    & 27.27\%                           & 0\%                            \\ \hline
+	2          & 9         & 1      & 20.27\%                        & 0\%                            \\ \hline
+	2          & 18        & 0.01   & 48.25\%                        & 4.76\%                         \\ \hline
+	2          & 18        & 0.1    & 27.97\%                           & 0\%                            \\ \hline
+	2          & 18        & 1      & 20.27\%                        & 0\%                            \\ \hline
 \end{longtable}
 \noindent Berdasarkan tabel di atas, dapat disimpulkan bahwa akurasi pengenalan karakter maksimal yang didapatkan apabila menggunakan ukuran sel 2 $\times$ 2 piksel adalah 58.52\%. Kombinasi parameter yang digunakan untuk mencapai hasil tersebut adalah ukuran sel 2 $\times$ 2 piksel, jumlah \textit{bin} sebanyak 4 sehingga besar setiap \textit{bin} adalah 45 derajat, kemudian nilai \textit{sigma} yang digunakan untuk metode \textit{SVM} adalah 0.01. Dengan citra karakter inputan berukuran 32 $\times$ 32 piksel. Maka panjang vektor fitur dari \textit{HOG descriptor} yang dihasilkan adalah 3600 fitur.
  
