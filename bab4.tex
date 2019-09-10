@@ -63,9 +63,7 @@
 	\begin{longtable}{| p {0.5cm} | p {4.5cm} | p {4cm} | p {1.5cm} | p {3cm} |}
 		\caption{Daftar \textit{Method Class Gradient} } \\
 		\hline
-		\textbf{No}  & \textbf{Nama \textit{method}}  & \textbf{Masukan}  & \textbf{Keluaran} & \textbf{Keterangan} \\
-		\hline
-		\endfirsthead
+		\textbf{No}  & \textbf{Nama \textit{method}}  & \textbf{Masukan}  & \textbf{Keluaran} & \textbf{Keterangan} \\ \hline
 		\endhead	
 		1	& Gradient & double orientation, double magnitude & void & Metode \textit{constructor} yang digunakan untuk inisialisasi objek dari kelas Gradient dengan nilai \textit{orientation} dan \textit{magnitude} yang didapatkan dari perhitungan. \\
 		\hline
@@ -86,9 +84,7 @@
 	\begin{longtable}{| p {0.5cm} | p {4.5cm} | p {3cm} | p {2.5cm} | p {3cm} |}
 		\caption{Daftar \textit{Method Class GradientCell} } \\
 		\hline
-		\textbf{No}  & \textbf{Nama \textit{method}}  & \textbf{Masukan}  & \textbf{Keluaran} & \textbf{Keterangan} \\
-		\hline
-		\endfirsthead
+		\textbf{No}  & \textbf{Nama \textit{method}}  & \textbf{Masukan}  & \textbf{Keluaran} & \textbf{Keterangan} \\ \hline
 		\endhead	
 		1	& GradientCell() & int length & void & Metode \textit{constructor} yang digunakan untuk inisialisasi objek dari kelas GradientCell. \\
 		\hline
@@ -103,9 +99,7 @@
 	\begin{longtable}{| p {0.5cm} | p {4.5cm} | p {4cm} | p {1.5cm} | p {3cm} |}
 		\caption{Daftar \textit{Method Class HOG} } \\
 		\hline
-		\textbf{No}  & \textbf{Nama \textit{method}}  & \textbf{Masukan}  & \textbf{Keluaran} & \textbf{Keterangan} \\
-		\hline
-		\endfirsthead
+		\textbf{No}  & \textbf{Nama \textit{method}}  & \textbf{Masukan}  & \textbf{Keluaran} & \textbf{Keterangan} \\ \hline
 		\endhead	
 		1	& HOG() & Integer[][] image, int cellHeight, int cellWidth, int blockSize, int numBins & void & Metode \textit{constructor} yang digunakan untuk inisialisasi objek dari kelas HOG. \\
 		\hline
@@ -150,6 +144,77 @@
 		
 	\end{longtable}
 \end{small}
+
+\subsection{Daftar \textit{Class} dan \textit{Method} ConfusionMatrix}
+\noindent Berikut adalah tabel berisi \textit{method} pada \textit{class} ConfusionMatrix. \textit{Class} ConfusionMatrix digunakan untuk perhitungan akurasi dari hasil pengklasifikasian karakter yang dilakukan dengan metode SVM. \textit{Confusion Matrix} juga biasanya digunakan sebagai alat ukur untuk menghitung kinerja dari algoritma klasifikasi yang digunakan.
+
+\begin{small}
+	\begin{longtable}{| p {0.5cm} | p {4.5cm} | p {3cm} | p {1.5cm} | p {4cm} |}
+		\caption{Daftar \textit{Method Class ConfusionMatrix} } \\
+		\hline
+		\textbf{No}  & \textbf{Nama \textit{method}}  & \textbf{Masukan}  & \textbf{Keluaran} & \textbf{Keterangan} \\ \hline
+		\endhead	
+		1	& getClassIndex() & String label & int & Metode yang digunakan untuk mengembalikan nilai indeks \textit{array} dari label yang dimasukkan. \\
+		\hline
+		2	& getConfusionMatrix() & int[][] result & void & Metode untuk melakukan perhitungan \textit{Confusion Matrix} dan juga menghitung akurasi dari hasil klasifikasi, metode ini juga akan menampilkan hasil \textit{Confusion Matrix} sebagai keluaran pada antarmuka aplikasi.\\
+		\hline
+	\end{longtable}
+\end{small}
+
+\subsection{Tampilan Antarmuka Antar Aplikasi}
+\noindent Subbab ini akan menjelaskan tampilan antarmuka dari aplikasi pengenalan plat nomor kendaraan. Tampilan awal dari aplikasi ketika dibuka adalah seperti pada gambar \ref{fig:TampilanAntarmuka}. \\
+\\
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\includegraphics[width=16cm]{images/TampilanAntarmuka.png}
+		\captionof{figure}{Tampilan antarmuka aplikasi pengenalan plat nomor kendaraan\\}
+		\label{fig:TampilanAntarmuka}
+	\end{minipage}
+\end{adjustbox}\\
+\\
+\noindent Pada gambar \ref{fig:TampilanAntarmuka}, terdapat beberapa tombol diantaranya adalah tombol \textit{Load Train Data Path}, \textit{Load Test Data Path}, \textit{Extract HOG Descriptor}, \textit{Train Classifier}, dan \textit{Show Testing Result}. Terdapat juga beberapa tombol \textit{dropdown} yang berfungsi untuk memilih nilai dari parameter metode HOG dan SVM. Untuk metode HOG tombol \textit{dropdown} yang tersedia adalah tombol \textit{dropdown} untuk memilih ukuran sel (\textit{Cell Size}) dan jumlah \textit{bins} yang akan digunakan (\textit{Num of Bins}). Sedangkan untuk metode SVM tombol \textit{dropdown} yang tersedia adalah tombol \textit{dropdown} untuk memilih nilai sigma yang akan digunakan. Tahapan proses pengenalan plat nomor kendaraan di aplikasi terbagi menjadi dua, yaitu proses \textit{training} dan proses \textit{testing}. Tahapan proses \textit{training} pada aplikasi adalah sebagai berikut:
+\begin{enumerate}
+\item Memasukkan \textit{path} dari kumpulan citra yang akan digunakan sebagai data latih untuk proses pengenalan karakter.
+\item Memasukkan ukuran sel dan jumlah \textit{bin} yang digunakan untuk metode HOG dengan memilih menggunakan tombol \textit{dropdown Cell Size} dan tombol \textit{dropdown Num of Bins}.
+\item Klik tombol \textit{Extract HOG Descriptor} untuk menjalankan proses ekstraksi fitur.
+\item Klik tombol \textit{Train Classifier} untuk menjalankan proses \textit{training}.
+\end{enumerate}
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\includegraphics[width=16cm]{images/TampilanAntarmukaTraining.png}
+		\captionof{figure}{Tampilan antarmuka hasil \textit{training}\\}
+		\label{fig:TampilanAntarmukaTraining}
+	\end{minipage}
+\end{adjustbox}\\
+\\
+\noindent Pada gambar \ref{fig:TampilanAntarmukaTraining} aplikasi akan menampilkan \textit{path} dari folder citra yang akan digunakan sebagai data latih, ukuran sel dan jumlah \textit{bins} yang digunakan untuk metode HOG, pesan bahwa proses ekstraksi fitur sudah berjalan dan lokasi penyimpanan fitur, dan pesan bahwa proses \textit{training} sudah selesai.
+\noindent Sedangkan untuk tahapan proses \textit{testing} pada aplikasi adalah sebagai berikut:
+\begin{enumerate}
+\item Lakukan proses \textit{training} terlebih dahulu.
+\item Setelah proses \textit{training} selesai dilakukan, kemudian masukkan \textit{path} dari folder citra yang akan digunakan sebagai data uji.
+\item Klik tombol \textit{Show Testing Result} untuk menjalankan proses testing otomatis.
+\end{enumerate}
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\includegraphics[width=16cm]{images/TampilanAntarmukaTesting1.png}
+		\label{fig:TampilanAntarmukaTesting1}
+	\end{minipage}
+\end{adjustbox}\\
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\includegraphics[width=16cm]{images/TampilanAntarmukaTesting2.png}
+		\label{fig:TampilanAntarmukaTesting2}
+	\end{minipage}
+\end{adjustbox}\\
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\includegraphics[width=16cm]{images/TampilanAntarmukaTesting3.png}
+		\captionof{figure}{Tampilan antarmuka hasil \textit{testing} (Atas, tengah, bawah)\\}
+		\label{fig:TampilanAntarmukaTesting3}
+	\end{minipage}
+\end{adjustbox}\\
+\\
+\noindent Pada gambar \ref{fig:TampilanAntarmukaTesting3} aplikasi akan menampilkan \textit{path} dari folder citra yang akan digunakan sebagai data uji, teks asli dari plat nomor pada citra beserta hasil prediksi dari SVM, jumlah plat yang teridentifikasi dengan benar, jumlah total plat yang diproses, akurasi plat yang terdeteksi dan teridentifikasi dengan benar, hasil dari \textit{confusion matrix} untuk klasifikasi karakter, jumlah karakter yang terklasifikasi dengan benar, jumlah keseluruhan karakter, dan akurasi dari klasifikasi karakter.\\
 %Package cnn
 %\subsubsection{Daftar \textit{Class} dan \textit{Method}}
 %\noindent \textit{Class} CNN merupakan kelas yang berfungsi untuk melaksanakan proses \textit{Convolutional Neural Network} dengan arsitektur lapisan dan \textit{hyperparameter} yang telah ditentukan, lihat tabel \ref{tbl:classCNN}.
@@ -1075,7 +1140,7 @@
 %\endgroup
 
 \section{Pengujian}
-\noindent Pada bagian ini, akan dilakukan berbagai skenario pengujian dengan beragam parameter dari metode HOG. Tujuan dari penelitian ini adalah untuk menerapkan metode \textit{HOG} pada proses ekstraksi fitur karakter pada sistem pengenalan karakter, oleh karena itu perlu diketahui berapa ukuran sel, ukuran blok, dan jumlah \textit{bin} yang akan menghasilkan fitur yang paling baik untuk akurasi pengenalan karakter. Pengujian ini akan dilakukan dengan data latih sebanyak 117 citra karakter hasil segmentasi dari plat nomor untuk 36 kelas karakter yang terdiri dari 10 kelas angka dan 26 kelas huruf, dimana setiap kelas karakter memiliki jumlah data latih sebanyak 3-5 citra.\\
+\noindent Pada bagian ini, akan dilakukan berbagai skenario pengujian dengan beragam parameter dari metode HOG. Tujuan dari penelitian ini adalah untuk menerapkan metode HOG pada proses ekstraksi fitur karakter pada sistem pengenalan karakter, oleh karena itu perlu diketahui berapa ukuran sel, ukuran blok, dan jumlah \textit{bin} yang akan menghasilkan fitur yang paling baik untuk akurasi pengenalan karakter. Pengujian ini akan dilakukan dengan data latih sebanyak 117 citra karakter hasil segmentasi dari plat nomor untuk 36 kelas karakter yang terdiri dari 10 kelas angka dan 26 kelas huruf, dimana setiap kelas karakter memiliki jumlah data latih sebanyak 3-5 citra.\\
 
 \subsection{Pengujian Kombinasi Parameter}
 \noindent Pada bagian ini akan dilakukan pengujian untuk beragam kombinasi parameter dari metode HOG dalam mengekstraksi fitur karakter. Fitur dari metode \textit{HOG} akan digunakan pada proses klasifikasi karakter menggunakan \textit{library} dari Weka dan akan diukur akurasinya menggunakan \textit{Confusion Matrix}. Adapun nilai dari setiap parameter yang akan digunakan untuk kombinasi, yaitu:
@@ -1119,93 +1184,352 @@
 	2          & 4         & 0.01   & {\color[HTML]{FE0000} 61.53\%} & {\color[HTML]{FE0000} 14.28\%} \\ \hline
 	2          & 4         & 0.1    & 28.67\%                        & 0\%                            \\ \hline
 	2          & 4         & 1      & 20.27\%                        & 0\%                            \\ \hline
-	2          & 6         & 0.01   & 53.84\%                           & 9.52\%                         \\ \hline
+	2          & 6         & 0.01   & 53.84\%                        & 9.52\%                         \\ \hline
 	2          & 6         & 0.1    & 27.97\%                        & 0\%                            \\ \hline
 	2          & 6         & 1      & 20.27\%                        & 0\%                            \\ \hline
 	2          & 9         & 0.01   & 52.44\%                        & 4.76\%                         \\ \hline
-	2          & 9         & 0.1    & 27.27\%                           & 0\%                            \\ \hline
+	2          & 9         & 0.1    & 27.27\%                        & 0\%                            \\ \hline
 	2          & 9         & 1      & 20.27\%                        & 0\%                            \\ \hline
 	2          & 18        & 0.01   & 48.25\%                        & 4.76\%                         \\ \hline
-	2          & 18        & 0.1    & 27.97\%                           & 0\%                            \\ \hline
+	2          & 18        & 0.1    & 27.97\%                        & 0\%                            \\ \hline
 	2          & 18        & 1      & 20.27\%                        & 0\%                            \\ \hline
 \end{longtable}
 \noindent Berdasarkan tabel di atas, dapat disimpulkan bahwa akurasi pengenalan karakter maksimal yang didapatkan apabila menggunakan ukuran sel 2 $\times$ 2 piksel adalah 58.52\%. Kombinasi parameter yang digunakan untuk mencapai hasil tersebut adalah ukuran sel 2 $\times$ 2 piksel, jumlah \textit{bin} sebanyak 4 sehingga besar setiap \textit{bin} adalah 45 derajat, kemudian nilai \textit{sigma} yang digunakan untuk metode \textit{SVM} adalah 0.01. Dengan citra karakter inputan berukuran 32 $\times$ 32 piksel. Maka panjang vektor fitur dari \textit{HOG descriptor} yang dihasilkan adalah 3600 fitur.
- 
-\noindent Kolom di bagian kiri menunjukkan kombinasi parameter yang digunakan pada saat pengujian. Kolom CRR merupakan akronim dari \textit{Character Recognition Rate} yang memiliki rumus jumlah karakter yang dikenali dibagi dengan keseluruhan karakter yang terdeteksi. Dari 176 karakter yang terdeteksi, sebanyak 103 di antaranya dapat diklasifikasikan dengan baik. Kolom OVR pada bagian kanan menunjukkan performa keseluruhan yang memiliki rumus jumlah plat nomor yang terdeteksi dan dikenali dengan benar dibagi dengan keseluruhan jumlah plat nomor yang ada. Dari 29 plat nomor yang terdeteksi, hanya 3 plat nomor yang dapat dikenali dengan baik. Dapat disimpulkan bahwa penggunaan ukuran sel 2 $\times$ 2 piksel kurang tepat untuk kasus ini.\\
+
+\noindent Kolom di bagian kiri menunjukkan kombinasi parameter yang digunakan pada saat pengujian. Kolom CRR merupakan akronim dari \textit{Character Recognition Rate} yang memiliki rumus jumlah karakter yang dikenali dibagi dengan keseluruhan karakter yang terdeteksi. Dari 143 karakter yang terdeteksi, sebanyak 88 di antaranya dapat diklasifikasikan dengan baik. Kolom OVR pada bagian kanan menunjukkan performa keseluruhan yang memiliki rumus jumlah plat nomor yang terdeteksi dan dikenali dengan benar dibagi dengan keseluruhan jumlah plat nomor yang ada. Dari 21 plat nomor yang terdeteksi, hanya 3 plat nomor yang dapat dikenali dengan baik. 
+
+\noindent Tabel \ref{tab:hasilklasifikasisel2} merupakan tabel yang menunjukkan hasil klasifikasi karakter dengan parameter HOG (\textit{CellSize} dan \textit{NumBins}) masing-masing 2 dan 4, dan nilai \textit{sigma} untuk metode \textit{SVM} 0.01.
+
+\begin{longtable}[c]{|c|c|c|c|c|}
+	\caption{Hasil klasifikasi karakter dengan parameter CellSize = 2, NumBins = 4, dan Sigma = 0.01}
+	\label{tab:hasilklasifikasisel2}\\
+	\hline
+	\textbf{No} & \textbf{Karakter} & \textbf{Prediksi Benar} & \textbf{Prediksi Salah} & \textbf{Akurasi} \\ \hline
+	\endhead
+	1           & 0                 & 2                       & 0                       &100.00\%            \\ \hline
+	2           & 1                 & 15                       & 7                       &68.18\%            \\ \hline
+	3           & 2                 & 6                       & 3                       &66.67\%            \\ \hline
+	4           & 3                 & 2                       & 6                       &25.00\%            \\ \hline
+	5           & 4                 & 3                       & 5                       &37.50\%            \\ \hline
+	6           & 5                 & 2                       & 2                       &50.00\%            \\ \hline
+	7           & 6                 & 1                       & 3                       &25.00\%            \\ \hline
+	8           & 7                 & 6                       & 7                       &46.15\%            \\ \hline
+	9           & 8                 & 1                       & 2                       &33.33\%            \\ \hline
+	10           & 9                 & 2                       & 4                       &33.33\%            \\ \hline
+	11           & A                 & 0                       & 0                       & -            \\ \hline
+	12           & B                 & 1                       & 3                       &25.00\%            \\ \hline
+	13           & C                 & 1                       & 0                       &100.00\%            \\ \hline
+	14           & D                 & 20                       & 0                       &100.00\%            \\ \hline
+	15           & E                 & 1                       & 0                       &100.00\%            \\ \hline
+	16           & F                 & 0                       & 0                       & -            \\ \hline
+	17           & G                 & 1                       & 0                       &100.00\%            \\ \hline
+	18           & H                 & 1                       & 0                       &100.00\%            \\ \hline
+	19           & I                 & 1                       & 2                       &33.33\%            \\ \hline
+	20           & J                 & 2                       & 1                       &66.67\%            \\ \hline
+	21           & K                 & 2                       & 0                       &100.00\%            \\ \hline
+	22           & L                 & 4                       & 0                       &100.00\%            \\ \hline
+	23           & M                 & 1                       & 0                       &100.00\%            \\ \hline
+	24           & N                 & 0                       & 0                       & -            \\ \hline
+	25           & O                 & 1                       & 0                       &100.00\%            \\ \hline
+	26           & P                 & 1                       & 3                       &25.00\%            \\ \hline
+	27           & Q                 & 2                       & 0                       &100.00\%            \\ \hline
+	28           & R                 & 1                       & 1                       &50.00\%            \\ \hline
+	29           & S                 & 1                       & 1                       &50.00\%            \\ \hline
+	30           & T                 & 1                       & 0                       &100.00\%            \\ \hline
+	31           & U                 & 1                       & 0                       &100.00\%            \\ \hline
+	32           & V                 & 1                       & 0                       &100.00\%            \\ \hline
+	33           & W                 & 2                       & 5                       &28.57\%            \\ \hline
+	34           & X                 & 0                       & 0                       & -            \\ \hline
+	35           & Y                 & 1                       & 0                       &100.00\%            \\ \hline
+	36           & Z                 & 1                       & 0                       &100.00\%            \\ \hline
+\end{longtable}
+
+\noindent Dengan akurasi pengenalan karakter (\textit{Character Recognition Rate}) sebesar 61.53\%, dapat dilihat pada tabel \ref{tab:hasilklasifikasisel2} bahwa dari 36  karakter yang ada, yang dapat diprediksi dengan benar 100\% adalah sebanyak 16 karakter, terdapat juga beberapa karakter yang memiliki akurasi pengenalan yang rendah, diantaranya adalah angka 3, angka 4, angka 6, angka 7, angka 8, angka 9, huruf B, huruf I, huruf P, dan huruf W. Dari hasil akurasi klasifikasi di atas, dapat disimpulkan bahwa penggunaan ukuran sel 2 $\times$ 2 piksel kurang tepat untuk digunakan dalam proses ekstraksi fitur HOG dalam sistem pengenalan karakter ini.\\
+
 \subsubsection{Pengujian dengan Ukuran Sel 4}
 \noindent Pada bagian ini, pengujian akan dilakukan dengan menggunakan ukuran sel berukuran 4 $\times$ 4 piksel dan ukuran blok 2 $\times$ 2 sel (8 $\times$ 8 piksel). Jumlah bin yang akan digunakan adalah 4, 6, 9, dan 18. Sedangkan untuk nilai sigma pada metode \textit{SVM} yang akan digunakan adalah 0.01, 0.1, dan 1. Berikut adalah hasil pengujian untuk setiap kombinasi parameter tersebut:
-\begin{longtable}[c]{|c|c|c|}
+%\begin{longtable}[c]{|c|c|c|}
+%	\caption{Hasil Pengujian dengan ukuran sel 4 $\times$ 4 piksel}
+%	\label{tab:HasilPengujianSel4}\\
+%	\hline
+%	\begin{tabular}[c]{@{}c@{}}Parameter\\ (CellSize, NumBins, Sigma)\end{tabular} & CRR     & OVR     \\ \hline
+%	\endhead
+%	%
+%	(4, 4, 0.01)                                                                   & 86.36\% & 27.58\% \\ \hline
+%	(4, 4, 0.1)                                                                    & 47.72\% & 0\%     \\ \hline
+%	(4, 4, 1)                                                                      & 26.13\% & 0\%     \\ \hline
+%	(4, 6, 0.01)                                                                   & 85.22\% & 31.03\%  \\ \hline
+%	(4, 6, 0.1)                                                                    & 40.90\% & 0\%     \\ \hline
+%	(4, 6, 1)                                                                      & 25\%    & 0\%     \\ \hline
+%	(4, 9, 0.01)                                                                   & {\color[HTML]{FE0000} 89.77\%} & {\color[HTML]{FE0000} 37.93\%}  \\ \hline
+%	(4, 9, 0.1)                                                                    & 40.90\% & 0\%     \\ \hline
+%	(4, 9, 1)                                                                      & 23.86\% & 0\%     \\ \hline
+%	(4, 18, 0.01)                                                                  & 84.09\% & 34.48\%  \\ \hline
+%	(4, 18, 0.1)                                                                   & 40.90\% & 0\%     \\ \hline
+%	(4, 18, 1)                                                                     & 24.43\% & 0\%     \\ \hline
+%\end{longtable}
+\begin{longtable}[c]{|c|c|c|c|c|}
 	\caption{Hasil Pengujian dengan ukuran sel 4 $\times$ 4 piksel}
 	\label{tab:HasilPengujianSel4}\\
 	\hline
-	\begin{tabular}[c]{@{}c@{}}Parameter\\ (CellSize, NumBins, Sigma)\end{tabular} & CRR     & OVR     \\ \hline
+	\multicolumn{3}{|c|}{Parameter} &                                &                                \\ \cline{1-3}
+	CellSize   & NumBins   & Sigma  & \multirow{-2}{*}{CRR}          & \multirow{-2}{*}{OVR}          \\ \hline
 	\endhead
 	%
-	(4, 4, 0.01)                                                                   & 86.36\% & 27.58\% \\ \hline
-	(4, 4, 0.1)                                                                    & 47.72\% & 0\%     \\ \hline
-	(4, 4, 1)                                                                      & 26.13\% & 0\%     \\ \hline
-	(4, 6, 0.01)                                                                   & 85.22\% & 31.03\%  \\ \hline
-	(4, 6, 0.1)                                                                    & 40.90\% & 0\%     \\ \hline
-	(4, 6, 1)                                                                      & 25\%    & 0\%     \\ \hline
-	(4, 9, 0.01)                                                                   & {\color[HTML]{FE0000} 89.77\%} & {\color[HTML]{FE0000} 37.93\%}  \\ \hline
-	(4, 9, 0.1)                                                                    & 40.90\% & 0\%     \\ \hline
-	(4, 9, 1)                                                                      & 23.86\% & 0\%     \\ \hline
-	(4, 18, 0.01)                                                                  & 84.09\% & 34.48\%  \\ \hline
-	(4, 18, 0.1)                                                                   & 40.90\% & 0\%     \\ \hline
-	(4, 18, 1)                                                                     & 24.43\% & 0\%     \\ \hline
+	4          & 4         & 0.01   & 88.11\%                        & 38.09\% \\ \hline
+	4          & 4         & 0.1    & 50.34\%                        & 0\%                            \\ \hline
+	4          & 4         & 1      & 27.97\%                        & 0\%                            \\ \hline
+	4          & 6         & 0.01   & 86.71\%                        & 42.85\%                         \\ \hline
+	4          & 6         & 0.1    & 44.05\%                        & 0\%                            \\ \hline
+	4          & 6         & 1      & 26.57\%                        & 0\%                            \\ \hline
+	4          & 9         & 0.01   & {\color[HTML]{FE0000} 90.20\%} & {\color[HTML]{FE0000} 52.38\%} \\ \hline
+	4          & 9         & 0.1    & 44.05\%                        & 0\%                            \\ \hline
+	4          & 9         & 1      & 25.87\%                        & 0\%                            \\ \hline
+	4          & 18        & 0.01   & 87.41\%                        & 47.61\%                         \\ \hline
+	4          & 18        & 0.1    & 44.05\%                        & 0\%                            \\ \hline
+	4          & 18        & 1      & 25.87\%                        & 0\%                            \\ \hline
 \end{longtable}
-\noindent Berdasarkan tabel di atas, dapat disimpulkan bahwa akurasi pengenalan karakter maksimal yang didapatkan apabila menggunakan ukuran sel 4 $\times$ 4 piksel adalah 89.77\%. Kombinasi parameter yang digunakan untuk mencapai hasil tersebut adalah ukuran sel 4 $\times$ 4 piksel, jumlah \textit{bin} sebanyak 9 sehingga besar setiap \textit{bin} adalah 20 derajat, kemudian nilai \textit{sigma} yang digunakan untuk metode \textit{SVM} adalah 0.01. Dengan citra karakter inputan berukuran 32 $\times$ 32 piksel. Maka panjang vektor fitur dari \textit{HOG descriptor} yang dihasilkan adalah 1764 fitur. Jika dibandingkan dengan pengujian sebelumnya, jumlah fitur yang lebih sedikit justru mampu mendapatkan akurasi pengenalan karakter yang lebih baik.
+\noindent Berdasarkan tabel di atas, dapat disimpulkan bahwa akurasi pengenalan karakter maksimal yang didapatkan apabila menggunakan ukuran sel 4 $\times$ 4 piksel adalah 90.20\%. Kombinasi parameter yang digunakan untuk mencapai hasil tersebut adalah ukuran sel 4 $\times$ 4 piksel, jumlah \textit{bin} sebanyak 9 sehingga besar setiap \textit{bin} adalah 20 derajat, kemudian nilai \textit{sigma} yang digunakan untuk metode \textit{SVM} adalah 0.01. Dengan citra karakter inputan berukuran 32 $\times$ 32 piksel. Maka panjang vektor fitur dari \textit{HOG descriptor} yang dihasilkan adalah 1764 fitur. Jika dibandingkan dengan pengujian sebelumnya, jumlah fitur yang lebih sedikit justru mampu mendapatkan akurasi pengenalan karakter yang lebih baik.
 
-\noindent Sama seperti bagian sebelumnya, kolom di bagian kiri menunjukkan kombinasi parameter yang digunakan pada saat pengujian. Dari hasil pada kolom CRR, dari 176 karakter yang terdeteksi, sebanyak 158 di antaranya dapat diklasifikasikan dengan baik. Dari hasil pada kolom OVR menunjukkan, dari 29 plat nomor yang terdeteksi, 11 plat nomor dapat dikenali dengan baik, hal ini merupakan peningkatan apabila dibandingkan dengan hasil pengujian sebelumnya, namun masih cukup banyak plat yang tidak dapat dikenali dengan baik. Dari pengujian ini dapat  disimpulkan bahwa penggunaan ukuran sel 4 $\times$ 4 piksel sudah dapat meningkatkan akurasi pengenalan karakter namun masih belum optimal.\\
+\noindent Sama seperti bagian sebelumnya, kolom di bagian kiri menunjukkan kombinasi parameter yang digunakan pada saat pengujian. Dari hasil pada kolom CRR, dari 143 karakter yang terdeteksi, sebanyak 129 di antaranya dapat diklasifikasikan dengan baik. Dari hasil pada kolom OVR menunjukkan, dari 21 plat nomor yang terdeteksi, 11 plat nomor dapat dikenali dengan baik, hal ini merupakan peningkatan apabila dibandingkan dengan hasil pengujian sebelumnya, namun masih cukup banyak plat yang tidak dapat dikenali dengan baik. 
+
+\noindent Tabel \ref{tab:hasilklasifikasisel4} merupakan tabel yang menunjukkan hasil klasifikasi karakter dengan parameter HOG (\textit{CellSize} dan \textit{NumBins}) masing-masing 4 dan 9, dan nilai \textit{sigma} untuk metode \textit{SVM} 0.01.
+
+\begin{longtable}[c]{|c|c|c|c|c|}
+	\caption{Hasil klasifikasi karakter dengan parameter CellSize = 4, NumBins = 9, dan Sigma = 0.01}
+	\label{tab:hasilklasifikasisel4}\\
+	\hline
+	\textbf{No} & \textbf{Karakter} & \textbf{Prediksi Benar} & \textbf{Prediksi Salah} & \textbf{Akurasi} \\ \hline
+	\endhead
+	1           & 0                 & 0                       & 2                       &0.00\%            \\ \hline
+	2           & 1                 & 18                       & 4                       &81.82\%            \\ \hline
+	3           & 2                 & 7                       & 2                       &77.78\%            \\ \hline
+	4           & 3                 & 8                       & 0                       &100.00\%            \\ \hline
+	5           & 4                 & 8                       & 0                       &100.00\%            \\ \hline
+	6           & 5                 & 4                       & 0                       &100.00\%            \\ \hline
+	7           & 6                 & 4                       & 0                       &100.00\%            \\ \hline
+	8           & 7                 & 13                       & 0                       &100.00\%            \\ \hline
+	9           & 8                 & 3                       & 0                       &100.00\%            \\ \hline
+	10           & 9                 & 6                       & 0                       &100.00\%            \\ \hline
+	11           & A                 & 0                       & 0                       & -            \\ \hline
+	12           & B                 & 4                       & 0                       &100.00\%            \\ \hline
+	13           & C                 & 1                       & 0                       &100.00\%            \\ \hline
+	14           & D                 & 19                       & 1                       &95.00\%            \\ \hline
+	15           & E                 & 1                       & 0                       &100.00\%            \\ \hline
+	16           & F                 & 0                       & 0                       & -            \\ \hline
+	17           & G                 & 1                       & 0                       &100.00\%            \\ \hline
+	18           & H                 & 1                       & 0                       &100.00\%            \\ \hline
+	19           & I                 & 3                       & 0                       &100.00\%            \\ \hline
+	20           & J                 & 2                       & 1                       &66.67\%            \\ \hline
+	21           & K                 & 2                       & 0                       &100.00\%            \\ \hline
+	22           & L                 & 4                       & 0                       &100.00\%            \\ \hline
+	23           & M                 & 1                       & 0                       &100.00\%            \\ \hline
+	24           & N                 & 0                       & 0                       & -            \\ \hline
+	25           & O                 & 1                       & 0                       &100.00\%            \\ \hline
+	26           & P                 & 4                       & 0                       &100.00\%            \\ \hline
+	27           & Q                 & 0                       & 2                       &0.00\%            \\ \hline
+	28           & R                 & 2                       & 0                       &100.00\%            \\ \hline
+	29           & S                 & 2                       & 0                       &100.00\%            \\ \hline
+	30           & T                 & 1                       & 0                       &100.00\%            \\ \hline
+	31           & U                 & 0                       & 1                       &0.00\%            \\ \hline
+	32           & V                 & 1                       & 0                       &100.00\%            \\ \hline
+	33           & W                 & 6                       & 1                       &85.71\%            \\ \hline
+	34           & X                 & 0                       & 0                       & -            \\ \hline
+	35           & Y                 & 1                       & 0                       &100.00\%            \\ \hline
+	36           & Z                 & 1                       & 0                       &100.00\%            \\ \hline
+\end{longtable}
+
+%Dari pengujian ini dapat  disimpulkan bahwa penggunaan ukuran sel 4 $\times$ 4 piksel sudah dapat meningkatkan akurasi pengenalan karakter namun masih belum optimal.
+\noindent Dengan akurasi pengenalan karakter (\textit{Character Recognition Rate}) sebesar 90.20\%, dapat dilihat pada tabel \ref{tab:hasilklasifikasisel4} bahwa dari 36  karakter yang ada, yang dapat diprediksi dengan benar 100\% adalah sebanyak 24 karakter, terdapat juga beberapa karakter yang memiliki akurasi pengenalan yang rendah, diantaranya adalah angka 0, huruf Q, dan huruf U. Dari hasil akurasi klasifikasi di atas, dapat  disimpulkan bahwa penggunaan ukuran sel 4 $\times$ 4 piksel sudah dapat meningkatkan akurasi pengenalan karakter namun masih belum optimal.\\
+
 \subsubsection{Pengujian dengan Ukuran Sel 8}
 \noindent Pada bagian ini, pengujian akan dilakukan dengan menggunakan ukuran sel berukuran 8 $\times$ 8 piksel dan ukuran blok 2 $\times$ 2 sel (16 $\times$ 16 piksel). Jumlah bin yang akan digunakan adalah 4, 6, 9, dan 18. Sedangkan untuk nilai sigma pada metode \textit{SVM} yang akan digunakan adalah 0.01, 0.1, dan 1. Berikut adalah hasil pengujian untuk setiap kombinasi parameter tersebut:
-\begin{longtable}[c]{|c|c|c|}
+%\begin{longtable}[c]{|c|c|c|}
+%	\caption{Hasil Pengujian dengan ukuran sel 8 $\times$ 8 piksel}
+%	\label{tab:HasilPengujianSel8}\\
+%	\hline
+%	\begin{tabular}[c]{@{}c@{}}Parameter\\ (CellSize, NumBins, Sigma)\end{tabular} & CRR     & OVR     \\ \hline
+%	\endhead
+%	%
+%	(8, 4, 0.01)                                                                   & 15.90\% & 0\% \\ \hline
+%	(8, 4, 0.1)                                                                    & 93.18\% & 51.72\%     \\ \hline
+%	(8, 4, 1)                                                                      & 46.02\% & 0\%     \\ \hline
+%	(8, 6, 0.01)                                                                   & 21.02\% & 0\%  \\ \hline
+%	(8, 6, 0.1)                                                                    & 93.18\% & 51.72\%     \\ \hline
+%	(8, 6, 1)                                                                      & 42.61\% & 0\%     \\ \hline
+%	(8, 9, 0.01)                                                                   & 28.40\% & 0\%  \\ \hline
+%	(8, 9, 0.1)                                                                    & 93.75\% & 51.72\%     \\ \hline
+%	(8, 9, 1)                                                                      & 39.20\% & 0\%     \\ \hline
+%	(8, 18, 0.01)                                                                  & 21.59\% & 0\%  \\ \hline
+%	(8, 18, 0.1)                                                                   & {\color[HTML]{FE0000} 94.88\%} & {\color[HTML]{FE0000} 58.62\%}     \\ \hline
+%	(8, 18, 1)                                                                     & 40.34\% & 0\%     \\ \hline
+%\end{longtable}
+\begin{longtable}[c]{|c|c|c|c|c|}
 	\caption{Hasil Pengujian dengan ukuran sel 8 $\times$ 8 piksel}
 	\label{tab:HasilPengujianSel8}\\
 	\hline
-	\begin{tabular}[c]{@{}c@{}}Parameter\\ (CellSize, NumBins, Sigma)\end{tabular} & CRR     & OVR     \\ \hline
+	\multicolumn{3}{|c|}{Parameter} &                                &                                \\ \cline{1-3}
+	CellSize   & NumBins   & Sigma  & \multirow{-2}{*}{CRR}          & \multirow{-2}{*}{OVR}          \\ \hline
 	\endhead
 	%
-	(8, 4, 0.01)                                                                   & 15.90\% & 0\% \\ \hline
-	(8, 4, 0.1)                                                                    & 93.18\% & 51.72\%     \\ \hline
-	(8, 4, 1)                                                                      & 46.02\% & 0\%     \\ \hline
-	(8, 6, 0.01)                                                                   & 21.02\% & 0\%  \\ \hline
-	(8, 6, 0.1)                                                                    & 93.18\% & 51.72\%     \\ \hline
-	(8, 6, 1)                                                                      & 42.61\% & 0\%     \\ \hline
-	(8, 9, 0.01)                                                                   & 28.40\% & 0\%  \\ \hline
-	(8, 9, 0.1)                                                                    & 93.75\% & 51.72\%     \\ \hline
-	(8, 9, 1)                                                                      & 39.20\% & 0\%     \\ \hline
-	(8, 18, 0.01)                                                                  & 21.59\% & 0\%  \\ \hline
-	(8, 18, 0.1)                                                                   & {\color[HTML]{FE0000} 94.88\%} & {\color[HTML]{FE0000} 58.62\%}     \\ \hline
-	(8, 18, 1)                                                                     & 40.34\% & 0\%     \\ \hline
+	8          & 4         & 0.01   & 17.48\%                        & 0\% \\ \hline
+	8          & 4         & 0.1    & 94.40\%                        & 71.42\%                            \\ \hline
+	8          & 4         & 1      & 48.95\%                        & 0\%                            \\ \hline
+	8          & 6         & 0.01   & 23.07\%                        & 0\%                         \\ \hline
+	8          & 6         & 0.1    & 94.40\%                        & 71.42\%                            \\ \hline
+	8          & 6         & 1      & 46.15\%                        & 0\%                            \\ \hline
+	8          & 9         & 0.01   & 29.37\%                        & 0\% \\ \hline
+	8          & 9         & 0.1    & 94.40\%                        & 71.42\%                            \\ \hline
+	8          & 9         & 1      & 41.95\%                        & 0\%                            \\ \hline
+	8          & 18        & 0.01   & 23.77\%                        & 0\%                         \\ \hline
+	8          & 18        & 0.1    & {\color[HTML]{FE0000} 95.80\%} & {\color[HTML]{FE0000} 80.95\%}                            \\ \hline
+	8          & 18        & 1      & 43.35\%                        & 0\%                            \\ \hline
 \end{longtable}
-\noindent Berdasarkan tabel di atas, dapat disimpulkan bahwa akurasi pengenalan karakter maksimal yang didapatkan apabila menggunakan ukuran sel 8 $\times$ 8 piksel adalah 94.88\%. Kombinasi parameter yang digunakan untuk mencapai hasil tersebut adalah ukuran sel 8 $\times$ 8 piksel, jumlah \textit{bin} sebanyak 18 sehingga besar setiap \textit{bin} adalah 10 derajat, kemudian nilai \textit{sigma} yang digunakan untuk metode \textit{SVM} adalah 0.1. Dengan citra karakter inputan berukuran 32 $\times$ 32 piksel. Maka panjang vektor fitur dari \textit{HOG descriptor} yang dihasilkan adalah 648 fitur. Sama seperti pengujian sebelumnya, jika dibandingkan dengan pengujian sebelumnya, jumlah fitur yang lebih sedikit justru mampu mendapatkan akurasi pengenalan karakter yang lebih baik.
+\noindent Berdasarkan tabel di atas, dapat disimpulkan bahwa akurasi pengenalan karakter maksimal yang didapatkan apabila menggunakan ukuran sel 8 $\times$ 8 piksel adalah 95.80\%. Kombinasi parameter yang digunakan untuk mencapai hasil tersebut adalah ukuran sel 8 $\times$ 8 piksel, jumlah \textit{bin} sebanyak 18 sehingga besar setiap \textit{bin} adalah 10 derajat, kemudian nilai \textit{sigma} yang digunakan untuk metode \textit{SVM} adalah 0.1. Dengan citra karakter inputan berukuran 32 $\times$ 32 piksel. Maka panjang vektor fitur dari \textit{HOG descriptor} yang dihasilkan adalah 648 fitur. Sama seperti pengujian sebelumnya, jika dibandingkan dengan pengujian sebelumnya, jumlah fitur yang lebih sedikit justru mampu mendapatkan akurasi pengenalan karakter yang lebih baik.
 
-\noindent Sama seperti bagian sebelumnya, kolom di bagian kiri menunjukkan kombinasi parameter yang digunakan pada saat pengujian. Dari hasil pada kolom CRR, dari 176 karakter yang terdeteksi, sebanyak 167 di antaranya dapat diklasifikasikan dengan baik. Dari hasil pada kolom OVR menunjukkan, dari 29 plat nomor yang terdeteksi, 17 plat nomor dapat dikenali dengan baik, hal ini merupakan peningkatan apabila dibandingkan dengan hasil pengujian sebelumnya, dengan memperhatikan akurasi pengenalan karakter yang tinggi namun hasil performa keseluruhan yang masih di bawah 70\% maka dapat disimpulkan bahwa kemungkinan ada faktor lain yang cukup menghambat dalam proses pengenalan karakter pada keseluruhan plat nomor. Dari pengujian ini dapat  disimpulkan bahwa penggunaan ukuran sel 8 $\times$ 8 piksel sudah dapat menghasilkan akurasi pengenalan karakter yang baik.\\
+\noindent Sama seperti bagian sebelumnya, kolom di bagian kiri menunjukkan kombinasi parameter yang digunakan pada saat pengujian. Dari hasil pada kolom CRR, dari 143 karakter yang terdeteksi, sebanyak 137 di antaranya dapat diklasifikasikan dengan baik. Dari hasil pada kolom OVR menunjukkan, dari 21 plat nomor yang terdeteksi, 17 plat nomor dapat dikenali dengan baik, hal ini merupakan peningkatan apabila dibandingkan dengan hasil pengujian sebelumnya.
+
+\noindent Tabel \ref{tab:hasilklasifikasisel8} merupakan tabel yang menunjukkan hasil klasifikasi karakter dengan parameter HOG (\textit{CellSize} dan \textit{NumBins}) masing-masing 8 dan 18, dan nilai \textit{sigma} untuk metode \textit{SVM} 0.1.
+
+\begin{longtable}[c]{|c|c|c|c|c|}
+	\caption{Hasil klasifikasi karakter dengan parameter CellSize = 8, NumBins = 18, dan Sigma = 0.1}
+	\label{tab:hasilklasifikasisel8}\\
+	\hline
+	\textbf{No} & \textbf{Karakter} & \textbf{Prediksi Benar} & \textbf{Prediksi Salah} & \textbf{Akurasi} \\ \hline
+	\endhead
+	1           & 0                 & 2                       & 0                       &100.00\%            \\ \hline
+	2           & 1                 & 21                       & 1                       &95.45\%            \\ \hline
+	3           & 2                 & 7                       & 2                       &77.78\%            \\ \hline
+	4           & 3                 & 8                       & 0                       &100.00\%            \\ \hline
+	5           & 4                 & 8                       & 0                       &100.00\%            \\ \hline
+	6           & 5                 & 4                       & 0                       &100.00\%            \\ \hline
+	7           & 6                 & 4                       & 0                       &100.00\%            \\ \hline
+	8           & 7                 & 13                       & 0                       &100.00\%            \\ \hline
+	9           & 8                 & 3                       & 0                       &100.00\%            \\ \hline
+	10           & 9                 & 6                       & 0                       &100.00\%            \\ \hline
+	11           & A                 & 0                       & 0                       & -            \\ \hline
+	12           & B                 & 4                       & 0                       &100.00\%            \\ \hline
+	13           & C                 & 1                       & 0                       &100.00\%            \\ \hline
+	14           & D                 & 19                       & 1                       &95.00\%            \\ \hline
+	15           & E                 & 1                       & 0                       &100.00\%            \\ \hline
+	16           & F                 & 0                       & 0                       & -            \\ \hline
+	17           & G                 & 1                       & 0                       &100.00\%            \\ \hline
+	18           & H                 & 1                       & 0                       &100.00\%            \\ \hline
+	19           & I                 & 3                       & 0                       &100.00\%            \\ \hline
+	20           & J                 & 3                       & 0                       &100.00\%            \\ \hline
+	21           & K                 & 2                       & 0                       &100.00\%            \\ \hline
+	22           & L                 & 4                       & 0                       &100.00\%            \\ \hline
+	23           & M                 & 1                       & 0                       &100.00\%            \\ \hline
+	24           & N                 & 0                       & 0                       & -            \\ \hline
+	25           & O                 & 1                       & 0                       &100.00\%            \\ \hline
+	26           & P                 & 4                       & 0                       &100.00\%            \\ \hline
+	27           & Q                 & 0                       & 2                       &0.00\%            \\ \hline
+	28           & R                 & 2                       & 0                       &100.00\%            \\ \hline
+	29           & S                 & 2                       & 0                       &100.00\%            \\ \hline
+	30           & T                 & 1                       & 0                       &100.00\%            \\ \hline
+	31           & U                 & 1                       & 0                       &100.00\%            \\ \hline
+	32           & V                 & 1                       & 0                       &100.00\%            \\ \hline
+	33           & W                 & 7                       & 0                       &100.00\%            \\ \hline
+	34           & X                 & 0                       & 0                       & -            \\ \hline
+	35           & Y                 & 1                       & 0                       &100.00\%            \\ \hline
+	36           & Z                 & 1                       & 0                       &100.00\%            \\ \hline
+\end{longtable}
+
+\noindent Dengan akurasi pengenalan karakter (\textit{Character Recognition Rate}) sebesar 95.80\%, dapat dilihat pada tabel \ref{tab:hasilklasifikasisel8} bahwa dari 36  karakter yang ada, yang dapat diprediksi dengan benar 100\% adalah sebanyak 29 karakter, dari karakter yang  tersisa, hanya satu karakter yang memiliki akurasi rendah, yaitu huruf Q yang mana dari 2 karakter yang terdapat di data \textit{testing}, tidak ada yang dapat diklasifikasikan dengan benar. Dari hasil pengujian ini dapat  disimpulkan bahwa penggunaan ukuran sel 8 $\times$ 8 piksel sudah dapat menghasilkan akurasi pengenalan karakter yang baik.\\
+
 \subsubsection{Pengujian dengan Ukuran Sel 16}
 \noindent Pada bagian ini, pengujian akan dilakukan dengan menggunakan ukuran sel berukuran 16 $\times$ 16 piksel dan ukuran blok 2 $\times$ 2 sel (32 $\times$ 32 piksel). Jumlah bin yang akan digunakan adalah 4, 6, 9, dan 18. Sedangkan untuk nilai sigma pada metode \textit{SVM} yang akan digunakan adalah 0.01, 0.1, dan 1. Berikut adalah hasil pengujian untuk setiap kombinasi parameter tersebut:
-\begin{longtable}[c]{|c|c|c|}
+%\begin{longtable}[c]{|c|c|c|}
+%	\caption{Hasil Pengujian dengan ukuran sel 16 $\times$ 16 piksel}
+%	\label{tab:HasilPengujianSel16}\\
+%	\hline
+%	\begin{tabular}[c]{@{}c@{}}Parameter\\ (CellSize, NumBins, Sigma)\end{tabular} & CRR     & OVR     \\ \hline
+%	\endhead
+%	%
+%	(16, 4, 0.01)                                                                   & 13.06\% & 0\% \\ \hline
+%	(16, 4, 0.1)                                                                    & 18.75\% & 0\%     \\ \hline
+%	(16, 4, 1)                                                                      & 84.09\% & 17.24\%     \\ \hline
+%	(16, 6, 0.01)                                                                   & 13.06\% & 0\%  \\ \hline
+%	(16, 6, 0.1)                                                                    & 22.72\% & 0\%     \\ \hline
+%	(16, 6, 1)                                                                      & 84.09\% & 13.79\%     \\ \hline
+%	(16, 9, 0.01)                                                                   & 13.06\% & 0\%  \\ \hline
+%	(16, 9, 0.1)                                                                    & 28.97\% & 0\%     \\ \hline
+%	(16, 9, 1)                                                                      & {\color[HTML]{FE0000} 86.36\%} & {\color[HTML]{FE0000} 27.58\%}     \\ \hline
+%	(16, 18, 0.01)                                                                  & 13.06\% & 0\%  \\ \hline
+%	(16, 18, 0.1)                                                                   & 23.29\% & 0\%     \\ \hline
+%	(16, 18, 1)                                                                     & 85.79\% & 24.13\%     \\ \hline
+%\end{longtable}
+\begin{longtable}[c]{|c|c|c|c|c|}
 	\caption{Hasil Pengujian dengan ukuran sel 16 $\times$ 16 piksel}
 	\label{tab:HasilPengujianSel16}\\
 	\hline
-	\begin{tabular}[c]{@{}c@{}}Parameter\\ (CellSize, NumBins, Sigma)\end{tabular} & CRR     & OVR     \\ \hline
+	\multicolumn{3}{|c|}{Parameter} &                                &                                \\ \cline{1-3}
+	CellSize   & NumBins   & Sigma  & \multirow{-2}{*}{CRR}          & \multirow{-2}{*}{OVR}          \\ \hline
 	\endhead
 	%
-	(16, 4, 0.01)                                                                   & 13.06\% & 0\% \\ \hline
-	(16, 4, 0.1)                                                                    & 18.75\% & 0\%     \\ \hline
-	(16, 4, 1)                                                                      & 84.09\% & 17.24\%     \\ \hline
-	(16, 6, 0.01)                                                                   & 13.06\% & 0\%  \\ \hline
-	(16, 6, 0.1)                                                                    & 22.72\% & 0\%     \\ \hline
-	(16, 6, 1)                                                                      & 84.09\% & 13.79\%     \\ \hline
-	(16, 9, 0.01)                                                                   & 13.06\% & 0\%  \\ \hline
-	(16, 9, 0.1)                                                                    & 28.97\% & 0\%     \\ \hline
-	(16, 9, 1)                                                                      & {\color[HTML]{FE0000} 86.36\%} & {\color[HTML]{FE0000} 27.58\%}     \\ \hline
-	(16, 18, 0.01)                                                                  & 13.06\% & 0\%  \\ \hline
-	(16, 18, 0.1)                                                                   & 23.29\% & 0\%     \\ \hline
-	(16, 18, 1)                                                                     & 85.79\% & 24.13\%     \\ \hline
+	16          & 4         & 0.01   & 13.98\%                        & 0\%                            \\ \hline
+	16          & 4         & 0.1    & 20.27\%                        & 0\%                            \\ \hline
+	16          & 4         & 1      & 83.91\%                        & 23.80\%                        \\ \hline
+	16          & 6         & 0.01   & 13.98\%                        & 0\%                            \\ \hline
+	16          & 6         & 0.1    & 25.17\%                        & 0\%                            \\ \hline
+	16          & 6         & 1      & 83.21\%                        & 19.04\%                        \\ \hline
+	16          & 9         & 0.01   & 13.98\%                        & 0\%                            \\ \hline
+	16          & 9         & 0.1    & 30.76\%                        & 0\%                            \\ \hline
+	16          & 9         & 1      & {\color[HTML]{FE0000} 86.71\%} & {\color[HTML]{FE0000} 38.09\%} \\ \hline
+	16          & 18        & 0.01   & 13.98\%                        & 0\%                            \\ \hline
+	16          & 18        & 0.1    & 25.87\%                        & 0\%                            \\ \hline
+	16          & 18        & 1      & 86.01\%                        & 33.33\%                        \\ \hline
 \end{longtable}
-\noindent Berdasarkan tabel di atas, dapat disimpulkan bahwa akurasi pengenalan karakter maksimal yang didapatkan apabila menggunakan ukuran sel 16 $\times$ 16 piksel adalah 86.36\%. Kombinasi parameter yang digunakan untuk mencapai hasil tersebut adalah ukuran sel 16 $\times$ 16 piksel, jumlah \textit{bin} sebanyak 9 sehingga besar setiap \textit{bin} adalah 20 derajat, kemudian nilai \textit{sigma} yang digunakan untuk metode \textit{SVM} adalah 1. Dengan citra karakter inputan berukuran 32 $\times$ 32 piksel. Maka panjang vektor fitur dari \textit{HOG descriptor} yang dihasilkan adalah 9 fitur. Berbeda dengan pengujian sebelumnya, kali ini jumlah fitur yang terlalu sedikit justru akan mengurangi akurasi dari proses pengenalan karakter yang sebelumnya sudah mencapai 94.88\%, dari keseluruhan pengujian yang sudah dilakukan terhadap jumlah sel, dapat disimpulkan bahwa ukuran sel yang terlampau besar ataupun terlampau kecil pada penggunaan metode \textit{HOG} dapat mengurangi kualitas fitur yang dihasilkan sehingga akan berefek terhadap hasil klasifikasi.
+\noindent Berdasarkan tabel di atas, dapat disimpulkan bahwa akurasi pengenalan karakter maksimal yang didapatkan apabila menggunakan ukuran sel 16 $\times$ 16 piksel adalah 86.71\%. Kombinasi parameter yang digunakan untuk mencapai hasil tersebut adalah ukuran sel 16 $\times$ 16 piksel, jumlah \textit{bin} sebanyak 9 sehingga besar setiap \textit{bin} adalah 20 derajat, kemudian nilai \textit{sigma} yang digunakan untuk metode \textit{SVM} adalah 1. Dengan citra karakter inputan berukuran 32 $\times$ 32 piksel. Maka panjang vektor fitur dari \textit{HOG descriptor} yang dihasilkan adalah 9 fitur. Berbeda dengan pengujian sebelumnya, kali ini jumlah fitur yang terlalu sedikit justru akan mengurangi akurasi dari proses pengenalan karakter yang sebelumnya sudah mencapai 95.80\%, dari keseluruhan pengujian yang sudah dilakukan terhadap jumlah sel, dapat disimpulkan bahwa ukuran sel yang terlampau besar ataupun terlampau kecil pada penggunaan metode \textit{HOG} dapat mengurangi kualitas fitur yang dihasilkan sehingga akan berefek terhadap hasil klasifikasi.
 
-\noindent Sama seperti bagian sebelumnya, kolom di bagian kiri menunjukkan kombinasi parameter yang digunakan pada saat pengujian. Dari hasil pada kolom CRR, dari 176 karakter yang terdeteksi, sebanyak 152 di antaranya dapat diklasifikasikan dengan baik. Dari hasil pada kolom OVR menunjukkan, dari 29 plat nomor yang terdeteksi, 8 plat nomor dapat dikenali dengan baik, hal ini merupakan dampak dari penurunan akurasi pengenalan karakter. Dari pengujian ini dapat  disimpulkan bahwa penggunaan ukuran sel 16 $\times$ 16 piksel dapat menghasilkan akurasi pengenalan karakter yang baik namun belum optimal.\\
+\noindent Sama seperti bagian sebelumnya, kolom di bagian kiri menunjukkan kombinasi parameter yang digunakan pada saat pengujian. Dari hasil pada kolom CRR, dari 143 karakter yang terdeteksi, sebanyak 123 di antaranya dapat diklasifikasikan dengan baik. Dari hasil pada kolom OVR menunjukkan, dari 21 plat nomor yang terdeteksi, 7 plat nomor dapat dikenali dengan baik, hal ini merupakan dampak dari penurunan akurasi pengenalan karakter.
+
+\noindent Tabel \ref{tab:hasilklasifikasisel16} merupakan tabel yang menunjukkan hasil klasifikasi karakter dengan parameter HOG (\textit{CellSize} dan \textit{NumBins}) masing-masing 16 dan 9, dan nilai \textit{sigma} untuk metode \textit{SVM} 1.
+
+\begin{longtable}[c]{|c|c|c|c|c|}
+	\caption{Hasil klasifikasi karakter dengan parameter CellSize = 16, NumBins = 9, dan Sigma = 1.0}
+	\label{tab:hasilklasifikasisel16}\\
+	\hline
+	\textbf{No} & \textbf{Karakter} & \textbf{Prediksi Benar} & \textbf{Prediksi Salah} & \textbf{Akurasi} \\ \hline
+	\endhead
+	1           & 0                 & 2                       & 0                       &100.00\%            \\ \hline
+	2           & 1                 & 20                       & 2                       &90.91\%            \\ \hline
+	3           & 2                 & 6                       & 3                       &66.67\%            \\ \hline
+	4           & 3                 & 8                       & 0                       &100.00\%            \\ \hline
+	5           & 4                 & 8                       & 0                       &100.00\%            \\ \hline
+	6           & 5                 & 4                       & 0                       &100.00\%            \\ \hline
+	7           & 6                 & 4                       & 0                       &100.00\%            \\ \hline
+	8           & 7                 & 13                       & 0                       &100.00\%            \\ \hline
+	9           & 8                 & 3                       & 0                       &100.00\%            \\ \hline
+	10           & 9                 & 6                       & 0                       &100.00\%            \\ \hline
+	11           & A                 & 0                       & 0                       & -            \\ \hline
+	12           & B                 & 3                       & 1                       &75.00\%            \\ \hline
+	13           & C                 & 1                       & 0                       &100.00\%            \\ \hline
+	14           & D                 & 19                       & 1                       &95.00\%            \\ \hline
+	15           & E                 & 1                       & 0                       &100.00\%            \\ \hline
+	16           & F                 & 0                       & 0                       & -            \\ \hline
+	17           & G                 & 1                       & 0                       &100.00\%            \\ \hline
+	18           & H                 & 1                       & 0                       &100.00\%            \\ \hline
+	19           & I                 & 0                       & 3                       &0.00\%            \\ \hline
+	20           & J                 & 3                       & 0                       &100.00\%            \\ \hline
+	21           & K                 & 2                       & 0                       &100.00\%            \\ \hline
+	22           & L                 & 4                       & 0                       &100.00\%            \\ \hline
+	23           & M                 & 1                       & 0                       &100.00\%            \\ \hline
+	24           & N                 & 0                       & 0                       & -            \\ \hline
+	25           & O                 & 1                       & 0                       &100.00\%            \\ \hline
+	26           & P                 & 4                       & 0                       &100.00\%            \\ \hline
+	27           & Q                 & 0                       & 2                       &0.00\%            \\ \hline
+	28           & R                 & 2                       & 0                       &100.00\%            \\ \hline
+	29           & S                 & 2                       & 0                       &100.00\%            \\ \hline
+	30           & T                 & 1                       & 0                       &100.00\%            \\ \hline
+	31           & U                 & 1                       & 0                       &100.00\%            \\ \hline
+	32           & V                 & 1                       & 0                       &100.00\%            \\ \hline
+	33           & W                 & 0                       & 7                       &0.00\%            \\ \hline
+	34           & X                 & 0                       & 0                       & -            \\ \hline
+	35           & Y                 & 1                       & 0                       &100.00\%            \\ \hline
+	36           & Z                 & 1                       & 0                       &100.00\%            \\ \hline
+\end{longtable}
+
+\noindent Dengan akurasi pengenalan karakter (\textit{Character Recognition Rate}) sebesar 86.71\%, dapat dilihat pada tabel \ref{tab:hasilklasifikasisel16} bahwa dari 36  karakter yang ada, yang dapat diprediksi dengan benar 100\% adalah sebanyak 25 karakter, terdapat juga karakter yang memiliki akurasi rendah, yaitu huruf I, huruf Q, dan huruf W. Apabila dibandingkan dengan hasil pengujian yang sebelumnya, dengan menggunakan ukuran sel 16 piksel justru malah mengurangi akurasi dari pengenalan karakter dan yang tadinya karakter tersebut sudah dapat dikenali dengan baik (huruf I dan huruf W) malah menjadi tidak bisa diklasifikasikan dengan benar sama sekali (akurasi 0\% untuk kedua karakter tersebut). Dari pengujian ini dapat  disimpulkan bahwa penggunaan ukuran sel 16 $\times$ 16 piksel dapat menghasilkan akurasi pengenalan karakter yang baik namun belum optimal.\\
 
 \newpage
