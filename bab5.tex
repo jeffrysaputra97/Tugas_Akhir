@@ -9,20 +9,29 @@
 \section{Kesimpulan}
 \noindent Kesimpulan dari sistem pengenalan plat nomor kendaraan adalah:
 \begin{enumerate}
-\item  Metode \textit{HOG} memerlukan komposisi parameter yang tepat agar dapat menghasilkan fitur yang baik, ukuran sel yang terlalu kecil ataupun terlalu besar dapat mengurangi tingkat akurasi. Metode ini dapat menghasilkan akurasi yang baik walaupun citra latih karakternya berukuran kecil yaitu 32 $\times$ 32 piksel, asalkan diimbangi dengan pemilihan komposisi parameter yang tepat. Hasil akurasi pengenalan karakter yang tertinggi yaitu sebesar 94.88\% dicapai ketika menggunakan ukuran sel 8 $\times$ 8 piksel, ukuran blok 2 $\times$ 2 sel (16 $\times$ 16 piksel), jumlah bin sebanyak 18, dan nilai sigma sebesar 0.1.
+\item Hasil akurasi terbaik pengenalan plat nomor kendaraan dengan menggunakan metode \textit{Histogram of Oriented Gradient} dan \textit{Support Vector Machine} adalah 94.88\% yang dicapai ketika menggunakan ukuran sel 8 $\times$ 8 piksel, ukuran blok 2 $\times$ 2 sel (16 $\times$ 16 piksel), jumlah \textit{bin} sebanyak 18 dan nilai sigma untuk metode \textit{Support Vector Machine} sebesar 0.1.
+
+\item  Metode \textit{HOG} memerlukan komposisi parameter yang tepat agar dapat menghasilkan fitur yang baik, ukuran sel yang terlalu kecil ataupun terlalu besar dapat mengurangi tingkat akurasi. Metode ini dapat menghasilkan akurasi yang baik walaupun citra latih karakternya berukuran kecil yaitu 32 $\times$ 32 piksel, asalkan diimbangi dengan pemilihan komposisi parameter yang tepat.
+
 \item Metode \textit{Support Vector Machine} yang digunakan sebagai metode untuk klasifikasi karakter ternyata dapat menggunakan fitur dari metode \textit{HOG} dan dapat menghasilkan akurasi yang baik dengan akurasi tertinggi sebesar 94.88\% dengan nilai sigma yang digunakan adalah 0.1. Semakin besar ukuran sel yang digunakan pada metode \textit{HOG}, maka nilai sigma untuk mendapatkan akurasi yang optimal untuk ukuran sel yang digunakan semakin besar.
+
 \item Terdapat beberapa karakter yang dapat diklasifikasi dengan baik (rata-rata akurasi mencapai 100\%) walaupun komposisi dari parameter \textit{HOG} dan nilai sigma untuk metode \textit{Support Vector Machine} yang digunakan beragam, karakter tersebut adalah huruf C, E, G, H, K, L, M, O, T, V, Y, dan huruf Z.
+
 \item Terdapat juga karakter dengan akurasi klasifikasi yang rendah (rata-rata akurasi hanya 25\%), huruf tersebut adalah huruf Q, huruf ini hanya dapat diklasifikasi dengan baik ketika menggunakan ukuran sel 2 $\times$ 2 piksel, ukuran blok 2 $\times$ 2 sel (4 $\times$ 4 piksel) dan nilai sigma untuk metode \textit{Support Vector Machine} sebesar 0.01.\\
 %\item Metode \textit{HOG} memerlukan komposisi parameter yang tepat agar dapat menghasilkan fitur yang baik, ukuran sel yang terlalu kecil ataupun besar dapat mengurangi tingkat akurasi.
 %\item Metode \textit{HOG} dapat menghasilkan akurasi yang baik walaupun citra latih karakternya berukuran kecil yaitu 32 $\times$ 32 piksel, asal diimbangi dengan pemilihan komposisi parameter yang tepat.
 %\item Bagus tidaknya fitur \textit{HOG} yang dihasilkan bergantung daripada ukuran sel dan jumlah bin yang digunakan.\\
 \end{enumerate}
 
-\subsection{Saran}
+\section{Saran}
 \noindent Saran untuk pengembangan sistem pengenalan plat nomor kendaraan adalah:
 \begin{enumerate}
-\item Metode \textit{HOG} masih memerlukan metode tambahan untuk melakukan proses klasifikasi (misal SVM, K-NN, dan lain-lain), untuk metode \textit{Support Vector Machine} sendiri memiliki kelemahan dalam hal sulitnya memilih parameter yang tepat untuk suatu permasalahan, parameter yang bagus untuk suatu kasus belum tentu bagus juga untuk kasus lainnya, untuk pengembangan lebih lanjut, pengenalan karakter dapat dicoba menggunakan metode \textit{Deep Learning} yang dapat melakukan ekstraksi fitur dan klasifikasi dalam satu metode seperti \textit{Convolutional Neural Network}.
-\item Masih sering terjadi misklasifikasi pada karakter yang berbentuk mirip seperti misalnya huruf D dengan angka 0, huruf B dengan angka 8, huruf S dengan angka 5, huruf A dengan angka 4, dan beberapa karakter lainnya. Oleh karena itu diperlukan menambahkan metode klasifikasi atau metode ekstraksi fitur yang dapat mengambil fitur pasangan karakter yang mirip tersebut dengan lebih baik atau menggunakan metode \textit{deep learning} seperti \textit{Convolutional Neural Network} yang disebut memiliki kemampuan yang baik untuk melakukan ekstraksi fitur.
+\item Untuk pengembangan lebih lanjut, pengenalan karakter dapat dicoba dengan menggunakan metode \textit{Deep Learning} seperti misalnya metode \textit{Convolutional Neural Network} yang dapat melakukan ekstraksi fitur dan klasifikasi dalam satu metode.
+
+\item Ekstraksi fitur dapat dicoba menggunakan metode-metode seperti \textit{zoning}, metode yang berbasis \textit{moments} seperti \textit{Geometric Moments, Zernike Moment,} dan \textit{Orthogonal Fourier-Mellin Moments}, atau dapat juga menggunakan metode yang berbasis analisa struktural dan statistik yang disebutkan memiliki toleransi lebih terhadap derau dan variasi bentuk seperti \textit{Freeman Chain Code}, atau metode seperti \textit{Discrete Wavelet Transform} dan \textit{Restricted Boltzman Machine} yang dapat menangani permasalahan translasi dan rotasi terhadap karakter.
+
+%\item Metode \textit{HOG} masih memerlukan metode tambahan untuk melakukan proses klasifikasi (misal SVM, K-NN, dan lain-lain), untuk metode \textit{Support Vector Machine} sendiri memiliki kelemahan dalam hal sulitnya memilih parameter yang tepat untuk suatu permasalahan, parameter yang bagus untuk suatu kasus belum tentu bagus juga untuk kasus lainnya, untuk pengembangan lebih lanjut, pengenalan karakter dapat dicoba menggunakan metode \textit{Deep Learning} yang dapat melakukan ekstraksi fitur dan klasifikasi dalam satu metode seperti \textit{Convolutional Neural Network}.
+%\item Masih sering terjadi misklasifikasi pada karakter yang berbentuk mirip seperti misalnya huruf D dengan angka 0, huruf B dengan angka 8, huruf S dengan angka 5, huruf A dengan angka 4, dan beberapa karakter lainnya. Oleh karena itu diperlukan menambahkan metode klasifikasi atau metode ekstraksi fitur yang dapat mengambil fitur pasangan karakter yang mirip tersebut dengan lebih baik atau menggunakan metode \textit{deep learning} seperti \textit{Convolutional Neural Network} yang disebut memiliki kemampuan yang baik untuk melakukan ekstraksi fitur																																											.
 \end{enumerate}
 
 \newpage

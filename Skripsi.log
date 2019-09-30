@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.13)  9 SEP 2019 14:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.13)  28 SEP 2019 17:24
 entering extended mode
 **./Skripsi.tex
 (Skripsi.tex
@@ -1136,9 +1136,16 @@ File: tikzlibrarymatrix.code.tex 2019/02/02 v3.1.1 (3.1.1)
 
 (hype.indonesia.tex)
 \c@originalpagenumber=\count326
- (Skripsi.aux (sampul.aux) (bab1.aux) (bab2.aux) (bab3.aux) (bab4.aux
+ (Skripsi.aux (sampul.aux) (bab1.aux) (bab2.aux
 
-LaTeX Warning: Label `tab:hasilklasifikasisel2' multiply defined.
+LaTeX Warning: Label `eq:crr' multiply defined.
+
+) (bab3.aux) (bab4.aux
+
+LaTeX Warning: Label `tab:HasilPengujianSel4' multiply defined.
+
+
+LaTeX Warning: Label `tab:hasilklasifikasisel4' multiply defined.
 
 
 LaTeX Warning: Label `tab:hasilklasifikasisel4' multiply defined.
@@ -1327,13 +1334,13 @@ LaTeX Font Info:    Try loading font information for U+stmry on input line 2.
 
  [4
 
-] (Skripsi.lof)
+] (Skripsi.lof [5
+
+])
 \tf@lof=\write6
 \openout6 = `Skripsi.lof'.
 
- [5
-
-]
+ [6]
 \openout2 = `bab1.aux'.
 
  (bab1.tex
@@ -1372,347 +1379,311 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 150.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 150.
- [6] [7]
-<images/svm.jpeg, id=68, 641.39626pt x 401.5pt>
+ [6]
+<images/IlustrasiBin.png, id=68, 197.538pt x 72.87225pt>
+File: images/IlustrasiBin.png Graphic file (type png)
+<use images/IlustrasiBin.png>
+Package pdftex.def Info: images/IlustrasiBin.png  used on input line 197.
+(pdftex.def)             Requested size: 170.71652pt x 62.97914pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 198.
+ [7 <./images/IlustrasiBin.png>]
+<images/svm.jpeg, id=72, 641.39626pt x 401.5pt>
 File: images/svm.jpeg Graphic file (type jpg)
 <use images/svm.jpeg>
-Package pdftex.def Info: images/svm.jpeg  used on input line 280.
+Package pdftex.def Info: images/svm.jpeg  used on input line 288.
 (pdftex.def)             Requested size: 398.33858pt x 249.35626pt.
 
 
 Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 285.
+(caption)                 on input line 293.
 See the caption package documentation for explanation.
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 285.
 [8] [9 <./images/svm.jpeg>]
-Overfull \hbox (2.28003pt too wide) in paragraph at lines 304--315
+Overfull \hbox (2.28003pt too wide) in paragraph at lines 312--323
  [] 
  []
 
 
-Overfull \hbox (2.28003pt too wide) in paragraph at lines 338--348
+Overfull \hbox (2.28003pt too wide) in paragraph at lines 346--356
  [] 
  []
 
 [10]
-Overfull \hbox (2.28003pt too wide) in paragraph at lines 364--374
+Overfull \hbox (2.28003pt too wide) in paragraph at lines 372--382
  []
  []
 
-<images/ConfusionMatrixForBinaryClassification.png, id=79, 366.61969pt x 209.28
+<images/ConfusionMatrixForBinaryClassification.png, id=83, 366.61969pt x 209.28
 188pt>
 File: images/ConfusionMatrixForBinaryClassification.png Graphic file (type png)
 
 <use images/ConfusionMatrixForBinaryClassification.png>
 Package pdftex.def Info: images/ConfusionMatrixForBinaryClassification.png  use
-d on input line 380.
+d on input line 388.
 (pdftex.def)             Requested size: 227.62204pt x 129.93861pt.
 [11 <./images/ConfusionMatrixForBinaryClassification.png>]
-Overfull \hbox (398.3386pt too wide) detected at line 434
+
+LaTeX Warning: Reference `eq:ovr' on page 2-12 undefined on input line 453.
+
+[12]
+Overfull \hbox (398.3386pt too wide) detected at line 474
  [] 
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 436.
-[12]
-Overfull \hbox (398.3386pt too wide) detected at line 466
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 476.
+[13]
+Overfull \hbox (398.3386pt too wide) detected at line 508
  [] 
  []
 
-[13]
-Overfull \hbox (398.3386pt too wide) detected at line 490
+
+Overfull \hbox (398.3386pt too wide) detected at line 532
  [] 
  []
 
 [14]
-Underfull \vbox (badness 10000) detected at line 568
+Underfull \vbox (badness 10000) detected at line 610
  []
 
-[15] [16] [17]
-<images/plat_nomor_example.png, id=104, 1027.84pt x 642.4pt>
+[15] [16] [17] [18]
+<images/plat_nomor_example.png, id=111, 1027.84pt x 642.4pt>
 File: images/plat_nomor_example.png Graphic file (type png)
 <use images/plat_nomor_example.png>
-Package pdftex.def Info: images/plat_nomor_example.png  used on input line 592.
+Package pdftex.def Info: images/plat_nomor_example.png  used on input line 634.
 
 (pdftex.def)             Requested size: 341.43306pt x 213.39436pt.
- [18]
-<images/RasioPlat.png, id=108, 309.5565pt x 98.769pt>
+ [19]
+<images/RasioPlat.png, id=115, 309.5565pt x 98.769pt>
 File: images/RasioPlat.png Graphic file (type png)
 <use images/RasioPlat.png>
-Package pdftex.def Info: images/RasioPlat.png  used on input line 604.
+Package pdftex.def Info: images/RasioPlat.png  used on input line 646.
 (pdftex.def)             Requested size: 341.43306pt x 108.94763pt.
- [19 <./images/plat_nomor_example.png (PNG copy)> <./images/RasioPlat.png>]
-<images/PengambilanCitra.png, id=113, 795.57225pt x 163.20975pt>
+ [20 <./images/plat_nomor_example.png (PNG copy)> <./images/RasioPlat.png>]
+<images/PengambilanCitra.png, id=121, 795.57225pt x 163.20975pt>
 File: images/PengambilanCitra.png Graphic file (type png)
 <use images/PengambilanCitra.png>
-Package pdftex.def Info: images/PengambilanCitra.png  used on input line 637.
+Package pdftex.def Info: images/PengambilanCitra.png  used on input line 679.
 (pdftex.def)             Requested size: 398.33858pt x 81.71672pt.
 
 
 Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 642.
+(caption)                 on input line 684.
 See the caption package documentation for explanation.
 
-[20] [21 <./images/PengambilanCitra.png>])
+[21] [22 <./images/PengambilanCitra.png>])
 \openout2 = `bab3.aux'.
 
  (bab3.tex
 Bab III.
-<images/KerangkaPemikiran.png, id=122, 654.64575pt x 389.65575pt>
+<images/KerangkaPemikiran.png, id=129, 654.64575pt x 389.65575pt>
 File: images/KerangkaPemikiran.png Graphic file (type png)
 <use images/KerangkaPemikiran.png>
-Package pdftex.def Info: images/KerangkaPemikiran.png  used on input line 22.
+Package pdftex.def Info: images/KerangkaPemikiran.png  used on input line 21.
 (pdftex.def)             Requested size: 369.88582pt x 220.16779pt.
 [1
 
 
 
 ]
-<images/FlowchartTraining.jpg, id=126, 536.0025pt x 332.24126pt>
+<images/FlowchartTraining.jpg, id=133, 536.0025pt x 332.24126pt>
 File: images/FlowchartTraining.jpg Graphic file (type jpg)
 <use images/FlowchartTraining.jpg>
-Package pdftex.def Info: images/FlowchartTraining.jpg  used on input line 37.
+Package pdftex.def Info: images/FlowchartTraining.jpg  used on input line 35.
 (pdftex.def)             Requested size: 341.43306pt x 211.63496pt.
  [2 <./images/KerangkaPemikiran.png>] [3 <./images/FlowchartTraining.jpg>]
-<images/FlowchartTesting.png, id=133, 374.39874pt x 964.60374pt>
+<images/FlowchartTesting.png, id=140, 374.39874pt x 964.60374pt>
 File: images/FlowchartTesting.png Graphic file (type png)
 <use images/FlowchartTesting.png>
-Package pdftex.def Info: images/FlowchartTesting.png  used on input line 55.
+Package pdftex.def Info: images/FlowchartTesting.png  used on input line 52.
 (pdftex.def)             Requested size: 199.16928pt x 513.15099pt.
 
 [4 <./images/FlowchartTesting.png>]
-<images/CitraDatasetPakai.PNG, id=138, 105.39375pt x 75.28125pt>
+<images/ContohPlat.PNG, id=146, 280.04625pt x 72.27pt>
+File: images/ContohPlat.PNG Graphic file (type png)
+<use images/ContohPlat.PNG>
+Package pdftex.def Info: images/ContohPlat.PNG  used on input line 74.
+(pdftex.def)             Requested size: 227.62204pt x 58.74347pt.
+<images/ContohHasilPreprocessing.PNG, id=147, 280.04625pt x 72.27pt>
+File: images/ContohHasilPreprocessing.PNG Graphic file (type png)
+<use images/ContohHasilPreprocessing.PNG>
+Package pdftex.def Info: images/ContohHasilPreprocessing.PNG  used on input lin
+e 82.
+(pdftex.def)             Requested size: 227.62204pt x 58.74347pt.
+<images/HasilSegmentasiHorizontal.PNG, id=148, 290.08376pt x 44.165pt>
+File: images/HasilSegmentasiHorizontal.PNG Graphic file (type png)
+<use images/HasilSegmentasiHorizontal.PNG>
+Package pdftex.def Info: images/HasilSegmentasiHorizontal.PNG  used on input li
+ne 91.
+(pdftex.def)             Requested size: 227.62204pt x 34.65543pt.
+<images/HasilSegmentasiVertikal.PNG, id=149, 384.2355pt x 52.39575pt>
+File: images/HasilSegmentasiVertikal.PNG Graphic file (type png)
+<use images/HasilSegmentasiVertikal.PNG>
+Package pdftex.def Info: images/HasilSegmentasiVertikal.PNG  used on input line
+ 98.
+(pdftex.def)             Requested size: 398.33858pt x 54.32079pt.
+<images/CitraDatasetPakai.PNG, id=150, 105.39375pt x 75.28125pt>
 File: images/CitraDatasetPakai.PNG Graphic file (type png)
 <use images/CitraDatasetPakai.PNG>
-Package pdftex.def Info: images/CitraDatasetPakai.PNG  used on input line 78.
+Package pdftex.def Info: images/CitraDatasetPakai.PNG  used on input line 107.
 (pdftex.def)             Requested size: 227.62204pt x 162.59126pt.
- [5]
-<images/FlowchartDeteksiPlat.png, id=142, 743.77875pt x 462.72874pt>
+ [5 <./images/ContohPlat.PNG (PNG copy)>]
+[6 <./images/ContohHasilPreprocessing.PNG (PNG copy)> <./images/HasilSegmentasi
+Horizontal.PNG (PNG copy)> <./images/HasilSegmentasiVertikal.PNG>]
+<images/FlowchartDeteksiPlat.png, id=157, 743.77875pt x 462.72874pt>
 File: images/FlowchartDeteksiPlat.png Graphic file (type png)
 <use images/FlowchartDeteksiPlat.png>
-Package pdftex.def Info: images/FlowchartDeteksiPlat.png  used on input line 90
-.
+Package pdftex.def Info: images/FlowchartDeteksiPlat.png  used on input line 11
+9.
 (pdftex.def)             Requested size: 369.88582pt x 230.12112pt.
-<images/CitraMatriksAsal.PNG, id=143, 304.13625pt x 304.7385pt>
+<images/CitraMatriksAsal.PNG, id=158, 304.13625pt x 304.7385pt>
 File: images/CitraMatriksAsal.PNG Graphic file (type png)
 <use images/CitraMatriksAsal.PNG>
-Package pdftex.def Info: images/CitraMatriksAsal.PNG  used on input line 103.
+Package pdftex.def Info: images/CitraMatriksAsal.PNG  used on input line 131.
 (pdftex.def)             Requested size: 227.62204pt x 228.07901pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 104.
- [6 <./images/CitraDatasetPakai.PNG> <./images/FlowchartDeteksiPlat.png>]
-<images/CitraMatriksGrayscale.PNG, id=150, 140.9265pt x 141.52875pt>
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 132.
+ [7 <./images/CitraDatasetPakai.PNG> <./images/FlowchartDeteksiPlat.png>]
+<images/CitraMatriksGrayscale.PNG, id=164, 140.9265pt x 141.52875pt>
 File: images/CitraMatriksGrayscale.PNG Graphic file (type png)
 <use images/CitraMatriksGrayscale.PNG>
 Package pdftex.def Info: images/CitraMatriksGrayscale.PNG  used on input line 1
-29.
+55.
 (pdftex.def)             Requested size: 170.71652pt x 171.45114pt.
- [7 <./images/CitraMatriksAsal.PNG> <./images/CitraMatriksGrayscale.PNG>]
-<images/HasilCanny.png, id=156, 616.704pt x 387.24675pt>
+ [8 <./images/CitraMatriksAsal.PNG> <./images/CitraMatriksGrayscale.PNG>]
+<images/HasilCanny.png, id=170, 616.704pt x 387.24675pt>
 File: images/HasilCanny.png Graphic file (type png)
 <use images/HasilCanny.png>
-Package pdftex.def Info: images/HasilCanny.png  used on input line 148.
+Package pdftex.def Info: images/HasilCanny.png  used on input line 174.
 (pdftex.def)             Requested size: 369.88582pt x 232.2671pt.
 
-Overfull \hbox (16.02606pt too wide) in paragraph at lines 145--153
+Overfull \hbox (16.02606pt too wide) in paragraph at lines 170--179
 [] 
  []
 
-[8]
-<images/accumulatorspace.jpg, id=160, 240.9pt x 180.675pt>
+[9 <./images/HasilCanny.png>]
+<images/accumulatorspace.jpg, id=175, 240.9pt x 180.675pt>
 File: images/accumulatorspace.jpg Graphic file (type jpg)
 <use images/accumulatorspace.jpg>
-Package pdftex.def Info: images/accumulatorspace.jpg  used on input line 162.
+Package pdftex.def Info: images/accumulatorspace.jpg  used on input line 189.
 (pdftex.def)             Requested size: 227.62204pt x 170.72221pt.
 
-Overfull \hbox (29.39955pt too wide) in paragraph at lines 159--167
+Overfull \hbox (29.39955pt too wide) in paragraph at lines 185--194
 [] 
  []
 
-[9 <./images/HasilCanny.png>] [10 <./images/accumulatorspace.jpg>]
-<images/OutputSegmentasi.png, id=168, 176.45924pt x 34.9305pt>
+[10 <./images/accumulatorspace.jpg>]
+<images/HasilPlat.png, id=180, 296.10625pt x 91.34125pt>
+File: images/HasilPlat.png Graphic file (type png)
+<use images/HasilPlat.png>
+Package pdftex.def Info: images/HasilPlat.png  used on input line 212.
+(pdftex.def)             Requested size: 227.62204pt x 70.21729pt.
+ [11] [12 <./images/HasilPlat.png (PNG copy)>]
+<images/OutputSegmentasi.png, id=187, 176.45924pt x 34.9305pt>
 File: images/OutputSegmentasi.png Graphic file (type png)
 <use images/OutputSegmentasi.png>
-Package pdftex.def Info: images/OutputSegmentasi.png  used on input line 187.
+Package pdftex.def Info: images/OutputSegmentasi.png  used on input line 232.
 (pdftex.def)             Requested size: 398.33858pt x 78.8615pt.
 
 
 Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 219.
-See the caption package documentation for explanation.
-
-[11 <./images/OutputSegmentasi.png>]
-
-Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 254.
+(caption)                 on input line 264.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 280.
+(caption)                 on input line 299.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 313.
+(caption)                 on input line 325.
+See the caption package documentation for explanation.
+
+[13 <./images/OutputSegmentasi.png>]
+
+Package caption Warning: The caption type was already set to `table'
+(caption)                 on input line 358.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 339.
+(caption)                 on input line 384.
 See the caption package documentation for explanation.
 
-[12]
-<images/HistogramOfOrientedGradient.PNG, id=177, 363.759pt x 219.219pt>
+[14]
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/pzccm/m/n' tried instead on input line 389.
+
+<images/HistogramOfOrientedGradient.PNG, id=195, 363.759pt x 219.219pt>
 File: images/HistogramOfOrientedGradient.PNG Graphic file (type png)
 <use images/HistogramOfOrientedGradient.PNG>
 Package pdftex.def Info: images/HistogramOfOrientedGradient.PNG  used on input 
-line 354.
+line 403.
 (pdftex.def)             Requested size: 341.43306pt x 205.76816pt.
 
-Overfull \hbox (29.39955pt too wide) in paragraph at lines 349--359
+Overfull \hbox (29.39955pt too wide) in paragraph at lines 398--408
 [] 
  []
 
-[13]
-
-Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 375.
-See the caption package documentation for explanation.
-
-[14 <./images/HistogramOfOrientedGradient.PNG>]
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 394--394
-[]|\OT1/ptm/m/n/10.95 0.0184| 
+[15]
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 414--414
+[]|\OT1/ptm/m/n/10.95 129.45| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 394--394
-[]|\OT1/ptm/m/n/10.95 0.0736| 
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 414--415
+[]|\OT1/ptm/m/n/10.95 126.62| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 394--394
-[]|\OT1/ptm/m/n/10.95 0.0368| 
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 416--416
+[]|\OT1/ptm/m/n/10.95 140.04| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 394--394
-[]|\OT1/ptm/m/n/10.95 0.0368| 
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 418--418
+[]|\OT1/ptm/m/n/10.95 171.21| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 396--396
-[]|\OT1/ptm/m/n/10.95 0.0139| 
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 418--418
+[]|\OT1/ptm/m/n/10.95 136.49| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 396--396
-[]|\OT1/ptm/m/n/10.95 0.6674| 
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 420--420
+[]|\OT1/ptm/m/n/10.95 116.74| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 396--396
-[]|\OT1/ptm/m/n/10.95 0.0508| 
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 420--420
+[]|\OT1/ptm/m/n/10.95 125.74| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 396--396
-[]|\OT1/ptm/m/n/10.95 0.0228| 
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 420--420
+[]|\OT1/ptm/m/n/10.95 124.19| 
  []
 
 
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 396--396
-[]|\OT1/ptm/m/n/10.95 0.7367| 
- []
-
-
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 398--398
-[]|\OT1/ptm/m/n/10.95 0.0097| 
- []
-
-
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 398--398
-[]|\OT1/ptm/m/n/10.95 0.4637| 
- []
-
-
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 398--398
-[]|\OT1/ptm/m/n/10.95 0.0353| 
- []
-
-
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 398--398
-[]|\OT1/ptm/m/n/10.95 0.0158| 
- []
-
-
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 398--398
-[]|\OT1/ptm/m/n/10.95 0.5118| 
- []
-
-
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 400--400
-[]|\OT1/ptm/m/n/10.95 0.5118| 
- []
-
-
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 400--400
-[]|\OT1/ptm/m/n/10.95 0.0290| 
- []
-
-
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 400--400
-[]|\OT1/ptm/m/n/10.95 0.5084| 
- []
-
-
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 402--402
-[]|\OT1/ptm/m/n/10.95 0.5307| 
- []
-
-
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 402--402
-[]|\OT1/ptm/m/n/10.95 0.0301| 
- []
-
-
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 402--402
-[]|\OT1/ptm/m/n/10.95 0.5271| 
- []
-
-
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 404--404
-[]|\OT1/ptm/m/n/10.95 0.0218| 
- []
-
-
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 404--404
-[]|\OT1/ptm/m/n/10.95 0.4823| 
- []
-
-
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 404--404
-[]|\OT1/ptm/m/n/10.95 0.0504| 
- []
-
-
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 404--404
-[]|\OT1/ptm/m/n/10.95 0.0159| 
- []
-
-
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 404--404
-[]|\OT1/ptm/m/n/10.95 0.4511| 
+Overfull \hbox (1.6597pt too wide) in paragraph at lines 420--420
+[]|\OT1/ptm/m/n/10.95 132.16| 
  []
 
 
 Package caption Warning: The caption type was already set to `table'
-(caption)                 on input line 408.
+(caption)                 on input line 424.
 See the caption package documentation for explanation.
 
-[15] [16])
+[16 <./images/HistogramOfOrientedGradient.PNG>]
+
+Package caption Warning: The caption type was already set to `table'
+(caption)                 on input line 451.
+See the caption package documentation for explanation.
+
+[17] [18])
 \openout2 = `bab4.aux'.
 
  (bab4.tex
@@ -1728,12 +1699,12 @@ Overfull \hbox (1.45976pt too wide) in paragraph at lines 66--66
  []
 
 
-Overfull \hbox (48.17354pt too wide) in alignment at lines 63--67
+Overfull \hbox (5.4944pt too wide) in alignment at lines 63--67
 [] [] [] [] []
  []
 
 
-Overfull \hbox (48.17354pt too wide) in alignment at lines 67--78
+Overfull \hbox (5.4944pt too wide) in alignment at lines 67--78
 [] [] [] [] []
  []
 
@@ -1747,7 +1718,7 @@ Overfull \hbox (398.3386pt too wide) detected at line 85
  []
 
 
-Overfull \hbox (48.17354pt too wide) in alignment at lines 84--88
+Overfull \hbox (5.4944pt too wide) in alignment at lines 84--88
 [] [] [] [] []
  []
 
@@ -1758,7 +1729,7 @@ File: omlptm.fd
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10.95> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 91.
 
-Overfull \hbox (48.17354pt too wide) in alignment at lines 88--93
+Overfull \hbox (5.4944pt too wide) in alignment at lines 88--93
 [] [] [] [] []
  []
 
@@ -1773,12 +1744,12 @@ Overfull \hbox (1.45976pt too wide) in paragraph at lines 102--102
  []
 
 
-Overfull \hbox (48.17354pt too wide) in alignment at lines 99--103
+Overfull \hbox (5.4944pt too wide) in alignment at lines 99--103
 [] [] [] [] []
  []
 
 
-Overfull \hbox (48.17354pt too wide) in alignment at lines 103--116
+Overfull \hbox (5.4944pt too wide) in alignment at lines 103--116
 [] [] [] [] []
  []
 
@@ -1788,13 +1759,18 @@ Overfull \hbox (398.3386pt too wide) detected at line 123
  []
 
 
-Overfull \hbox (48.17354pt too wide) in alignment at lines 122--127
+Overfull \hbox (5.4944pt too wide) in alignment at lines 122--127
 [] [] [] [] []
  []
 
 
-Overfull \hbox (48.17354pt too wide) in alignment at lines 127--128
+Overfull \hbox (5.4944pt too wide) in alignment at lines 127--128
 [] [] [] [] []
+ []
+
+
+Overfull \hbox (1.96442pt too wide) in paragraph at lines 134--134
+[]|\OT1/ptm/m/n/10.95 createLinearEquation()| 
  []
 
 
@@ -1803,7 +1779,12 @@ Overfull \hbox (8.01118pt too wide) in paragraph at lines 136--136
  []
 
 
-Overfull \hbox (48.17354pt too wide) in alignment at lines 128--145
+Overfull \hbox (2.43495pt too wide) in paragraph at lines 138--138
+[]|\OT1/ptm/m/n/10.95 createRBFTestMatrix()| 
+ []
+
+
+Overfull \hbox (5.4944pt too wide) in alignment at lines 128--145
 [] [] [] [] []
  []
 
@@ -1818,78 +1799,92 @@ Overfull \hbox (1.45976pt too wide) in paragraph at lines 155--155
  []
 
 
-Overfull \hbox (48.17354pt too wide) in alignment at lines 152--156
+Overfull \hbox (5.4944pt too wide) in alignment at lines 152--156
 [] [] [] [] []
  []
 
 
-Overfull \hbox (48.17354pt too wide) in alignment at lines 156--161
+Overfull \hbox (10.74872pt too wide) in paragraph at lines 159--159
+[]|\OT1/ptm/m/n/10.95 getConfusionMatrix()| 
+ []
+
+
+Overfull \hbox (5.4944pt too wide) in alignment at lines 156--161
 [] [] [] [] []
  []
 
 [5]
-<images/TampilanAntarmuka.png, id=207, 925.65825pt x 474.573pt>
+<images/TampilanAntarmuka.png, id=226, 925.65825pt x 474.573pt>
 File: images/TampilanAntarmuka.png Graphic file (type png)
 <use images/TampilanAntarmuka.png>
 Package pdftex.def Info: images/TampilanAntarmuka.png  used on input line 169.
-(pdftex.def)             Requested size: 455.24408pt x 233.40453pt.
-
-Overfull \hbox (56.90549pt too wide) in paragraph at lines 169--170
- [][] 
- []
-
-[6 <./images/TampilanAntarmuka.png>]
-<images/TampilanAntarmukaTraining.png, id=211, 924.45375pt x 268.00125pt>
+(pdftex.def)             Requested size: 398.33858pt x 204.22896pt.
+ [6 <./images/TampilanAntarmuka.png>]
+<images/TampilanAntarmukaTraining.png, id=230, 924.45375pt x 268.00125pt>
 File: images/TampilanAntarmukaTraining.png Graphic file (type png)
 <use images/TampilanAntarmukaTraining.png>
 Package pdftex.def Info: images/TampilanAntarmukaTraining.png  used on input li
 ne 184.
-(pdftex.def)             Requested size: 455.24408pt x 131.97604pt.
-
-Overfull \hbox (56.90549pt too wide) in paragraph at lines 184--185
- [][] 
- []
-
-<images/TampilanAntarmukaTesting1.png, id=212, 921.4425pt x 467.346pt>
+(pdftex.def)             Requested size: 398.33858pt x 115.47955pt.
+<images/TampilanAntarmukaTesting1.png, id=231, 921.4425pt x 467.346pt>
 File: images/TampilanAntarmukaTesting1.png Graphic file (type png)
 <use images/TampilanAntarmukaTesting1.png>
 Package pdftex.def Info: images/TampilanAntarmukaTesting1.png  used on input li
 ne 199.
-(pdftex.def)             Requested size: 455.24408pt x 230.89128pt.
-
-Overfull \hbox (56.90549pt too wide) in paragraph at lines 199--201
- [][] 
- []
-
-<images/TampilanAntarmukaTesting2.png, id=213, 917.829pt x 467.346pt>
+(pdftex.def)             Requested size: 398.33858pt x 202.03165pt.
+<images/TampilanAntarmukaTesting2.png, id=232, 917.829pt x 467.346pt>
 File: images/TampilanAntarmukaTesting2.png Graphic file (type png)
 <use images/TampilanAntarmukaTesting2.png>
 Package pdftex.def Info: images/TampilanAntarmukaTesting2.png  used on input li
 ne 205.
-(pdftex.def)             Requested size: 455.24408pt x 231.80406pt.
-
-Overfull \hbox (56.90549pt too wide) in paragraph at lines 205--207
- [][] 
- []
-
-<images/TampilanAntarmukaTesting3.png, id=214, 919.63576pt x 469.15276pt>
+(pdftex.def)             Requested size: 398.33858pt x 202.83034pt.
+<images/TampilanAntarmukaTesting3.png, id=233, 919.63576pt x 469.15276pt>
 File: images/TampilanAntarmukaTesting3.png Graphic file (type png)
 <use images/TampilanAntarmukaTesting3.png>
 Package pdftex.def Info: images/TampilanAntarmukaTesting3.png  used on input li
 ne 211.
-(pdftex.def)             Requested size: 455.24408pt x 232.24207pt.
-
-Overfull \hbox (56.90549pt too wide) in paragraph at lines 211--212
- [][] 
- []
-
-[7 <./images/TampilanAntarmukaTraining.png>] [8 <./images/TampilanAntarmukaTest
-ing1.png> <./images/TampilanAntarmukaTesting2.png>] [9 <./images/TampilanAntarm
-ukaTesting3.png>] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20])
+(pdftex.def)             Requested size: 398.33858pt x 203.2136pt.
+ [7 <./images/TampilanAntarmukaTraining.png>] [8 <./images/TampilanAntarmukaTes
+ting1.png> <./images/TampilanAntarmukaTesting2.png> <./images/TampilanAntarmuka
+Testing3.png>] [9] [10] [11] [12]
+[13] [14] [15] [16] [17] [18] [19] [20] [21]
+<images/D1623RB.png, id=281, 376.40625pt x 64.24pt>
+File: images/D1623RB.png Graphic file (type png)
+<use images/D1623RB.png>
+Package pdftex.def Info: images/D1623RB.png  used on input line 1576.
+(pdftex.def)             Requested size: 227.62204pt x 38.84816pt.
+<images/D1192PS.png, id=282, 421.575pt x 95.35625pt>
+File: images/D1192PS.png Graphic file (type png)
+<use images/D1192PS.png>
+Package pdftex.def Info: images/D1192PS.png  used on input line 1586.
+(pdftex.def)             Requested size: 227.62204pt x 51.48723pt.
+<images/D1278LI.png, id=283, 329.23pt x 83.31125pt>
+File: images/D1278LI.png Graphic file (type png)
+<use images/D1278LI.png>
+Package pdftex.def Info: images/D1278LI.png  used on input line 1593.
+(pdftex.def)             Requested size: 227.62204pt x 57.6005pt.
+<images/2Misklasifikasi1.png, id=284, 38.1425pt x 91.34125pt>
+File: images/2Misklasifikasi1.png Graphic file (type png)
+<use images/2Misklasifikasi1.png>
+Package pdftex.def Info: images/2Misklasifikasi1.png  used on input line 1602.
+(pdftex.def)             Requested size: 28.45274pt x 68.1392pt.
+<images/2Misklasifikasi2.png, id=285, 25.09375pt x 77.28876pt>
+File: images/2Misklasifikasi2.png Graphic file (type png)
+<use images/2Misklasifikasi2.png>
+Package pdftex.def Info: images/2Misklasifikasi2.png  used on input line 1607.
+(pdftex.def)             Requested size: 28.45274pt x 87.6407pt.
+ [22 <./images/D1623RB.png (PNG copy)>] [23 <./images/D1192PS.png (PNG copy)> <
+./images/D1278LI.png (PNG copy)> <./images/2Misklasifikasi1.png (PNG copy)> <./
+images/2Misklasifikasi2.png (PNG copy)>]
+<images/DMisklasifikasi.png, id=293, 43.16125pt x 96.36pt>
+File: images/DMisklasifikasi.png Graphic file (type png)
+<use images/DMisklasifikasi.png>
+Package pdftex.def Info: images/DMisklasifikasi.png  used on input line 1619.
+(pdftex.def)             Requested size: 28.45274pt x 63.52278pt.
+ [24 <./images/DMisklasifikasi.png (PNG copy)>] [25])
 \openout2 = `bab5.aux'.
 
-
-(bab5.tex
+ (bab5.tex
 Bab V.
 [1
 
@@ -1898,24 +1893,27 @@ Bab V.
 ] [2])
 \openout2 = `pustaka.aux'.
 
- (pustaka.tex [6
+ (pustaka.tex [7
 
 
 
-]) [7] (Skripsi.aux (sampul.aux) (bab1.aux) (bab2.aux)
+]) [8] (Skripsi.aux (sampul.aux) (bab1.aux) (bab2.aux)
 (bab3.aux) (bab4.aux) (bab5.aux) (pustaka.aux))
+
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 29336 strings out of 492946
- 564883 string characters out of 3126266
- 730034 words of memory out of 3000000
- 32548 multiletter control sequences out of 15000+200000
- 589450 words of font info for 133 fonts, out of 3000000 for 9000
+ 29417 strings out of 492946
+ 566961 string characters out of 3126266
+ 730322 words of memory out of 3000000
+ 32617 multiletter control sequences out of 15000+200000
+ 591478 words of font info for 137 fonts, out of 3000000 for 9000
  1228 hyphenation exceptions out of 8191
- 64i,19n,102p,1296b,740s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,19n,102p,1336b,740s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/jeffr/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
 }<C:/Users/jeffr/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmex10.pfb><C:/Users/jeffr/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
@@ -1927,9 +1925,9 @@ Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/jeffr/AppD
 ata/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/jeffr
 /AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/j
 effr/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Skripsi.pdf (71 pages, 2862862 bytes).
+Output written on Skripsi.pdf (80 pages, 2971475 bytes).
 PDF statistics:
- 304 PDF objects out of 1000 (max. 8388607)
+ 346 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 123 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 183 words of extra memory for PDF output out of 10000 (max. 10000000)
 

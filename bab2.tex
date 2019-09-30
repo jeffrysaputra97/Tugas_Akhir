@@ -190,7 +190,15 @@ $I(x,y)$ = nilai piksel citra dari baris x dan kolom y
 $M(x,y)$ = besar nilai gradient dari sumbu x dan y\\
 $\theta(x,y)$ = arah nilai gradient dari sumbu x dan y
 
-\noindent Kemudian, setiap piksel citra akan dibagi ke dalam beberapa sel yang dari setiap sel, akan dihitung persebaran \textit{Histogram of Oriented Gradient}-nya melalui proses \textit{voting}. Proses \textit{voting} dalam \textit{Histogram of Oriented Gradient} pertama akan menentukan nilai-nilai dari \textit{bin} dengan membagi total jumlah sudut gradien ke dalam jumlah \textit{orientation bin}. Kemudian untuk setiap arah sudut gradien dari setiap piksel dalam sel akan dimasukkan ke dalam rentang \textit{orientation bin} yang sudah ditentukan pada pertama kali, kemudian membagi besar nilai gradiennya dengan \textit{orientation bin} yang terkait.
+\noindent Kemudian, setiap piksel citra akan dibagi ke dalam beberapa sel yang dari setiap sel, akan dihitung persebaran \textit{Histogram of Oriented Gradient}-nya melalui proses \textit{voting}. Proses \textit{voting} dalam \textit{Histogram of Oriented Gradient} pertama akan menentukan nilai-nilai dari \textit{bin} dengan membagi total jumlah sudut gradien ke dalam jumlah \textit{orientation bin}. Kemudian untuk setiap arah sudut gradien dari setiap piksel dalam sel akan dimasukkan ke dalam rentang \textit{orientation bin} yang sudah ditentukan pada pertama kali, kemudian membagi besar nilai gradiennya dengan \textit{orientation bin} yang terkait. Sebagai contoh, jika jumlah \textit{bin} yang digunakan adalah 4 \textit{bin}. Maka ukuran \textit{range} sudut setiap bin adalah 180/4 = 45 derajat. Ilustrasinya dapat dilihat pada gambar \ref{fig:IlustrasiBin}.
+
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\includegraphics[width=6cm]{images/IlustrasiBin.png}
+		\captionof{figure}{Ilustrasi \textit{bin} dengan jumlah 4\\}
+		\label{fig:IlustrasiBin}
+	\end{minipage}
+\end{adjustbox}\\
 
 \noindent Setelah \textit{Histogram of Oriented Gradient} sudah dibuat untuk setiap sel, proses selanjutnya adalah melakukan normalisasi terhadap hasil \textit{vote} pada setiap \textit{bin} dalam sel. Normalisasi akan dilakukan dalam 1 blok, dengan ukuran blok merupakan m $\times$ n sel. Terdapat 4 macam metode untuk normalisasi, yaitu: \textit{L2-Norm}, \textit{L2-Hys}, \textit{L1-sqrt}, dan \textit{L1-Norm}. Persamaannya adalah sebagai berikut:
 
@@ -200,15 +208,15 @@ $\theta(x,y)$ = arah nilai gradient dari sumbu x dan y
 		\begin{tabular}{|p{13.55cm}|}
 			\hline
 			\begin{equation} 
-			V_{i} = \frac{V_{i}}{\sum_{i=1}^{N}V_{i}}
+			\text{L1-Norm}_{i} = \frac{V_{i}}{\sum_{j=1}^{N}V_{j}}
 			\end{equation}\\
 			\hline
 		\end{tabular}
 	\end{adjustbox}
 \end{table}
 \noindent Dimana:\\
-$V_{i}$ = bobot vektor hasil \textit{L1-Norm} yang merepresentasikan nilai setiap \textit{bin}\\
-$i$ = nilai \textit{counter} dari 1 sampai N\\
+$V$ = bobot vektor yang merepresentasikan nilai setiap \textit{bin}\\
+$j$ = nilai \textit{counter} dari 1 sampai N\\
 $N$ = jumlah total nilai total \textit{bin} yang digunakan dalam proses normalisasi
 
 \begin{table}[H]
@@ -217,15 +225,15 @@ $N$ = jumlah total nilai total \textit{bin} yang digunakan dalam proses normalis
 		\begin{tabular}{|p{13.55cm}|}
 			\hline
 			\begin{equation} 
-			V_{i} = \sqrt{\frac{V_{i}}{\sum_{i=1}^{N}V_{i}}}
+			\text{L1-Sqrt}_{i} = \sqrt{\frac{V_{i}}{\sum_{j=1}^{N}V_{j}}}
 			\end{equation}\\
 			\hline
 		\end{tabular}
 	\end{adjustbox}
 \end{table}
 \noindent Dimana:\\
-$V_{i}$ = bobot vektor hasil \textit{L1-sqrt} yang merepresentasikan nilai setiap \textit{bin}\\
-$i$ = nilai \textit{counter} dari 1 sampai N\\
+$V$ = bobot vektor yang merepresentasikan nilai setiap \textit{bin}\\
+$j$ = nilai \textit{counter} dari 1 sampai N\\
 $N$ = jumlah total nilai total \textit{bin} yang digunakan dalam proses normalisasi
 
 \begin{table}[H]
@@ -234,7 +242,7 @@ $N$ = jumlah total nilai total \textit{bin} yang digunakan dalam proses normalis
 		\begin{tabular}{|p{13.55cm}|}
 			\hline
 			\begin{equation} 
-			V_{i} = \frac{V_{i}}{\sqrt{\sum_{i=1}^{N}V_{i}^2}}
+			\text{L2-Norm}_{i} = \frac{V_{i}}{\sqrt{\sum_{j=1}^{N}V_{j}^2}}
 			\label{eq:L2-Norm}
 			\end{equation}\\
 			\hline
@@ -242,8 +250,8 @@ $N$ = jumlah total nilai total \textit{bin} yang digunakan dalam proses normalis
 	\end{adjustbox}
 \end{table}
 \noindent Dimana:\\
-$V_{i}$ = bobot vektor hasil \textit{L2-Norm} yang merepresentasikan nilai setiap \textit{bin}\\
-$i$ = nilai \textit{counter} dari 1 sampai N\\
+$V$ = bobot vektor yang merepresentasikan nilai setiap \textit{bin}\\
+$j$ = nilai \textit{counter} dari 1 sampai N\\
 $N$ = jumlah total nilai total \textit{bin} yang digunakan dalam proses normalisasi
 
 \noindent Untuk algoritme rumus normalisasi \textit{L2-Hys} merupakan algoritme mengikuti dari \textit{L2-Norm}, namun dengan membatasi nilai maksimal hasil normalisasi sebesar 0,2.
@@ -354,7 +362,7 @@ $N$ = jumlah total nilai total \textit{bin} yang digunakan dalam proses normalis
 		\begin{tabular}{|p{13.55cm}|}
 			\hline
 			\begin{equation}
-			RBF = K(x_i,x_j) = \exp (-\frac{\|x_i-x_j\|}{2\sigma^2})
+			RBF = K(x_i,x_j) = \exp (-\frac{\|x_i-x_j\|^2}{2\sigma^2})
 			\label{eq:PersamaanRBF}
 			\end{equation}\\
 			\hline
@@ -425,6 +433,38 @@ Dan perhitungan \textit{recall} atau disebut juga sebagai sensitivitas dapat dih
 	\end{adjustbox}
 \end{table}
 
+\subsection{\textit{Character Recognition Rate} (CRR)}
+\noindent \textit{Character Recognition Rate} atau CRR adalah alat ukur untuk mengetahui keberhasilan pengenalan karakter dari suatu aplikasi pengenalan karakter. Perhitungan persentase CRR dilakukan dengan cara membagi jumlah karakter yang dapat dikenali terhadap jumlah karakter yang terdeteksi oleh sistem seperti yang dapat dilihat pada persamaan \ref{eq:crr}. 
+
+\begin{table}[H]
+	\begin{adjustbox}{width=1\textwidth}
+		\begin{tabular}{|p{13.55cm}|}
+			\hline
+			\begin{equation}
+			CRR = \frac{\text{\textit{Number of Correctly Recognized Characters}}}{\text{\textit{Number of All Detected Characters}}}
+			\label{eq:crr}
+			\end{equation}\\
+			\hline
+		\end{tabular}
+	\end{adjustbox}
+\end{table}
+
+\subsection{\textit{Overall Performance} (OVR)}
+\noindent \textit{Overall Performance} atau OVR adalah alat ukur untuk mengetahui performa keseluruhan dari aplikasi pada penelitian ini. Perhitungan persentase OVR dilakukan dengan cara membagi jumlah plat nomor yang terdeteksi dan dapat dikenali dengan benar terhadap jumlah keseluruhan plat nomor pada \textit{dataset} seperti yang dapat dilihat pada persamaan \ref{eq:ovr}. 
+
+\begin{table}[H]
+	\begin{adjustbox}{width=1\textwidth}
+		\begin{tabular}{|p{13.55cm}|}
+			\hline
+			\begin{equation}
+			CRR = \frac{\text{\textit{Number of Correctly Detected and Recognized LPs}}}{\text{\textit{Number of All Ground Truth LPs}}}
+			\label{eq:crr}
+			\end{equation}\\
+			\hline
+		\end{tabular}
+	\end{adjustbox}
+\end{table}
+
 \subsection{Penggunaan \textit{Library}}
 \noindent Berikut adalah penjelasan dari \textit{library} yang digunakan di dalam penelitian. \\
 \subsubsection{OpenCV}
@@ -456,6 +496,8 @@ Dan perhitungan \textit{recall} atau disebut juga sebagai sensitivitas dapat dih
 		7 & Imgproc.contourArea(Mat contour) & Melakukan perhitungan luas area dari kontur yang diberikan.\\
 		\hline
 		8 & Imgproc.imwrite(String filename, Mat img) & Menyimpan citra yang diisikan ke parameter ke \textit{path} yang dijadikan tujuan penyimpanan.\\
+		\hline
+		9 & Imgproc.HoughLines(Mat image, double minTheta, double maxTheta, double rho, Mat peak) & Mengekstraksi segmen garis berdasarkan \textit{peaks}. \textit{Peaks} adalah matriks hasil keluaran \textit{function} \textit{houghpeaks} yang berisi koordinat baris dan kolom dari \textit{hough transform bins} yang digunakan untuk melakukan pencarian segmen garis.\\
 		\hline
 	\end{longtable}
 \end{small}
