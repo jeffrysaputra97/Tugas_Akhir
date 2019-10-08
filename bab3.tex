@@ -10,7 +10,7 @@
 \section{Analisis Masalah}
 \noindent Pada bab 1 telah dijelaskan bahwa penelitian mengenai sistem pengenalan plat nomor kendaraan merupakan bidang yang masih berkembang dan implementasinya memegang peranan penting dalam bidang transportasi. Pada penelitian ini, metode yang akan digunakan adalah \textit{Hough Transform} untuk mendeteksi lokasi plat kendaraan, kemudian menggunakan metode \textit{Histogram of Oriented Gradient} untuk mengekstraksi fitur dari citra karakter dari plat nomor yang sudah disegmentasi dengan menghitung grafik horizontal pita, kemudian dilakukan klasifikasi dengan menggunakan metode \textit{Support Vector Machine}.
 \noindent Masukan untuk sistem deteksi dan pengenalan plat nomor kendaraan ini adalah citra yang ditangkap oleh kamera DSLR Canon EOS 500 D dan Canon EOS 550 D beresolusi 15 dan 18 megapiksel. Citra tangkapan kemudian akan diubah resolusinya menjadi 1024 $\times$ 640 piksel. Setiap citra masukan berisi bagian depan dari kendaraan yang memiliki plat nomor kendaraan.
-\noindent Keluaran atau hasil dari sistem akan berupa teks hasil dari pengenalan karakter pada citra plat nomor kendaraan masukkan.\\ 
+\noindent Keluaran atau hasil dari sistem akan berupa teks hasil dari pengenalan karakter pada citra plat nomor kendaraan masukan.\\ 
 
 \section{Kerangka Pemikiran}
 \noindent Berikut ini adalah kerangka pemikiran dari metode yang diusulkan untuk melakukan deteksi plat nomor kendaraan dan melakukan pengenalan karakter pada citra karakter yang terdapat pada plat nomor.
@@ -23,40 +23,63 @@
 		\label{fig:KerangkaPemikiran}
 	\end{minipage}
 \end{adjustbox}
+
 \noindent Seperti pada gambar \ref{fig:KerangkaPemikiran}, terdapat beberapa variabel indikator yang memengaruhi hasil dan perlu dilakukan penyesuaian, seperti ukuran sel pada metode \textit{Histogram of Oriented Gradient}, jumlah \textit{bin} yang menentukan batasan sudut yang digunakan, dan nilai sigma untuk \textit{classifier} \textit{Support Vector Machine}. Penelitian ini memiliki tujuan untuk menerapkan \textit{Histogram of Oriented Gradient} dan \textit{Support Vector Machine} untuk sistem pengenalan karakter pada plat nomor dengan menguji beragam faktor yang diduga akan mempengaruhi hasil akurasi dari penggabungan kedua metode tersebut. Hasil pengenalan karakter akan diukur dengan menggunakan \textit{Confusion Matrix}.\\
 
 \section{Urutan Proses Global}
 \noindent Dalam sistem pengenalan plat nomor kendaraan terbagi atas dua proses yaitu proses \textit{training} dan proses \textit{testing}. Proses \textit{training} dilakukan untuk mendapatkan kelas-kelas dari karakter-karakter yang akan dikenali. Proses \textit{testing} dilakukan untuk menghitung hasil yang berupa akurasi dari pengenalan karakter pada plat nomor kendaraan.\\
 
-\subsection{Proses \textit{Training}}
 \begin{adjustbox}{width=1\textwidth}
 	\noindent
 	\begin{minipage}{\linewidth}
-		\framebox[\textwidth]{\includegraphics[width=12cm]{images/FlowchartTraining.jpg}}
-		\captionof{figure}{\textit{Flowchart Training} Sistem Pengenalan Plat Nomor Kendaraan\\}
-		\label{fig:FlowchartTraining}
+		\framebox[\textwidth]{\includegraphics[width=12cm]{images/FlowchartGlobal.png}}
+		\captionof{figure}{\textit{Flowchart Global} Sistem Pengenalan Plat Nomor Kendaraan\\}
+		\label{fig:FlowchartGlobal}
 	\end{minipage}
 \end{adjustbox}
-Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:FlowchartTraining} yang dilakukan dalam penelitian ini:
-\begin{enumerate}
-	\item Citra yang menjadi masukkan adalah citra karakter hasil segmentasi dari citra plat nomor kendaraan. Citra karakter masukkan berukuran 32 $\times$ 32 piksel. Citra karakter berwarna hitam dengan latar belakang berwarna putih. Kumpulan karakter yang digunakan adalah karakter angka dari 0 sampai dengan 9 dan karakter huruf dari A sampai dengan Z, tidak ada karakter huruf kecil dikarenakan plat nomor kendaraan tidak ada yang menggunakan karakter huruf kecil.
-	\item \textit{Histogram of Oriented Gradient} berfungsi untuk mendapatkan fitur dari dari citra masukan. Hasil dari ekstraksi fitur dengan menggunakan HOG adalah \textit{HOG descriptor}, yang mendeskripsikan distribusi dari gradien berarah pada suatu area citra.
-	\item Ukuran sel dan blok yang digunakan untuk proses ekstraksi fitur dengan menggunakan \textit{HOG} adalah beragam sesuai dengan ukuran-ukuran sel yang akan digunakan untuk proses testing dan jumlah \textit{bin} yang digunakan juga akan beragam sesuai dengan ukuran \textit{bin} yang digunakan untuk proses testing. Ukuran sudut yang akan dipakai adalah dari 0 sampai dengan 180 derajat.
-	\item \textit{Support Vector Machine} (SVM) digunakan untuk mengklasifikasikan fitur-fitur yang sudah didapatkan ke dalam kelas-kelas dari karakter yang akan dikenali. Metode \textit{SVM} yang digunakan pada penelitian ini berasal dari \textit{library WEKA}.\\
-\end{enumerate}
 
-\subsection{Proses \textit{Testing}}
-\begin{adjustbox}{width=1\textwidth}
-	\noindent
-	\begin{minipage}{\linewidth}
-		\framebox[\textwidth]{\includegraphics[width=7cm]{images/FlowchartTesting.png}}
-		\captionof{figure}{\textit{Flowchart Testing} Sistem Deteksi dan Pengenalan Plat Nomor\\}
-		\label{fig:FlowchartTesting}
-	\end{minipage}
-\end{adjustbox}
-\noindent Pada gambar \ref{fig:FlowchartTesting} terlihat urutan proses \textit{testing}. Pada proses \textit{testing} terdapat beberapa proses yang sama seperti pada proses \textit{training}. Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:FlowchartTesting} yang dilakukan dalam penelitian ini:
+\noindent Seperti pada gambar \ref{fig:FlowchartGlobal}. Bagian kiri merupakan \textit{flowchart} dari proses \textit{training} dan bagian kanan merupakan \textit{flowchart} dari proses \textit{testing}. Berikut ini adalah uraian dari proses-proses yang terjadi ketika tahapan \textit{training}:
 \begin{enumerate}
-	\item Citra pengujian yang digunakan didapatkan dari \textit{dataset} plat nomor kendaraan Universitas Telkom yang bernama \textit{Tel-U Vehicle Data-set V1.0}, penggunaan dari dataset ini sesuai dengan perizinan dari institusi yang bersangkutan.
+	\item Citra masukan adalah citra plat nomor kendaraan mobil yang di-\textit{crop} secara manual dari citra mobil utuh hal ini untuk memastikan citra yang didapatkan adalah plat yang benar. 
+	\item Citra plat kemudian akan melalui tahapan \textit{preprocessing} yang meliputi \textit{grayscaling} untuk menghilangkan informasi warna yang tidak diperlukan, \textit{Gaussian Smoothing} untuk menghilangkan derau pada citra, \textit{Binarization} untuk mengubah citra menjadi citra biner, menghilangkan objek kecil (untuk menghilangkan objek seperti baut pada plat) dengan cara menghilangkan objek yang luasnya kurang dari \textit{threshold} sebesar 100 piksel, dan terakhir \textit{Inverse Binarization} untuk mendapatkan citra karakter berwarna hitam dengan latar belakang berwarna putih.
+	\item Citra plat selanjutnya melalui tahapan segmentasi karakter, tahapan segmentasi bertujuan untuk mendapatkan citra-citra karakter dari plat nomor tersebut tahapan segmentasi dilakukan dua tahapan, yaitu segmentasi horizontal dan segmentasi vertikal.
+	\item Citra karakter hasil \textit{segmentasi} akan di-\textit{scaling} menjadi berukuran 32 $\times$ 32 piksel. Kumpulan karakter yang digunakan adalah karakter angka dari 0 sampai dengan 9 dan karakter huruf dari A sampai dengan Z, tidak ada karakter huruf kecil dikarenakan plat nomor kendaraan tidak ada yang menggunakan karakter huruf kecil.
+	\item \textit{Histogram of Oriented Gradient} berfungsi untuk mendapatkan fitur dari citra hasil segmentasi. Hasil dari ekstraksi fitur dengan menggunakan HOG adalah \textit{HOG descriptor}, yang mendeskripsikan distribusi dari gradien berarah pada suatu area citra.
+	\item Untuk ukuran sel dan jumlah \textit{bin} yang digunakan untuk proses ekstraksi fitur dengan menggunakan \textit{HOG}, dikarenakan kedua parameter tersebut merupakan indikator uji seperti ditunjukan pada kerangka pemikiran \ref{fig:KerangkaPemikiran}, maka nilai dari ukuran sel dan jumlah \textit{bin} akan menyesuaikan dengan kondisi yang akan diuji.
+	\item Setelah tahapan ekstraksi fitur, fitur-fitur akan disimpan dalam berkas CSV dan proses pelabelan fitur untuk setiap karakter akan dilakukan terhadap berkas CSV tersebut.
+	\item \textit{Support Vector Machine} (SVM) digunakan untuk mengklasifikasikan fitur-fitur yang sudah didapatkan ke dalam kelas-kelas dari karakter yang akan dikenali. Metode \textit{SVM} yang digunakan pada penelitian ini berasal dari \textit{library WEKA}.
+\end{enumerate}
+%\subsection{Proses \textit{Training}}
+%\begin{adjustbox}{width=1\textwidth}
+%	\noindent
+%	\begin{minipage}{\linewidth}
+%		\framebox[\textwidth]{\includegraphics[width=12cm]{images/FlowchartTraining.jpg}}
+%		\captionof{figure}{\textit{Flowchart Training} Sistem Pengenalan Plat Nomor Kendaraan\\}
+%		\label{fig:FlowchartTraining}
+%	\end{minipage}
+%\end{adjustbox}
+%Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:FlowchartTraining} yang dilakukan dalam penelitian ini:
+%\begin{enumerate}
+%	\item Citra yang menjadi masukkan adalah citra karakter hasil segmentasi dari citra plat nomor kendaraan. Citra karakter masukkan berukuran 32 $\times$ 32 piksel. Citra karakter berwarna hitam dengan latar belakang berwarna putih. Kumpulan karakter yang digunakan adalah karakter angka dari 0 sampai dengan 9 dan karakter huruf dari A sampai dengan Z, tidak ada karakter huruf kecil dikarenakan plat nomor kendaraan tidak ada yang menggunakan karakter huruf kecil.
+%	\item \textit{Histogram of Oriented Gradient} berfungsi untuk mendapatkan fitur dari dari citra masukan. Hasil dari ekstraksi fitur dengan menggunakan HOG adalah \textit{HOG descriptor}, yang mendeskripsikan distribusi dari gradien berarah pada suatu area citra.
+%	\item Ukuran sel dan blok yang digunakan untuk proses ekstraksi fitur dengan menggunakan \textit{HOG} adalah beragam sesuai dengan ukuran-ukuran sel yang akan digunakan untuk proses testing dan jumlah \textit{bin} yang digunakan juga akan beragam sesuai dengan ukuran \textit{bin} yang digunakan untuk proses testing. Ukuran sudut yang akan dipakai adalah dari 0 sampai dengan 180 derajat.
+%	\item \textit{Support Vector Machine} (SVM) digunakan untuk mengklasifikasikan fitur-fitur yang sudah didapatkan ke dalam kelas-kelas dari karakter yang akan dikenali. Metode \textit{SVM} yang digunakan pada penelitian ini berasal dari \textit{library WEKA}.\\
+%\end{enumerate}
+%
+%\subsection{Proses \textit{Testing}}
+%\begin{adjustbox}{width=1\textwidth}
+%	\noindent
+%	\begin{minipage}{\linewidth}
+%		\framebox[\textwidth]{\includegraphics[width=7cm]{images/FlowchartTesting.png}}
+%		\captionof{figure}{\textit{Flowchart Testing} Sistem Deteksi dan Pengenalan Plat Nomor\\}
+%		\label{fig:FlowchartTesting}
+%	\end{minipage}
+%\end{adjustbox}
+\noindent Kemudian untuk proses \textit{testing}, seperti terlihat pada gambar \ref{fig:FlowchartGlobal}, terdapat beberapa proses yang sama seperti pada proses \textit{training}. Berikut ini adalah uraian dari \textit{flowchart} bagian kanan pada gambar \ref{fig:FlowchartGlobal} yang dilakukan dalam penelitian ini:
+\begin{enumerate}
+	\item Citra pengujian yang digunakan didapatkan dari \textit{dataset} plat nomor kendaraan Universitas Telkom yang bernama \textit{Tel-U Vehicle Data-set V1.0}, penggunaan dari dataset ini sesuai dengan perizinan dari institusi yang bersangkutan. 
+	\item Citra kendaraan akan melalui tahapan deteksi area plat kendaraan untuk mendapatkan citra plat.
+	\item Citra plat yang didapatkan kemudian disegmentasi untuk mendapatkan citra karakter. 
 	\item Citra yang akan menjadi input dari \textit{HOG} adalah citra hasil dari segmentasi karakter pada citra plat kendaraan hasil deteksi lokasi plat nomor kendaraan.
 	\item Ukuran dari sel dan blok yang digunakan untuk proses ekstraksi fitur dengan menggunakan \textit{HOG} akan beragam sesuai dengan pengujian yang akan dilakukan.
 	\item Pada tahap \textit{testing} model SVM yang digunakan berasal dari hasil keluaran model SVM pada tahap \textit{training}.
@@ -67,7 +90,8 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 \noindent Pada bagian ini dilakukan analisis tahapan proses dengan melakukan perhitungan manual.\\
 
 \subsection{\textit{Dataset}}
-\noindent Untuk citra karakter yang akan digunakan pada tahap \textit{training} akan digunakan citra karakter yang sudah disegmentasi dari citra plat kendaraan. Citra plat kendaraan yang digunakan di-\textit{crop} secara manual seperti terlihat pada gambar \ref{fig:ContohCitraPlat}.
+\noindent Citra plat kendaraan yang digunakan sebagai dataset adalah citra plat yang di-\textit{crop} secara manual seperti terlihat pada gambar \ref{fig:ContohCitraPlat}.
+
 \begin{adjustbox}{width=1\textwidth}
 	\noindent
 	\begin{minipage}{\linewidth}
@@ -76,7 +100,9 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 		\label{fig:ContohCitraPlat}
 	\end{minipage}
 \end{adjustbox}
-\noindent Dari citra plat akan dilakukan tahapan \textit{preprocessing} seperti \textit{grayscaling}, \textit{Gaussian Smoothing}, \textit{Binarization}, menghilangkan objek kecil (untuk menghilangkan objek seperti baut pada plat) dengan cara menghilangkan objek yang luasnya kurang dari \textit{threshold} yang ditentukan, kemudian melakukan \textit{Inverse Binarization} dengan tujuan agar kita mendapatkan citra karakter berwarna hitam dengan latar belakang berwarna putih. Hasil akhir dari tahapan-tahapan tersebut dapat dilihat pada gambar \ref{fig:ContohCitraPlatHasilPreprocessing}.
+
+\noindent Dari citra plat akan dilakukan tahapan \textit{preprocessing}. Hasil akhir dari tahapan-tahapan tersebut dapat dilihat pada gambar \ref{fig:ContohCitraPlatHasilPreprocessing}.
+
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
 		\framebox[\textwidth]{\includegraphics[width=8cm]{images/ContohHasilPreprocessing.PNG}}
@@ -84,7 +110,9 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 		\label{fig:ContohCitraPlatHasilPreprocessing}
 	\end{minipage}
 \end{adjustbox}
-\noindent Dari citra plat hasil \textit{preprocessing}, berikutnya dilakukan proses segmentasi terhadap citra plat, tujuannya untuk mendapatkan area-area yang merupakan karakter dari plat nomor tersebut. Tahapan segmentasi dilakukan secara dua tahapan, yaitu segmentasi horizontal dan segmentasi vertikal. Segmentasi horizontal bertujuan untuk memisahkan area karakter plat nomor dengan karakter tanggal masa berlaku plat nomor. Sedangkan segmentasi vertikal bertujuan untuk mendapatkan karakter karakter. Hasilnya dapat dilihat pada gambar \ref{fig:CitraPlatHasilSegmentasiHorizontal} dan gambar \ref{fig:CitraPlatHasilSegmentasiVertikal}.
+
+\noindent Dari citra plat hasil \textit{preprocessing}, berikutnya dilakukan proses segmentasi terhadap citra plat. Segmentasi horizontal bertujuan untuk memisahkan area karakter plat nomor dengan karakter tanggal masa berlaku plat nomor. Sedangkan segmentasi vertikal bertujuan untuk mendapatkan karakter karakter. Hasilnya dapat dilihat pada gambar \ref{fig:CitraPlatHasilSegmentasiHorizontal} dan gambar \ref{fig:CitraPlatHasilSegmentasiVertikal}.
+
 \begin{adjustbox}{width=1\textwidth}
 	\noindent
 	\begin{minipage}{\linewidth}
@@ -93,6 +121,7 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 		\label{fig:CitraPlatHasilSegmentasiHorizontal}
 	\end{minipage}
 \end{adjustbox}
+
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
 		\framebox[\textwidth]{\includegraphics[width=14cm]{images/HasilSegmentasiVertikal.PNG}}
@@ -100,8 +129,11 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 		\label{fig:CitraPlatHasilSegmentasiVertikal}
 	\end{minipage}
 \end{adjustbox}
+
 \noindent Setelah didapatkan karakter-karakter dari plat nomor tersebut, berikutnya dilakukan proses \textit{scaling} dari ukuran seperti pada gambar \ref{fig:CitraPlatHasilSegmentasiVertikal} menjadi ukuran 32 $\times$ 32 piksel. Alasan digunakannya ukuran 32 $\times$ 32 piksel adalah agar ukuran fitur dari \textit{HOG Descriptor} yang dihasilkan tidak terlalu besar. Hasil dari proses \textit{scaling} citra karakter dapat dilihat pada gambar \ref{fig:ContohCitraDatasetPakai}. Citra karakter hasil proses \textit{scaling} itulah yang akan digunakan sebagai data latih.
-\noindent Karakter terdiri dari angka 0 sampai dengan 9 dan karakter huruf kapital dari A sampai dengan Z. Untuk setiap karakter akan digunakan citra latih sebanyak tiga sampai dengan enam citra. Terlihat contoh citra karakter yang ditunjukan pada gambar \ref{fig:ContohCitraDatasetPakai} merupakan contoh karakter angka dan huruf kapital yang akan dipakai. Dalam kumpulan citra karakter yang dijadikan \textit{dataset}, tidak ada citra karakter tipis, karakter miring dan karakter huruf kecil. Tidak adanya jenis-jenis karakter tersebut dikarenakan pada plat nomor Indonesia, karakter yang digunakan hanyalah karakter huruf kapital dan angka dalam bentuk tegak dan tebal.
+
+\noindent Karakter terdiri dari angka 0 sampai dengan 9 dan karakter huruf kapital dari A sampai dengan Z. Untuk setiap karakter akan digunakan citra latih sebanyak tiga sampai dengan enam citra. Terlihat contoh citra karakter yang ditunjukan pada gambar \ref{fig:ContohCitraDatasetPakai} merupakan contoh karakter angka dan huruf kapital yang akan dipakai.
+
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
 		\framebox[\textwidth]{\includegraphics[width=8cm]{images/CitraDatasetPakai.PNG}}
@@ -113,6 +145,7 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 
 \subsection{Tahap Pendeteksian Lokasi Plat Nomor}
 \noindent Skema alur dari tahap pendeteksian lokasi plat nomor adalah:
+
 \begin{adjustbox}{width=1\textwidth}
 	\noindent
 	\begin{minipage}{\linewidth}
@@ -125,7 +158,7 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 \subsubsection{\textit{Grayscale}}
 \noindent Proses pertama adalah mengubah citra masukan dari citra RGB menjadi citra \textit{grayscale}, tujuan dari \textit{grayscaling} citra adalah untuk menghilangkan informasi warna dari setiap piksel citra. Untuk menghitung nilai derajat keabuan setiap piksel, diperoleh dengan menggunakan persamaan \ref{eq:grayscale}.
 \noindent Di bawah merupakan contoh matriks citra asli dengan 3 \textit{channel} warna yaitu \textit{Red}, \textit{Green}, dan \textit{Blue} berukuran 5 $\times$ 5 piksel. 
-\\
+
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
 		\framebox[\textwidth]{\includegraphics[width=8cm]{images/CitraMatriksAsal.PNG}}
@@ -133,7 +166,7 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 		\label{fig:MatriksCitraAsal}
 	\end{minipage}
 \end{adjustbox} 
-\\
+
 \noindent Dengan menggunakan persamaan \ref{eq:grayscale}, maka nilai matriks citra \textit{grayscale} pada titik (4,4) akan menjadi sebagai berikut:
 \begin{table}[H]
 	\begin{adjustbox}{width=1\textwidth}
@@ -150,6 +183,7 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 	\end{adjustbox}
 \end{table}
 \noindent Perhitungan di atas dilakukan terhadap seluruh nilai matriks citra asal dan hasilnya adalah matriks citra berukuran 5 $\times$ 5 dengan satu nilai derajat keabuan.
+
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
 		\framebox[\textwidth]{\includegraphics[width=6cm]{images/CitraMatriksGrayscale.PNG}}
@@ -161,13 +195,14 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 \subsubsection{Deteksi Tepi Canny}
 \noindent Proses deteksi tepi dilakukan terhadap citra hasil \textit{grayscaling}. Pada penelitian ini, metode \textit{Canny Edge Detection} digunakan untuk mendapatkan tepian. Berikut adalah algoritme dari metode \textit{Canny Edge Detection} untuk mendapatkan tepian.
 \begin{enumerate}[leftmargin=16pt]
-	\item Citra masukkan adalah citra dari hasil \textit{grayscaling} pada tahapan sebelumnya.
-	\item Citra masukkan diperhalus dengan menggunakan \textit{Gaussian Filter} untuk membuang derau.
+	\item Citra masukan adalah citra dari hasil \textit{grayscaling} pada tahapan sebelumnya.
+	\item Citra masukan diperhalus dengan menggunakan \textit{Gaussian Filter} untuk membuang derau.
 	\item Lakukan operasi perhitungan gradien menggunakan operator Sobel untuk mendapatkan tepian yang tebal.
 	\item Untuk menipiskan tepian yang didapat dari operasi sebelumnya maka teknik \textit{Non-Maxima Suppression} dilakukan dengan mencari nilai maksimum pada tepian.
 	\item Buat 2 nilai \textit{threshold} yaitu \textit{high threshold} dan \textit{low threshold} untuk menentukan piksel mana yang masuk dalam kategori tepian kuat, tepian lemah, dan bukan tepian. Jika nilai dari piksel tersebut di atas \textit{high threshold}, maka piksel tersebut masuk ke dalam kategori tepian kuat, apabila nilai piksel berada di antara batas \textit{high threshold} dan \textit{low threshold}, maka piksel tersebut masuk ke dalam kategori tepian lemah, selebihnya akan masuk ke dalam kategori bukan tepian.
 	\item Tahapan terakhir adalah \textit{Edge Linking} untuk menghubungkan tepian lemah dengan tepian kuat. Apabila piksel tepian lemah memiliki tetangga piksel (terhubung), maka piksel tersebut akan menjadi tepian.
 	\item Citra keluaran adalah citra biner yang merupakan hasil pendeteksian tepi.
+	
 	\begin{adjustbox}{width=1\textwidth}
 		\noindent
 		\begin{minipage}{\linewidth}
@@ -182,7 +217,8 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 \noindent Metode \textit{Hough Transform} yang digunakan adalah untuk identifikasi garis lurus. Dalam ekstraksi fitur \textit{Hough Transform} perlu menspesifikasikan \textit{accumulator space} untuk menyimpan nilai \textit{voting}. Untuk tahapan \textit{Hough Transform} ini akan menggunakan \textit{library} dari \textit{OpenCV} yaitu dengan menggunakan \textit{function} \textit{Imgproc.HoughLines()}. \textit{Function} \textit{Imgproc.HoughLines()} ini memiliki parameter masukan berupa citra biner hasil dari metode \textit{Canny Edge Detection}, \textit{range} sudut yang akan digunakan sebagai $\theta$ untuk membatasi sudut yang akan dicari, dan  nilai rho yang merupakan panjang garis dalam piksel. Spesifikasi \textit{accumulator space} ditentukan berdasarkan ukuran citra input. Berikut adalah algoritme dari metode \textit{Hough Transform} untuk mendapatkan garis lurus:
 \begin{enumerate}
 	\item Citra masukan adalah citra biner hasil deteksi tepi pada tahapan sebelumnya.
-	\item Matriks \textit{Accumulator Space} didefinisikan sebagai \textit{array} 2 dimensi dengan sumbu horizontal menunjukkan nilai sudut ($\theta$) yang digunakan dan sumbu vertikal adalah nilai-nilai dari $\rho$.\\
+	\item Matriks \textit{Accumulator Space} didefinisikan sebagai \textit{array} 2 dimensi dengan sumbu horizontal menunjukkan nilai sudut ($\theta$) yang digunakan dan sumbu vertikal adalah nilai-nilai dari $\rho$.
+	
 	\begin{adjustbox}{width=1\textwidth}
 		\noindent
 		\begin{minipage}{\linewidth}
@@ -207,6 +243,7 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 	\item Jika masih terdapat lebih dari satu kandidat, maka pilih kandidat dengan rasio panjang : lebar yang paling mendekati rasio plat nomor kendaraan Indonesia, yaitu 1 : 3.
 	\item Hasil dari tahapan ini adalah 4 titik koordinat yang merupakan koordinat citra plat. Citra plat akan diambil dari citra asal dengan menggunakan titik-titik koordinat tersebut.
 \end{enumerate}
+
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
 		\centering\includegraphics[width=8cm]{images/HasilPlat.png}
@@ -216,7 +253,7 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 \end{adjustbox}\\
 
 \subsection{Tahapan Segmentasi Karakter}
-\noindent Setelah mendapatkan kandidat plat, maka berikutnya dilakukan segmentasi karakter untuk mendapatkan citra-citra karakter yang terdapat pada plat nomor kendaraan. Pada tahapan segmentasi karakter, akan dilakukan dua tahapan, yaitu segmentasi vertikal untuk mendapatkan batas atas dan batas bawah daerah karakter, dan segmentasi horizontal untuk mendapatkan batas kiri dan batas kanan untuk setiap karakter. Untuk tahapan segmentasi karakter ini akan menggunakan \textit{method} dari \textit{library JavaOCR} seperti yang disebutkan pada \ref{tbl:FunctionJavaOCR}, yaitu \textit{LineExtractor.slice()} dan \textit{CharacterExtractor.slice()}. \textit{LineExtractor.slice()} digunakan untuk melakukan segmentasi horizontal, parameter dari \textit{method} tersebut adalah berkas citra plat yang sudah melalui tahapan \textit{preprocessing} dan berkas citra yang akan menampung hasil segmentasi horizontal. Sedangkan \textit{CharackterExtractor.slice()} digunakan untuk melakukan segmentasi vertikal dengan parameter citra hasil segmentasi horizontal, berkas citra yang akan menampung hasil segmentasi vertikal, dan dua parameter berikutnya adalah ukuran lebar dan tinggi citra untuk hasil proses \textit{scaling}. Berikut adalah langkah-langkah dari proses segmentasi karakter:
+\noindent Setelah mendapatkan kandidat plat, maka berikutnya dilakukan segmentasi karakter untuk mendapatkan citra-citra karakter yang terdapat pada plat nomor kendaraan. Pada tahapan segmentasi karakter, akan dilakukan dua tahapan, yaitu segmentasi vertikal untuk mendapatkan batas atas dan batas bawah daerah karakter, dan segmentasi horizontal untuk mendapatkan batas kiri dan batas kanan untuk setiap karakter. Untuk tahapan segmentasi karakter ini akan menggunakan \textit{method} dari \textit{library JavaOCR} seperti yang disebutkan pada \ref{tbl:FunctionJavaOCR}, yaitu \textit{LineExtractor.slice()} dan \textit{CharacterExtractor.slice()}. \textit{LineExtractor.slice()} digunakan untuk melakukan segmentasi horizontal, parameter dari \textit{method} tersebut adalah berkas citra plat yang sudah melalui tahapan \textit{preprocessing} dan berkas citra yang akan menampung hasil segmentasi horizontal. Sedangkan \textit{CharacterExtractor.slice()} digunakan untuk melakukan segmentasi vertikal dengan parameter citra hasil segmentasi horizontal, berkas citra yang akan menampung hasil segmentasi vertikal, dan dua parameter berikutnya adalah ukuran lebar dan tinggi citra untuk hasil proses \textit{scaling}. Berikut adalah langkah-langkah dari proses segmentasi karakter:
 \begin{enumerate}
 \item Citra masukan adalah citra plat hasil tahapan deteksi plat kendaraan yang sudah dilakukan \textit{preprocessing} menjadi citra biner.
 \item Lakukan segmentasi vertikal untuk mendapatkan batas atas dan batas bawah dari area kandidat karakter.
@@ -325,7 +362,7 @@ Berikut ini adalah uraian dari \textit{flowchart} pada gambar \ref{fig:Flowchart
 	\captionof{figure}{Matriks hasil Perhitungan Gradien sumbu Y\\}
 	\label{fig:MatriksCitraHasilGradienY}
 \end{table}
-\item Untuk setiap piksel, hitung \textit{magnitude} gradien dan arah gradien menggunakan persamaaan \ref{eq:PersamaanMagnitude} dan \ref{eq:PersamaanArah}. Contoh perhitungannya untuk piksel koordinat (2,5) dan hasil dari tahap ini dapat dilihat pada gambar di bawah:
+\item Untuk setiap piksel, hitung \textit{magnitude} gradien dan arah gradien menggunakan persamaaan \ref{eq:PersamaanMagnitude} dan \ref{eq:PersamaanArah}. Contoh perhitungannya untuk piksel koordinat (2,5) dan hasil dari tahap ini dapat dilihat pada gambar \ref{fig:MatriksHasilMagnitude}:
 \begin{equation*}
 M(2,5) = \sqrt{0^2 + (-37)^2} = 37
 \end{equation*}

@@ -45,18 +45,16 @@
 \contentsline {section}{\numberline {3.1\hspace {0,3cm}}Analisis Masalah}{3-1}% 
 \contentsline {section}{\numberline {3.2\hspace {0,3cm}}Kerangka Pemikiran}{3-1}% 
 \contentsline {section}{\numberline {3.3\hspace {0,3cm}}Urutan Proses Global}{3-2}% 
-\contentsline {subsection}{\numberline {3.3.1}Proses \textit {Training}}{3-3}% 
-\contentsline {subsection}{\numberline {3.3.2}Proses \textit {Testing}}{3-4}% 
 \contentsline {section}{\numberline {3.4\hspace {0,3cm}}Analisis Manual}{3-5}% 
 \contentsline {subsection}{\numberline {3.4.1}\textit {Dataset}}{3-5}% 
 \contentsline {subsection}{\numberline {3.4.2}Tahap Pendeteksian Lokasi Plat Nomor}{3-7}% 
 \contentsline {subsubsection}{\numberline {3.4.2.1\hspace {-0,35cm}}\textit {Grayscale}}{3-7}% 
-\contentsline {subsubsection}{\numberline {3.4.2.2\hspace {-0,35cm}}Deteksi Tepi Canny}{3-8}% 
+\contentsline {subsubsection}{\numberline {3.4.2.2\hspace {-0,35cm}}Deteksi Tepi Canny}{3-9}% 
 \contentsline {subsubsection}{\numberline {3.4.2.3\hspace {-0,35cm}}\textit {Hough Transform}}{3-10}% 
 \contentsline {subsubsection}{\numberline {3.4.2.4\hspace {-0,35cm}}Tahap Validasi Plat Kendaraan}{3-11}% 
 \contentsline {subsection}{\numberline {3.4.3}Tahapan Segmentasi Karakter}{3-12}% 
 \contentsline {subsection}{\numberline {3.4.4}\textit {Histogram of Oriented Gradient}}{3-13}% 
-\contentsline {subsection}{\numberline {3.4.5}\textit {Support Vector Machine}}{3-17}% 
+\contentsline {subsection}{\numberline {3.4.5}\textit {Support Vector Machine}}{3-18}% 
 \contentsline {chapter}{\numberline {IV}IMPLEMENTASI DAN PENGUJIAN}{4-1}% 
 \contentsline {section}{\numberline {4.1\hspace {0,3cm}}Lingkungan Implementasi}{4-1}% 
 \contentsline {subsection}{\numberline {4.1.1}Spesifikasi Perangkat Keras}{4-1}% 

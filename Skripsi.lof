@@ -10,28 +10,27 @@
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Ilustrasi proses pengambilan citra \textit {dataset}\relax }}{2-22}% 
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Kerangka Pemikiran\relax }}{3-2}% 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces \textit {Flowchart Training} Sistem Pengenalan Plat Nomor Kendaraan \relax }}{3-3}% 
-\contentsline {figure}{\numberline {3.3}{\ignorespaces \textit {Flowchart Testing} Sistem Deteksi dan Pengenalan Plat Nomor \relax }}{3-4}% 
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Contoh citra plat yang digunakan \relax }}{3-5}% 
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Contoh citra plat setelah proses \textit {preprocessing} \relax }}{3-6}% 
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Citra plat setelah proses segmentasi horizontal \relax }}{3-6}% 
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Citra plat setelah proses segmentasi vertikal \relax }}{3-6}% 
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Contoh citra karakter yang digunakan untuk tahap \textit {training} \relax }}{3-7}% 
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Skema Alur Pendeteksian Plat \relax }}{3-7}% 
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Matriks Citra Asal berukuran 5 $\times $ 5 \relax }}{3-8}% 
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Matriks Citra Hasil \textit {Grayscale} \relax }}{3-8}% 
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Contoh Citra hasil deteksi tepi \textit {Canny} \relax }}{3-9}% 
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Ilustrasi matriks \textit {Accumulator Space} \relax }}{3-10}% 
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Contoh hasil citra plat \relax }}{3-12}% 
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Contoh hasil keluaran dari tahapan segmentasi \relax }}{3-13}% 
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Matriks citra hasil \textit {preprocessing} \relax }}{3-13}% 
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Matriks hasil Perhitungan Gradien sumbu X \relax }}{3-14}% 
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Matriks hasil Perhitungan Gradien sumbu Y \relax }}{3-14}% 
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Matriks hasil Perhitungan \textit {Magnitude} \relax }}{3-14}% 
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Matriks hasil Perhitungan Arah \relax }}{3-15}% 
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Contoh hasil \textit {Histogram of Oriented Gradient} untuk sel yang memiliki piksel dengan koordinat (2,5)\relax }}{3-16}% 
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Matriks hasil Perhitungan Histogram untuk seluruh sel \relax }}{3-16}% 
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Matriks hasil Normalisasi \relax }}{3-17}% 
+\contentsline {figure}{\numberline {3.2}{\ignorespaces \textit {Flowchart Global} Sistem Pengenalan Plat Nomor Kendaraan \relax }}{3-3}% 
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Contoh citra plat yang digunakan \relax }}{3-5}% 
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Contoh citra plat setelah proses \textit {preprocessing} \relax }}{3-6}% 
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Citra plat setelah proses segmentasi horizontal \relax }}{3-6}% 
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Citra plat setelah proses segmentasi vertikal \relax }}{3-6}% 
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Contoh citra karakter yang digunakan untuk tahap \textit {training} \relax }}{3-7}% 
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Skema Alur Pendeteksian Plat \relax }}{3-7}% 
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Matriks Citra Asal berukuran 5 $\times $ 5 \relax }}{3-8}% 
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Matriks Citra Hasil \textit {Grayscale} \relax }}{3-8}% 
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Contoh Citra hasil deteksi tepi \textit {Canny} \relax }}{3-10}% 
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Ilustrasi matriks \textit {Accumulator Space} \relax }}{3-11}% 
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Contoh hasil citra plat \relax }}{3-12}% 
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Contoh hasil keluaran dari tahapan segmentasi \relax }}{3-13}% 
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Matriks citra hasil \textit {preprocessing} \relax }}{3-14}% 
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Matriks hasil Perhitungan Gradien sumbu X \relax }}{3-14}% 
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Matriks hasil Perhitungan Gradien sumbu Y \relax }}{3-14}% 
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Matriks hasil Perhitungan \textit {Magnitude} \relax }}{3-15}% 
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Matriks hasil Perhitungan Arah \relax }}{3-15}% 
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Contoh hasil \textit {Histogram of Oriented Gradient} untuk sel yang memiliki piksel dengan koordinat (2,5)\relax }}{3-16}% 
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Matriks hasil Perhitungan Histogram untuk seluruh sel \relax }}{3-17}% 
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Matriks hasil Normalisasi \relax }}{3-18}% 
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Tampilan antarmuka aplikasi pengenalan plat nomor kendaraan \relax }}{4-6}% 
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Tampilan antarmuka hasil \textit {training} \relax }}{4-7}% 

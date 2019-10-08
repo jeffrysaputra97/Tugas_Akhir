@@ -136,7 +136,7 @@ M = ukuran \textit{height} dari citra
 \noindent Dari penjelasan di atas maka \textit{output} dari proses ekstraksi fitur dengan metode \textit{Hough Transform} adalah intensitas kemunculan dari setiap nilai \textit{theta} yang didapat dari keseluruhan \textit{peak} yang terpilih. Karena rentang nilai \textit{theta} adalah 0 - 180 derajat maka ukuran fitur yang diekstrak adalah 181.\\
 
 \subsection{Segmentasi}
-\noindent Segmentasi merupakan proses pembagian daerah dalam suatu citra untuk dipisahkan ke dalam segmen-segmen tertentu. Tujuan utama dari proses segmentasi adalah menyederhanakan dan/atau mengubah representasi gambar menjadi sesuatu yang memiliki arti tertentu dan lebih mudah dianalisis. Segmentasi gambar secara umum digunakan untuk mengenali objek dan batas-batas (garis) dalam gambar.\\ 
+\noindent Segmentasi merupakan proses pembagian daerah dalam suatu citra untuk dipisahkan ke dalam segmen-segmen tertentu. Tujuan utama dari proses segmentasi adalah menyederhanakan dan/atau mengubah representasi citra menjadi sesuatu yang memiliki arti tertentu dan lebih mudah dianalisis. Segmentasi citra secara umum digunakan untuk mengenali objek dan batas-batas (garis) dalam citra.\\ 
 
 \subsection{Fitur pada Citra}
 \noindent Dalam sistem pengenalan objek, fitur merupakan hal yang penting. Fitur merupakan atribut yang menonjol atau karakteristik yang dapat membedakan antara satu objek dengan objek lainnya. Fitur pada sebuah citra dapat digunakan untuk proses segmentasi dan klasifikasi. Sebuah objek dapat dibedakan berdasarkan fitur internal dan fitur eksternal. Fitur internal didapatkan berdasarkan komposisi piksel yang membentuk suatu wilayah (\textit{region}), sedangkan fitur eksternal membahas mengenai batas wilayah (\textit{region boundary}) dari sebuah objek. Contoh fitur internal adalah fitur tekstur, fitur dasar geometri, momen, histogram, dan \textit{Euler Number}. Fitur eksternal adalah \textit{Chain codes}, \textit{signatures}, dan \textit{Fourier descriptors} untuk menggambarkan bentuk dari objek (\textit{shape descriptor}) \cite{gonzalez}.\\
@@ -457,8 +457,8 @@ Dan perhitungan \textit{recall} atau disebut juga sebagai sensitivitas dapat dih
 		\begin{tabular}{|p{13.55cm}|}
 			\hline
 			\begin{equation}
-			CRR = \frac{\text{\textit{Number of Correctly Detected and Recognized LPs}}}{\text{\textit{Number of All Ground Truth LPs}}}
-			\label{eq:crr}
+			OVR = \frac{\text{\textit{Number of Correctly Detected and Recognized LPs}}}{\text{\textit{Number of All Ground Truth LPs}}}
+			\label{eq:ovr}
 			\end{equation}\\
 			\hline
 		\end{tabular}
@@ -491,7 +491,7 @@ Dan perhitungan \textit{recall} atau disebut juga sebagai sensitivitas dapat dih
 		\hline
 		5 & Imgproc.threshold(Mat src, Mat dst, double thresh, double maxval, int type) & Melakukan \textit{thresholding} terhadap seluruh nilai piksel dari citra yang dijadikan masukkan dengan nilai \textit{threshold}, nilai maksimum, serta jenis metode \textit{thresholding} yang digunakan, misalnya metode \textit{thresholding} Otsu.\\
 		\hline
-		6 & Imgproc.findContours(Mat image, List<MatOfPoint> contours, Mat hierarchy, int mode, int method) & Melakukan pencarian kontur terhadap citra yang dijadikan masukkan.\\
+		6 & Imgproc.findContours(Mat image, List$<$MatOfPoint$>$ contours, Mat hierarchy, int mode, int method) & Melakukan pencarian kontur terhadap citra yang dijadikan masukkan.\\
 		\hline
 		7 & Imgproc.contourArea(Mat contour) & Melakukan perhitungan luas area dari kontur yang diberikan.\\
 		\hline
@@ -613,7 +613,7 @@ Rasheed, S., Naeem, A., Ishaq, O. (2012, October). Automated number plate recogn
  
 \subsection{Pembahasan Penelitian Terkait}
 \noindent Terdapat beberapa metode yang dapat khususnya untuk mendeteksi plat nomor dan mengenali karakter pada plat nomor.
-\noindent Pada referensi pertama \cite{nugroho} menggunakan metode pengolahan citra untuk mencari kandidat-kandidat pita dengan menghitung histogram gambar untuk mendapatkan lokasi plat nomor kendaraan, kemudian setiap karakter dari plat nomor yang didapatkan disegmentasi dengan cara menghitung grafik horizontal gambar, kemudian untuk metode klasifikasi karakter yang digunakan adalah \textit{Learning Vector Quantization}.
+\noindent Pada referensi pertama \cite{nugroho} menggunakan metode pengolahan citra untuk mencari kandidat-kandidat pita dengan menghitung histogram citra untuk mendapatkan lokasi plat nomor kendaraan, kemudian setiap karakter dari plat nomor yang didapatkan disegmentasi dengan cara menghitung grafik horizontal citra, kemudian untuk metode klasifikasi karakter yang digunakan adalah \textit{Learning Vector Quantization}.
 
 \noindent Pada referensi kedua \cite{gou2016} menggunakan metode \textit{Extremal Region} sebagai proses untuk mendapatkan daerah-daerah karakter dari suatu plat nomor, kemudian \textit{Extremal Region} yang didapat diseleksi dengan menggunakan \textit{AdaBoost} sehingga bisa didapatkan daerah karakter plat nomor yang sesuai dengan kriteria yang diinginkan, dari daerah-daerah karakter yang didapatkan barulah kandidat plat nomor yang benar bisa didapatkan. Proses selanjutnya adalah pengambilan fitur karakter dengan menggunakan metode \textit{Histogram of Oriented Gradient} sehingga didapatkan fitur vektor dari setiap karakter pada plat nomor, yang nantinya akan menjadi masukkan bagi metode klasifikasi \textit{Hybrid Discriminative Restricted Boltzmann Machine}. Penelitian ini menghasilkan akurasi 98,2\% untuk pengenalan karakternya.
 
