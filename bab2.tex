@@ -11,11 +11,14 @@ Bab ini menjelaskan teori-teori yang berkaitan mengenai teori penunjang dan jurn
 
 \subsection{Citra Digital}
 \label{subsec:CitraDigital}
-\noindent Citra digital merupakan sebuah fungsi dua dimensi \textit{f(x,y)}, di mana \textit{x} dan \textit{y} adalah koordinat, dan nilai \textit{f} menyatakan intensitas atau tingkat keabuan yang dimiliki citra pada titik atau \textit{pixel} (\textit{picture element}) tersebut. Nilai \textit{f} merupakan nilai berhingga dan bersifat diskrit \cite{gonzalez}.\\
+\noindent Citra digital merupakan sebuah fungsi dua dimensi \textit{f(x,y)}, di mana \textit{x} dan \textit{y} adalah koordinat, dan nilai \textit{f} menyatakan intensitas atau tingkat keabuan yang dimiliki citra pada titik atau \textit{pixel} (\textit{picture element}) tersebut. Nilai \textit{f} merupakan nilai berhingga dan bersifat diskrit \cite{gonzalez}.
+
 \noindent Jenis citra digital bergantung pada jenis perangkat keras yang digunakan dan dapat dikelompokkan ke dalam beberapa jenis model warna, yang paling umum digunakan adalah model RGB. Citra model RGB merupakan citra yang menggunakan 3 kombinasi warna, yaitu merah, hijau, dan biru. Pada citra RGB 24-bit, setiap warna mempunyai nilai \textit{f} antara 0 hingga 255 sehingga perpaduan dari ketiga warna tersebut akan menghasilkan $256^{3}$ jenis warna \cite{gonzalez}. \\
 
 \subsection{Pengolahan Citra}
-\noindent Pengolahan citra dapat didefinisikan sebagai suatu bidang yang menggunakan citra sebagai masukan, lalu masukan tersebut diolah sehingga menghasilkan citra kembali. Berdasarkan definisi tersebut, perhitungan rata-rata dari suatu citra yang menghasilkan sebuah angka tidak termasuk pengolahan citra \cite{gonzalez}.\\
+\noindent Pengolahan citra merupakan suatu proses yang berfokus pada dua hal utama, yaitu meningkatkan kualitas informasi pada citra untuk membantu interpretasi manusia dan pemrosesan data citra untuk nantinya disimpan, ditransmisikan, dan digunakan sebagai referensi pengetahuan dari suatu mesin \textit{autonomous} \cite{gonzalez}.
+
+%\noindent Pengolahan citra dapat didefinisikan sebagai suatu bidang yang menggunakan citra sebagai masukan, lalu masukan tersebut diolah sehingga menghasilkan citra kembali. Berdasarkan definisi tersebut, perhitungan rata-rata dari suatu citra yang menghasilkan sebuah angka tidak termasuk pengolahan citra \cite{gonzalez}.\\
 \noindent Terdapat satu paradigma yang mengkategorikan 3 jenis proses komputasi dalam pengolahan citra, yaitu tingkat rendah, tingkat sedang, dan tingkat tinggi. Proses tingkat rendah mencakup operasi yang sangat sederhana seperti \textit{image preprocessing} untuk mengurangi \textit{noise}, meningkatkan kontras, dan mempertajam citra. Proses tingkat sedang meliputi segmentasi untuk membagi daerah citra menjadi \textit{region} atau objek. Sedangkan proses tingkat tinggi memampukan komputer untuk mengerti seperti pengenalan objek dan analisis citra \cite{gonzalez}. \\
 
 \subsection{Pengabuan Citra}
@@ -37,7 +40,7 @@ Bab ini menjelaskan teori-teori yang berkaitan mengenai teori penunjang dan jurn
 \noindent Persamaan \ref{eq:grayscale} menyimpulkan bahwa persentase warna hijau yang paling besar karena manusia cenderung lebih sensitif terhadap perubahan warna hijau yang memiliki panjang gelombang sekitar 500-570 nm, merah, lalu biru \cite{ragb}, dan merupakan rekomendasi dari \textit{International Telecommunication Union Radiocommunication Sector}.\\
 
 \subsection{Deteksi Tepi}
-\noindent Tepian memiliki arti yaitu terjadinya perubahan intensitas secara signifikan pada sebuah citra. Deteksi tepi ini digunakan untuk mendapatkan informasi bentuk dari citra masukan. Deteksi tepi yang digunakan pada penelitian ini adalah dengan menggunakan operator \textit{Canny} untuk mendapatkan tepian citra sebesar 1 piksel. Proses deteksi tepi Canny memiliki tahapan sebagai berikut:
+\noindent Tepian memiliki arti yaitu terjadinya perubahan intensitas secara signifikan pada sebuah citra. Deteksi tepi ini digunakan untuk mendapatkan informasi bentuk dari citra masukan. Deteksi tepi yang digunakan pada penelitian ini adalah dengan menggunakan operator \textit{Canny} untuk mendapatkan tepian citra sebesar 1 piksel. Proses deteksi tepi Canny memiliki tahapan sebagai berikut \cite{gonzalez}:
 \begin{enumerate}
 	\item Penghalusan \\
 	Pada tahapan pertama citra dihaluskan dengan \textit{Gaussian filter} untuk mengurangi derau yang dapat menghasilkan detail yang mengganggu.
@@ -52,7 +55,7 @@ Bab ini menjelaskan teori-teori yang berkaitan mengenai teori penunjang dan jurn
 \end{enumerate} 
 
 \subsection{\textit{Hough Transform}}
-\noindent \textit{Hough Transform} adalah sebuah teknik untuk mengidentifikasi bentuk spesifik dalam sebuah citra. \textit{Hough Transform} mengkonversikan semua titik dalam sebuah kurva ke dalam sebuah lokasi tunggal dalam ruang parametrik (ruang akumulator) lain dengan transformasi koordinat. Metode ini bertujuan untuk memetakan fitur global ke fitur lokal. Konsep ini juga dapat diterapkan untuk mendeteksi garis lurus, lingkaran, elips atau bentuk geometrik lainnya. \textit{Hough Transform} yang digunakan adalah untuk ekstraksi garis lurus. Berikut adalah rumus yang digunakan untuk mencari jarak antara titik \textit{origin} dengan garis yang terbentuk \cite{shih}:
+\noindent \textit{Hough Transform} adalah sebuah teknik untuk mengidentifikasi bentuk spesifik dalam sebuah citra. \textit{Hough Transform} mengkonversikan semua titik dalam sebuah kurva ke dalam sebuah lokasi tunggal dalam ruang parametrik (ruang akumulator) lain dengan transformasi koordinat. Metode ini bertujuan untuk memetakan fitur global ke fitur lokal. Konsep ini juga dapat diterapkan untuk mendeteksi garis lurus, lingkaran, elips atau bentuk geometrik lainnya. \textit{Hough Transform} yang digunakan adalah untuk ekstraksi garis lurus. Persamaan \ref{eq:PersamaanRho} adalah rumus yang digunakan untuk mencari jarak antara titik \textit{origin} dengan garis yang terbentuk \cite{shih}:
 
 \begin{table}[H]
 	\begin{adjustbox}{width=1\textwidth}
@@ -73,7 +76,7 @@ x = koordinat titik x\\
 y = koordinat titik y\\
 $\theta$ = sudut derajat; $0^\circ$ $\leq$ $\theta$ $\leq$ $180^\circ$
 
-\noindent Metode \textit{Hough Transform} menerapkan skema \textit{voting}. Sebuah \textit{array} akumulator diperlukan untuk menyimpan hasil \textit{voting}. Rentang nilai $\theta$ (\textit{theta}) yang digunakan adalah antara nilai 0 hingga 180 derajat. Sedangkan rentang nilai $\rho$ (\textit{rho}) yang digunakan dalam akumulator adalah \cite{comvis}:
+\noindent Metode \textit{Hough Transform} menerapkan skema \textit{voting}. Sebuah \textit{array} akumulator diperlukan untuk menyimpan hasil \textit{voting}. Rentang nilai $\theta$ (\textit{theta}) yang digunakan adalah antara nilai 0 hingga 180 derajat. Sedangkan rentang nilai $\rho$ (\textit{rho}) yang digunakan dalam akumulator memenuhi aturan pertidaksamaan \ref{eq:RentangRho} \cite{comvis}:
 
 \begin{table}[H]
 	\begin{adjustbox}{width=1\textwidth}
@@ -81,6 +84,7 @@ $\theta$ = sudut derajat; $0^\circ$ $\leq$ $\theta$ $\leq$ $180^\circ$
 			\hline
 			\begin{equation}
 			-D \leq \rho \leq D
+			\label{eq:RentangRho}
 			\end{equation}\\
 			\hline
 		\end{tabular}
@@ -90,7 +94,7 @@ $\theta$ = sudut derajat; $0^\circ$ $\leq$ $\theta$ $\leq$ $180^\circ$
 \noindent Dimana:\\
 D = jarak diagonal dari citra
 
-\noindent Karena citra yang digunakan berbentuk persegi panjang maka jarak diagonal memenuhi persamaan berikut \cite{rectangle}:
+\noindent Karena citra yang digunakan berbentuk persegi panjang maka jarak diagonal memenuhi persamaan \ref{eq:PersamaanJarakDiagonalPersegi} \cite{rectangle}:
 
 \begin{table}[H]
 	\begin{adjustbox}{width=1\textwidth}
@@ -98,6 +102,7 @@ D = jarak diagonal dari citra
 			\hline
 			\begin{equation}
 			D = \sqrt{N^2 + M^2}
+			\label{eq:PersamaanJarakDiagonalPersegi}
 			\end{equation}\\
 			\hline
 		\end{tabular}
@@ -109,7 +114,7 @@ D = jarak diagonal dari citra\\
 N = ukuran \textit{width} dari citra\\
 M = ukuran \textit{height} dari citra
 
-\noindent Sehingga rentang nilai \textit{rho} yang digunakan dalam penelitian ini adalah:
+\noindent Sehingga rentang nilai \textit{rho} yang digunakan dalam penelitian ini adalah memenuhi aturan seperti ditunjukkan pada pertidaksamaan \ref{eq:RentangRho2}:
 
 \begin{table}[H]
 	\begin{adjustbox}{width=1\textwidth}
@@ -117,6 +122,7 @@ M = ukuran \textit{height} dari citra
 			\hline
 			\begin{equation}
 			-\sqrt{N^2 + M^2} \leq \rho \leq \sqrt{N^2 + M^2}
+			\label{eq:RentangRho2}
 			\end{equation}\\
 			\hline
 		\end{tabular}
@@ -136,13 +142,15 @@ M = ukuran \textit{height} dari citra
 \noindent Dari penjelasan di atas maka \textit{output} dari proses ekstraksi fitur dengan metode \textit{Hough Transform} adalah intensitas kemunculan dari setiap nilai \textit{theta} yang didapat dari keseluruhan \textit{peak} yang terpilih. Karena rentang nilai \textit{theta} adalah 0 - 180 derajat maka ukuran fitur yang diekstrak adalah 181.\\
 
 \subsection{Segmentasi}
-\noindent Segmentasi merupakan proses pembagian daerah dalam suatu citra untuk dipisahkan ke dalam segmen-segmen tertentu. Tujuan utama dari proses segmentasi adalah menyederhanakan dan/atau mengubah representasi citra menjadi sesuatu yang memiliki arti tertentu dan lebih mudah dianalisis. Segmentasi citra secara umum digunakan untuk mengenali objek dan batas-batas (garis) dalam citra.\\ 
+\noindent Segmentasi merupakan proses pembagian daerah dalam suatu citra untuk dipisahkan ke dalam segmen-segmen tertentu. Tujuan utama dari proses segmentasi adalah menyederhanakan dan/atau mengubah representasi citra menjadi sesuatu yang memiliki arti tertentu dan lebih mudah dianalisis \cite{gonzalez}. Segmentasi citra secara umum digunakan untuk mengenali objek dan batas-batas (garis) dalam citra. 
+
+\noindent Secara garis besar, terdapat tiga cara utama untuk melakukan segmentasi, yaitu dengan cara \textit{Thresholding}, segmentasi tepian, dan segmentasi wilayah. Contoh dari metode segmentasi \textit{Thresholding} adalah \textit{Basic Global Thresholding}, \textit{Otsu}, \textit{Multiple Threshold}, dan \textit{Variable Thresholding}. Contoh metode segmentasi tepian adalah deteksi tepi standar (\textit{Sobel}, \textit{Robert}, \textit{Prewitt}, \textit{Canny}), \textit{Marr-Hildreth edge detector}, \textit{Short Response Hilbert Transform}, dan \textit{Watersheds}. Sedangkan untuk metode segmentasi wilayah contohnya adalah \textit{Region Growing}, \textit{Data Clustering}, \textit{Partitional Clustering}, dan \textit{Cheng-Jin Kuo's Method}.\\
 
 \subsection{Fitur pada Citra}
 \noindent Dalam sistem pengenalan objek, fitur merupakan hal yang penting. Fitur merupakan atribut yang menonjol atau karakteristik yang dapat membedakan antara satu objek dengan objek lainnya. Fitur pada sebuah citra dapat digunakan untuk proses segmentasi dan klasifikasi. Sebuah objek dapat dibedakan berdasarkan fitur internal dan fitur eksternal. Fitur internal didapatkan berdasarkan komposisi piksel yang membentuk suatu wilayah (\textit{region}), sedangkan fitur eksternal membahas mengenai batas wilayah (\textit{region boundary}) dari sebuah objek. Contoh fitur internal adalah fitur tekstur, fitur dasar geometri, momen, histogram, dan \textit{Euler Number}. Fitur eksternal adalah \textit{Chain codes}, \textit{signatures}, dan \textit{Fourier descriptors} untuk menggambarkan bentuk dari objek (\textit{shape descriptor}) \cite{gonzalez}.\\
 
 \subsection{\textit{Histogram of Oriented Gradient}}
-\noindent\textit{Histogram of Oriented Gradients} merupakan salah satu teknik pengambilan fitur yang bertujuan untuk mengambil informasi penting dari sebuah citra. Cara kerja metode ini yaitu dengan mengevaluasi histogram lokal yang sudah ternormalisasi secara baik dari distribusi gradien citra dalam \textit{grid} yang padat. Teknik mengekstrak fitur untuk metode ini yaitu dari distribusi lokal dari intensitas gradient tiap piksel yang terdapat pada sebuah objek citra. Dalam metode \textit{Histogram of Oriented Gradient}, ukuran sel berupa kumpulan atau gabungan piksel dan blok berupa kumpulan atau gabungan sel beserta jumlah \textit{orientation bin} yang merupakan tempat unutk menampung hasil arah dan besar gradien akan mempengaruhi hasil keluaran fitur vektor yang dihasilkan dan juga akurasi yang didapat. Pertama untuk setiap piksel dari citra akan dihitung gradiennya dari sumbu x dan y dengan menggunakan persamaan :
+\noindent\textit{Histogram of Oriented Gradients} merupakan salah satu teknik pengambilan fitur yang bertujuan untuk mengambil informasi penting dari sebuah citra. Cara kerja metode ini yaitu dengan mengevaluasi histogram lokal yang sudah ternormalisasi secara baik dari distribusi gradien citra dalam \textit{grid} yang padat. Teknik mengekstrak fitur untuk metode ini yaitu dari distribusi lokal dari intensitas gradient tiap piksel yang terdapat pada sebuah objek citra \cite{hog}. Dalam metode \textit{Histogram of Oriented Gradient}, ukuran sel berupa kumpulan atau gabungan piksel dan blok berupa kumpulan atau gabungan sel beserta jumlah \textit{orientation bin} yang merupakan tempat untuk menampung hasil arah dan besar gradien akan mempengaruhi hasil keluaran fitur vektor yang dihasilkan dan juga akurasi yang didapat. Pertama untuk setiap piksel dari citra akan dihitung gradiennya dari sumbu x dan y dengan menggunakan persamaan \ref{eq:PersamaanGradienX} dan \ref{eq:PersamaanGradienY} :
 
 \begin{table}[H]
 	\small
@@ -167,7 +175,7 @@ $G_{x}(x,y)$ = nilai gradient untuk sumbu x\\
 $G_{y}(x,y)$ = nilai gradient untuk sumbu y\\
 $I(x,y)$ = nilai piksel citra dari baris x dan kolom y
 
-\noindent Setelah didapat nilai gradient dari sumbu x dan y untuk setiap pikselnya, proses selanjutnya adalah menghitung besar nilai dan arah gradiennya dengan menggunakan rumus:
+\noindent Setelah didapat nilai gradient dari sumbu x dan y untuk setiap pikselnya, proses selanjutnya adalah menghitung besar nilai dan arah gradiennya dengan menggunakan rumus \ref{eq:PersamaanMagnitude} dan \ref{eq:PersamaanArah}:
 
 \begin{table}[H]
 	\small
@@ -190,7 +198,7 @@ $I(x,y)$ = nilai piksel citra dari baris x dan kolom y
 $M(x,y)$ = besar nilai gradient dari sumbu x dan y\\
 $\theta(x,y)$ = arah nilai gradient dari sumbu x dan y
 
-\noindent Kemudian, setiap piksel citra akan dibagi ke dalam beberapa sel yang dari setiap sel, akan dihitung persebaran \textit{Histogram of Oriented Gradient}-nya melalui proses \textit{voting}. Proses \textit{voting} dalam \textit{Histogram of Oriented Gradient} pertama akan menentukan nilai-nilai dari \textit{bin} dengan membagi total jumlah sudut gradien ke dalam jumlah \textit{orientation bin}. Kemudian untuk setiap arah sudut gradien dari setiap piksel dalam sel akan dimasukkan ke dalam rentang \textit{orientation bin} yang sudah ditentukan pada pertama kali, kemudian membagi besar nilai gradiennya dengan \textit{orientation bin} yang terkait. Sebagai contoh, jika jumlah \textit{bin} yang digunakan adalah 4 \textit{bin}. Maka ukuran \textit{range} sudut setiap bin adalah 180/4 = 45 derajat. Ilustrasinya dapat dilihat pada gambar \ref{fig:IlustrasiBin}.
+\noindent Kemudian, setiap piksel citra akan dibagi ke dalam beberapa sel yang dari setiap sel, akan dihitung persebaran \textit{Histogram of Oriented Gradient}-nya melalui proses \textit{voting}. Proses \textit{voting} dalam \textit{Histogram of Oriented Gradient} pertama akan menentukan nilai-nilai dari \textit{bin} dengan membagi total jumlah sudut gradien ke dalam jumlah \textit{orientation bin}. Kemudian untuk setiap arah sudut gradien dari setiap piksel dalam sel akan dimasukkan ke dalam rentang \textit{orientation bin} yang sudah ditentukan pada pertama kali, kemudian membagi besar nilai gradiennya dengan \textit{orientation bin} yang terkait. Sebagai contoh, jika jumlah \textit{bin} yang digunakan adalah 4 \textit{bin}. Maka ukuran \textit{range} sudut setiap bin adalah 180/4 = 45 derajat. Ilustrasinya dapat dilihat pada Gambar \ref{fig:IlustrasiBin}.
 
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
@@ -200,7 +208,7 @@ $\theta(x,y)$ = arah nilai gradient dari sumbu x dan y
 	\end{minipage}
 \end{adjustbox}\\
 
-\noindent Setelah \textit{Histogram of Oriented Gradient} sudah dibuat untuk setiap sel, proses selanjutnya adalah melakukan normalisasi terhadap hasil \textit{vote} pada setiap \textit{bin} dalam sel. Normalisasi akan dilakukan dalam 1 blok, dengan ukuran blok merupakan m $\times$ n sel. Terdapat 4 macam metode untuk normalisasi, yaitu: \textit{L2-Norm}, \textit{L2-Hys}, \textit{L1-sqrt}, dan \textit{L1-Norm}. Persamaannya adalah sebagai berikut:
+\noindent Setelah \textit{Histogram of Oriented Gradient} sudah dibuat untuk setiap sel, proses selanjutnya adalah melakukan normalisasi terhadap hasil \textit{vote} pada setiap \textit{bin} dalam sel. Normalisasi akan dilakukan dalam 1 blok, dengan ukuran blok merupakan m $\times$ n sel. Terdapat 4 macam metode untuk normalisasi, yaitu: \textit{L2-Norm}, \textit{L2-Hys}, \textit{L1-sqrt}, dan \textit{L1-Norm}. Persamaan \ref{eq:PersamaanL1Norm} sampai \ref{eq:L2-Norm} berikut merupakan persamaan untuk metode normalisasi \textit{L1-Norm}, \textit{L1-Sqrt}, dan \textit{L2-Norm}:
 
 \begin{table}[H]
 	\small
@@ -209,6 +217,7 @@ $\theta(x,y)$ = arah nilai gradient dari sumbu x dan y
 			\hline
 			\begin{equation} 
 			\text{L1-Norm}_{i} = \frac{V_{i}}{\sum_{j=1}^{N}V_{j}}
+			\label{eq:PersamaanL1Norm}
 			\end{equation}\\
 			\hline
 		\end{tabular}
@@ -259,9 +268,9 @@ $N$ = jumlah total nilai total \textit{bin} yang digunakan dalam proses normalis
 \noindent Adapun proses normalisasi blok akan dilakukan dalam \textit{sliding window} yang akan bergerak melakukan proses dengan pergeseran sebesar 1$\times$ ukuran sel secara vertikal dan horizontal. Proses ini kemudian akan bersifat \textit{overlapping} untuk beberapa sel yang dinormalisasi sehingga menimbulkan informasi yang redundan, namun akurasi yang dihasilkan justru semakin meningkat karenanya. Terakhir, hasil dari normalisasi tiap blok akan digabungkan menjadi 1 fitur vektor besar.\\
 
 \subsection{\textit{Support Vector Machine}}
-\noindent\textit{Support Vector Machine} merupakan salah satu algoritme \textit{supervised learning} untuk melakukan klasifikasi serta regresi dengan menggunakan teori vektor. SVM dapat memetakan vektor input ke dalam sebuah ruang beukuran n-dimensional (n adalah jumlah fitur). Konsep dasar dari SVM adalah menemukan sebuah \textit{separating hyperplane} (bidang) yang dapat memisahkan dua kelas dengan margin maksimal. 
+\noindent\textit{Support Vector Machine} merupakan salah satu algoritme \textit{supervised learning} untuk melakukan klasifikasi serta regresi dengan menggunakan teori vektor. SVM dapat memetakan vektor masukan ke dalam sebuah ruang beukuran n-dimensional (n adalah jumlah fitur). Konsep dasar dari SVM adalah menemukan sebuah \textit{separating hyperplane} (bidang) yang dapat memisahkan dua kelas dengan margin maksimal. 
 
-\noindent Garis putus-putus yang berada paling dekat dengan masing-masing kelas merupakan \textit{hyperplane} paralel untuk memisahkan kedua kelas (lihat gambar \ref{fig:hyperplanesvm}). Asumsinya adalah semakin besar jarak atau margin antara 2 \textit{hyperplane} pendukung ini maka semakin baik hasil klasifikasinya. \textit{Hyperplane} yang optimal harus memenuhi persamaan \ref{eq:PersamaanHyperplane} berikut:
+\noindent Garis putus-putus yang berada paling dekat dengan masing-masing kelas merupakan \textit{hyperplane} paralel untuk memisahkan kedua kelas (lihat Gambar \ref{fig:hyperplanesvm}). Asumsinya adalah semakin besar jarak atau margin antara 2 \textit{hyperplane} pendukung ini maka semakin baik hasil klasifikasinya. \textit{Hyperplane} yang optimal harus memenuhi persamaan \ref{eq:PersamaanHyperplane} berikut:
 
 \begin{table}[H]
 	\small
@@ -277,7 +286,7 @@ $N$ = jumlah total nilai total \textit{bin} yang digunakan dalam proses normalis
 	\end{adjustbox}
 \end{table}
 
-\noindent Dimana $w^T$ adalah vektor berat dan $x$ adalah vektor input dan $b$ merupakan nilai bias. Tanda “.” menggambarkan perkalian dot vektor.
+\noindent Dimana $w^T$ adalah vektor berat dan $x$ adalah vektor masukan dan $b$ merupakan nilai bias. Tanda “.” menggambarkan perkalian dot vektor.
 \begin{table}[H]
 	\small
 	\begin{adjustbox}{width=1\textwidth}
@@ -294,9 +303,9 @@ $N$ = jumlah total nilai total \textit{bin} yang digunakan dalam proses normalis
 	\label{fig:hyperplanesvm}
 \end{table}
 
-\noindent SVM pada mulanya digunakan untuk menangani klasifikasi yang terdiri dari 2 kelas saja. Namun seriring dengan perkembangan zaman masalah yang dihadapi semakin kompleks sehingga membutuhkan teknik untuk melakukan proses klasifikasi lebih dari 2 kelas. Untuk melakukan klasifikasi lebih dari 2 kelas, terdapat 2 pendekatan yang bisa digunakan yaitu \textit{One-Versus-One} dan \textit{One-Versus-Rest}. Pada pendekatan \textit{One-Versus-One}, akan dibuat sebanyak $k(k-1)/2$  pasangan kelas untuk pengujian untuk klasifikasi dengan kelas sebanyak $k$. Untuk menentukan kelas mana yang menjadi klasifikasi untuk suatu kumpulan data caranya adalah sistem \textit{voting}. Kelas dengan jumlah \textit{voting} terbanyak akan menjadi \textit{classifier} untuk data tersebut. Pada pendekatan \textit{One-Versus-Rest} akan dibuat sebanyak $k$ pasangan kelas untuk klasifikasi dengan kelas sebanyak $k$. Setiap kelas yang diuji akan dibandingkan dengan sisa kelas yang ada. Misal terdapat 3 kelas A,B, dan C, maka kelas A akan dibandingkan dengan kelas B dan C, kelas B dibandingkan dengan kelas A dan C, kelas C dibandingkan dengan kelas A dan B. Kekurangan dari pendekatan ini adalah jumlah \textit{training set} yang tidak seimbang \cite{svm}.
+\noindent SVM pada mulanya digunakan untuk menangani klasifikasi yang terdiri dari 2 kelas saja. Namun seiring dengan perkembangan zaman masalah yang dihadapi semakin kompleks sehingga membutuhkan teknik untuk melakukan proses klasifikasi lebih dari 2 kelas. Untuk melakukan klasifikasi lebih dari 2 kelas, terdapat 2 pendekatan yang bisa digunakan yaitu \textit{One-Versus-One} dan \textit{One-Versus-Rest}. Pada pendekatan \textit{One-Versus-One}, akan dibuat sebanyak $k(k-1)/2$  pasangan kelas untuk pengujian untuk klasifikasi dengan kelas sebanyak $k$. Untuk menentukan kelas mana yang menjadi klasifikasi untuk suatu kumpulan data caranya adalah sistem \textit{voting}. Kelas dengan jumlah \textit{voting} terbanyak akan menjadi \textit{classifier} untuk data tersebut. Pada pendekatan \textit{One-Versus-Rest} akan dibuat sebanyak $k$ pasangan kelas untuk klasifikasi dengan kelas sebanyak $k$. Setiap kelas yang diuji akan dibandingkan dengan sisa kelas yang ada. Misal terdapat 3 kelas A,B, dan C, maka kelas A akan dibandingkan dengan kelas B dan C, kelas B dibandingkan dengan kelas A dan C, kelas C dibandingkan dengan kelas A dan B. Kekurangan dari pendekatan ini adalah jumlah \textit{training set} yang tidak seimbang \cite{svm}.
 
-\noindent Untuk proses klasifikasi \textit{non-linear} dapat dicari dengan persamaan 2.13 berikut:
+\noindent Untuk proses klasifikasi \textit{non-linear} dapat dicari dengan persamaan \ref{eq:FungsiSignum} berikut:
 \begin{table}[H]
 	\small
 	\begin{adjustbox}{width=1\textwidth}
@@ -304,6 +313,7 @@ $N$ = jumlah total nilai total \textit{bin} yang digunakan dalam proses normalis
 			\hline
 			\begin{equation}
 			f(x) = sign(\sum_{i=1}^{l}\alpha_iy_iK(x,x_i)+b)
+			\label{eq:FungsiSignum}
 			\end{equation}\\
 			\hline
 		\end{tabular}
@@ -354,7 +364,7 @@ $N$ = jumlah total nilai total \textit{bin} yang digunakan dalam proses normalis
 	$b$ & = & nilai bias\\
 \end{tabularx}
 
-\noindent Seringkali kasus yang ada dalam dunia nyata tidak selalu bisa dipisahkan secara linier (\textit{linearly separable}) seperti pada contoh gambar di atas. Misalnya suatu kumpulan data memiliki fitur yang memiliki n-dimensi. Linear SVM tidak bisa diterapkan untuk kasus tersebut, sehingga diperlukan teknik agar membuat \textit{hyperplane} yang bisa memisahkan antara 2 kelas dalam ruang multidimensi. Cara yang umum digunakan untuk menyelesaikan masalah tersebut adalah dengan menggunakan kernel. Kernel yang umum digunakan pada SVM yaitu \textit{Radial Basis Function} seperti pada persamaan \ref{eq:PersamaanRBF} berikut:
+\noindent Seringkali kasus yang ada dalam dunia nyata tidak selalu bisa dipisahkan secara linier (\textit{linearly separable}) seperti pada contoh Gambar \ref{fig:hyperplanesvm}. Misalnya suatu kumpulan data memiliki fitur yang memiliki n-dimensi. Linear SVM tidak bisa diterapkan untuk kasus tersebut, sehingga diperlukan teknik agar membuat \textit{hyperplane} yang bisa memisahkan antara 2 kelas dalam ruang multidimensi. Cara yang umum digunakan untuk menyelesaikan masalah tersebut adalah dengan menggunakan kernel. Kernel yang umum digunakan pada SVM yaitu \textit{Radial Basis Function} seperti pada persamaan \ref{eq:PersamaanRBF} berikut:
 
 \begin{table}[H]
 	\small
@@ -374,14 +384,14 @@ $N$ = jumlah total nilai total \textit{bin} yang digunakan dalam proses normalis
 \begin{tabularx}{\textwidth}{lll}
 	Dimana: \\
 	$K$ & = & nilai fungsi kernel RBF\\
-	$x_i$ & = & vektor input 1\\
-	$x_j$ & = & vektor input 2\\
+	$x_i$ & = & vektor masukan 1\\
+	$x_j$ & = & vektor masukan 2\\
 	$\sigma$ & = & konstanta sigma\\
 \end{tabularx}
 \vspace{4.5pt}
 
 \subsection{\textit{Confusion Matrix}}
-\noindent \textit{Confusion Matrix} merupakan metode pengukuran untuk mengevaluasi hasil klasifikasi. Dengan melakukan klasifikasi sebanyak $C$ kelas, dihasilkan \textit{confusion matrix} $M$ berukuran $C \times C$, di mana elemen $M_{ij}$ dalam matriks menunjukkan jumlah sampel yang salah diklasifikasikan, sementara $M_{ii}$ adalah jumlah sampel yang hasil klasifikasinya adalah benar. \textit{Confusion matrix} pada gambar \ref{fig:ConfusionMatrix} digunakan pada kasus klasifikasi dua buah kelas sehingga membentuk matriks berukuran $2 \times 2$ \cite{markham}.
+\noindent \textit{Confusion Matrix} merupakan metode pengukuran untuk mengevaluasi hasil klasifikasi. Dengan melakukan klasifikasi sebanyak $C$ kelas, dihasilkan \textit{confusion matrix} $M$ berukuran $C \times C$, di mana elemen $M_{ij}$ dalam matriks menunjukkan jumlah sampel yang salah diklasifikasikan, sementara $M_{ii}$ adalah jumlah sampel yang hasil klasifikasinya adalah benar. \textit{Confusion matrix} pada Gambar \ref{fig:ConfusionMatrix} digunakan pada kasus klasifikasi dua buah kelas sehingga membentuk matriks berukuran $2 \times 2$ \cite{markham}.
 
 \begin{adjustbox}{width=1\textwidth}
 \noindent\begin{minipage}{\linewidth}
@@ -433,8 +443,8 @@ Dan perhitungan \textit{recall} atau disebut juga sebagai sensitivitas dapat dih
 	\end{adjustbox}
 \end{table}
 
-\subsection{\textit{Character Recognition Rate} (CRR)}
-\noindent \textit{Character Recognition Rate} atau CRR adalah alat ukur untuk mengetahui keberhasilan pengenalan karakter dari suatu aplikasi pengenalan karakter. Perhitungan persentase CRR dilakukan dengan cara membagi jumlah karakter yang dapat dikenali terhadap jumlah karakter yang terdeteksi oleh sistem seperti yang dapat dilihat pada persamaan \ref{eq:crr}. 
+\subsection{\textit{Character Recognition Rate}}
+\noindent \textit{Character Recognition Rate} atau CRR adalah alat ukur untuk mengetahui keberhasilan pengenalan karakter dari suatu aplikasi pengenalan karakter \cite{gou2016}. Perhitungan persentase CRR dilakukan dengan cara membagi jumlah karakter yang dapat dikenali terhadap jumlah karakter yang terdeteksi oleh sistem seperti yang dapat dilihat pada persamaan \ref{eq:crr}. 
 
 \begin{table}[H]
 	\begin{adjustbox}{width=1\textwidth}
@@ -449,8 +459,8 @@ Dan perhitungan \textit{recall} atau disebut juga sebagai sensitivitas dapat dih
 	\end{adjustbox}
 \end{table}
 
-\subsection{\textit{Overall Performance} (OVR)}
-\noindent \textit{Overall Performance} atau OVR adalah alat ukur untuk mengetahui performa keseluruhan dari aplikasi pada penelitian ini. Perhitungan persentase OVR dilakukan dengan cara membagi jumlah plat nomor yang terdeteksi dan dapat dikenali dengan benar terhadap jumlah keseluruhan plat nomor pada \textit{dataset} seperti yang dapat dilihat pada persamaan \ref{eq:ovr}. 
+\subsection{\textit{Overall Performance}}
+\noindent \textit{Overall Performance} atau OVR adalah alat ukur untuk mengetahui performa keseluruhan dari aplikasi pada penelitian ini \cite{gou2016}. Perhitungan persentase OVR dilakukan dengan cara membagi jumlah plat nomor yang terdeteksi dan dapat dikenali dengan benar terhadap jumlah keseluruhan plat nomor pada \textit{dataset} seperti yang dapat dilihat pada persamaan \ref{eq:ovr}. 
 
 \begin{table}[H]
 	\begin{adjustbox}{width=1\textwidth}
@@ -466,7 +476,7 @@ Dan perhitungan \textit{recall} atau disebut juga sebagai sensitivitas dapat dih
 \end{table}
 
 \subsection{Penggunaan \textit{Library}}
-\noindent Berikut adalah penjelasan dari \textit{library} yang digunakan di dalam penelitian. \\
+\noindent Bagian ini akan menjelaskan \textit{library} yang digunakan dalam penelitian ini. \textit{Library} yang digunakan diantaranya \textit{OpenCV} untuk melakukan tahapan \textit{preprocessing}, \textit{Weka SVM} untuk melakukan tahapan klasifikasi karakter, \textit{JavaOCR} untuk melakukan segmentasi terhadap citra plat. Untuk penjelasan lebih lanjut dari setiap \textit{library} akan disampaikan pada subbab berikut.\\
 \subsubsection{OpenCV}
 \noindent\textit{Library} yang digunakan adalah OpenCV untuk proses \textit{pre-processing} citra. OpenCV merupakan \textit{library open-source} yang banyak digunakan untuk penelitian terkait proses pengolahan citra dan \textit{computer vision}. 
 \begin{small}
@@ -483,17 +493,17 @@ Dan perhitungan \textit{recall} atau disebut juga sebagai sensitivitas dapat dih
 		\endhead
 		1 & Imgcodecs.imread(String filename) & Mengambil citra dari \textit{path} yang diisikan ke parameter.\\
 		\hline
-		2 & Imgproc.cvtColor(Mat src, Mat dst, int code) & Mengubah jenis warna pada citra sesuai yang diinginkan. Parameter fungsi ini terdiri dari Mat asal, Mat tujuan, dan \textit{code}. \textit{Code} digunakan untuk memilih tipe konversi citra tersebut, misal \textit{grayscale}.\\
+		2 & Imgproc.cvtColor(Mat src, Mat dst, int code) & Mengkonversi jenis warna citra dengan parameter citra RGB, matriks citra tujuan, dan \textit{code}. \textit{Code} digunakan untuk memilih tipe konversi citra tersebut, misal \textit{grayscale}.\\
 		\hline
 		3 & Imgproc.Canny(Mat image,Mat edges,double threshold1, double threshold2) & Fungsi ini digunakan untuk mendeteksi tepian pada citra menggunakan Canny.\\
 		\hline
-		4 & Imgproc.GaussianBlur(Mat src, Mat dst, Size ksize, double sigmaX) & Melakukan \textit{Gaussian Filter} terhadap citra yang dimasukkan ke dalam parameter dengan ukuran \textit{kernel} dan nilai \textit{sigma} yang diberikan.\\
+		4 & Imgproc.GaussianBlur(Mat src, Mat dst, Size ksize, double sigmaX) & Melakukan \textit{Gaussian Filter} dengan parameter citra \textit{grayscale}, matriks citra tujuan, ukuran \textit{kernel} dan nilai \textit{sigma} yang diberikan.\\
 		\hline
-		5 & Imgproc.threshold(Mat src, Mat dst, double thresh, double maxval, int type) & Melakukan \textit{thresholding} terhadap seluruh nilai piksel dari citra yang dijadikan masukkan dengan nilai \textit{threshold}, nilai maksimum, serta jenis metode \textit{thresholding} yang digunakan, misalnya metode \textit{thresholding} Otsu.\\
+		5 & Imgproc.threshold(Mat src, Mat dst, double thresh, double maxval, int type) & Melakukan \textit{thresholding} dengan parameter citra \textit{grayscale}, matriks citra tujuan, nilai \textit{threshold}, nilai maksimum, serta jenis metode \textit{thresholding} yang digunakan, misalnya metode \textit{thresholding} Otsu. Keluaran dari \textit{function} ini adalah citra biner.\\
 		\hline
-		6 & Imgproc.findContours(Mat image, List$<$MatOfPoint$>$ contours, Mat hierarchy, int mode, int method) & Melakukan pencarian kontur terhadap citra yang dijadikan masukkan.\\
+		6 & Imgproc.findContours(Mat image, List$<$MatOfPoint$>$ contours, Mat hierarchy, int mode, int method) & Melakukan pencarian kontur terhadap citra biner yang dijadikan masukkan.\\
 		\hline
-		7 & Imgproc.contourArea(Mat contour) & Melakukan perhitungan luas area dari kontur yang diberikan.\\
+		7 & Imgproc.contourArea(Mat contour) & Melakukan perhitungan luas area untuk setiap kontur dari hasil pencarian kontur menggunakan \textit{function} \textit{Imgproc.findContours()}. \\
 		\hline
 		8 & Imgproc.imwrite(String filename, Mat img) & Menyimpan citra yang diisikan ke parameter ke \textit{path} yang dijadikan tujuan penyimpanan.\\
 		\hline
@@ -502,7 +512,7 @@ Dan perhitungan \textit{recall} atau disebut juga sebagai sensitivitas dapat dih
 	\end{longtable}
 \end{small}
 \subsubsection{Weka}
-\noindent Weka adalah kumpulan dari algoritme pembelajaran mesin yang digunakan untuk menyelesaikan permasalahan \textit{data mining}. \textit{Library} ini berbasis bahasa pemrograman Java dan dapat berjalan di hampir seluruh platform. Dalam penelitian ini, \textit{library} Weka digunakan untuk melakukan proses klasifikasi menggunakan metode \textit{Support Vector Machine}.
+\noindent Weka adalah kumpulan dari algoritme pembelajaran mesin yang digunakan untuk menyelesaikan permasalahan \textit{data mining}. \textit{Library} ini berbasis bahasa pemrograman Java dan dapat berjalan di hampir seluruh \textit{platform}. Dalam penelitian ini, \textit{library} Weka digunakan untuk melakukan proses klasifikasi menggunakan metode \textit{Support Vector Machine}.
 \begin{small}
 	\begin{longtable}{| p {0.5cm} | p {6cm} | p {6cm} |}
 		\caption{Tabel fungsi \textit{Library} Weka} 
@@ -624,7 +634,7 @@ Rasheed, S., Naeem, A., Ishaq, O. (2012, October). Automated number plate recogn
 \noindent Pada referensi kelima \cite{rasheed} menggunakan \textit{Hough Transform} untuk mendeteksi lokasi plat kendaraan dan menghasilkan akurasi yang baik, yaitu sekitar 94\% untuk plat nomor yang terdeteksi dan dengan menggunakan metode \textit{Template Matching} menghasilkan akurasi pengenalan karakter plat nomor kendaraan sebesar 90\%.\\
 
 \section{Tinjauan Objek}
-\noindent Pada bagian ini akan diulas mengenai objek-objek yang terkait dengan deteksi dan pengenalan plat nomor kendaraan.\\
+\noindent Pada bagian ini akan diulas mengenai objek penelitian yaitu plat nomor kendaraan dan hal-hal yang berkaitan seperti spesifikasi plat nomor kendaraan Indonesia, jenis plat nomor kendaraan bermotor di Indonesia, dan \textit{dataset Tel-U Vehicle Data-set V1.0} yang akan digunakan dalam penelitian.\\
 
 \subsection{Tanda Nomor Kendaraan Bermotor}
 \noindent Tanda Nomor Kendaraan Bermotor (disingkat TNKB) disebut juga sebagai plat nomor atau nomor polisi adalah plat aluminium tanda kendaraan bermotor di Indonesia yang telah didaftarkan pada Kantor Bersama Samsat.
@@ -637,7 +647,7 @@ Rasheed, S., Naeem, A., Ishaq, O. (2012, October). Automated number plate recogn
 \end{minipage}
 \end{adjustbox}\\
 
-\noindent Plat nomor kendaraan Indonesia terdiri dari cetakan tulisan dua baris, pada baris pertama terdapat tiga hal yang diinformasikan, yaitu kode wilayah(huruf), nomor polisi(angka), dan kode/seri akhir wilayah(huruf). Sedangkan baris kedua menunjukkan bulan dan tahun masa berlaku, masing-masing dua digit. Contohnya pada gambar \ref{fig:ContohPlatNomorIndonesia} angka yang terdapat di baris keduanya adalah 10.21. Hal tersebut menandakan bahwa plat nomor tersebut akan habis masa berlakunya pada bulan Oktober tahun 2021.
+\noindent Plat nomor kendaraan Indonesia terdiri dari cetakan tulisan dua baris, pada baris pertama terdapat tiga hal yang diinformasikan, yaitu kode wilayah(huruf), nomor polisi(angka), dan kode/seri akhir wilayah(huruf). Sedangkan baris kedua menunjukkan bulan dan tahun masa berlaku, masing-masing dua digit. Contohnya pada Gambar \ref{fig:ContohPlatNomorIndonesia} angka yang terdapat di baris keduanya adalah 10.21. Hal tersebut menandakan bahwa plat nomor tersebut akan habis masa berlakunya pada bulan Oktober tahun 2021.
 
 \noindent Bahan baku dari plat nomor adalah aluminium dengan ketebalan 1mm. Ukuran plat nomor untuk kendaraan bermotor roda dua dan roda tiga adalah 250 $\times$ 105 mm, sedangkan untuk kendaraan bermotor roda empat atau lebih adalah 395 $\times$ 135 mm. Terdapat cetakan garis lurus pembatas selebar 5mm di antara ruang nomor polisi dengan ruang angka masa berlaku (untuk plat nomor lama), sedangkan semenjak tahun 2011 di sekitar plat nomor terdapat garis putih dan tidak ada garis pemisah antara nomor polisi dan masa berlaku.
 
@@ -649,7 +659,7 @@ Rasheed, S., Naeem, A., Ishaq, O. (2012, October). Automated number plate recogn
 	\end{minipage}
 \end{adjustbox}\\
 
-\noindent Berdasarkan gambar \ref{fig:UkuranPlatNomorIndonesia}. Dengan ukuran panjang sebesar 395mm dan ukuran lebar sebesar 135mm. Maka dapat disimpulkan bahwa rasio untuk ukuran dari plat nomor Indonesia adalah 3:1 (panjang:lebar). Informasi dapat digunakan untuk proses pendeteksian plat kendaraan.
+\noindent Berdasarkan Gambar \ref{fig:UkuranPlatNomorIndonesia}. Dengan ukuran panjang sebesar 395mm dan ukuran lebar sebesar 135mm. Maka dapat disimpulkan bahwa rasio untuk ukuran dari plat nomor Indonesia adalah 3:1 (panjang:lebar). Informasi dapat digunakan untuk proses pendeteksian plat kendaraan.
 
 \noindent Pada tahun 2014 terjadi perubahan tampilan pada plat nomor untuk kendaraan bermotor roda empat. Plat nomor kini sedikit lebih panjang dari sebelumnya (5 cm lebih panjang) untuk memberi ruang pada kode/seri akhir wilayah yang dulunya berjumlah dua digit menjadi tiga digit.\\
 
@@ -686,79 +696,5 @@ Rasheed, S., Naeem, A., Ishaq, O. (2012, October). Automated number plate recogn
 \end{table}
 
 \noindent Citra dalam \textit{dataset} ini diambil dengan menggunakan kamera DSLR Canon EOS 500 D dan Canon EOS 550 D dengan resolusi 15 dan 18 megapiksel. Citra kemudian diubah resolusinya menjadi 1024 $\times$ 640 piksel. Jenis plat nomor kendaraan yang ada di dalam \textit{dataset} ini adalah plat kendaraan bermotor pribadi(plat hitam dengan karakter putih). Untuk penelitian ini, citra plat kendaraan yang akan digunakan adalah citra plat kendaraan bermotor yang diambil dengan posisi lurus dengan kendaraan dalam jarak kurang lebih satu meter dan kurang lebih 3 meter.
-
-%\subsubsection{Pendeteksian dan Pelacakan Manusia}
-%\noindent Pada bagian ini akan dijelaskan beberapa teori mengenai deteksi manusia dan pelacakan manusia.\\
-
-%\subsubsection{Deteksi dan Melacak Manusia}
-%\noindent Pendeteksian manusia adalah proses atau tahap awal untuk menemukan dan menentukan posisi objek manusia dari sebuah citra. Pendeteksian manusia ini fokus untuk menemukan bagian atas badan manusia dari tampak depan maupun tampak belakang, seperti yang terlihat pada gambar \ref{fig:ContohDeteksiManusia}. Sementara pelacakan manusia adalah proses untuk mengikuti jejak pergerakan dari objek manusia yang telah terdeteksi pada tahap sebelumnya. Tahap ini menggunakan estimasi perubahan atau pergerakan sehingga tidak perlu terus-menerus melakukan proses pendeteksian manusia pada setiap citra.\\
-%\begin{adjustbox}{width=1\textwidth}
-%\noindent\begin{minipage}{\linewidth}
-%	\framebox[\textwidth]{\includegraphics[width=8cm]{images/DeteksiManusia.jpg}}
-%	\captionof{figure}{Contoh dari pendeteksian manusia \cite{15}}
-%	\label{fig:ContohDeteksiManusia}
-%\end{minipage}
-%\end{adjustbox}\\
-
-%\subsection{\textit{Database RGB-D}}
-%\noindent \textit{Database RGB-D} didapatkan dari \textit{Fudan University}. \textit{Fudan University} memiliki dan menyediakan \textit{database} yang dapat digunakan secara gratis oleh umum. Dalam penelitian ini digunakan 2 buah \textit{dataset} positif yang terdapat manusia di dalamnya, ditangkap oleh \textit{Fudan University} menggunakan sensor Microsoft Kinect yang memiliki resolusi berukuran 640 $\times$ 480 dengan \textit{frame rate} 30 fps. Sensor yang digunakan Microsoft Kinect dapat menangkap sepasang citra dalam waktu bersamaan yaitu citra RGB dan citra kedalaman sehingga menjadi citra RGB-D.
-
-%\noindent Dalam masing-masing \textit{dataset} terdapat sepasang kumpulan citra yaitu citra tipe RGB dan citra kedalaman. Selain itu, diberitahukan juga koordinat \textit{ground truth} pada setiap pasangan citra yang menandakan posisi manusia yang terdapat pada citra tersebut.
-%\textit{Dataset} yang pertama bernama \textit{Clothing Store RGBD}, berada pada salah satu toko pakaian dengan jumlah citra 1.000 buah untuk masing-masing tipe citra. Dalam 1.000 citra tersebut terdapat 2.367 posisi manusia pada berkas \textit{ground truth}. Contoh sepasang citra yang terdapat pada \textit{dataset} pertama dapat dilihat pada gambar \ref{fig:DatasetClothingStore}, di mana seharusnya terdapat 2 orang yang terdeteksi. \\
-%\begin{adjustbox}{width=1\textwidth}
-%\noindent\begin{minipage}{\linewidth}
-%	\framebox[\textwidth]{\includegraphics[width=12cm]{images/DBClothingStore.jpg}}
-%	\captionof{figure}{\textit{Dataset} CLOTHING STORE \cite{15}}
-%	\label{fig:DatasetClothingStore}
-%\end{minipage}
-%\end{adjustbox}\\
-
-%\noindent Pada gambar \ref{fig:GroundTruthClothingStore} terlihat \textit{ground truth} dari setiap citra \textit{dataset Clothing Store}, di mana angka awal sebelum titik dua merupakan citra pada waktu \textit{fps} tertentu dan setiap kurung siku menyatakan keberadaan posisi manusia pada citra, yang masing-masing terdiri atas $x_{1},y_{1}$ untuk koordinat titik kiri atas dan $x_{2},y_{2}$ untuk koordinat titik kanan bawah. \\
-%\begin{adjustbox}{width=1\textwidth}
-%\noindent\begin{minipage}{\linewidth}
-%	\framebox[\textwidth]{\includegraphics[width=8cm]{images/GroundTruthClothingStore.jpg}}
-%	\captionof{figure}{Berkas \textit{ground truth} CLOTHING STORE \cite{15}}
-%	\label{fig:GroundTruthClothingStore}
-%\end{minipage}
-%\end{adjustbox}\\
-
-%\noindent Untuk dataset kedua bernama \textit{Outdoor crowds in the dark RGBD}, berada di lingkungan \textit{Fudan University} pada malam hari sehingga kondisi pencahayaannya relatif redup dengan jumlah citra total adalah 275 buah untuk masing-masing tipe citra. Berbeda dengan \textit{dataset} pertama, pada \textit{dataset Outdoor} terdapat tiga buah folder bernama 31, 54, dan 56. Jumlah citra pada masing-masing folder bervariasi dan telah dilengkapi dengan berkas \textit{ground truth}. Penjelasan lebih rinci mengenai \textit{dataset} ini dapat dilihat pada tabel \ref{tbl:Outdoor}.
-%\begin{table}[H]
-%\centering
-%\begin{small}
-%\captionof{table}{Rincian \textit{Dataset Outdoor} \label{tbl:Outdoor}}
-%\begin{tabular}{|p{1cm}|p{3cm}|p{3cm}|}
-%	\hline
-%	\textbf{Folder} & \textbf{Jumlah Citra} & \textbf{Jumlah Posisi Manusia}\\
-%	\hline
-%	31 & 57 & 273 \\
-%	\hline
-%	54 & 95 & 427 \\
-%	\hline
-%	56 & 123 & 548 \\
-%	\hline
-%\end{tabular}
-%\end{small}
-%\end{table}
-
-%\noindent Contoh sepasang citra yang terdapat pada dataset kedua dapat dilihat pada gambar \ref{fig:DatasetOutdoor}, di mana seharusnya terdapat 6 orang yang terdeteksi. \\
-%\begin{adjustbox}{width=1\textwidth}
-%\noindent\begin{minipage}{\linewidth}
-%	\framebox[\textwidth]{\includegraphics[width=12cm]{images/DBOutdoor.jpg}}
-%	\captionof{figure}{\textit{Dataset} OUTDOOR \cite{15}}
-%	\label{fig:DatasetOutdoor}
-%\end{minipage}
-%\end{adjustbox}\\
-
-%\noindent Pada gambar \ref{fig:GroundTruthOutdoor} terlihat \textit{ground truth} dari setiap citra \textit{dataset Outdoor}, di mana nilai yang berada dalam tanda kutip dua merupakan lokasi dengan nama citra dan setiap nilai di dalam tanda kurung menyatakan keberadaan posisi manusia pada citra, yang masing-masing terdiri atas $x_{1},y_{1}$ untuk koordinat titik kiri atas dan $x_{2},y_{2}$ untuk koordinat titik kanan bawah. \\
-%\begin{adjustbox}{width=1\textwidth}
-%\noindent\begin{minipage}{\linewidth}
-%	\framebox[\textwidth]{\includegraphics[width=8cm]{images/GroundTruthOutdoor.jpg}}
-%	\captionof{figure}{Berkas \textit{ground truth} OUTDOOR \cite{15}}
-%	\label{fig:GroundTruthOutdoor}
-%\end{minipage}
-%\end{adjustbox}\\
-
-%\noindent \textit{Dataset} pertama akan dibagi dengan perbandingan 80:20, 80\% akan digunakan sebagai \textit{data training} dan 20\% digunakan sebagai {data testing}. Untuk \textit{dataset} kedua, folder 56 akan digunakan sebagai \textit{data training} dan folder 31 dan 54 digunakan sebagai {data testing}. \textit{Dataset} negatif yang tidak mengandung manusia akan diambil secara acak berukuran 65 $\times$ 80 dari masing-masing \textit{dataset} dengan ketentuan, tidak berpotongan dengan posisi \textit{ground truth}.
 
 \newpage

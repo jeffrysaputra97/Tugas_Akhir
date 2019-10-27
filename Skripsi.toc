@@ -25,30 +25,30 @@
 \contentsline {subsection}{\numberline {2.1.5}\textit {Hough Transform}}{2-3}% 
 \contentsline {subsection}{\numberline {2.1.6}Segmentasi}{2-5}% 
 \contentsline {subsection}{\numberline {2.1.7}Fitur pada Citra}{2-5}% 
-\contentsline {subsection}{\numberline {2.1.8}\textit {Histogram of Oriented Gradient}}{2-5}% 
+\contentsline {subsection}{\numberline {2.1.8}\textit {Histogram of Oriented Gradient}}{2-6}% 
 \contentsline {subsection}{\numberline {2.1.9}\textit {Support Vector Machine}}{2-8}% 
 \contentsline {subsection}{\numberline {2.1.10}\textit {Confusion Matrix}}{2-11}% 
-\contentsline {subsection}{\numberline {2.1.11}\textit {Character Recognition Rate} (CRR)}{2-12}% 
-\contentsline {subsection}{\numberline {2.1.12}\textit {Overall Performance} (OVR)}{2-12}% 
+\contentsline {subsection}{\numberline {2.1.11}\textit {Character Recognition Rate}}{2-13}% 
+\contentsline {subsection}{\numberline {2.1.12}\textit {Overall Performance}}{2-13}% 
 \contentsline {subsection}{\numberline {2.1.13}Penggunaan \textit {Library}}{2-13}% 
 \contentsline {subsubsection}{\numberline {2.1.13.1\hspace {-0,35cm}}OpenCV}{2-13}% 
-\contentsline {subsubsection}{\numberline {2.1.13.2\hspace {-0,35cm}}Weka}{2-14}% 
-\contentsline {subsubsection}{\numberline {2.1.13.3\hspace {-0,35cm}}JavaOCR}{2-14}% 
-\contentsline {section}{\numberline {2.2\hspace {0,3cm}}Tinjauan Studi}{2-15}% 
-\contentsline {subsection}{\numberline {2.2.1}\textit {State of the Art}}{2-15}% 
+\contentsline {subsubsection}{\numberline {2.1.13.2\hspace {-0,35cm}}Weka}{2-15}% 
+\contentsline {subsubsection}{\numberline {2.1.13.3\hspace {-0,35cm}}JavaOCR}{2-15}% 
+\contentsline {section}{\numberline {2.2\hspace {0,3cm}}Tinjauan Studi}{2-16}% 
+\contentsline {subsection}{\numberline {2.2.1}\textit {State of the Art}}{2-16}% 
 \contentsline {subsection}{\numberline {2.2.2}Pembahasan Penelitian Terkait}{2-18}% 
 \contentsline {section}{\numberline {2.3\hspace {0,3cm}}Tinjauan Objek}{2-19}% 
-\contentsline {subsection}{\numberline {2.3.1}Tanda Nomor Kendaraan Bermotor}{2-19}% 
+\contentsline {subsection}{\numberline {2.3.1}Tanda Nomor Kendaraan Bermotor}{2-20}% 
 \contentsline {subsection}{\numberline {2.3.2}Jenis TNKB}{2-21}% 
-\contentsline {subsection}{\numberline {2.3.3}\textit {Dataset Tel-U Vehicle Data-set V1.0}}{2-21}% 
+\contentsline {subsection}{\numberline {2.3.3}\textit {Dataset Tel-U Vehicle Data-set V1.0}}{2-22}% 
 \contentsline {chapter}{\numberline {III}ANALISIS DAN PERANCANGAN SISTEM}{3-1}% 
 \contentsline {section}{\numberline {3.1\hspace {0,3cm}}Analisis Masalah}{3-1}% 
 \contentsline {section}{\numberline {3.2\hspace {0,3cm}}Kerangka Pemikiran}{3-1}% 
 \contentsline {section}{\numberline {3.3\hspace {0,3cm}}Urutan Proses Global}{3-2}% 
 \contentsline {section}{\numberline {3.4\hspace {0,3cm}}Analisis Manual}{3-5}% 
-\contentsline {subsection}{\numberline {3.4.1}\textit {Dataset}}{3-5}% 
+\contentsline {subsection}{\numberline {3.4.1}\textit {Dataset}}{3-6}% 
 \contentsline {subsection}{\numberline {3.4.2}Tahap Pendeteksian Lokasi Plat Nomor}{3-7}% 
-\contentsline {subsubsection}{\numberline {3.4.2.1\hspace {-0,35cm}}\textit {Grayscale}}{3-7}% 
+\contentsline {subsubsection}{\numberline {3.4.2.1\hspace {-0,35cm}}\textit {Grayscale}}{3-8}% 
 \contentsline {subsubsection}{\numberline {3.4.2.2\hspace {-0,35cm}}Deteksi Tepi Canny}{3-9}% 
 \contentsline {subsubsection}{\numberline {3.4.2.3\hspace {-0,35cm}}\textit {Hough Transform}}{3-10}% 
 \contentsline {subsubsection}{\numberline {3.4.2.4\hspace {-0,35cm}}Tahap Validasi Plat Kendaraan}{3-11}% 
@@ -60,20 +60,18 @@
 \contentsline {subsection}{\numberline {4.1.1}Spesifikasi Perangkat Keras}{4-1}% 
 \contentsline {subsection}{\numberline {4.1.2}Lingkungan Perangkat Lunak}{4-1}% 
 \contentsline {section}{\numberline {4.2\hspace {0,3cm}}Implementasi Perangkat Lunak}{4-1}% 
-\contentsline {subsection}{\numberline {4.2.1}Daftar \textit {Class} dan \textit {Method} Gradient}{4-2}% 
+\contentsline {subsection}{\numberline {4.2.1}Daftar \textit {Class} dan \textit {Method} Gradient}{4-1}% 
 \contentsline {subsection}{\numberline {4.2.2}Daftar \textit {Class} dan \textit {Method} GradientCell}{4-3}% 
 \contentsline {subsection}{\numberline {4.2.3}Daftar \textit {Class} dan \textit {Method} HOG}{4-3}% 
 \contentsline {subsection}{\numberline {4.2.4}Daftar \textit {Class} dan \textit {Method} SVM}{4-4}% 
 \contentsline {subsection}{\numberline {4.2.5}Daftar \textit {Class} dan \textit {Method} ConfusionMatrix}{4-5}% 
 \contentsline {subsection}{\numberline {4.2.6}Tampilan Antarmuka Antar Aplikasi}{4-6}% 
-\contentsline {subsection}{\numberline {4.2.7}Implementasi Pendeteksian Plat Kendaraan}{4-9}% 
-\contentsline {section}{\numberline {4.3\hspace {0,3cm}}Pengujian}{4-10}% 
-\contentsline {subsection}{\numberline {4.3.1}Pengujian Kombinasi Parameter}{4-10}% 
-\contentsline {subsubsection}{\numberline {4.3.1.1\hspace {-0,35cm}}Pengujian dengan Ukuran Sel 2}{4-11}% 
-\contentsline {subsubsection}{\numberline {4.3.1.2\hspace {-0,35cm}}Pengujian dengan Ukuran Sel 4}{4-13}% 
-\contentsline {subsubsection}{\numberline {4.3.1.3\hspace {-0,35cm}}Pengujian dengan Ukuran Sel 8}{4-16}% 
-\contentsline {subsubsection}{\numberline {4.3.1.4\hspace {-0,35cm}}Pengujian dengan Ukuran Sel 16}{4-19}% 
-\contentsline {section}{\numberline {4.4\hspace {0,3cm}}Analisis Kesalahan}{4-21}% 
+\contentsline {subsection}{\numberline {4.2.7}Implementasi Validasi Plat Kendaraan}{4-9}% 
+\contentsline {section}{\numberline {4.3\hspace {0,3cm}}Pengujian}{4-11}% 
+\contentsline {subsection}{\numberline {4.3.1}Pengujian Kombinasi Parameter}{4-11}% 
+\contentsline {subsection}{\numberline {4.3.2}Pengujian Kombinasi Parameter Campuran}{4-21}% 
+\contentsline {section}{\numberline {4.4\hspace {0,3cm}}Analisis Pengujian}{4-23}% 
+\contentsline {section}{\numberline {4.5\hspace {0,3cm}}Analisis Kesalahan}{4-25}% 
 \contentsline {chapter}{\numberline {V}PENUTUP}{5-1}% 
 \contentsline {section}{\numberline {5.1\hspace {0,3cm}}Kesimpulan}{5-1}% 
 \contentsline {section}{\numberline {5.2\hspace {0,3cm}}Saran}{5-2}% 

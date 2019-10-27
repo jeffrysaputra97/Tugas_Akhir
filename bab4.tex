@@ -11,7 +11,7 @@
 
 \subsection{Spesifikasi Perangkat Keras}
 \noindent Spesifikasi dari perangkat keras yang digunakan dalam pembangunan aplikasi adalah sebagai berikut:
-\begin{enumerate}
+\begin{enumerate}[noitemsep]
 \item \textit{Laptop} ASUS A442UQ
 \item \textit{Processor} Intel Core i7-7500U CPU @ 2.7GHz
 \item \textit{Hard Disk} kapasitas 1TB
@@ -20,40 +20,12 @@
 
 \subsection{Lingkungan Perangkat Lunak}
 \noindent Spesifikasi dari perangkat lunak yang digunakan dalam pembangunan aplikasi adalah sebagai berikut:
-\begin{enumerate}
+\begin{enumerate}[noitemsep]
 \item Sistem Operasi Windows 10 Home 64 bit.
 \item Netbeans IDE 8.2
 \item Java Development Kit (JDK) 1.8.0{\_}161
 \item \textit{Library} OpenCV 3.4.6\\
 \end{enumerate}
-
-%\subsection{Penjelasan \textit{Dataset}}
-%\noindent Pada implementasi digunakan dua buah \textit{dataset} yaitu \textit{Clothing Store} dan \textit{Outdoor}. Seperti yang telah dijelaskan pada bab 2, 80\% citra dari \textit{dataset Clothing Store} akan digunakan untuk pembelajaran dan 20\% citra lainya untuk pengujian. Sementara \textit{dataset Outdoor} yang terdiri atas 3 buah folder yaitu 31, 54, dan 56, di mana seluruh citra pada folder 56 untuk data belajar, lalu folder 31 dan folder 54 untuk data uji. Pada masing-masing \textit{dataset} didapatkan masing-masing citra positif yaitu berisi manusia sesuai dengan berkas \textit{ground truth} sedangkan citra negatif yaitu berisi selain manusia didapatkan secara acak yang tidak berpotongan dengan daerah citra manusia. Ukuran dari citra negatif adalah 65 $\times$ 80 piksel. Rincian dari jumlah citra, citra positif, dan citra negatif dapat dilihat pada tabel \ref{tbl:rincianDataset}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|c|c|c|c|c|c|c|}
-%\caption{Rincian \textit{Dataset} untuk Implementasi}
-%\label{tbl:rincianDataset}
-%\endhead
-%\hline
-%\textit{\textbf{Dataset}}			& \textbf{Folder}			& \textbf{Keterangan}	& \textbf{Citra Belajar}	& \textbf{Citra Uji}	& \multicolumn{2}{c|}{\textbf{Total}} \\ \hline
-%\multirow{3}{*}{\textit{Clothing Store}}	& \multirow{3}{*}{-}		& Citra				& 616					& 154				& \multicolumn{2}{c|}{770}            \\ \cline{3-7} 
-%								&						& Manusia			& 1160					& 471				& 1631     & \multirow{2}{*}{5092}    \\ \cline{3-6}
-%								&						& Lain-lain			& 2766					& 695				& 3461     &                          \\ \hline
-%\multirow{9}{*}{\textit{Outdoor}}		& \multirow{3}{*}{31}	& Citra				& - 						& 46				& \multicolumn{2}{c|}{46}             \\ \cline{3-7} 
-%								&						& Manusia			& - 						& 218				& 218      & \multirow{2}{*}{427}     \\ \cline{3-6}
-%								&						& Lain-lain			& - 						& 209				& 209      &                          \\ \cline{2-7} 
-%								& \multirow{3}{*}{54}	& Citra				& - 						& 84				& \multicolumn{2}{c|}{84}             \\ \cline{3-7} 
-%								&						& Manusia			& - 						& 371				& 371      & \multirow{2}{*}{744}     \\ \cline{3-6}
-%								&						& Lain-lain			& - 						& 373				& 373      &                          \\ \cline{2-7} 
-%								& \multirow{3}{*}{56}	& Citra				& 113					& - 					& \multicolumn{2}{c|}{113}            \\ \cline{3-7} 
-%								&						& Manusia			& 496					& - 					& 496      & \multirow{2}{*}{999}     \\ \cline{3-6}
-%								&						& Lain-lain			& 503					& - 					& 503      &                          \\ \hline
-%\end{longtable}
-%\end{small}
-%\endgroup
 
 \section{Implementasi Perangkat Lunak}
 \noindent Pada bab ini akan dijelaskan mengenai implementasi aplikasi untuk pengenalan karakter pada citra plat kendaraan. Di bawah ini merupakan daftar \textit{class} dan \textit{method} beserta penjelasan mengenai cara kerja program.\\
@@ -139,14 +111,14 @@
 		\hline
 		6	& classify() & double[][] solutions, double[] rbfTest, double[] classList	& double & Mendapatkan nilai hasil klasifikasi berdasarkan data uji dan nilai alpha dan bias.\\
 		\hline
-		7	& getDataFromText() & String path	& double[][] & Membaca matriks fitur dari file teks.\\
+		7	& getDataFromText() & String path	& double[][] & Membaca matriks fitur dari berkas teks.\\
 		\hline
 		
 	\end{longtable}
 \end{small}
 
 \subsection{Daftar \textit{Class} dan \textit{Method} ConfusionMatrix}
-\noindent Berikut adalah tabel berisi \textit{method} pada \textit{class} ConfusionMatrix. \textit{Class} ConfusionMatrix digunakan untuk perhitungan akurasi dari hasil klasifikasi karakter yang dilakukan dengan metode SVM. \textit{Confusion Matrix} juga biasanya digunakan sebagai alat ukur untuk menghitung kinerja dari algoritma klasifikasi yang digunakan.
+\noindent Berikut adalah tabel berisi \textit{method} pada \textit{class} ConfusionMatrix. \textit{Class} ConfusionMatrix digunakan untuk perhitungan akurasi dari hasil klasifikasi karakter yang dilakukan dengan metode SVM. \textit{Confusion Matrix} juga biasanya digunakan sebagai alat ukur untuk menghitung kinerja dari algoritme klasifikasi yang digunakan.
 
 \begin{small}
 	\begin{longtable}{| p {0.5cm} | p {3cm} | p {3cm} | p {1.5cm} | p {4cm} |}
@@ -162,7 +134,7 @@
 \end{small}
 
 \subsection{Tampilan Antarmuka Antar Aplikasi}
-\noindent Subbab ini akan menjelaskan tampilan antarmuka dari aplikasi pengenalan plat nomor kendaraan. Tampilan awal dari aplikasi ketika dibuka adalah seperti pada gambar \ref{fig:TampilanAntarmuka}. \\
+\noindent Subbab ini akan menjelaskan tampilan antarmuka dari aplikasi pengenalan plat nomor kendaraan. Tampilan awal dari aplikasi ketika dibuka adalah seperti pada Gambar \ref{fig:TampilanAntarmuka}. \\
 \\
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
@@ -172,7 +144,7 @@
 	\end{minipage}
 \end{adjustbox}\\
 \\
-\noindent Pada gambar \ref{fig:TampilanAntarmuka}, terdapat beberapa tombol diantaranya adalah tombol \textit{Load Train Data Path}, \textit{Load Test Data Path}, \textit{Extract HOG Descriptor}, \textit{Train Classifier}, dan \textit{Show Testing Result}. Terdapat juga beberapa tombol \textit{dropdown} yang berfungsi untuk memilih nilai dari parameter metode HOG dan SVM. Untuk metode HOG tombol \textit{dropdown} yang tersedia adalah tombol \textit{dropdown} untuk memilih ukuran sel (\textit{Cell Size}) dan jumlah \textit{bins} yang akan digunakan (\textit{Num of Bins}). Sedangkan untuk metode SVM tombol \textit{dropdown} yang tersedia adalah tombol \textit{dropdown} untuk memilih nilai sigma yang akan digunakan. Tahapan proses pengenalan plat nomor kendaraan di aplikasi terbagi menjadi dua, yaitu proses \textit{training} dan proses \textit{testing}. Tahapan proses \textit{training} pada aplikasi adalah sebagai berikut:
+\noindent Pada Gambar \ref{fig:TampilanAntarmuka}, terdapat beberapa tombol diantaranya adalah tombol \textit{Load Train Data Path}, \textit{Load Test Data Path}, \textit{Extract HOG Descriptor}, \textit{Train Classifier}, dan \textit{Show Testing Result}. Terdapat juga beberapa tombol \textit{dropdown} yang berfungsi untuk memilih nilai dari parameter metode HOG dan SVM. Untuk metode HOG tombol \textit{dropdown} yang tersedia adalah tombol \textit{dropdown} untuk memilih ukuran sel (\textit{Cell Size}) dan jumlah \textit{bins} yang akan digunakan (\textit{Num of Bins}). Sedangkan untuk metode SVM tombol \textit{dropdown} yang tersedia adalah tombol \textit{dropdown} untuk memilih nilai sigma yang akan digunakan. Tahapan proses pengenalan plat nomor kendaraan di aplikasi terbagi menjadi dua, yaitu proses \textit{training} dan proses \textit{testing}. Tahapan proses \textit{training} pada aplikasi adalah sebagai berikut:
 \begin{enumerate}
 \item Memasukkan \textit{path} dari kumpulan citra yang akan digunakan sebagai data latih untuk proses pengenalan karakter.
 \item Memasukkan ukuran sel dan jumlah \textit{bin} yang digunakan untuk metode HOG dengan memilih menggunakan tombol \textit{dropdown Cell Size} dan tombol \textit{dropdown Num of Bins}.
@@ -181,13 +153,13 @@
 \end{enumerate}
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
-		\centering\includegraphics[width=14cm]{images/TampilanAntarmukaTraining.png}
+		\centering\framebox{\includegraphics[width=14cm]{images/TampilanAntarmukaTraining.png}}
 		\captionof{figure}{Tampilan antarmuka hasil \textit{training}\\}
 		\label{fig:TampilanAntarmukaTraining}
 	\end{minipage}
 \end{adjustbox}\\
 \\
-\noindent Pada gambar \ref{fig:TampilanAntarmukaTraining} aplikasi akan menampilkan \textit{path} dari folder citra yang akan digunakan sebagai data latih, ukuran sel dan jumlah \textit{bins} yang digunakan untuk metode HOG, pesan bahwa proses ekstraksi fitur sudah berjalan dan lokasi penyimpanan fitur, dan pesan bahwa proses \textit{training} sudah selesai.
+\noindent Pada Gambar \ref{fig:TampilanAntarmukaTraining} aplikasi akan menampilkan \textit{path} dari folder citra yang akan digunakan sebagai data latih, ukuran sel dan jumlah \textit{bins} yang digunakan untuk metode HOG, pesan bahwa proses ekstraksi fitur sudah berjalan dan lokasi penyimpanan fitur, dan pesan bahwa proses \textit{training} sudah selesai.
 \noindent Sedangkan untuk tahapan proses \textit{testing} pada aplikasi adalah sebagai berikut:
 \begin{enumerate}
 \item Lakukan proses \textit{training} terlebih dahulu.
@@ -196,28 +168,32 @@
 \end{enumerate}
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
-		\centering\includegraphics[width=14cm]{images/TampilanAntarmukaTesting1.png}
+		\centering\framebox{\includegraphics[width=14cm]{images/TampilanAntarmukaTesting1.png}}
+		\captionof{figure}{Keluaran \textit{path} data untuk \textit{testing} dan hasil pengenalan plat}
 		\label{fig:TampilanAntarmukaTesting1}
 	\end{minipage}
-\end{adjustbox}\\
+\end{adjustbox}
+
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
-		\centering\includegraphics[width=14cm]{images/TampilanAntarmukaTesting2.png}
+		\centering\framebox{\includegraphics[width=14cm]{images/TampilanAntarmukaTesting2.png}}
+		\captionof{figure}{Keluaran tingkat akurasi pengenalan plat dan \textit{Confusion Matrix}}
 		\label{fig:TampilanAntarmukaTesting2}
 	\end{minipage}
-\end{adjustbox}\\
+\end{adjustbox}
+
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
-		\centering\includegraphics[width=14cm]{images/TampilanAntarmukaTesting3.png}
-		\captionof{figure}{Tampilan antarmuka hasil \textit{testing} (Atas, tengah, bawah)\\}
+		\centering\framebox{\includegraphics[width=14cm]{images/TampilanAntarmukaTesting3.png}}
+		\captionof{figure}{Keluaran hasil tingkat akurasi pengenalan karakter\\}
 		\label{fig:TampilanAntarmukaTesting3}
 	\end{minipage}
 \end{adjustbox}\\
 \\
-\noindent Pada gambar \ref{fig:TampilanAntarmukaTesting3} aplikasi akan menampilkan \textit{path} dari folder citra yang akan digunakan sebagai data uji, teks asli dari plat nomor pada citra beserta hasil prediksi dari SVM, jumlah plat yang teridentifikasi dengan benar, jumlah total plat yang diproses, akurasi plat yang terdeteksi dan teridentifikasi dengan benar, hasil dari \textit{confusion matrix} untuk klasifikasi karakter, jumlah karakter yang terklasifikasi dengan benar, jumlah keseluruhan karakter, dan akurasi dari klasifikasi karakter.\\
+\noindent Pada Gambar \ref{fig:TampilanAntarmukaTesting1} aplikasi akan menampilkan \textit{path} dari folder citra yang akan digunakan sebagai data uji, teks asli dari plat nomor pada citra beserta hasil prediksi dari SVM, jumlah plat yang teridentifikasi dengan benar, jumlah total plat yang diproses, akurasi plat yang terdeteksi dan teridentifikasi dengan benar, hasil dari \textit{confusion matrix} untuk klasifikasi karakter, jumlah karakter yang terklasifikasi dengan benar, jumlah keseluruhan karakter, dan akurasi dari klasifikasi karakter.\\
 
-\subsection{Implementasi Pendeteksian Plat Kendaraan}
-\noindent Pada bagian ini, citra masukan berupa citra RGB mobil akan diproses untuk mendapatkan citra plat nomor dari citra RGB mobil. Berikut ini merupakan langkah pemrosesan citra dimulai dari masukan citra RGB mobil hingga menjadi citra plat.
+\subsection{Implementasi Validasi Plat Kendaraan}
+\noindent Bagian ini merupakan penjelasan implementasi tahap validasi plat kendaraan seperti yang disebutkan pada subbab 3.4.2.4, citra masukan berupa citra RGB mobil akan diproses untuk mendapatkan citra plat nomor dari citra RGB mobil. Berikut ini merupakan langkah pemrosesan citra dimulai dari masukan citra RGB mobil hingga menjadi citra plat.
 \begin{enumerate}
 	\item Baca citra RGB mobil dengan menggunakan \textit{Imgcodecs.imread()}. Parameter \textit{method} tersebut adalah lokasi citra yang akan diproses.
 	\item Ubah citra RGB menjadi citra \textit{grayscale} dengan menggunakan \textit{Imgproc.cvtColor(mat1, mat2, Imgproc.COLORRGB2GRAY)}. Dengan parameter \textit{mat1} merupakan citra RGB dan \textit{mat2} adalah penampung citra hasil \textit{grayscale} dan \textit{COLORRBG2GRAY} adalah kode konversi \textit{color space} yang digunakan, kode yang digunakan adalah untuk mengkonversi citra RGB yang merupakan citra dengan 3 \textit{channel} warna menjadi citra dengan 1 \textit{channel} warna.
@@ -228,942 +204,24 @@
 	\item Jika kandidat masih lebih dari satu kandidat, maka koordinat yang dipakai adalah koordinat yang rasio tinggi terhadap lebarnya paling mendekati 0.33.
 	\item Kemudian lakukan pemotongan citra RGB dengan menggunakan koordinat yang didapat, dan hasil dari proses ini adalah citra plat.\\
 \end{enumerate}
-%Package cnn
-%\subsubsection{Daftar \textit{Class} dan \textit{Method}}
-%\noindent \textit{Class} CNN merupakan kelas yang berfungsi untuk melaksanakan proses \textit{Convolutional Neural Network} dengan arsitektur lapisan dan \textit{hyperparameter} yang telah ditentukan, lihat tabel \ref{tbl:classCNN}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} CNN \label{tbl:classCNN}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} CNN (Lanjutan)} \\ \hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & CNN & List$<$\newline Layer$>$,\newline double,\newline double,\newline int,\newline String & layers,\newline alpha,\newline alphaDivider,\newline saveModel,\newline pathModel & - & Konstruktor yang menerima dan menyimpan nilai \textit{hyperparameter} serta melakukan inisialisasi nilai pada kelas CNN.\\
-%	\hline
-%	2 & train & List$<$\newline TrainImage\newline$>$,\newline int & trainImg,\newline epoch & - & Melakukan tahap pembelajaran dari citra dengan pengulangan sebanyak \textit{epoch} serta menyimpan hasil pembelajaran.\\
-%	\hline
-%	3 & train & TrainImage & trainImg & - & Melakukan tahap pembelajaran untuk 1 citra, tahap \textit{forward} dan \textit{backward} yang mencakup menghitung turunan atau gradien lalu memperbarui nilai parameter berdasarkan gradien masing-masing.\\
-%	\hline
-%	4 & forward & TrainImage,\newline Process & img,\newline process & - & Melakukan tahap \textit{forward} pada setiap lapisan dan menghitung hasil berdasarkan proses pelatihan atau pengujian.\\
-%	\hline
-%	5 &  setGradient & TrainImage & img & - & Melakukan perhitungan gradien pada setiap lapisan.\\
-%	\hline
-%	6 & getData & - & - & List$<Data>$ & Menambahkan seluruh data yang telah dihitung pada setiap lapisan pada sebuah kelas \textit{List}.\\
-%	\hline
-%	7 & updateParams & - & - & - & Memperbarui parameter bobot berdasarkan data yang telah didapatkan dalam bentuk \textit{List}.\\
-%	\hline
-%	8 & update & int,\newline double,\newline double[] & j,\newline gradient,\newline weight & - & Menambahkan nilai bobot sesuai dengan gradiennya.\\
-%	\hline
-%	9 & test & List$<$\newline TrainImage\newline $>$ & trainImg & double & Melakukan tahap \textit{forward} untuk setiap gambar dan mengembalikan nilai akurasi.\\
-%	\hline
-%	10 & isHuman & double[][],\newline double & img,\newline threshold & boolean & Menguji adanya citra manusia yang dibatasi dengan probabilitas hasil pengujian.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%\subsubsection{\textit{Class} CNNLoader}
-%\noindent \textit{Class} CNNLoader merupakan kelas yang berfungsi untuk melakukan penyimpanan serta pemuatan model hasil pembelajaran \textit{Convolutional Neural Network}, lihat tabel \ref{tbl:classCNNLoader}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} CNNLoader \label{tbl:classCNNLoader}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} CNNLoader (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & saveModel & String,\newline CNN & fileName,\newline cnn & - & Menyimpan model \textit{Convolutional Neural Network} dengan nama yang telah ditentukan.\\
-%	\hline
-%	2 & loadModel & String & fileName & CNN & Memuat model \textit{Convolutional Neural Network} yang telah disimpan sebelumnya.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%Package cnn.layer
-%\subsubsection{\textit{Class} Data}
-%\noindent \textit{Class} Data merupakan kelas yang berfungsi untuk menyimpan data yang digunakan pada tahap \textit{Convolutional Neural Network}, lihat tabel \ref{tbl:classData}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} Data \label{tbl:classData}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} Data (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & Data & Size & size & - & Konstruktor yang menerima dan menyimpan besar ukuran.\\
-%	\hline
-%	2 & addImage-\newline Data & double[][] & trainImg & - & Menyimpan nilai dari citra.\\
-%	\hline
-%	3 & getSize & - & - & Size & Digunakan untuk mendapatkan ukuran dari data.\\
-%	\hline
-%	4 & getWeight & int & index & double & Digunakan untuk mendapatkan bobot pada indeks 1 dimensi.\\
-%	\hline
-%	5 & getWeight & int,\newline int,\newline int & x,\newline y,\newline depth & double & Digunakan untuk mendapatkan bobot pada indeks 3 dimensi.\\
-%	\hline
-%	6 & setWeight & double & value & - & Digunakan untuk mendapatkan bobot pada indeks 1 dimensi.\\
-%	\hline
-%	7 & setWeight & int,\newline int,\newline int,\newline double & x,\newline y,\newline depth,\newline value & - & Digunakan untuk menetapkan nilai bobot pada indeks 3 dimensi.\\
-%	\hline
-%	8 & addWeight & int,\newline int,\newline int,\newline double & x,\newline y,\newline depth,\newline value & - & Digunakan untuk menambahkan nilai bobot.\\
-%	\hline
-%	9 & getGradient & int,\newline int,\newline int & x,\newline y,\newline depth & double & Digunakan untuk mendapatkan ukuran dari data pada indeks 3 dimensi.\\
-%	\hline
-%	10 & getGradient & int & index & double & Digunakan untuk mendapatkan ukuran dari data pada indeks 1 dimensi\\
-%	\hline
-%	11 & setGradient & int,\newline int,\newline int,\newline double & x,\newline y,\newline depth,\newline value & - & Digunakan untuk menentukan nilai gradien pada indeks 3 dimensi.\\
-%	\hline
-%	12 & setGradient & int & value & - & Digunakan untuk menentukan nilai gradien pada indeks 1 dimensi.\\
-%	\hline
-%	13 & addGradient & int,\newline int,\newline int,\newline double & x,\newline y,\newline depth,\newline value & - & Digunakan untuk nambahkan nilai gradien dengan indeks 3 dimensi.\\
-%	\hline
-%	14 & addGradient & int,\newline double & index,\newline value & - & Digunakan untuk nambahkan nilai gradien pada indeks 1 dimensi.\\
-%	\hline
-%	15 & calculate-\newline Index & int,\newline int,\newline int & x,\newline y,\newline depth & int & Digunakan untuk mendapatkan indeks pada 1 dimensi.\\
-%	\hline
-%	16 & clearGradient & - & - & - & Digunakan untuk hapus seluruh gradien.\\
-%	\hline
-%	17 & getWeights & - & - & double[] & Digunakan untuk mendapatkan seluruh bobot.\\
-%	\hline
-%	18 & getGradients & - & - & double[] & Digunakan untuk mendapatkan seluruh gradien.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%\subsubsection{\textit{Class} Size}
-%\noindent \textit{Class} Size merupakan kelas yang berfungsi untuk menyimpan informasi ukuran lebar, tinggi, dan kedalaman. Penjelasan mengenai kelas ini dapat dilihat pada tabel \ref{tbl:classSize}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} Size \label{tbl:classSize}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} Size (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & Size & - & - & - & Konstruktor kosong ketika objek dibuat tanpa parameter.\\
-%	\hline
-%	2 & Size & int,\newline int,\newline int & width,\newline height,\newline depth & - & Konstruktor yang menerima dan menerima informasi ukuran.\\
-%	\hline
-%	3 & getWidth & - & - & int & Digunakan untuk mendapatkan lebar citra.\\
-%	\hline
-%	2 & setWidth & int & width & - & Digunakan untuk menentukan lebar citra.\\
-%	\hline
-%	2 & getHeight & - & - & int & Digunakan untuk mendapatkan tinggi citra.\\
-%	\hline
-%	2 & setHeight & int & height & - & Digunakan untuk menentukan tinggi citra.\\
-%	\hline
-%	2 & getDepth & - & - & int & Digunakan untuk mendapatkan kedalaman citra.\\
-%	\hline
-%	2 & setDepth & int & depth & - & Digunakan untuk menentukan kedalaman citra.\\
-%	\hline
-%	2 & toString & - & - & String & Mengembalikan informasi ukuran dalam bentuk text.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%Package cnn.layer
-%\subsubsection{\textit{Class} Layer}
-%\noindent \textit{Class} Layer merupakan sebuah kelas abstrak untuk lapisan pada \textit{Convolutional Neural Network}. Penjelasan mengenai kelas ini dapat dilihat pada tabel \ref{tbl:classLayer}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} Layer \label{tbl:classLayer}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} Layer (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & forward & Data & inData & Data & Menerima data masukan untuk diproses dan menghasilkan data keluaran.\\
-%	\hline
-%	2 & setGradient & - & - & - & Menghitung dan menentukan nilai gradien.\\
-%	\hline
-%	3 & getData & - & - & List$<$Data$>$ & Digunakan untuk mendapatkan seluruh data dalam bentuk \textit{List}.\\
-%	\hline
-%	4 & getType & - & - & LayerType & Digunakan untuk mendapatkan keterangan jenis lapisan.\\
-%	\hline
-%	5 & setType & LayerType & type & - & Digunakan untuk menentukan jenis dari lapisan.\\
-%	\hline
-%	6 & getMapSize & - & - & Size & Digunakan untuk mendapatkan informasi ukuran.\\
-%	\hline
-%	7 & setMapSize & Size & mapSize & - & Digunakan untuk menentukan ukuran.\\
-%	\hline
-%	8 & setInData & Data & data & - & Digunakan untuk menentukan data masukan.\\
-%	\hline
-%	9 & getOutData & - & - & Data & Digunakan untuk mendapatkan data keluaran.\\
-%	\hline
-%	10 & setData & Data & data & - & Digunakan untuk menentukan data keluaran.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%\subsubsection{\textit{Class} InputLayer}
-%\noindent \textit{Class} InputLayer merupakan kelas untuk menyimpan informasi pada lapisan masukan dan di-\textit{extends} dengan \textit{class} Layer. Penjelasan kelas ini dapat dilihat pada tabel \ref{tbl:classInputLayer}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} InputLayer \label{tbl:classInputLayer}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} InputLayer (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & InputLayer & Size & mapSize & - & Konstruktor untuk menerima parameter dan menentukan jenis layer.\\
-%	\hline
-%	2 & setTrain-\newline Image & TrainImage & trainImg & - & Digunakan untuk menentukan citra masukan yang akan diproses.\\
-%	\hline
-%	3 & getImgInput & - & - & double[][] & Digunakan untuk mendapatkan informasi mengenai citra masukan.\\
-%	\hline
-%	4 & getLabel & - & - & int & Digunakan untuk mendapatkan label dari citra masukan.\\
-%	\hline
-%	5 & forward & Data & data & Data & Untuk menerima data masukan dan menentukan data keluaran serta mengembalikan nilai keluaran tersebut.\\
-%	\hline
-%	6 & setGradient & - & - & - & Pada lapisan masukan tidak dilakukan perhitungan gradien.\\
-%	\hline
-%	7 & getData & - & - & List$<$Data$>$ & Mengembalikan list kosong karena tidak terdapat data yang perlu diperbarui.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%\subsubsection{\textit{Class} ConvolutionLayer}
-%\noindent \textit{Class} ConvolutionLayer merupakan kelas untuk proses konvolusi pada tahap \textit{forward} maupun \textit{backward} dan di-\textit{extends} dengan \textit{class} Layer. Penjelasan kelas ini dapat dilihat pada tabel \ref{tbl:classConvolutionLayer}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} ConvolutionLayer \label{tbl:classConvolutionLayer}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} ConvolutionLayer (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & Convolution-\newline Layer & Size & kernelSize & - & Konstruktor yang menerima ukuran \textit{kernel} dan melakukan inisialisasi atribut.\\
-%	\hline
-%	2 & initOutData & Data & inData & Data & Melakukan inisialisasi ukuran untuk data keluaran.\\
-%	\hline
-%	3 & forward & Data & inData & Data & Melakukan proses perhitungan konvolusi data masukan dengan \textit{kernel} dan bias, lalu hasilnya disimpan dan dikembalikan sebagai data keluaran untuk diproses pada lapisan selanjutnya.\\
-%	\hline
-%	4 & setGradient & - & - & - & Menghitung gradien pada lapisan konvolusi dengan menggunakan gradien dari lapisan selanjutnya.\\
-%	\hline
-%	5 & getData & - & - & List$<$Data$>$ & Mengembalikan seluruh data \textit{kernel} dan bias yang digunakan pada lapisan konvolusi.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%\subsubsection{\textit{Class} RELULayer}
-%\noindent \textit{Class} RELU merupakan kelas yang di-\textit{extends} dengan \textit{class} Layer untuk menghitung hasil data masukan yang dimasukkan ke fungsi aktivasi \textit{rectified linear unit} (ReLU). Penjelasan kelas ini dapat dilihat pada tabel \ref{tbl:classRELULayer}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} RELULayer \label{tbl:classRELULayer}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} RELULayer (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & reluActivation & double & value & double & Menghitung sebuah nilai untuk digunakan pada fungsi aktivasi ReLU.\\
-%	\hline
-%	2 & forward & Data & inData & Data & Menghitung seluruh nilai dari data masukan dengan fungsi aktivasi ReLU.\\
-%	\hline
-%	3 & setGradient & - & - & - & Menghitung gradien dengan turunan dari fungsi aktivasi ReLU.\\
-%	\hline
-%	4 & getData & - & - & List$<$Data$>$ & Mengembalikan list data kosong karena tidak terdapat data yang perlu diperbarui.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%\subsubsection{\textit{Class} SubsamplingLayer}
-%\noindent \textit{Class} SubsamplingLayer merupakan kelas untuk menyimpan hasil dari proses \textit{subsampling} atau \textit{pooling} dan di-\textit{extends} dengan \textit{class} Layer. Penjelasan kelas ini dapat dilihat pada tabel \ref{tbl:classSubsamplingLayer}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} SubsamplingLayer \label{tbl:classSubsamplingLayer}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} SubsamplingLayer (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & Sub-\newline sampling-\newline Layer & Size & scaleSize & - & Konstruktor yang menerima ukuran untuk \textit{pooling}.\\
-%	\hline
-%	2 & initOutData & Data & inData & Data & Melakukan inisialisasi ukuran untuk data keluaran.\\
-%	\hline
-%	3 & initMaxData & Data & outData & Data & Melakukan inisialisasi ukuran untuk indeks dengan nilai tertinggi.\\
-%	\hline
-%	2 & forward & Data & inData & Data & Melakukan proses \textit{pooling} sesuai dengan ukuran yang telah ditentukan dan menyimpan indeks dari nilai yang tertinggi untuk digunakan saat tahap \textit{backward}.\\
-%	\hline
-%	3 & setGradient & - & - & - & Menentukan nilai gradien berdasarkan nilai tertinggi saat tahap \textit{forward} dan nilai lainnya adalah 0.\\
-%	\hline
-%	4 & getData & - & - & List$<$Data$>$ & Mengembalikan list data kosong karena tidak terdapat data yang perlu diperbarui.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%\subsubsection{\textit{Class} FullyConnectedLayer}
-%\noindent \textit{Class} FullyConnectedLayer merupakan kelas yang berfungsi untuk menerima seluruh data hasil dari lapisan sebelumnya dan selanjutnya dimasukkan ke fungsi. \textit{Class} ini juga di-\textit{extends} dengan \textit{class} Layer. Penjelasan kelas ini dapat dilihat pada tabel \ref{tbl:classFullyConnectedLayer}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} FullyConnectedLayer \label{tbl:classFullyConnectedLayer}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} FullyConnectedLayer (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & Fully-\newline Connected-\newline Layer & Size & kernelSize & - & Konstruktor yang menerima ukuran \textit{kernel} dan inisialisasi atribut.\\
-%	\hline
-%	2 & forward & Data & inData & Data & Membentuk data masukan dalam bentuk 1 dimensi dan dikalikan dengan \textit{kernel} yang berukuran sama dengan masukan, kemudian dijumlahkan sebagai data keluaran.\\
-%	\hline
-%	3 & setGradient & - & - & - & Menghitung dan menentukan nilai gradien pada data masukan, \textit{kernel}, serta bias.\\
-%	\hline
-%	4 & getData & - & - & List$<$Data$>$ & Mengembalikan seluruh data \textit{kernel} dan bias yang digunakan pada lapisan ini.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%\subsubsection{\textit{Class} SoftmaxLayer}
-%\noindent \textit{Class} SoftmaxLayer merupakan kelas yang di-\textit{extends} dengan \textit{class} Layer untuk menghitung hasil data masukan yang dimasukkan ke fungsi \textit{softmax}. Penjelasan kelas ini dapat dilihat pada tabel \ref{tbl:classSoftmaxLayer}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} SoftmaxLayer \label{tbl:classSoftmaxLayer}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} SoftmaxLayer (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & Softmax-\newline Layer & Size & size & - & Konstruktor yang menerima ukuran hasil akhir dari \textit{Convolutional Neural Network}.\\
-%	\hline
-%	2 & forward & Data & inData & Data & Melakukan perhitungan menggunakan fungsi \textit{softmax} yang telah dinormalisasi dengan nilai maksimal nilai masukan.\\
-%	\hline
-%	3 & setGradient & - & - & - & Menghitung nilai \textit{error} dari label sebenarnya.\\
-%	\hline
-%	4 & getData & - & - & List$<$Data$>$ & Mengembalikan list data kosong karena tidak terdapat data yang perlu diperbarui.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%Package kalman
-%\subsubsection{\textit{Class} Kalman}
-%\noindent \textit{Class} Kalman merupakan kelas yang berfungsi untuk melakukan proses Kalman \textit{filtering} yang mencakup tahap prediksi dan pembaruan, lihat tabel \ref{tbl:classKalman}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} Kalman \label{tbl:classKalman}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} Kalman (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & Kalman & double & rk & - & Konstruktor yang menerima parameter dan melakukan inisialisasi atribut.\\
-%	\hline
-%	2 & predict & - & - & double & Menghitung dan mengembalikan hasil prediksi berdasarkan data sebelumnya.\\
-%	\hline
-%	3 & update & double & zk & - & Memperbarui nilai pada Kalman sesuai dengan kondisi sebenarnya.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%\subsubsection{\textit{Class} KalmanPosition}
-%\noindent \textit{Class} KalmanPosition merupakan kelas yang berisi posisi $x_{1}$, $y_{1}$, $x_{2}$, dan $y_{2}$ dengan tipe Kalman, lihat tabel \ref{tbl:classKalmanPosition}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} KalmanPosition \label{tbl:classKalmanPosition}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} KalmanPosition (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & Kalman-\newline Position & double & rk & - & Konstruktor yang menerima parameter dan melakukan inisialisasi setiap posisi.\\
-%	\hline
-%	2 & getX1 & - & - & Kalman & Digunakan untuk mendapatkan posisi $x_{1}$.\\
-%	\hline
-%	3 & setX1 & Kalman & x1 & Kalman & Digunakan untuk menentukan $x_{1}$.\\
-%	\hline
-%	4 & getY1 & - & - & Kalman & Digunakan untuk mendapatkan posisi $y_{1}$.\\
-%	\hline
-%	5 & setY1 & Kalman & y1 & - & Digunakan untuk menentukan posisi $y_{1}$.\\
-%	\hline
-%	6 & getX2 & - & - & Kalman & Digunakan untuk mendapatkan posisi $x_{2}$.\\
-%	\hline
-%	7 & setX2 & Kalman & x2 & - & Digunakan untuk menentukan posisi $x_{2}$.\\
-%	\hline
-%	8 & getY2 & - & - & Kalman & Digunakan untuk mendapatkan posisi $y_{2}$.\\
-%	\hline
-%	9 & setX2 & Kalman & y2 & - & Digunakan untuk menentukan posisi $y_{2}$.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%Package main
-%\subsubsection{\textit{Class} Main}
-%\noindent \textit{Class} Main merupakan kelas untuk melakukan inisialisasi lapisan, pembelajaran, dan pengujian terhadap beberapa model sekaligus melalui kode tanpa tampilan, lihat tabel \ref{tbl:classMain}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} Main \label{tbl:classMain}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} Main (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & initializeCNN & CNN & double,\newline double,\newline int,\newline String & learning-\newline Rate,\newline lrDivider,\newline saveModel,\newline pathModel & Melakukan inisialisasi arsitektur lapisan pada \textit{Convolutional Neural Network}.\\
-%	\hline
-%	2 & train & - & - & - & Melakukan pembelajaran dengan \textit{hyperparameter} yang ditentukan.\\
-%	\hline
-%	3 & test & Dataset & String & path & Melakukan pengujian terhadap beberapa model \textit{Convolutional Neural Network} dengan \textit{hyperparameter} yang ditentukan.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%\subsubsection{\textit{Class} Dataset}
-%\noindent \textit{Class} Dataset merupakan kelas untuk menampung seluruh citra beserta dengan posisi manusia pada citra, lihat tabel \ref{tbl:classDataset}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} Dataset \label{tbl:classDataset}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} Dataset (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & Dataset & - & - & - & Konstruktor kosong hanya untuk inisialisasi.\\
-%	\hline
-%	2 & Dataset & String & path & - & Konstruktor menerima alamat \textit{dataset} dan memuat citra dan posisi \textit{dataset} tersebut.\\
-%	\hline
-%	3 & loadPosition & - & - & - & Memuat posisi manusia dari file text untuk setiap citra dalam \textit{dataset}.\\
-%	\hline
-%	4 & loadDataset-\newline Image & - & - & - & Memuat seluruh citra kedalaman dalam \textit{dataset} dan dilanjutkan dengan memuat citra pembelajaran.\\
-%	\hline
-%	5 & loadTrain-\newline Image & - & - & - & Memuat dan menghitung citra pembelajaran yang mencakup citra manusia berdasarkan posisi yang telah ditentukan dan citra bukan manusia yang posisinya didapatkan secara acak.\\
-%	\hline
-%	6 & getImages & - & - & List$<$\newline Original-\newline Image$>$ & Digunakan untuk mendapatkan seluruh citra awal dari \textit{dataset} dalam bentuk \textit{List}.\\
-%	\hline
-%	7 & getTrain-\newline Image & - & - & List$<$\newline TrainImage\newline$>$ & Digunakan untuk mendapatkan seluruh citra pembelajaran yang telah dimuat.\\
-%	\hline
-%	8 & getPosition & - & - & Map$<$\newline String, List$<$\newline Position$>$$>$ & Digunakan untuk mendapatkan seluruh posisi yang digunakan pada citra \textit{dataset}.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%\subsubsection{\textit{Class} OriginalImage}
-%\noindent \textit{Class} OriginalImage merupakan kelas untuk menampung citra awal \textit{dataset} yang telah dilakukan \textit{median filtering}. Pada kelas ini juga terdapat fungsi dan prosedur untuk memproses citra, lihat tabel \ref{tbl:classOriginalImage}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} OriginalImage \label{tbl:classOriginalImage}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} OriginalImage (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & Original-\newline Image & String,\newline Buffered-\newline Image,\newline List$<$\newline Position$>$ & fileName,\newline image,\newline position & - & Konstruktor yang menerima parameter dan citra yang diterima langsung diproses dengan \textit{median fitlering} berukuran 5 $\times$ 5.\\
-%	\hline
-%	2 & clear & - & - & - & Digunakan untuk mengurangi pemakaian memori bila dibutuhkan.\\
-%	\hline
-%	3 & isBlankImage & double[][] & img & boolean & Mengecek apakah data citra yang dimasukkan merupakan citra yang kosong atau bernilai hampir sama.\\
-%	\hline
-%	4 & load-\newline Buffered-\newline ImageTo-\newline Array & Buffered-\newline Image & bi & double[][] & Melakukan konversi citra yang bertipe BufferedImage menjadi larik 2 dimensi.\\
-%	\hline
-%	5 & drawRect & Buffered-\newline Image,\newline List$<$\newline Position$>$,\newline Color & bi,\newline pos, \newline c & Buffered-\newline Image & Menggambar persegi panjang pada citra dan mengembalikan citra tersebut.\\
-%	\hline
-%	6 & cropImage & Buffered-\newline Image,\newline Position & bi,\newline p & Buffered-\newline Image & Melakukan pemotongan pada citra sesuai dengan posisi yang telah ditentukan dan mengembalikan citra tersebut.\\
-%	\hline
-%	7 & scaleImage & Buffered-\newline Image & bi & Buffered-\newline Image & Melakukan penskalaan pada gambar.\\
-%	\hline
-%	8 & medianFilter & Buffered-\newline Image,\newline int & bi,\newline size & Buffered-\newline Image & Melakukan proses \textit{median filtering} dengan ukuran \textit{kernel} yang yang telah ditentukan.\\
-%	\hline
-%	9 & getWindow & Buffered-\newline Image,\newline int,\newline int & bi,\newline row,\newline col & Buffered-\newline Image & Mengambil daerah persegi panjang dari citra awal sesuai dengan baris dan kolom yang ditentukan.\\
-%	\hline
-%	10 & getNegative-\newline Window & Buffered-\newline Image,\newline List$<$\newline Position$>$$>$ & bi,\newline pos & Buffered-\newline Image & Mengambil daerah persegi panjang secara acak yang tidak berpotongan dengan posisi pada daftar.\\
-%	\hline
-%	11 & getId & - & - & String & Digunakan untuk mendapatkan nama citra.\\
-%	\hline
-%	12 & getImage & - & - & Buffered-\newline Image & Digunakan untuk mendapatkan citra awal.\\
-%	\hline
-%	13 & getHuman-\newline Position & - & - & List$<$\newline Position$>$ & Digunakan untuk mendapatkan posisi manusia pada citra.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%\subsubsection{\textit{Class} Position}
-%\noindent \textit{Class} Position merupakan kelas yang terdiri atas dua buah objek Point untuk menyimpan data posisi, lihat tabel \ref{tbl:classPosition}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} Position \label{tbl:classPosition}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} Position (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & Position & Point,\newline Point & topLeft,\newline bottomRight & - & Konstruktor yang menyimpan posisi.\\
-%	\hline
-%	2 & getTopLeft & - & - & Point & Digunakan untuk mendapatkan koordinat $x_{1}$, $y_{1}$ yang berada pada pojok kiri atas persegi panjang.\\
-%	\hline
-%	3 & getBottom-\newline Right & - & - & Point & Digunakan untuk mendapatkan koordinat $x_{2}$, $y_{2}$ yang berada pada pojok kanan bawah persegi panjang.\\
-%	\hline
-%	4 & isIntersection & Position,\newline List$<$\newline Position$>$$>$ & testPos,\newline position & boolean & Mengecek apakah posisi yang diuji berpotongan dengan salah satu posisi pada daftar.\\
-%	\hline
-%	5 & intersection\newline OverUnion & Position,\newline Position & pA,\newline pB & double & Menghitung \textit{Intersection over Union} (IoU) atau disebut juga sebagai Jaccard \textit{similarity} yang merupakan salah satu dari \textit{similarity measure} (SM).\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%\subsubsection{\textit{Class} TrainImage}
-%\noindent \textit{Class} TrainImage merupakan kelas yang menampung citra yang digunakan untuk pembelajaran dan dapat juga untuk pengujian, lihat tabel \ref{tbl:classTrainImage}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} TrainImage \label{tbl:classTrainImage}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} TrainImage (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & TrainImage & int,\newline String,\newline double[][] & label,\newline fileName,\newline img & - & Konstruktor untuk menentukan data pada citra pembelajaran dan pengujian.\\
-%	\hline
-%	2 & getLabel & - & - & int & Digunakan untuk mendapatkan label jenis citra.\\
-%	\hline
-%	3 & getFileName & - & - & String & Digunakan untuk mendapatkan nama file dari citra.\\
-%	\hline
-%	4 & getImg & - & - & double[][] & Digunakan untuk mendapatkan data citra.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%Package view
-%\subsubsection{\textit{Class} ImageShow}
-%\noindent \textit{Class} ImageShow merupakan kelas yang menampilkan serangkaian citra dan citra yang ditampilkan berubah dalam waktu tertentu, lihat tabel \ref{tbl:classImageShow}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} ImageShow \label{tbl:classImageShow}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} ImageShow (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & ImageShow & List$<$\newline Image$>$ & listImage & - & Menyimpan daftar citra dan melakukan inisialisasi.\\
-%	\hline
-%	2 & paint & Graphcis & g & - & Membentuk citra pada indeks yang bersesuaian.\\
-%	\hline
-%	3 & moveFirst & - & - & - & Menampilkan citra pertama.\\
-%	\hline
-%	4 & moveNext & - & - & - & Menampilkan citra selanjutnya.\\
-%	\hline
-%	5 & getImages & - & - & List$<$\newline Image$>$ & Menyimpan model \textit{Convolutional Neural Network} dengan nama yang telah ditentukan.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%\subsubsection{\textit{Class} MainGUI}
-%\noindent \textit{Class} MainGUI merupakan kelas untuk mengatur tampilan utama sebelum memilih proses pembelajaran atau pengujian, lihat tabel \ref{tbl:classMainGUI}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} MainGUI \label{tbl:classMainGUI}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} MainGUI (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & MainGUI & - & - & - & Konstruktor yang memanggil prosedur inisialisasi.\\
-%	\hline
-%	2 & initMain & - & - & - & Melakukan inisialisasi tampilan yang berada pada kelas ini.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%\subsubsection{\textit{Class} TrainGUI}
-%\noindent \textit{Class} TrainGUI merupakan kelas yang mengatur tampilan untuk tahap pembelajaran, lihat tabel \ref{tbl:classTrainGUI}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} TrainGUI \label{tbl:classTrainGUI}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} TrainGUI (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & TrainGUI & - & - & - & Konstruktor yang memanggil prosedur inisialisasi.\\
-%	\hline
-%	2 & initTrain & - & - & - & Melakukan inisialisasi tampilan yang berada pada kelas ini.\\
-%	\hline
-%	3 & startTrain & - & - & - & Memulai proses pembelajaran berdasarkan pengaturan yang telah dipilih melalui tampilan.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%\subsubsection{\textit{Class} TestGUI}
-%\noindent \textit{Class} TestGUI merupakan kelas yang mengatur tampilan untuk tahap pengujian, lihat tabel \ref{tbl:classTestGUI}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} TestGUI \label{tbl:classTestGUI}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} TestGUI (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & TestGUI & - & - & - & Konstruktor yang memanggil prosedur inisialisasi.\\
-%	\hline
-%	2 & initTest & - & - & - & Melakukan inisialisasi tampilan yang berada pada kelas ini.\\
-%	\hline
-%	3 & testCNN & - & - & - & Proses pengujian terhadap model hasil pembelajaran \textit{Convolutional Neural Network}.\\
-%	\hline
-%	4 & testKalman & - & - & - & Proses pengujian metode Kalman \textit{filtering} untuk memprediksi posisi manusia pada waktu selanjutnya. Hasil dari pengujian ini berupa daftar gambar untuk ditampilkan.\\
-%	\hline
-%	5 & testCascade-\newline CNN & - & - & List$<$\newline Buffered-\newline Image\newline $>$ & Proses pengujian dengan menggabungkan metode \textit{Cascade Classifier} untuk lokalisasi citra dan \textit{Convolutional Neural Network} untuk klasifikasi. Hasil dari pengujian ini berupa daftar gambar untuk ditampilkan.\\
-%	\hline
-%	6 & testCCCNN-\newline Kalman & - & - & List$<$\newline Buffered-\newline Image\newline $>$ & Proses pengujian keseluruhan dengan menggabungkan metode \textit{Cascade Classifier} untuk lokalisasi citra, \textit{Convolutional Neural Network} untuk klasifikasi, dan Kalman \textit{filter} untuk melacak. Hasil dari pengujian ini berupa daftar gambar untuk ditampilkan. \\
-%	\hline
-%	7 & matTo-\newline Buffered-\newline Image & Mat & m & Buffered\newline Image & Fungsi yang digunakan pada pengujian untuk mengubah citra yang memiliki tipe data Mat menjadi BufferedImage. \\
-%	\hline
-%	8 & buffered-\newline Image-\newline ToMat & Buffered\newline Image & bi & Mat & Fungsi yang digunakan pada pengujian untuk mengubah citra yang memiliki tipe data BufferedImage menjadi Mat. \\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%Package util
-%\subsubsection{\textit{Class} TimedTask}
-%\noindent \textit{Class} TimedTask merupakan kelas untuk menghitung waktu suatu proses. Pada kelas ini terdapat sebuah \textit{interface} Task. Penjelasan kelas ini dapat dilihat pada tabel \ref{tbl:classTimedTask}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} TimedTask \label{tbl:classTimedTask}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} TimedTask (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & TimedTask & Task,\newline int,\newline String & task,\newline repeat,\newline taskName & - & Konstruktor untuk menentukan nilai dari setiap proses.\\
-%	\hline
-%	2 & run & - & - & - & Menghitung waktu dari proses yang dilakukan.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
-
-%\subsubsection{\textit{Class} Util}
-%\noindent \textit{Class} Util merupakan kelas pembantu untuk operasi-operasi umum, lihat tabel \ref{tbl:classUtil}.
-%\begingroup
-%\setlength{\LTleft}{-20cm plus -1fill}
-%\setlength{\LTright}{\LTleft}
-%\begin{small}
-%\begin{longtable}{|p{0.4cm}|p{2cm}|p{1.8cm}|p{1.8cm}|p{1.7cm}|p{3.55cm}|}
-%	\caption{Daftar \textit{Method} pada \textit{Class} Util \label{tbl:classUtil}}\\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endfirsthead
-%	\multicolumn{6}{c}{\textbf{\tablename~\thetable} Daftar \textit{Method} pada \textit{Class} Util (Lanjutan)} \\
-%	\hline
-%	\multirow{2}{*}{\textbf{No}} & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c|}{\textit{\textbf{Input}}} & \multirow{2}{*}{\textit{\textbf{Output}}} & 
-%	\multirow{2}{*}{\textbf{Keterangan}}\\
-%	\cline{3-4}
-%	& & \textbf{Tipe} & \textbf{Variabel} & & \\
-%	\endhead
-%	\hline
-%	1 & randomVector & int & size & double[] & Mengembalikan larik 1 dimensi dengan nilai acak yang kecil.\\
-%	\hline
-%	2 & randomPerm & int & size & List$<$\newline Integer$>$ & Mengembalikan daftar dari bilangan bulat yang telah diacak.\\
-%	\hline
-%	3 & getMaxIndex & double[] & value & int & Mengembalikan indeks yang memiliki nilai tertinggi pada larik.\\
-%	\hline
-%\end{longtable}
-%\end{small}
-%\endgroup
 
 \section{Pengujian}
-\noindent Pada bagian ini, akan dilakukan berbagai skenario pengujian dengan beragam parameter dari metode HOG. Tujuan dari penelitian ini adalah untuk menerapkan metode HOG pada proses ekstraksi fitur karakter pada sistem pengenalan karakter, oleh karena itu perlu diketahui berapa ukuran sel, ukuran blok, dan jumlah \textit{bin} yang akan menghasilkan fitur yang paling baik untuk akurasi pengenalan karakter. Pengujian ini akan dilakukan dengan data latih sebanyak 117 citra karakter hasil segmentasi dari plat nomor untuk 36 kelas karakter yang terdiri dari 10 kelas angka dan 26 kelas huruf, dimana setiap kelas karakter memiliki jumlah data latih sebanyak 3-5 citra.\\
+\noindent Pada bagian ini, akan dilakukan berbagai skenario pengujian dengan beragam parameter dari metode HOG. Tujuan dari penelitian ini adalah untuk menerapkan metode HOG pada proses ekstraksi fitur karakter pada sistem pengenalan karakter, oleh karena itu perlu diketahui berapa ukuran sel, ukuran blok, dan jumlah \textit{bin} yang akan menghasilkan fitur yang paling baik untuk akurasi pengenalan karakter. Pengujian ini akan dilakukan dengan data latih sebanyak 117 citra karakter hasil segmentasi dari plat nomor untuk 36 kelas karakter yang terdiri dari 10 kelas angka dan 26 kelas huruf, dimana setiap kelas karakter memiliki jumlah data latih sebanyak 3-5 citra.
+
+\noindent Fitur dari metode \textit{HOG} akan digunakan pada proses klasifikasi karakter menggunakan \textit{library} SVM dari Weka dan akan diukur akurasinya menggunakan \textit{Confusion Matrix}. Adapun nilai dari setiap parameter yang akan digunakan untuk kombinasi, yaitu:
+\begin{enumerate}
+	\item Ukuran sel yang akan digunakan (dalam satuan piksel) : 2, 4, 8, 16
+	\item Jumlah \textit{bin} yang akan digunakan : 4, 6, 9, 18
+	\item Nilai \textit{sigma} pada metode \textit{SVM} yang akan digunakan: 0.01, 0.1, 1
+	\item Campuran : Kombinasi parameter yang menghasilkan akurasi paling optimal untuk setiap karakter.\\
+\end{enumerate}
+%\noindent Adapun untuk nilai sigma pada metode \textit{SVM} yang digunakan dalam kombinasi adalah 0.01, 0.1, dan 1.
+
+%\noindent Setelah setiap kombinasi ukuran sel, jumlah \textit{bin}, dan nilai sigma diuji, akan dipilih kombinasi parameter yang menghasilkan akurasi paling optimal untuk setiap karakter. Kemudian beberapa kombinasi parameter tersebut akan digabungkan dan diuji kembali, tujuannya untuk menilai apakah gabungan dari beberapa kombinasi parameter tersebut dapat meningkatkan akurasi.\\
 
 \subsection{Pengujian Kombinasi Parameter}
-\noindent Pada bagian ini akan dilakukan pengujian untuk beragam kombinasi parameter dari metode HOG dalam mengekstraksi fitur karakter. Fitur dari metode \textit{HOG} akan digunakan pada proses klasifikasi karakter menggunakan \textit{library} dari Weka dan akan diukur akurasinya menggunakan \textit{Confusion Matrix}. Adapun nilai dari setiap parameter yang akan digunakan untuk kombinasi, yaitu:
-\begin{enumerate}
-\item Ukuran sel yang akan digunakan (dalam satuan piksel) : 2, 4, 8, 16
-\item Jumlah \textit{bin} yang akan digunakan : 4, 6, 9, 18
-\end{enumerate}
-\noindent Adapun untuk nilai sigma pada metode \textit{SVM} yang digunakan dalam kombinasi adalah 0.01, 0.1, dan 1.\\
-\subsubsection{Pengujian dengan Ukuran Sel 2}
-\noindent Pada bagian ini, pengujian akan dilakukan dengan menggunakan ukuran sel berukuran 2 $\times$ 2 piksel dan ukuran blok 2 $\times$ 2 sel (4 $\times$ 4 piksel). Jumlah bin yang akan digunakan adalah 4, 6, 9, dan 18. Sedangkan untuk nilai sigma pada metode \textit{SVM} yang akan digunakan adalah 0.01, 0.1, dan 1. Berikut adalah hasil pengujian untuk setiap kombinasi parameter tersebut:
+\noindent Pada skenario pengujian ini, pengujian akan dilakukan dengan menggunakan ukuran sel berukuran 2 $\times$ 2 piksel, 4 $\times$ 4 piksel, 8 $\times$ 8 piksel, dan 16 $\times$ 16 piksel. Setiap ukuran sel akan menggunakan ukuran blok 2 $\times$ 2 sel. Jumlah bin yang akan digunakan adalah 4, 6, 9, dan 18. Sedangkan untuk nilai sigma pada metode \textit{SVM} yang akan digunakan adalah 0.01, 0.1, dan 1. Berikut adalah hasil pengujian untuk setiap kombinasi parameter tersebut:
+
 %\begin{longtable}[c]{|c|c|c|c|c|}
 %	\caption{Hasil Pengujian dengan ukuran sel 2 $\times$ 2 piksel}
 %	\label{tab:HasilPengujianSel2}\\
@@ -1185,35 +243,43 @@
 %	2          & 18        & 0.1    & 25\%                           & 0\%                            \\ \hline
 %	2          & 18        & 1      & 18.18\%                        & 0\%                            \\ \hline
 %\end{longtable}
-\begin{longtable}[c]{|c|c|c|c|c|}
-	\caption{Hasil Pengujian dengan ukuran sel 2 $\times$ 2 piksel}
-	\label{tab:HasilPengujianSel2}\\
-	\hline
-	\multicolumn{3}{|c|}{Parameter} &                                &                                \\ \cline{1-3}
-	CellSize   & NumBins   & Sigma  & \multirow{-2}{*}{CRR}          & \multirow{-2}{*}{OVR}          \\ \hline
-	\endhead
-	%
-	2          & 4         & 0.01   & {\color[HTML]{FE0000} 61.53\%} & {\color[HTML]{FE0000} 14.28\%} \\ \hline
-	2          & 4         & 0.1    & 28.67\%                        & 0\%                            \\ \hline
-	2          & 4         & 1      & 20.27\%                        & 0\%                            \\ \hline
-	2          & 6         & 0.01   & 53.84\%                        & 9.52\%                         \\ \hline
-	2          & 6         & 0.1    & 27.97\%                        & 0\%                            \\ \hline
-	2          & 6         & 1      & 20.27\%                        & 0\%                            \\ \hline
-	2          & 9         & 0.01   & 52.44\%                        & 4.76\%                         \\ \hline
-	2          & 9         & 0.1    & 27.27\%                        & 0\%                            \\ \hline
-	2          & 9         & 1      & 20.27\%                        & 0\%                            \\ \hline
-	2          & 18        & 0.01   & 48.25\%                        & 4.76\%                         \\ \hline
-	2          & 18        & 0.1    & 27.97\%                        & 0\%                            \\ \hline
-	2          & 18        & 1      & 20.27\%                        & 0\%                            \\ \hline
-\end{longtable}
-\noindent Berdasarkan tabel di atas, dapat disimpulkan bahwa akurasi pengenalan karakter maksimal yang didapatkan apabila menggunakan ukuran sel 2 $\times$ 2 piksel adalah 58.52\%. Kombinasi parameter yang digunakan untuk mencapai hasil tersebut adalah ukuran sel 2 $\times$ 2 piksel, jumlah \textit{bin} sebanyak 4 sehingga besar setiap \textit{bin} adalah 45 derajat, kemudian nilai \textit{sigma} yang digunakan untuk metode \textit{SVM} adalah 0.01. Dengan citra karakter masukan berukuran 32 $\times$ 32 piksel. Maka panjang vektor fitur dari \textit{HOG descriptor} yang dihasilkan adalah 3600 fitur.
+%\begin{longtable}[c]{|r|r|r|r|r|}
+%	\caption{Pengujian dengan ukuran sel 2 $\times$ 2 piksel}
+%	\label{tab:HasilPengujianSel2}\\
+%	\hline
+%	\multicolumn{3}{|c|}{Parameter} &                                &                                \\ \cline{1-3}
+%	CellSize   & NumBins   & Sigma  & \multicolumn{1}{c|}{\multirow{-2}{*}{CRR}} & \multicolumn{1}{c|}{\multirow{-2}{*}{OVR}} \\ \hline
+%	\endhead
+%	%
+%	2          & 4         & 0.01   & {\color[HTML]{FE0000} 61.53\%} & {\color[HTML]{FE0000} 14.28\%} \\ \hline
+%	2          & 4         & 0.1    & 28.67\%                        & 0\%                            \\ \hline
+%	2          & 4         & 1      & 20.27\%                        & 0\%                            \\ \hline
+%	2          & 6         & 0.01   & 53.84\%                        & 9.52\%                         \\ \hline
+%	2          & 6         & 0.1    & 27.97\%                        & 0\%                            \\ \hline
+%	2          & 6         & 1      & 20.27\%                        & 0\%                            \\ \hline
+%	2          & 9         & 0.01   & 52.44\%                        & 4.76\%                         \\ \hline
+%	2          & 9         & 0.1    & 27.27\%                        & 0\%                            \\ \hline
+%	2          & 9         & 1      & 20.27\%                        & 0\%                            \\ \hline
+%	2          & 18        & 0.01   & 48.25\%                        & 4.76\%                         \\ \hline
+%	2          & 18        & 0.1    & 27.97\%                        & 0\%                            \\ \hline
+%	2          & 18        & 1      & 20.27\%                        & 0\%                            \\ \hline
+%\end{longtable}
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\framebox{\includegraphics[width=14cm]{images/HasilPengujianUkuranSel2.png}}
+		\captionof{figure}{Hasil Pengujian Kombinasi Parameter dengan Ukuran Sel 2\\}
+		\label{fig:HasilPengujianUkuranSel2}
+	\end{minipage}
+\end{adjustbox}
 
-\noindent Kolom di bagian kiri menunjukkan kombinasi parameter yang digunakan pada saat pengujian. Kolom CRR merupakan akronim dari \textit{Character Recognition Rate} yang memiliki rumus jumlah karakter yang dikenali dibagi dengan keseluruhan karakter yang terdeteksi. Dari 143 karakter yang terdeteksi, sebanyak 88 di antaranya dapat diklasifikasikan dengan baik. Kolom OVR pada bagian kanan menunjukkan performa keseluruhan yang memiliki rumus jumlah plat nomor yang terdeteksi dan dikenali dengan benar dibagi dengan keseluruhan jumlah plat nomor yang ada. Dari 21 plat nomor yang terdeteksi, hanya 3 plat nomor yang dapat dikenali dengan baik. 
+\noindent Berdasarkan Gambar \ref{fig:HasilPengujianUkuranSel2}, dapat disimpulkan bahwa tingkat akurasi pengenalan karakter (CRR) maksimal yang didapatkan apabila menggunakan ukuran sel 2 $\times$ 2 piksel adalah 61.53\%. Kombinasi parameter yang digunakan untuk mencapai hasil tersebut adalah ukuran sel 2 $\times$ 2 piksel, jumlah \textit{bin} sebanyak 4 sehingga besar setiap \textit{bin} adalah 45 derajat, kemudian nilai \textit{sigma} yang digunakan untuk metode \textit{SVM} adalah 0.01. Dengan citra karakter masukan berukuran 32 $\times$ 32 piksel. Maka panjang vektor fitur dari \textit{HOG descriptor} yang dihasilkan adalah 3600 fitur.
+
+\noindent Grafik batang berwarna biru menunjukkan tingkat akurasi pengenalan karakter (CRR). CRR sendiri merupakan akronim dari \textit{Character Recognition Rate} yang memiliki rumus jumlah karakter yang dikenali dibagi dengan keseluruhan karakter yang terdeteksi. Berdasarkan hasil CRR tertinggi pada Gambar \ref{fig:HasilPengujianUkuranSel2}, dari 143 karakter yang terdeteksi, sebanyak 88 di antaranya dapat diklasifikasikan dengan baik. Grafik batang berwarna kuning menunjukkan performa keseluruhan aplikasi (OVR). OVR merupakan akronim dari \textit{Overall Performance} yang memiliki rumus jumlah plat nomor yang terdeteksi dan dikenali dengan benar dibagi dengan keseluruhan jumlah plat nomor yang ada. Berdasarkan hasil OVR tertinggi dari Gambar \ref{fig:HasilPengujianUkuranSel2}, dari 21 plat nomor yang terdeteksi, hanya 3 plat nomor yang dapat dikenali dengan baik. 
 
 \noindent Tabel \ref{tab:hasilklasifikasisel2} merupakan tabel yang menunjukkan hasil klasifikasi karakter dengan parameter HOG (\textit{CellSize} dan \textit{NumBins}) masing-masing 2 dan 4, dan nilai \textit{sigma} untuk metode \textit{SVM} 0.01.
 
-\begin{longtable}[c]{|c|c|c|c|c|}
-	\caption{Hasil klasifikasi karakter dengan parameter CellSize = 2, NumBins = 4, dan Sigma = 0.01}
+\begin{longtable}[c]{|r|r|r|r|r|}
+	\caption{Klasifikasi karakter dengan parameter CellSize = 2, NumBins = 4, dan Sigma = 0.01}
 	\label{tab:hasilklasifikasisel2}\\
 	\hline
 	\textbf{No} & \textbf{Karakter} & \textbf{Prediksi Benar} & \textbf{Prediksi Salah} & \textbf{Akurasi} \\ \hline
@@ -1259,10 +325,10 @@
 	36           & Z                 & 1                       & 0                       &100.00\%            \\ \hline
 \end{longtable}
 
-\noindent Dengan akurasi pengenalan karakter (\textit{Character Recognition Rate}) sebesar 61.53\%, dapat dilihat pada tabel \ref{tab:hasilklasifikasisel2} bahwa dari 36  karakter yang ada, yang dapat diprediksi dengan benar 100\% adalah sebanyak 16 karakter, terdapat juga beberapa karakter yang memiliki akurasi pengenalan yang rendah, diantaranya adalah angka 3, angka 4, angka 6, angka 7, angka 8, angka 9, huruf B, huruf I, huruf P, dan huruf W. Dari hasil akurasi klasifikasi di atas, dapat disimpulkan bahwa penggunaan ukuran sel 2 $\times$ 2 piksel kurang tepat untuk digunakan dalam proses ekstraksi fitur HOG dalam sistem pengenalan karakter ini.\\
+\noindent Dengan tingkat akurasi pengenalan karakter (\textit{Character Recognition Rate}) sebesar 61.53\%, dapat dilihat pada tabel \ref{tab:hasilklasifikasisel2} bahwa dari 36  karakter yang ada, yang dapat diprediksi dengan benar 100\% adalah sebanyak 16 karakter, terdapat juga beberapa karakter yang memiliki akurasi pengenalan yang rendah, diantaranya adalah angka 3, angka 4, angka 6, angka 7, angka 8, angka 9, huruf B, huruf I, huruf P, dan huruf W. Dari hasil akurasi klasifikasi di atas, dapat disimpulkan bahwa penggunaan ukuran sel 2 $\times$ 2 piksel kurang tepat untuk digunakan dalam proses ekstraksi fitur HOG dalam sistem pengenalan karakter ini.
 
-\subsubsection{Pengujian dengan Ukuran Sel 4}
-\noindent Pada bagian ini, pengujian akan dilakukan dengan menggunakan ukuran sel berukuran 4 $\times$ 4 piksel dan ukuran blok 2 $\times$ 2 sel (8 $\times$ 8 piksel). Jumlah bin yang akan digunakan adalah 4, 6, 9, dan 18. Sedangkan untuk nilai sigma pada metode \textit{SVM} yang akan digunakan adalah 0.01, 0.1, dan 1. Berikut adalah hasil pengujian untuk setiap kombinasi parameter tersebut:
+%\subsection{Pengujian dengan Ukuran Sel 4}
+%\noindent Pada bagian ini, pengujian akan dilakukan dengan menggunakan ukuran sel berukuran 4 $\times$ 4 piksel dan ukuran blok 2 $\times$ 2 sel (8 $\times$ 8 piksel). Jumlah bin yang akan digunakan adalah 4, 6, 9, dan 18. Sedangkan untuk nilai sigma pada metode \textit{SVM} yang akan digunakan adalah 0.01, 0.1, dan 1. Berikut adalah hasil pengujian untuk setiap kombinasi parameter tersebut:
 %\begin{longtable}[c]{|c|c|c|}
 %	\caption{Hasil Pengujian dengan ukuran sel 4 $\times$ 4 piksel}
 %	\label{tab:HasilPengujianSel4}\\
@@ -1283,43 +349,43 @@
 %	(4, 18, 0.1)                                                                   & 40.90\% & 0\%     \\ \hline
 %	(4, 18, 1)                                                                     & 24.43\% & 0\%     \\ \hline
 %\end{longtable}
-\\
-\\
-\\
-\\
-\\
-\\
-\\
-\\
-\begin{longtable}[c]{|c|c|c|c|c|}
-	\caption{Hasil Pengujian dengan ukuran sel 4 $\times$ 4 piksel}
-	\label{tab:HasilPengujianSel4}\\
-	\hline
-	\multicolumn{3}{|c|}{Parameter} &                                &                                \\ \cline{1-3}
-	CellSize   & NumBins   & Sigma  & \multirow{-2}{*}{CRR}          & \multirow{-2}{*}{OVR}          \\ \hline
-	\endhead
-	%
-	4          & 4         & 0.01   & 88.11\%                        & 38.09\% \\ \hline
-	4          & 4         & 0.1    & 50.34\%                        & 0\%                            \\ \hline
-	4          & 4         & 1      & 27.97\%                        & 0\%                            \\ \hline
-	4          & 6         & 0.01   & 86.71\%                        & 42.85\%                         \\ \hline
-	4          & 6         & 0.1    & 44.05\%                        & 0\%                            \\ \hline
-	4          & 6         & 1      & 26.57\%                        & 0\%                            \\ \hline
-	4          & 9         & 0.01   & {\color[HTML]{FE0000} 90.20\%} & {\color[HTML]{FE0000} 52.38\%} \\ \hline
-	4          & 9         & 0.1    & 44.05\%                        & 0\%                            \\ \hline
-	4          & 9         & 1      & 25.87\%                        & 0\%                            \\ \hline
-	4          & 18        & 0.01   & 87.41\%                        & 47.61\%                         \\ \hline
-	4          & 18        & 0.1    & 44.05\%                        & 0\%                            \\ \hline
-	4          & 18        & 1      & 25.87\%                        & 0\%                            \\ \hline
-\end{longtable}
-\noindent Berdasarkan tabel di atas, dapat disimpulkan bahwa akurasi pengenalan karakter maksimal yang didapatkan apabila menggunakan ukuran sel 4 $\times$ 4 piksel adalah 90.20\%. Kombinasi parameter yang digunakan untuk mencapai hasil tersebut adalah ukuran sel 4 $\times$ 4 piksel, jumlah \textit{bin} sebanyak 9 sehingga besar setiap \textit{bin} adalah 20 derajat, kemudian nilai \textit{sigma} yang digunakan untuk metode \textit{SVM} adalah 0.01. Dengan citra karakter masukan berukuran 32 $\times$ 32 piksel. Maka panjang vektor fitur dari \textit{HOG descriptor} yang dihasilkan adalah 1764 fitur. Jika dibandingkan dengan pengujian sebelumnya, jumlah fitur yang lebih sedikit justru mampu mendapatkan akurasi pengenalan karakter yang lebih baik.
+%\begin{longtable}[c]{|r|r|r|r|r|}
+%	\caption{Pengujian dengan ukuran sel 4 $\times$ 4 piksel}
+%	\label{tab:HasilPengujianSel4}\\
+%	\hline
+%	\multicolumn{3}{|c|}{Parameter} &                                &                                \\ \cline{1-3}
+%	CellSize   & NumBins   & Sigma  & \multicolumn{1}{c|}{\multirow{-2}{*}{CRR}} & \multicolumn{1}{c|}{\multirow{-2}{*}{OVR}} \\ \hline
+%	\endhead
+%	%
+%	4          & 4         & 0.01   & 88.11\%                        & 38.09\% \\ \hline
+%	4          & 4         & 0.1    & 50.34\%                        & 0\%                            \\ \hline
+%	4          & 4         & 1      & 27.97\%                        & 0\%                            \\ \hline
+%	4          & 6         & 0.01   & 86.71\%                        & 42.85\%                         \\ \hline
+%	4          & 6         & 0.1    & 44.05\%                        & 0\%                            \\ \hline
+%	4          & 6         & 1      & 26.57\%                        & 0\%                            \\ \hline
+%	4          & 9         & 0.01   & {\color[HTML]{FE0000} 90.20\%} & {\color[HTML]{FE0000} 52.38\%} \\ \hline
+%	4          & 9         & 0.1    & 44.05\%                        & 0\%                            \\ \hline
+%	4          & 9         & 1      & 25.87\%                        & 0\%                            \\ \hline
+%	4          & 18        & 0.01   & 87.41\%                        & 47.61\%                         \\ \hline
+%	4          & 18        & 0.1    & 44.05\%                        & 0\%                            \\ \hline
+%	4          & 18        & 1      & 25.87\%                        & 0\%                            \\ \hline
+%\end{longtable}
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\framebox{\includegraphics[width=14cm]{images/HasilPengujianUkuranSel4.png}}
+		\captionof{figure}{Hasil Pengujian Kombinasi Parameter dengan Ukuran Sel 4\\}
+		\label{fig:HasilPengujianUkuranSel4}
+	\end{minipage}
+\end{adjustbox}
 
-\noindent Sama seperti bagian sebelumnya, kolom di bagian kiri menunjukkan kombinasi parameter yang digunakan pada saat pengujian. Dari hasil pada kolom CRR, dari 143 karakter yang terdeteksi, sebanyak 129 di antaranya dapat diklasifikasikan dengan baik. Dari hasil pada kolom OVR menunjukkan, dari 21 plat nomor yang terdeteksi, 11 plat nomor dapat dikenali dengan baik, hal ini merupakan peningkatan apabila dibandingkan dengan hasil pengujian sebelumnya, namun masih cukup banyak plat yang tidak dapat dikenali dengan baik. 
+\noindent Berdasarkan Gambar \ref{fig:HasilPengujianUkuranSel4}, dapat disimpulkan bahwa tingkat akurasi pengenalan karakter (CRR) maksimal yang didapatkan apabila menggunakan ukuran sel 4 $\times$ 4 piksel adalah 90.20\%. Kombinasi parameter yang digunakan untuk mencapai hasil tersebut adalah ukuran sel 4 $\times$ 4 piksel, jumlah \textit{bin} sebanyak 9 sehingga besar setiap \textit{bin} adalah 20 derajat, kemudian nilai \textit{sigma} yang digunakan untuk metode \textit{SVM} adalah 0.01. Dengan citra karakter masukan berukuran 32 $\times$ 32 piksel. Maka panjang vektor fitur dari \textit{HOG descriptor} yang dihasilkan adalah 1764 fitur. Jika dibandingkan dengan pengujian sebelumnya, jumlah fitur yang lebih sedikit justru mampu mendapatkan akurasi pengenalan karakter yang lebih baik.
+
+\noindent Berdasarkan hasil CRR tertinggi pada Gambar \ref{fig:HasilPengujianUkuranSel4}, dari 143 karakter yang terdeteksi, sebanyak 129 di antaranya dapat diklasifikasikan dengan baik. Sedangkan dari hasil OVR tertinggi pada Gambar \ref{fig:HasilPengujianUkuranSel4}, dari 21 plat nomor yang terdeteksi, 11 plat nomor dapat dikenali dengan baik, hal ini merupakan peningkatan apabila dibandingkan dengan hasil pengujian sebelumnya, namun masih cukup banyak plat yang tidak dapat dikenali dengan baik. 
 
 \noindent Tabel \ref{tab:hasilklasifikasisel4} merupakan tabel yang menunjukkan hasil klasifikasi karakter dengan parameter HOG (\textit{CellSize} dan \textit{NumBins}) masing-masing 4 dan 9, dan nilai \textit{sigma} untuk metode \textit{SVM} 0.01.
 
-\begin{longtable}[c]{|c|c|c|c|c|}
-	\caption{Hasil klasifikasi karakter dengan parameter CellSize = 4, NumBins = 9, dan Sigma = 0.01}
+\begin{longtable}[c]{|r|r|r|r|r|}
+	\caption{Klasifikasi karakter dengan parameter CellSize = 4, NumBins = 9, dan Sigma = 0.01}
 	\label{tab:hasilklasifikasisel4}\\
 	\hline
 	\textbf{No} & \textbf{Karakter} & \textbf{Prediksi Benar} & \textbf{Prediksi Salah} & \textbf{Akurasi} \\ \hline
@@ -1362,11 +428,10 @@
 	36           & Z                 & 1                       & 0                       &100.00\%            \\ \hline
 \end{longtable}
 
-%Dari pengujian ini dapat  disimpulkan bahwa penggunaan ukuran sel 4 $\times$ 4 piksel sudah dapat meningkatkan akurasi pengenalan karakter namun masih belum optimal.
-\noindent Dengan akurasi pengenalan karakter (\textit{Character Recognition Rate}) sebesar 90.20\%, dapat dilihat pada tabel \ref{tab:hasilklasifikasisel4} bahwa dari 36  karakter yang ada, yang dapat diprediksi dengan benar 100\% adalah sebanyak 24 karakter, terdapat juga beberapa karakter yang memiliki akurasi pengenalan yang rendah, diantaranya adalah angka 0, huruf Q, dan huruf U. Dari hasil akurasi klasifikasi di atas, dapat  disimpulkan bahwa penggunaan ukuran sel 4 $\times$ 4 piksel sudah dapat meningkatkan akurasi pengenalan karakter namun masih belum optimal.\\
+\noindent Dengan tingkat akurasi pengenalan karakter (\textit{Character Recognition Rate}) sebesar 90.20\%, dapat dilihat pada tabel \ref{tab:hasilklasifikasisel4} bahwa dari 36  karakter yang ada, yang dapat diprediksi dengan benar 100\% adalah sebanyak 24 karakter, terdapat juga beberapa karakter yang memiliki akurasi pengenalan yang rendah, diantaranya adalah angka 0, huruf Q, dan huruf U. Dari hasil akurasi klasifikasi di atas, dapat  disimpulkan bahwa penggunaan ukuran sel 4 $\times$ 4 piksel sudah dapat meningkatkan akurasi pengenalan karakter namun masih belum optimal.
 
-\subsubsection{Pengujian dengan Ukuran Sel 8}
-\noindent Pada bagian ini, pengujian akan dilakukan dengan menggunakan ukuran sel berukuran 8 $\times$ 8 piksel dan ukuran blok 2 $\times$ 2 sel (16 $\times$ 16 piksel). Jumlah bin yang akan digunakan adalah 4, 6, 9, dan 18. Sedangkan untuk nilai sigma pada metode \textit{SVM} yang akan digunakan adalah 0.01, 0.1, dan 1. Berikut adalah hasil pengujian untuk setiap kombinasi parameter tersebut:
+%\subsection{Pengujian dengan Ukuran Sel 8}
+%\noindent Pada bagian ini, pengujian akan dilakukan dengan menggunakan ukuran sel berukuran 8 $\times$ 8 piksel dan ukuran blok 2 $\times$ 2 sel (16 $\times$ 16 piksel). Jumlah bin yang akan digunakan adalah 4, 6, 9, dan 18. Sedangkan untuk nilai sigma pada metode \textit{SVM} yang akan digunakan adalah 0.01, 0.1, dan 1. Berikut adalah hasil pengujian untuk setiap kombinasi parameter tersebut:
 %\begin{longtable}[c]{|c|c|c|}
 %	\caption{Hasil Pengujian dengan ukuran sel 8 $\times$ 8 piksel}
 %	\label{tab:HasilPengujianSel8}\\
@@ -1387,35 +452,43 @@
 %	(8, 18, 0.1)                                                                   & {\color[HTML]{FE0000} 94.88\%} & {\color[HTML]{FE0000} 58.62\%}     \\ \hline
 %	(8, 18, 1)                                                                     & 40.34\% & 0\%     \\ \hline
 %\end{longtable}
-\begin{longtable}[c]{|c|c|c|c|c|}
-	\caption{Hasil Pengujian dengan ukuran sel 8 $\times$ 8 piksel}
-	\label{tab:HasilPengujianSel8}\\
-	\hline
-	\multicolumn{3}{|c|}{Parameter} &                                &                                \\ \cline{1-3}
-	CellSize   & NumBins   & Sigma  & \multirow{-2}{*}{CRR}          & \multirow{-2}{*}{OVR}          \\ \hline
-	\endhead
-	%
-	8          & 4         & 0.01   & 17.48\%                        & 0\% \\ \hline
-	8          & 4         & 0.1    & 94.40\%                        & 71.42\%                            \\ \hline
-	8          & 4         & 1      & 48.95\%                        & 0\%                            \\ \hline
-	8          & 6         & 0.01   & 23.07\%                        & 0\%                         \\ \hline
-	8          & 6         & 0.1    & 94.40\%                        & 71.42\%                            \\ \hline
-	8          & 6         & 1      & 46.15\%                        & 0\%                            \\ \hline
-	8          & 9         & 0.01   & 29.37\%                        & 0\% \\ \hline
-	8          & 9         & 0.1    & 94.40\%                        & 71.42\%                            \\ \hline
-	8          & 9         & 1      & 41.95\%                        & 0\%                            \\ \hline
-	8          & 18        & 0.01   & 23.77\%                        & 0\%                         \\ \hline
-	8          & 18        & 0.1    & {\color[HTML]{FE0000} 95.80\%} & {\color[HTML]{FE0000} 80.95\%}                            \\ \hline
-	8          & 18        & 1      & 43.35\%                        & 0\%                            \\ \hline
-\end{longtable}
-\noindent Berdasarkan tabel di atas, dapat disimpulkan bahwa akurasi pengenalan karakter maksimal yang didapatkan apabila menggunakan ukuran sel 8 $\times$ 8 piksel adalah 95.80\%. Kombinasi parameter yang digunakan untuk mencapai hasil tersebut adalah ukuran sel 8 $\times$ 8 piksel, jumlah \textit{bin} sebanyak 18 sehingga besar setiap \textit{bin} adalah 10 derajat, kemudian nilai \textit{sigma} yang digunakan untuk metode \textit{SVM} adalah 0.1. Dengan citra karakter masukan berukuran 32 $\times$ 32 piksel. Maka panjang vektor fitur dari \textit{HOG descriptor} yang dihasilkan adalah 648 fitur. Sama seperti pengujian sebelumnya, jika dibandingkan dengan pengujian sebelumnya, jumlah fitur yang lebih sedikit justru mampu mendapatkan akurasi pengenalan karakter yang lebih baik.
+%\begin{longtable}[c]{|r|r|r|r|r|}
+%	\caption{Pengujian dengan ukuran sel 8 $\times$ 8 piksel}
+%	\label{tab:HasilPengujianSel8}\\
+%	\hline
+%	\multicolumn{3}{|c|}{Parameter} &                                &                                \\ \cline{1-3}
+%	CellSize   & NumBins   & Sigma  & \multicolumn{1}{c|}{\multirow{-2}{*}{CRR}} & \multicolumn{1}{c|}{\multirow{-2}{*}{OVR}} \\ \hline
+%	\endhead
+%	%
+%	8          & 4         & 0.01   & 17.48\%                        & 0\% \\ \hline
+%	8          & 4         & 0.1    & 94.40\%                        & 71.42\%                            \\ \hline
+%	8          & 4         & 1      & 48.95\%                        & 0\%                            \\ \hline
+%	8          & 6         & 0.01   & 23.07\%                        & 0\%                         \\ \hline
+%	8          & 6         & 0.1    & 94.40\%                        & 71.42\%                            \\ \hline
+%	8          & 6         & 1      & 46.15\%                        & 0\%                            \\ \hline
+%	8          & 9         & 0.01   & 29.37\%                        & 0\% \\ \hline
+%	8          & 9         & 0.1    & 94.40\%                        & 71.42\%                            \\ \hline
+%	8          & 9         & 1      & 41.95\%                        & 0\%                            \\ \hline
+%	8          & 18        & 0.01   & 23.77\%                        & 0\%                         \\ \hline
+%	8          & 18        & 0.1    & {\color[HTML]{FE0000} 95.80\%} & {\color[HTML]{FE0000} 80.95\%}                            \\ \hline
+%	8          & 18        & 1      & 43.35\%                        & 0\%                            \\ \hline
+%\end{longtable}
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\framebox{\includegraphics[width=14cm]{images/HasilPengujianUkuranSel8.png}}
+		\captionof{figure}{Hasil Pengujian Kombinasi Parameter dengan Ukuran Sel 8\\}
+		\label{fig:HasilPengujianUkuranSel8}
+	\end{minipage}
+\end{adjustbox}
 
-\noindent Sama seperti bagian sebelumnya, kolom di bagian kiri menunjukkan kombinasi parameter yang digunakan pada saat pengujian. Dari hasil pada kolom CRR, dari 143 karakter yang terdeteksi, sebanyak 137 di antaranya dapat diklasifikasikan dengan baik. Dari hasil pada kolom OVR menunjukkan, dari 21 plat nomor yang terdeteksi, 17 plat nomor dapat dikenali dengan baik, hal ini merupakan peningkatan apabila dibandingkan dengan hasil pengujian sebelumnya.
+\noindent Berdasarkan Gambar \ref{fig:HasilPengujianUkuranSel8}, dapat disimpulkan bahwa tingkat akurasi pengenalan karakter maksimal yang didapatkan apabila menggunakan ukuran sel 8 $\times$ 8 piksel adalah 95.80\%. Kombinasi parameter yang digunakan untuk mencapai hasil tersebut adalah ukuran sel 8 $\times$ 8 piksel, jumlah \textit{bin} sebanyak 18 sehingga besar setiap \textit{bin} adalah 10 derajat, kemudian nilai \textit{sigma} yang digunakan untuk metode \textit{SVM} adalah 0.1. Dengan citra karakter masukan berukuran 32 $\times$ 32 piksel. Maka panjang vektor fitur dari \textit{HOG descriptor} yang dihasilkan adalah 648 fitur. Sama seperti pengujian sebelumnya, jika dibandingkan dengan pengujian sebelumnya, jumlah fitur yang lebih sedikit justru mampu mendapatkan akurasi pengenalan karakter yang lebih baik.
+
+\noindent Dari hasil CRR tertinggi pada Gambar \ref{fig:HasilPengujianUkuranSel8}, dari 143 karakter yang terdeteksi, sebanyak 137 di antaranya dapat diklasifikasikan dengan baik. Sedangkan dari hasil OVR tertinggi pada Gambar \ref{fig:HasilPengujianUkuranSel8} menunjukkan, dari 21 plat nomor yang terdeteksi, 17 plat nomor dapat dikenali dengan baik, hal ini merupakan peningkatan apabila dibandingkan dengan hasil pengujian sebelumnya.
 
 \noindent Tabel \ref{tab:hasilklasifikasisel8} merupakan tabel yang menunjukkan hasil klasifikasi karakter dengan parameter HOG (\textit{CellSize} dan \textit{NumBins}) masing-masing 8 dan 18, dan nilai \textit{sigma} untuk metode \textit{SVM} 0.1.
 
-\begin{longtable}[c]{|c|c|c|c|c|}
-	\caption{Hasil klasifikasi karakter dengan parameter CellSize = 8, NumBins = 18, dan Sigma = 0.1}
+\begin{longtable}[c]{|r|r|r|r|r|}
+	\caption{Klasifikasi karakter dengan parameter CellSize = 8, NumBins = 18, dan Sigma = 0.1}
 	\label{tab:hasilklasifikasisel8}\\
 	\hline
 	\textbf{No} & \textbf{Karakter} & \textbf{Prediksi Benar} & \textbf{Prediksi Salah} & \textbf{Akurasi} \\ \hline
@@ -1458,10 +531,10 @@
 	36           & Z                 & 1                       & 0                       &100.00\%            \\ \hline
 \end{longtable}
 
-\noindent Dengan akurasi pengenalan karakter (\textit{Character Recognition Rate}) sebesar 95.80\%, dapat dilihat pada tabel \ref{tab:hasilklasifikasisel8} bahwa dari 36  karakter yang ada, yang dapat diprediksi dengan benar 100\% adalah sebanyak 29 karakter, dari karakter yang  tersisa, hanya satu karakter yang memiliki akurasi rendah, yaitu huruf Q yang mana dari 2 karakter yang terdapat di data \textit{testing}, tidak ada yang dapat diklasifikasikan dengan benar. Dari hasil pengujian ini dapat  disimpulkan bahwa penggunaan ukuran sel 8 $\times$ 8 piksel sudah dapat menghasilkan akurasi pengenalan karakter yang baik.\\
+\noindent Dengan tingkat akurasi pengenalan karakter (\textit{Character Recognition Rate}) sebesar 95.80\%, dapat dilihat pada tabel \ref{tab:hasilklasifikasisel8} bahwa dari 36  karakter yang ada, yang dapat diprediksi dengan benar 100\% adalah sebanyak 29 karakter, dari karakter yang  tersisa, hanya satu karakter yang memiliki akurasi rendah, yaitu huruf Q yang mana dari 2 karakter yang terdapat di data \textit{testing}, tidak ada yang dapat diklasifikasikan dengan benar. Dari hasil pengujian ini dapat  disimpulkan bahwa penggunaan ukuran sel 8 $\times$ 8 piksel sudah dapat menghasilkan akurasi pengenalan karakter yang baik.\\
 
-\subsubsection{Pengujian dengan Ukuran Sel 16}
-\noindent Pada bagian ini, pengujian akan dilakukan dengan menggunakan ukuran sel berukuran 16 $\times$ 16 piksel dan ukuran blok 2 $\times$ 2 sel (32 $\times$ 32 piksel). Jumlah bin yang akan digunakan adalah 4, 6, 9, dan 18. Sedangkan untuk nilai sigma pada metode \textit{SVM} yang akan digunakan adalah 0.01, 0.1, dan 1. Berikut adalah hasil pengujian untuk setiap kombinasi parameter tersebut:
+%\subsection{Pengujian dengan Ukuran Sel 16}
+%\noindent Pada bagian ini, pengujian akan dilakukan dengan menggunakan ukuran sel berukuran 16 $\times$ 16 piksel dan ukuran blok 2 $\times$ 2 sel (32 $\times$ 32 piksel). Jumlah bin yang akan digunakan adalah 4, 6, 9, dan 18. Sedangkan untuk nilai sigma pada metode \textit{SVM} yang akan digunakan adalah 0.01, 0.1, dan 1. Berikut adalah hasil pengujian untuk setiap kombinasi parameter tersebut:
 %\begin{longtable}[c]{|c|c|c|}
 %	\caption{Hasil Pengujian dengan ukuran sel 16 $\times$ 16 piksel}
 %	\label{tab:HasilPengujianSel16}\\
@@ -1482,35 +555,44 @@
 %	(16, 18, 0.1)                                                                   & 23.29\% & 0\%     \\ \hline
 %	(16, 18, 1)                                                                     & 85.79\% & 24.13\%     \\ \hline
 %\end{longtable}
-\begin{longtable}[c]{|c|c|c|c|c|}
-	\caption{Hasil Pengujian dengan ukuran sel 16 $\times$ 16 piksel}
-	\label{tab:HasilPengujianSel16}\\
-	\hline
-	\multicolumn{3}{|c|}{Parameter} &                                &                                \\ \cline{1-3}
-	CellSize   & NumBins   & Sigma  & \multirow{-2}{*}{CRR}          & \multirow{-2}{*}{OVR}          \\ \hline
-	\endhead
-	%
-	16          & 4         & 0.01   & 13.98\%                        & 0\%                            \\ \hline
-	16          & 4         & 0.1    & 20.27\%                        & 0\%                            \\ \hline
-	16          & 4         & 1      & 83.91\%                        & 23.80\%                        \\ \hline
-	16          & 6         & 0.01   & 13.98\%                        & 0\%                            \\ \hline
-	16          & 6         & 0.1    & 25.17\%                        & 0\%                            \\ \hline
-	16          & 6         & 1      & 83.21\%                        & 19.04\%                        \\ \hline
-	16          & 9         & 0.01   & 13.98\%                        & 0\%                            \\ \hline
-	16          & 9         & 0.1    & 30.76\%                        & 0\%                            \\ \hline
-	16          & 9         & 1      & {\color[HTML]{FE0000} 86.71\%} & {\color[HTML]{FE0000} 38.09\%} \\ \hline
-	16          & 18        & 0.01   & 13.98\%                        & 0\%                            \\ \hline
-	16          & 18        & 0.1    & 25.87\%                        & 0\%                            \\ \hline
-	16          & 18        & 1      & 86.01\%                        & 33.33\%                        \\ \hline
-\end{longtable}
-\noindent Berdasarkan tabel di atas, dapat disimpulkan bahwa akurasi pengenalan karakter maksimal yang didapatkan apabila menggunakan ukuran sel 16 $\times$ 16 piksel adalah 86.71\%. Kombinasi parameter yang digunakan untuk mencapai hasil tersebut adalah ukuran sel 16 $\times$ 16 piksel, jumlah \textit{bin} sebanyak 9 sehingga besar setiap \textit{bin} adalah 20 derajat, kemudian nilai \textit{sigma} yang digunakan untuk metode \textit{SVM} adalah 1. Dengan citra karakter masukan berukuran 32 $\times$ 32 piksel. Maka panjang vektor fitur dari \textit{HOG descriptor} yang dihasilkan adalah 9 fitur. Berbeda dengan pengujian sebelumnya, kali ini jumlah fitur yang terlalu sedikit justru akan mengurangi akurasi dari proses pengenalan karakter yang sebelumnya sudah mencapai 95.80\%, dari keseluruhan pengujian yang sudah dilakukan terhadap jumlah sel, dapat disimpulkan bahwa ukuran sel yang terlampau besar ataupun terlampau kecil pada penggunaan metode \textit{HOG} dapat mengurangi kualitas fitur yang dihasilkan sehingga akan berefek terhadap hasil klasifikasi.
+%\begin{longtable}[c]{|r|r|r|r|r|}
+%	\caption{Pengujian dengan ukuran sel 16 $\times$ 16 piksel}
+%	\label{tab:HasilPengujianSel16}\\
+%	\hline
+%	\multicolumn{3}{|c|}{Parameter} &                                &                                \\ \cline{1-3}
+%	CellSize   & NumBins   & Sigma  & \multicolumn{1}{c|}{\multirow{-2}{*}{CRR}} & \multicolumn{1}{c|}{\multirow{-2}{*}{OVR}} \\ \hline
+%	\endhead
+%	%
+%	16          & 4         & 0.01   & 13.98\%                        & 0\%                            \\ \hline
+%	16          & 4         & 0.1    & 20.27\%                        & 0\%                            \\ \hline
+%	16          & 4         & 1      & 83.91\%                        & 23.80\%                        \\ \hline
+%	16          & 6         & 0.01   & 13.98\%                        & 0\%                            \\ \hline
+%	16          & 6         & 0.1    & 25.17\%                        & 0\%                            \\ \hline
+%	16          & 6         & 1      & 83.21\%                        & 19.04\%                        \\ \hline
+%	16          & 9         & 0.01   & 13.98\%                        & 0\%                            \\ \hline
+%	16          & 9         & 0.1    & 30.76\%                        & 0\%                            \\ \hline
+%	16          & 9         & 1      & {\color[HTML]{FE0000} 86.71\%} & {\color[HTML]{FE0000} 38.09\%} \\ \hline
+%	16          & 18        & 0.01   & 13.98\%                        & 0\%                            \\ \hline
+%	16          & 18        & 0.1    & 25.87\%                        & 0\%                            \\ \hline
+%	16          & 18        & 1      & 86.01\%                        & 33.33\%                        \\ \hline
+%\end{longtable}
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\framebox{\includegraphics[width=14cm]{images/HasilPengujianUkuranSel16.png}}
+		\captionof{figure}{Hasil Pengujian Kombinasi Parameter dengan Ukuran Sel 16\\}
+		\label{fig:HasilPengujianUkuranSel16}
+	\end{minipage}
+\end{adjustbox}
 
-\noindent Sama seperti bagian sebelumnya, kolom di bagian kiri menunjukkan kombinasi parameter yang digunakan pada saat pengujian. Dari hasil pada kolom CRR, dari 143 karakter yang terdeteksi, sebanyak 123 di antaranya dapat diklasifikasikan dengan baik. Dari hasil pada kolom OVR menunjukkan, dari 21 plat nomor yang terdeteksi, 7 plat nomor dapat dikenali dengan baik, hal ini merupakan dampak dari penurunan akurasi pengenalan karakter.
+\noindent Berdasarkan Gambar \ref{fig:HasilPengujianUkuranSel16}, dapat disimpulkan bahwa akurasi pengenalan karakter maksimal yang didapatkan apabila menggunakan ukuran sel 16 $\times$ 16 piksel adalah 86.71\%. Kombinasi parameter yang digunakan untuk mencapai hasil tersebut adalah ukuran sel 16 $\times$ 16 piksel, jumlah \textit{bin} sebanyak 9 sehingga besar setiap \textit{bin} adalah 20 derajat, kemudian nilai \textit{sigma} yang digunakan untuk metode \textit{SVM} adalah 1. Dengan citra karakter masukan berukuran 32 $\times$ 32 piksel. Maka panjang vektor fitur dari \textit{HOG descriptor} yang dihasilkan adalah 9 fitur. Berbeda dengan pengujian sebelumnya, kali ini jumlah fitur yang terlalu sedikit justru akan mengurangi akurasi dari proses pengenalan karakter yang sebelumnya sudah mencapai 95.80\%. 
+%dari keseluruhan pengujian yang sudah dilakukan terhadap jumlah sel, dapat disimpulkan bahwa ukuran sel yang terlampau besar ataupun terlampau kecil pada penggunaan metode \textit{HOG} dapat mengurangi kualitas fitur yang dihasilkan sehingga akan berefek terhadap hasil klasifikasi.
+
+\noindent Berdasarkan hasil CRR tertinggi pada Gambar \ref{fig:HasilPengujianUkuranSel16}, dari 143 karakter yang terdeteksi, sebanyak 123 di antaranya dapat diklasifikasikan dengan baik. Sedangkan berdasarkan hasil OVR tertinggi pada Gambar \ref{fig:HasilPengujianUkuranSel16} dari 21 plat nomor yang terdeteksi, 7 plat nomor dapat dikenali dengan baik, hal ini merupakan dampak dari penurunan akurasi pengenalan karakter.
 
 \noindent Tabel \ref{tab:hasilklasifikasisel16} merupakan tabel yang menunjukkan hasil klasifikasi karakter dengan parameter HOG (\textit{CellSize} dan \textit{NumBins}) masing-masing 16 dan 9, dan nilai \textit{sigma} untuk metode \textit{SVM} 1.
 
-\begin{longtable}[c]{|c|c|c|c|c|}
-	\caption{Hasil klasifikasi karakter dengan parameter CellSize = 16, NumBins = 9, dan Sigma = 1.0}
+\begin{longtable}[c]{|r|r|r|r|r|}
+	\caption{Klasifikasi karakter dengan parameter CellSize = 16, NumBins = 9, dan Sigma = 1.0}
 	\label{tab:hasilklasifikasisel16}\\
 	\hline
 	\textbf{No} & \textbf{Karakter} & \textbf{Prediksi Benar} & \textbf{Prediksi Salah} & \textbf{Akurasi} \\ \hline
@@ -1553,86 +635,245 @@
 	36           & Z                 & 1                       & 0                       &100.00\%            \\ \hline
 \end{longtable}
 
-\noindent Dengan akurasi pengenalan karakter (\textit{Character Recognition Rate}) sebesar 86.71\%, dapat dilihat pada tabel \ref{tab:hasilklasifikasisel16} bahwa dari 36  karakter yang ada, yang dapat diprediksi dengan benar 100\% adalah sebanyak 25 karakter, terdapat juga karakter yang memiliki akurasi rendah, yaitu huruf I, huruf Q, dan huruf W. Apabila dibandingkan dengan hasil pengujian yang sebelumnya, dengan menggunakan ukuran sel 16 piksel justru malah mengurangi akurasi dari pengenalan karakter dan yang tadinya karakter tersebut sudah dapat dikenali dengan baik (huruf I dan huruf W) malah menjadi tidak bisa diklasifikasikan dengan benar sama sekali (akurasi 0\% untuk kedua karakter tersebut). Dari pengujian ini dapat  disimpulkan bahwa penggunaan ukuran sel 16 $\times$ 16 piksel dapat menghasilkan akurasi pengenalan karakter yang baik namun belum optimal.\\
+\noindent Dengan tingkat akurasi pengenalan karakter (\textit{Character Recognition Rate}) sebesar 86.71\%, dapat dilihat pada tabel \ref{tab:hasilklasifikasisel16} bahwa dari 36  karakter yang ada, yang dapat diprediksi dengan benar 100\% adalah sebanyak 25 karakter, terdapat juga karakter yang memiliki akurasi rendah, yaitu huruf I, huruf Q, dan huruf W. Apabila dibandingkan dengan hasil pengujian yang sebelumnya, dengan menggunakan ukuran sel 16 piksel justru malah mengurangi akurasi dari pengenalan karakter dan yang tadinya karakter tersebut sudah dapat dikenali dengan baik (huruf I dan huruf W) malah menjadi tidak bisa diklasifikasikan dengan benar sama sekali (akurasi 0\% untuk kedua karakter tersebut). Dari pengujian ini dapat  disimpulkan bahwa penggunaan ukuran sel 16 $\times$ 16 piksel dapat menghasilkan akurasi pengenalan karakter yang baik namun belum optimal.\\
 
-\section{Analisis Kesalahan}
-\noindent Berdasarkan hasil pengujian, didapatkan bahwa komposisi parameter yang menghasilkan akurasi paling tinggi dihasilkan oleh komposisi parameter dengan ukuran sel 8 $\times$ 8 piksel dan akurasi paling rendah dihasilkan oleh komposisi parameter dengan ukuran sel 2 $\times$ 2 piksel. Namun meskipun menghasilkan akurasi yang tertinggi dan banyak karakter yang jika dibandingkan dengan hasil pengujian menggunakan ukuran sel 2 $\times$ 2 piksel akurasinya meningkat, masih terdapat juga karakter yang kenaikan akurasinya tidak terlalu signifikan, ada karakter yang akurasinya berkurang, dan bahkan ada karakter yang tadinya dapat diklasifikasi dengan baik dan malah menjadi tidak dapat diklasifikasi dengan benar sama sekali. Karakter-karakter tersebut adalah angka 2, huruf D, dan huruf Q. Penjelasan dari kejadian ini diilustrasikan pada tabel \ref{tab:analisakesalahan}.
-\begin{longtable}[c]{|c|c|c|c|c|c|c|c|}
-	\caption{Perbandingan hasil akurasi karakter pada ukuran sel 2 dengan ukuran sel 8}
-	\label{tab:analisakesalahan}\\
+\subsection{Pengujian Kombinasi Parameter Campuran}
+\noindent Dari hasil pengujian kombinasi parameter pada subbab sebelumnya, akan didapatkan kombinasi parameter yang paling optimal untuk setiap karakter. Kombinasi parameter inilah yang akan digunakan dalam skenario pengujian, tujuan dari skenario ini adalah untuk mengetahui apakah penggabungan kombinasi parameter dapat meningkatkan tingkat akurasi pengenalan karakter. Kombinasi parameter yang paling optimal untuk karakter-karakter selain huruf D dan huruf Q adalah ukuran sel 8 $\times$ 8 piksel, jumlah \textit{bin} sebanyak 18, dan nilai sigma sebesar 0.1. Khusus untuk huruf D dan huruf Q, kombinasi parameter yang digunakan adalah ukuran sel 2 $\times$ 2 piksel, jumlah \textit{bin} sebanyak 4, dan nilai sigma sebesar 0.01. Untuk ukuran blok yang digunakan adalah sebesar 2 $\times$ 2 sel. Berikut adalah hasil klasifikasi karakter untuk penggunaan kombinasi parameter campuran:
+
+\begin{longtable}[c]{|r|r|r|r|r|}
+	\caption{Klasifikasi karakter dengan kombinasi parameter campuran}
+	\label{tab:hasilklasifikasiselCampuran}\\
 	\hline
-	\multirow{2}{*}{No} & \multirow{2}{*}{Karakter} & \multicolumn{3}{c|}{Ukuran Sel 2} & \multicolumn{3}{c|}{Ukuran Sel 8} \\ \cline{3-8} 
-	&  & Benar & Salah & Akurasi & Benar & Salah & Akurasi \\ \hline
-	\endfirsthead
-	%
-	\multicolumn{8}{c}%
-	{{\bfseries Table \thetable\ continued from previous page}} \\
-	\hline
-	\multirow{2}{*}{No} & \multirow{2}{*}{Karakter} & \multicolumn{3}{c|}{Ukuran Sel 2} & \multicolumn{3}{c|}{Ukuran Sel 8} \\ \cline{3-8} 
-	&  & Benar & Salah & Akurasi & Benar & Salah & Akurasi \\ \hline
+	\textbf{No} & \textbf{Karakter} & \textbf{Prediksi Benar} & \textbf{Prediksi Salah} & \textbf{Akurasi} \\ \hline
 	\endhead
-	%
-	1 & 2 & 6 & 3 & 66.67\% & 7 & 2 & 77.78\% \\ \hline
-	2 & D & 20 & 0 & 100\% & 19 & 1 & 95\% \\ \hline
-	3 & Q & 2 & 0 & 100\% & 0 & 2 & 0\% \\ \hline
+	1           & 0                 & 2                       & 0                       &100.00\%            \\ \hline
+	2           & 1                 & 21                       & 1                       &95.45\%            \\ \hline
+	3           & 2                 & 7                       & 2                       &77.78\%            \\ \hline
+	4           & 3                 & 8                       & 0                       &100.00\%            \\ \hline
+	5           & 4                 & 8                       & 0                       &100.00\%            \\ \hline
+	6           & 5                 & 4                       & 0                       &100.00\%            \\ \hline
+	7           & 6                 & 4                       & 0                       &100.00\%            \\ \hline
+	8           & 7                 & 13                       & 0                       &100.00\%            \\ \hline
+	9           & 8                 & 3                       & 0                       &100.00\%            \\ \hline
+	10           & 9                 & 6                       & 0                       &100.00\%            \\ \hline
+	11           & A                 & 0                       & 0                       & -            \\ \hline
+	12           & B                 & 4                       & 0                       &100.00\%            \\ \hline
+	13           & C                 & 1                       & 0                       &100.00\%            \\ \hline
+	14           & D                 & 20                       & 0                       &100.00\%            \\ \hline
+	15           & E                 & 1                       & 0                       &100.00\%            \\ \hline
+	16           & F                 & 0                       & 0                       & -            \\ \hline
+	17           & G                 & 1                       & 0                       &100.00\%            \\ \hline
+	18           & H                 & 1                       & 0                       &100.00\%            \\ \hline
+	19           & I                 & 3                       & 0                       &100.00\%            \\ \hline
+	20           & J                 & 3                       & 0                       &100.00\%            \\ \hline
+	21           & K                 & 2                       & 0                       &100.00\%            \\ \hline
+	22           & L                 & 4                       & 0                       &100.00\%            \\ \hline
+	23           & M                 & 1                       & 0                       &100.00\%            \\ \hline
+	24           & N                 & 0                       & 0                       & -            \\ \hline
+	25           & O                 & 1                       & 0                       &100.00\%            \\ \hline
+	26           & P                 & 4                       & 0                       &100.00\%            \\ \hline
+	27           & Q                 & 2                       & 0                       &100.00\%            \\ \hline
+	28           & R                 & 2                       & 0                       &100.00\%            \\ \hline
+	29           & S                 & 2                       & 0                       &100.00\%            \\ \hline
+	30           & T                 & 1                       & 0                       &100.00\%            \\ \hline
+	31           & U                 & 1                       & 0                       &100.00\%            \\ \hline
+	32           & V                 & 1                       & 0                       &100.00\%            \\ \hline
+	33           & W                 & 7                       & 0                       &100.00\%            \\ \hline
+	34           & X                 & 0                       & 0                       & -            \\ \hline
+	35           & Y                 & 1                       & 0                       &100.00\%            \\ \hline
+	36           & Z                 & 1                       & 0                       &100.00\%            \\ \hline
 \end{longtable}
-\noindent Seperti yang ditunjukkan pada tabel \ref{tab:analisakesalahan} di atas, angka 2 kenaikan akurasinya tidak begitu signifikan dikarenakan hanya berbeda 1 hasil klasifikasi yang benar, huruf D mengalami penurunan akurasi dikarenakan terdapat karakter yang tadinya dapat diklasifikasi dengan benar dan ketika ukuran sel diganti menjadi 8 $\times$ 8 piksel, karakter tersebut malah menjadi tidak terklasifikasi dengan benar. Sedangkan untuk huruf Q, awalnya karakter tersebut dapat dikenali dengan baik namun setelah menggunakan ukuran sel 8 $\times$ 8 piksel, karakter tersebut menjadi tidak dapat terklasifikasi dengan baik.
-\noindent Pada karakter angka 2, ketika dilihat pada hasil dari \textit{Confusion Matrix} ternyata ketika menggunakan ukuran sel 2 $\times$ 2 piksel, terdapat 3 karakter yang teridentifikasi sebagai karakter huruf D, dan ketika menggunakan ukuran sel 8 $\times$ 8 piksel berubah menjadi teridentifikasi sebagai karakter huruf O. Namun ada satu citra karakter angka 2 yang tadinya tidak dapat diklasifikasikan dengan benar ketika menggunakan ukuran sel 2 $\times$ 2 piksel dan menjadi dapat diklasifikan dengan benar ketika menggunakan ukuran sel 8 $\times$ 8 piksel. Gambar \ref{fig:CitraPlat} merupakan citra plat hasil \textit{preprocessing} dari karakter angka 2 tersebut.\\
-\\
-\begin{adjustbox}{width=1\textwidth}
-	\noindent\begin{minipage}{\linewidth}
-		\centering\includegraphics[width=8cm]{images/D1623RB.png}
-		\captionof{figure}{Citra Plat\\}
-		\label{fig:CitraPlat}
-	\end{minipage}
-\end{adjustbox}\\
-\\
-\noindent Dari citra plat dapat dilihat bahwa tidak ada masalah dengan bentuk dari plat itu sendiri (tidak miring dan berhasil tersegmentasi secara horizontal dengan baik). Jadi apabila terdapat kesalahan klasifikasi hal tersebut dikarenakan dari fitur yang dihasilkan dari \textit{HOG} dengan ukuran sel 2 $\times$ 2 piksel tidak cukup baik dibandingkan dengan \textit{HOG} ukuran sel 8 $\times$ 8 piksel. Sedangkan untuk 2 citra karakter angka 2 yang tetap tidak dapat diklasifikasikan dengan baik, berikut adalah citra plat tempat citra karakter berasal.\\
-\\
-\begin{adjustbox}{width=1\textwidth}
-	\noindent\begin{minipage}{\linewidth}
-		\centering\includegraphics[width=8cm]{images/D1192PS.png}
-	\end{minipage}
-\end{adjustbox}\\
-\\
-\\
-\begin{adjustbox}{width=1\textwidth}
-	\noindent\begin{minipage}{\linewidth}
-		\centering\includegraphics[width=8cm]{images/D1278LI.png}
-		\captionof{figure}{(atas dan bawah) Citra Plat asal karakter angka 2 yang misklasifikasi\\}
-		\label{fig:CitraPlatMisklasifikasi}
-	\end{minipage}
-\end{adjustbox}\\
-\\
-\noindent Dari citra dapat dilihat bahwa kedua citra karakter angka 2 yang misklasifikasi tersebut berasal dari citra plat yang bermasalah (citra plat miring dan tidak tersegmentasi horizontal dengan baik). Hal ini tentunya akan berdampak sangat besar kepada hasil segmentasi vertikalnya. Berikut adalah hasil segmentasi vertikal angka 2 dari kedua plat tersebut.\\\\
-\begin{adjustbox}{width=1\textwidth}
-	\noindent\begin{minipage}{\linewidth}
-		\centering\includegraphics[width=1cm]{images/2Misklasifikasi1.png}
-	\end{minipage}
-\end{adjustbox}\\\\\\
-\begin{adjustbox}{width=1\textwidth}
-	\noindent\begin{minipage}{\linewidth}
-		\centering\includegraphics[width=1cm]{images/2Misklasifikasi2.png}
-		\captionof{figure}{(atas dan bawah) Citra hasil segmentasi karakter angka 2\\}
-		\label{fig:CitraHasilSegmentasi2}
-	\end{minipage}
-\end{adjustbox}\\
-\\
-\noindent Dari citra dapat dilihat bahwa terdapat objek lain selain angka 2 pada hasil segmentasi vertikal kedua citra karakter angka 2 yang misklasifikasi. Hal ini akan berdampak pada hasil fitur yang akan dihasilkan dari metode \textit{HOG} nantinya. Oleh karena itu, bisa disimpulkan kondisi citra plat yang kurang baik yang menyebabkan kedua karakter ini tidak dapat diidentifikasi.
-
-\noindent Pada tabel \ref{tab:analisakesalahan} juga dapat dilihat terdapat satu citra karakter D yang awalnya dapat diklasifikasi dengan baik ketika menggunakan ukuran sel 2 $\times$ 2 piksel namun menjadi misklasifikasi ketika menggunakan ukuran sel 8 $\times$ 8 piksel. Setelah melihat hasil klasifikasi pada tabel \textit{Confusion Matrix} ternyata karakter D tersebut teridentifikasi sebagai karakter huruf O. Dan setelah ditelusuri, ternyata citra karakter huruf D tersebut berasal dari citra plat yang sama dengan citra plat yang menyebabkan 2 citra karakter angka 2 misklasfikasi, yaitu citra plat D1192PS seperti yang pernah ditampilkan sebelumnya (gambar \ref{fig:CitraPlatMisklasifikasi} atas). Adapun hasil segmentasi vertikal dari karakter huruf D tersebut dapat dilihat pada gambar \ref{fig:CitraHasilSegmentasiD}.
 
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
-		\centering\includegraphics[width=1cm]{images/DMisklasifikasi.png}
+		\centering\framebox{\includegraphics[width=6cm]{images/OVRKombinasiParameter.png}}
+		\captionof{figure}{Hasil OVR Pengujian Kombinasi Parameter Gabungan\\}
+		\label{fig:HasilOVRKombinasiParameterGabungan}
+	\end{minipage}
+\end{adjustbox}
+
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\framebox{\includegraphics[width=6cm]{images/CRRKombinasiParameter.png}}
+		\captionof{figure}{Hasil CRR Pengujian Kombinasi Parameter Gabungan\\}
+		\label{fig:HasilCRRKombinasiParameterGabungan}
+	\end{minipage}
+\end{adjustbox}
+
+\noindent Dari Gambar \ref{fig:HasilCRRKombinasiParameterGabungan} \textit{Character Recognition Rate} yang didapatkan adalah sebesar 97.90\%. Tingkat akurasi \textit{Character Recognition Rate} (CRR) meningkat 2\% terhadap hasil CRR kombinasi parameter dengan ukuran sel 8 $\times$ 8 piksel, jumlah \textit{bin} 18, dan nilai sigma 0.1. Dari 143 karakter yang terdeteksi, sebanyak 140 di antaranya dapat diklasifikasikan dengan baik, hal ini juga meningkatkan jumlah plat nomor yang berhasil dikenali. Sedangkan berdasarkan hasil OVR pada Gambar \ref{fig:HasilOVRKombinasiParameterGabungan} dari 21 plat nomor yang terdeteksi 19 plat nomor dapat dikenali dengan baik.\\
+
+\section{Analisis Pengujian}
+\noindent Setiap skenario pengujian yang dilakukan pada subbab 4.3.1 dan 4.3.2 diukur dengan melihat tingkat akurasi ada \textit{Character Recognition Rate} dan \textit{Overall Performance} yang mengukur performa keseluruhan aplikasi. Berdasarkan hasil pengujian pada Gambar \ref{fig:HasilPengujianUkuranSel2} sampai Gambar \ref{fig:HasilPengujianUkuranSel16}, tingginya tingkat akurasi OVR sangat bergantung kepada tingginya tingkat akurasi CRR, semakin tinggi tingkat akurasi dari CRR maka tingkat akurasi dari OVR juga akan semakin meningkat. Pada beberapa hasil pengujian terlihat juga OVR menunjukkan angka 0\%, hal ini disertai dengan rendahnya tingkat akurasi dari CRR pada hasil pengujian tersebut (biasanya terjadi ketika angka CRR berada di bawah 51\%). Hal ini disebabkan karena OVR menghitung jumlah plat yang dikenali dengan benar terhadap jumlah keseluruhan plat yang terdeteksi oleh sistem. Kondisi plat disebut dikenali dengan benar adalah ketika keseluruhan hasil prediksi karakter untuk plat tersebut sama persis dengan karakter asli pada citra plat, satu saja hasil prediksi karakter yang tidak sama akan membuat plat tersebut tidak dapat dimasukkan ke dalam kategori plat yang dapat dikenali dengan benar. Oleh karena itu, jika aplikasi tidak dapat mengenali setiap karakter dengan baik (angka akurasi CRR rendah) maka nilai OVR yang didapat pun akan rendah dan bahkan 0.
+
+\noindent Tingkat akurasi CRR yang didapatkan bergantung terhadap komposisi parameter yang digunakan. Berdasarkan hasil CRR hasil pengujian pada Gambar \ref{fig:HasilPengujianUkuranSel2} sampai Gambar \ref{fig:HasilPengujianUkuranSel16} tingkat akurasi CRR optimal yang didapatkan cenderung meningkat ketika menggunakan kombinasi parameter dengan ukuran sel 2 $\times$ 2 piksel sampai dengan 8 $\times$ 8 piksel. Namun ketika menggunakan kombinasi parameter dengan ukuran sel 16 $\times$ 16 piksel, tingkat akurasi CRR optimal yang didapatkan menurun. Dari pola tersebut dapat disimpulkan untuk menghasilkan tingkat CRR yang optimal diperlukan komposisi parameter yang tepat.
+
+\noindent Untuk nilai sigma pada metode \textit{SVM} yang digunakan agar tingkat akurasi CRR yang dihasilkan optimal, kecenderungan yang didapatkan dari hasil pengujian pada Gambar \ref{fig:HasilPengujianUkuranSel2} sampai Gambar \ref{fig:HasilPengujianUkuranSel16} adalah cenderung mengikuti besarnya ukuran sel, semakin ukuran selnya besar, maka semakin tinggi nilai sigma yang dibutuhkan.
+
+\noindent Kombinasi parameter terbaik untuk setiap karakter dapat ditentukan dengan melihat hasil klasifikasi dari setiap hasil pengujian kombinasi parameter, yaitu pada tabel \ref{tab:hasilklasifikasisel2} sampai dengan tabel \ref{tab:hasilklasifikasisel16}. Dari tabel-tabel tersebut didapati bahwa kombinasi parameter dengan ukuran sel 8 $\times$ 8 piksel dapat mengklasifikasikan mayoritas karakter dengan baik terkecuali huruf Q dan huruf D. Kedua huruf tersebut memiliki akurasi klasifikasi yang paling baik ketika diuji menggunakan kombinasi parameter dengan ukuran 2 $\times$ 2 piksel, jumlah \textit{bin} 4, dan nilai sigma sebesar 0.01. Untuk huruf Q, ketika ia diuji menggunakan kombinasi parameter selain dengan ukuran sel 2 $\times$ 2 piksel, maka huruf tersebut akan selalu tertukar dengan angka 0.
+
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\framebox{\includegraphics[width=2cm]{images/HurufQ.png}}
+		\begin{center}
+			(a)
+		\end{center}
+	\end{minipage}
+\end{adjustbox}
+
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\framebox{\includegraphics[width=2cm]{images/Angka0.png}}
+		\begin{center}
+			(b)
+		\end{center}
+		\captionof{figure}{Contoh citra (a) Huruf Q (b) Angka 0\\}
+		\label{fig:hurufQangka0}
+	\end{minipage}
+\end{adjustbox}
+
+\noindent Dari Gambar \ref{fig:hurufQangka0} dapat terlihat bahwa karakteristik objek yang dimiliki huruf Q dengan angka 0 memang mirip sehingga ketika dilakukan ekstraksi fitur terhadap kedua karakter tersebut tidak menutup kemungkinan fitur yang dihasilkan mirip. Oleh karena itu penggunaan ukuran sel 2 $\times$ 2 piksel memang tepat jika digunakan untuk mengklasifikasikan huruf Q dikarenakan ukuran sel 2 $\times$ 2 piksel dapat menangkap detail dari objek huruf Q dengan lebih baik dibandingkan ukuran sel lainnya.
+
+\noindent Untuk huruf D, dari keseluruhan citra huruf D yang terdeteksi sistem, terdapat 1 citra yang awalnya dapat diklasifikasi dengan benar ketika menggunakan ukuran sel 2 $\times$ piksel, namun menjadi misklasifikasi ketika menggunakan ukuran sel lain. Setelah dilakukan analisis lebih lanjut, satu citra yang misklasifikasi tersebut ternyata memiliki masalah pada hasil segmentasi karakternya. Hal itu juga disebabkan karena citra karakter berasalh dari citra plat yang bermasalah (citra plat miring dan tidak tersegmentasi horizontal dengan baik). Hal ini tentunya akan berdampak sangat besar terhadap hasil segmentasi vertikalnya. Citra plat hasil \textit{preprocessing} dan segmentasi dan citra karakter D yang misklasifikasi dapat dilihat pada Gambar \ref{fig:CitraPlatMisklasifikasiD} dan Gambar \ref{fig:CitraHasilSegmentasiD}.
+
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\framebox{\includegraphics[width=8cm]{images/D1192PS.png}}
+		\captionof{figure}{Citra Plat asal karakter D yang misklasifikasi\\}
+		\label{fig:CitraPlatMisklasifikasiD}
+	\end{minipage}
+\end{adjustbox}
+
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\framebox{\includegraphics[width=1cm]{images/DMisklasifikasi.png}}
 		\captionof{figure}{Citra hasil segmentasi karakter huruf D\\}
 		\label{fig:CitraHasilSegmentasiD}
 	\end{minipage}
 \end{adjustbox}\\
 
-\noindent Dari citra dapat dilihat bahwa terdapat objek garis yang merupakan garis tepi dari plat nomor. Hal inilah yang akan berdampak pada hasil fitur yang akan dihasilkan dari metode \textit{HOG} nantinya. Untuk kasus ini, citra karakter ini bisa diklasifikasikan sebagai karakter huruf D ketika menggunakan ukuran sel 2 $\times$ 2 piksel dan tidak dapat diklasifikan dengan benar ketika menggunakan ukuran sel 8 $\times$ 8 piksel sehingga bisa diasumsikan bahwa peranan ukuran sel berpengaruh dalam hasil klasifikasi, secara teori ukuran sel yang lebih kecil memang memiliki kelebihan untuk menangkap detil yang lebih baik jika dibandingkan dengan ukuran sel yang besar, walaupun dengan demikian ukuran fitur yang dihasilkan oleh ukuran sel yang kecil akan jauh lebih besar dibandingkan fitur dari ukuran sel yang lebih besar.
+\noindent Untuk meningkatkan akurasi pengenalan huruf Q dan huruf D, digunakanlah dua kombinasi parameter seperti yang sudah disinggung pada subbab 4.3.2. Dan dari hasil pengujian yang didapatkan terbukti dapat meningkatkan akurasi pengenalan terhadap huruf Q dan huruf D. Dari hasil pengujian tersebut dapat disimpulkan bahwa kombinasi parameter yang berbeda dapat diterapkan pada sistem untuk mencapai hasil yang lebih optimal.\\
 
-\noindent Asumsi di atas didukung dengan melihat data berikutnya pada tabel \ref{tab:analisakesalahan}. Terdapat karakter huruf Q yang ketika menggunakan ukuran sel 2 $\times$ 2 piksel dapat diklasifikasikan dengan baik tetapi ketika menggunakan ukuran sel 8 $\times$ 8 piksel malah terjadi misklasifikasi. Jika dilihat pada tabel hasil klasifikasi dengan ukuran sel di atas 2, memang karakter huruf Q tersebut sudah tidak dapat diklasifikasi dengan benar lagi dan selalu tertukar dengan karakter angka 0.
+\section{Analisis Kesalahan}
+\noindent Berdasarkan keseluruhan hasil skenario pengujian, didapatkan bahwa akurasi pengenalan karakter paling tinggi dihasilkan dari penggabungan kombinasi parameter yang paling optimal untuk setiap karakter. Namun berdasarkan tabel \ref{tab:hasilklasifikasiselCampuran}, terdapat tiga citra karakter yang mengalami misklasifikasi. Karakter-karakter tersebut adalah angka 1 sebanyak satu citra dan angka 2 sebanyak dua citra. Hasil misklasifikasi karakter-karakter tersebut dapat dilihat pada tabel \ref{tab:analisiskesalahan}
 
-\noindent Dari hasil analisis kesalahan ini dapat disimpulkan beberapa faktor yang berpengaruh terhadap hasil fitur dari \textit{HOG} yang nantinya juga akan berpengaruh terhadap akurasi dari klasifikasi karakter menggunakan SVM, yaitu faktor eksternal seperti masalah pada citra yang kurang baik (citra plat miring) dan faktor internal seperti ukuran sel dan jika diamati dari hasil pengujian jumlah bin cenderung mengikuti ukuran sel, semakin besar ukuran sel maka untuk menghasilkan akurasi yang maksimal pada ukuran sel tersebut diperlukan jumlah bin yang lebih besar juga, begitu pun dengan nilai sigma yang digunakan untuk metode \textit{Support Vector Machine} sebagai metode klasifikasinya.
+\begin{longtable}[c]{|r|r|r|}
+	\caption{Hasil klasifikasi karakter yang misklasifikasi}
+	\label{tab:analisiskesalahan}\\
+	\hline
+	No & Karakter & Hasil Klasifikasi \\ \hline
+	\endfirsthead
+	%
+	\multicolumn{3}{c}%
+	{{\bfseries Table \thetable\ continued from previous page}} \\
+	\hline
+	No & Karakter & Hasil Klasifikasi \\ \hline
+	\endhead
+	%
+	1  & 1        & D                 \\ \hline
+	2  & 2        & D                 \\ \hline
+\end{longtable}
+ 
+%\noindent Berdasarkan hasil pengujian, didapatkan bahwa komposisi parameter yang menghasilkan akurasi paling tinggi dihasilkan oleh komposisi parameter dengan ukuran sel 8 $\times$ 8 piksel dan akurasi paling rendah dihasilkan oleh komposisi parameter dengan ukuran sel 2 $\times$ 2 piksel. Namun meskipun menghasilkan akurasi yang tertinggi dan banyak karakter yang jika dibandingkan dengan hasil pengujian menggunakan ukuran sel 2 $\times$ 2 piksel akurasinya meningkat, masih terdapat juga karakter yang kenaikan akurasinya tidak terlalu signifikan, ada karakter yang akurasinya berkurang, dan bahkan ada karakter yang tadinya dapat diklasifikasi dengan baik dan malah menjadi tidak dapat diklasifikasi dengan benar sama sekali. Karakter-karakter tersebut adalah angka 2, huruf D, dan huruf Q. Penjelasan dari kejadian ini diilustrasikan pada tabel \ref{tab:analisiskesalahan}.
+%\begin{longtable}[c]{|c|c|c|c|c|c|c|c|}
+%	\caption{Perbandingan hasil akurasi karakter pada ukuran sel 2 dengan ukuran sel 8}
+%	\label{tab:analisiskesalahan}\\
+%	\hline
+%	\multirow{2}{*}{No} & \multirow{2}{*}{Karakter} & \multicolumn{3}{c|}{Ukuran Sel 2} & \multicolumn{3}{c|}{Ukuran Sel 8} \\ \cline{3-8} 
+%	&  & Benar & Salah & Akurasi & Benar & Salah & Akurasi \\ \hline
+%	\endfirsthead
+%	%
+%	\multicolumn{8}{c}%
+%	{{\bfseries Table \thetable\ continued from previous page}} \\
+%	\hline
+%	\multirow{2}{*}{No} & \multirow{2}{*}{Karakter} & \multicolumn{3}{c|}{Ukuran Sel 2} & \multicolumn{3}{c|}{Ukuran Sel 8} \\ \cline{3-8} 
+%	&  & Benar & Salah & Akurasi & Benar & Salah & Akurasi \\ \hline
+%	\endhead
+%	%
+%	1 & 2 & 6 & 3 & 66.67\% & 7 & 2 & 77.78\% \\ \hline
+%	2 & D & 20 & 0 & 100\% & 19 & 1 & 95\% \\ \hline
+%	3 & Q & 2 & 0 & 100\% & 0 & 2 & 0\% \\ \hline
+%\end{longtable}
+\noindent Seperti yang ditunjukkan pada tabel \ref{tab:analisiskesalahan}, keseluruhan angka 1 dan 2 yang misklasifikasi dianggap sebagai karakter huruf D. Kombinasi parameter yang digunakan untuk mengklasifikasikan karakter angka 1 dan angka 2 adalah kombinasi parameter yang paling optimal untuk kedua karakter tersebut berdasarkan hasil pengujian pada subbab 4.3.1, yaitu ukuran sel 8 $\times$ 8 piksel, jumlah \textit{bin} 18, dan nilai sigma 0.1. Setelah ditelusuri, ternyata karakter angka 1 dan satu dari dua angka 2 yang misklasifikasi berasal dari citra plat yang sama, yaitu citra plat pada Gambar \ref{fig:CitraPlatMisklasifikasiD}, sedangkan citra angka 2 yang satunya berasal dari citra plat seperti yang ditunjukkan pada Gambar \ref{fig:CitraPlatMisklasifikasi2}.
+
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\framebox{\includegraphics[width=8cm]{images/D1278LI.png}}
+		\captionof{figure}{Citra Plat asal karakter angka 2 yang misklasifikasi\\}
+		\label{fig:CitraPlatMisklasifikasi2}
+	\end{minipage}
+\end{adjustbox}
+
+\noindent Pada gambar \ref{fig:CitraPlatMisklasifikasiD} dan Gambar \ref{fig:CitraPlatMisklasifikasi2}, dapat dilihat bahwa citra plat yang didapatkan tidak lurus dan tidak tersegmentasi horizontal dengan baik. Hal ini akan mempengaruhi hasil segmentasi vertikal ketika mencari area karakter dari plat tersebut. Hasil segmentasi untuk setiap karakter dapat dilihat pada Gambar \ref{fig:CitraHasilSegmentasiKarakterMisklasifikasi}.
+
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\framebox{\includegraphics[width=1cm]{images/1Misklasifikasi.png}}
+		\begin{center}
+			(a)
+		\end{center}
+	\end{minipage}
+\end{adjustbox}
+
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\framebox{\includegraphics[width=1cm]{images/2Misklasifikasi1.png}}
+		\begin{center}
+			(b)
+		\end{center}
+	\end{minipage}
+\end{adjustbox}
+
+\begin{adjustbox}{width=1\textwidth}
+	\noindent\begin{minipage}{\linewidth}
+		\centering\framebox{\includegraphics[width=1cm]{images/2Misklasifikasi2.png}}
+		\begin{center}
+			(c)
+		\end{center}
+		\captionof{figure}{Citra hasil segmentasi karakter misklasifikasi (a) Citra angka 1 dengan satu objek lain (b) Citra angka 2 dengan dua objek lain (c) Citra angka 2 dengan satu objek lain \\}
+		\label{fig:CitraHasilSegmentasiKarakterMisklasifikasi}
+	\end{minipage}
+\end{adjustbox}
+
+%\noindent Seperti yang ditunjukkan pada tabel \ref{tab:analisiskesalahan} di atas, angka 2 kenaikan akurasinya tidak begitu signifikan dikarenakan hanya berbeda 1 hasil klasifikasi yang benar, huruf D mengalami penurunan akurasi dikarenakan terdapat karakter yang tadinya dapat diklasifikasi dengan benar dan ketika ukuran sel diganti menjadi 8 $\times$ 8 piksel, karakter tersebut malah menjadi tidak terklasifikasi dengan benar. Sedangkan untuk huruf Q, awalnya karakter tersebut dapat dikenali dengan baik namun setelah menggunakan ukuran sel 8 $\times$ 8 piksel, karakter tersebut menjadi tidak dapat terklasifikasi dengan baik.
+%\noindent Pada karakter angka 2, ketika dilihat pada hasil dari \textit{Confusion Matrix} ternyata ketika menggunakan ukuran sel 2 $\times$ 2 piksel, terdapat 3 karakter yang teridentifikasi sebagai karakter huruf D, dan ketika menggunakan ukuran sel 8 $\times$ 8 piksel berubah menjadi teridentifikasi sebagai karakter huruf O. Namun ada satu citra karakter angka 2 yang tadinya tidak dapat diklasifikasikan dengan benar ketika menggunakan ukuran sel 2 $\times$ 2 piksel dan menjadi dapat diklasifikan dengan benar ketika menggunakan ukuran sel 8 $\times$ 8 piksel. Gambar \ref{fig:CitraPlat} merupakan citra plat hasil \textit{preprocessing} dari karakter angka 2 tersebut.\\
+
+%\begin{adjustbox}{width=1\textwidth}
+%	\noindent\begin{minipage}{\linewidth}
+%		\centering\framebox{\includegraphics[width=8cm]{images/D1623RB.png}}
+%		\captionof{figure}{Citra Plat\\}
+%		\label{fig:CitraPlat}
+%	\end{minipage}
+%\end{adjustbox}\\
+%\\
+%\noindent Dari citra plat dapat dilihat bahwa tidak ada masalah dengan bentuk dari plat itu sendiri (tidak miring dan berhasil tersegmentasi secara horizontal dengan baik). Jadi apabila terdapat kesalahan klasifikasi hal tersebut dikarenakan dari fitur yang dihasilkan dari \textit{HOG} dengan ukuran sel 2 $\times$ 2 piksel tidak cukup baik dibandingkan dengan \textit{HOG} ukuran sel 8 $\times$ 8 piksel. Sedangkan untuk 2 citra karakter angka 2 yang tetap tidak dapat diklasifikasikan dengan baik, berikut adalah citra plat tempat citra karakter berasal.\\
+%
+%\noindent Dari citra dapat dilihat bahwa kedua citra karakter angka 2 yang misklasifikasi tersebut berasal dari citra plat yang bermasalah (citra plat miring dan tidak tersegmentasi horizontal dengan baik). Hal ini tentunya akan berdampak sangat besar kepada hasil segmentasi vertikalnya. Berikut adalah hasil segmentasi vertikal angka 2 dari kedua plat tersebut.\\\\
+%\begin{adjustbox}{width=1\textwidth}
+%	\noindent\begin{minipage}{\linewidth}
+%		\centering\framebox{\includegraphics[width=1cm]{images/2Misklasifikasi1.png}}
+%		\begin{center}
+%			(a)
+%		\end{center}
+%	\end{minipage}
+%\end{adjustbox}\\\\\\
+%\begin{adjustbox}{width=1\textwidth}
+%	\noindent\begin{minipage}{\linewidth}
+%		\centering\framebox{\includegraphics[width=1cm]{images/2Misklasifikasi2.png}}
+%		\begin{center}
+%			(b)
+%		\end{center}
+%		\captionof{figure}{Citra hasil segmentasi karakter angka 2, (a) citra dengan tiga objek di dalamnya (b) citra dengan dua objek di dalamnya\\}
+%		\label{fig:CitraHasilSegmentasi2}
+%	\end{minipage}
+%\end{adjustbox}\\
+%\\
+\noindent Dari citra hasil segmentasi pada Gambar \ref{fig:CitraHasilSegmentasiKarakterMisklasifikasi} dapat dilihat bahwa terdapat objek lain selain objek utama pada hasil segmentasi vertikal ketiga citra karakter angka 1 dan citra karakter angka 2 yang misklasifikasi. Hal ini akan berdampak pada hasil fitur yang akan dihasilkan dari metode \textit{HOG} nantinya. Oleh karena itu, bisa disimpulkan kondisi citra plat yang kurang baik yang menyebabkan kedua karakter ini tidak dapat diidentifikasi.
+
+%\noindent Pada tabel \ref{tab:analisiskesalahan} juga dapat dilihat terdapat satu citra karakter D yang awalnya dapat diklasifikasi dengan baik ketika menggunakan ukuran sel 2 $\times$ 2 piksel namun menjadi misklasifikasi ketika menggunakan ukuran sel 8 $\times$ 8 piksel. Setelah melihat hasil klasifikasi pada tabel \textit{Confusion Matrix} ternyata karakter D tersebut teridentifikasi sebagai karakter huruf O. Dan setelah ditelusuri, ternyata citra karakter huruf D tersebut berasal dari citra plat yang sama dengan citra plat yang menyebabkan 2 citra karakter angka 2 misklasfikasi, yaitu citra plat D1192PS seperti yang pernah ditampilkan sebelumnya (Gambar \ref{fig:CitraPlatMisklasifikasi} atas). Adapun hasil segmentasi vertikal dari karakter huruf D tersebut dapat dilihat pada Gambar \ref{fig:CitraHasilSegmentasiD}.
+%
+%\noindent Dari citra dapat dilihat bahwa terdapat objek garis yang merupakan garis tepi dari plat nomor. Hal inilah yang akan berdampak pada hasil fitur yang akan dihasilkan dari metode \textit{HOG} nantinya. Untuk kasus ini, citra karakter ini bisa diklasifikasikan sebagai karakter huruf D ketika menggunakan ukuran sel 2 $\times$ 2 piksel dan tidak dapat diklasifikan dengan benar ketika menggunakan ukuran sel 8 $\times$ 8 piksel sehingga bisa diasumsikan bahwa peranan ukuran sel berpengaruh dalam hasil klasifikasi, secara teori ukuran sel yang lebih kecil memang memiliki kelebihan untuk menangkap detil yang lebih baik jika dibandingkan dengan ukuran sel yang besar, walaupun dengan demikian ukuran fitur yang dihasilkan oleh ukuran sel yang kecil akan jauh lebih besar dibandingkan fitur dari ukuran sel yang lebih besar.
+%
+%\noindent Asumsi di atas didukung dengan melihat data berikutnya pada tabel \ref{tab:analisiskesalahan}. Terdapat karakter huruf Q yang ketika menggunakan ukuran sel 2 $\times$ 2 piksel dapat diklasifikasikan dengan baik tetapi ketika menggunakan ukuran sel 8 $\times$ 8 piksel malah terjadi misklasifikasi. Jika dilihat pada tabel hasil klasifikasi dengan ukuran sel di atas 2, memang karakter huruf Q tersebut sudah tidak dapat diklasifikasi dengan benar lagi dan selalu tertukar dengan karakter angka 0.
+%
+%\noindent Dari hasil analisis kesalahan ini dapat disimpulkan beberapa faktor yang berpengaruh terhadap hasil fitur dari \textit{HOG} yang nantinya juga akan berpengaruh terhadap akurasi dari klasifikasi karakter menggunakan SVM, yaitu faktor eksternal seperti masalah pada citra yang kurang baik (citra plat miring) dan faktor internal seperti ukuran sel dan jika diamati dari hasil pengujian jumlah bin cenderung mengikuti ukuran sel, semakin besar ukuran sel maka untuk menghasilkan akurasi yang maksimal pada ukuran sel tersebut diperlukan jumlah bin yang lebih besar juga, begitu pun dengan nilai sigma yang digunakan untuk metode \textit{Support Vector Machine} sebagai metode klasifikasinya.
 \newpage

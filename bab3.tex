@@ -24,7 +24,7 @@
 	\end{minipage}
 \end{adjustbox}
 
-\noindent Seperti pada gambar \ref{fig:KerangkaPemikiran}, terdapat beberapa variabel indikator yang memengaruhi hasil dan perlu dilakukan penyesuaian, seperti ukuran sel pada metode \textit{Histogram of Oriented Gradient}, jumlah \textit{bin} yang menentukan batasan sudut yang digunakan, dan nilai sigma untuk \textit{classifier} \textit{Support Vector Machine}. Penelitian ini memiliki tujuan untuk menerapkan \textit{Histogram of Oriented Gradient} dan \textit{Support Vector Machine} untuk sistem pengenalan karakter pada plat nomor dengan menguji beragam faktor yang diduga akan mempengaruhi hasil akurasi dari penggabungan kedua metode tersebut. Hasil pengenalan karakter akan diukur dengan menggunakan \textit{Confusion Matrix}.\\
+\noindent Seperti pada Gambar \ref{fig:KerangkaPemikiran}, terdapat beberapa variabel indikator yang mempengaruhi hasil dan perlu dilakukan penyesuaian, seperti ukuran sel pada metode \textit{Histogram of Oriented Gradient}, jumlah \textit{bin} yang menentukan batasan sudut yang digunakan, dan nilai sigma untuk \textit{classifier} \textit{Support Vector Machine}. Penelitian ini memiliki tujuan untuk menerapkan \textit{Histogram of Oriented Gradient} dan \textit{Support Vector Machine} untuk sistem pengenalan karakter pada plat nomor dengan menguji beragam faktor yang diduga akan mempengaruhi hasil akurasi dari penggabungan kedua metode tersebut. Hasil pengenalan karakter akan diukur dengan menggunakan \textit{Confusion Matrix}.\\
 
 \section{Urutan Proses Global}
 \noindent Dalam sistem pengenalan plat nomor kendaraan terbagi atas dua proses yaitu proses \textit{training} dan proses \textit{testing}. Proses \textit{training} dilakukan untuk mendapatkan kelas-kelas dari karakter-karakter yang akan dikenali. Proses \textit{testing} dilakukan untuk menghitung hasil yang berupa akurasi dari pengenalan karakter pada plat nomor kendaraan.\\
@@ -38,14 +38,14 @@
 	\end{minipage}
 \end{adjustbox}
 
-\noindent Seperti pada gambar \ref{fig:FlowchartGlobal}. Bagian kiri merupakan \textit{flowchart} dari proses \textit{training} dan bagian kanan merupakan \textit{flowchart} dari proses \textit{testing}. Berikut ini adalah uraian dari proses-proses yang terjadi ketika tahapan \textit{training}:
+\noindent Seperti pada Gambar \ref{fig:FlowchartGlobal}. Bagian kiri merupakan \textit{flowchart} dari proses \textit{training} dan bagian kanan merupakan \textit{flowchart} dari proses \textit{testing}. Berikut ini adalah uraian dari proses-proses yang terjadi ketika tahapan \textit{training}:
 \begin{enumerate}
 	\item Citra masukan adalah citra plat nomor kendaraan mobil yang di-\textit{crop} secara manual dari citra mobil utuh hal ini untuk memastikan citra yang didapatkan adalah plat yang benar. 
 	\item Citra plat kemudian akan melalui tahapan \textit{preprocessing} yang meliputi \textit{grayscaling} untuk menghilangkan informasi warna yang tidak diperlukan, \textit{Gaussian Smoothing} untuk menghilangkan derau pada citra, \textit{Binarization} untuk mengubah citra menjadi citra biner, menghilangkan objek kecil (untuk menghilangkan objek seperti baut pada plat) dengan cara menghilangkan objek yang luasnya kurang dari \textit{threshold} sebesar 100 piksel, dan terakhir \textit{Inverse Binarization} untuk mendapatkan citra karakter berwarna hitam dengan latar belakang berwarna putih.
-	\item Citra plat selanjutnya melalui tahapan segmentasi karakter, tahapan segmentasi bertujuan untuk mendapatkan citra-citra karakter dari plat nomor tersebut tahapan segmentasi dilakukan dua tahapan, yaitu segmentasi horizontal dan segmentasi vertikal.
-	\item Citra karakter hasil \textit{segmentasi} akan di-\textit{scaling} menjadi berukuran 32 $\times$ 32 piksel. Kumpulan karakter yang digunakan adalah karakter angka dari 0 sampai dengan 9 dan karakter huruf dari A sampai dengan Z, tidak ada karakter huruf kecil dikarenakan plat nomor kendaraan tidak ada yang menggunakan karakter huruf kecil.
+	\item Citra plat selanjutnya melalui tahapan segmentasi karakter, tahapan segmentasi bertujuan untuk mendapatkan citra-citra karakter dari plat nomor tersebut tahapan segmentasi dilakukan dua tahapan, yaitu segmentasi horizontal dan segmentasi vertikal. Tahapan segmentasi dilakukan dengan menggunakan \textit{library} segmentasi dari \textit{JavaOCR}. Citra hasil segmentasi memiliki ukuran yang beragam, tetapi setiap citra diberi \textit{padding} sebesar 1 piksel dari tepian. Tujuannya agar bentuk objek bisa didapat dengan baik, hal ini akan membuat fitur yang didapat pada tahapan ekstraksi fitur menjadi lebih baik.
+	\item Citra karakter hasil \textit{segmentasi} akan di-\textit{scaling} menjadi berukuran 32 $\times$ 32 piksel dengan tujuan untuk menyeragamkan ukuran citra karakter. Kumpulan karakter yang digunakan adalah karakter angka dari 0 sampai dengan 9 dan karakter huruf dari A sampai dengan Z, tidak ada karakter huruf kecil dikarenakan plat nomor kendaraan tidak ada yang menggunakan karakter huruf kecil.
 	\item \textit{Histogram of Oriented Gradient} berfungsi untuk mendapatkan fitur dari citra hasil segmentasi. Hasil dari ekstraksi fitur dengan menggunakan HOG adalah \textit{HOG descriptor}, yang mendeskripsikan distribusi dari gradien berarah pada suatu area citra.
-	\item Untuk ukuran sel dan jumlah \textit{bin} yang digunakan untuk proses ekstraksi fitur dengan menggunakan \textit{HOG}, dikarenakan kedua parameter tersebut merupakan indikator uji seperti ditunjukan pada kerangka pemikiran \ref{fig:KerangkaPemikiran}, maka nilai dari ukuran sel dan jumlah \textit{bin} akan menyesuaikan dengan kondisi yang akan diuji.
+	\item Untuk ukuran sel dan jumlah \textit{bin} yang digunakan untuk proses ekstraksi fitur dengan menggunakan \textit{HOG}, dikarenakan kedua parameter tersebut merupakan indikator uji seperti ditunjukkan pada kerangka pemikiran \ref{fig:KerangkaPemikiran}, maka nilai dari ukuran sel dan jumlah \textit{bin} akan menyesuaikan dengan kondisi yang akan diuji.
 	\item Setelah tahapan ekstraksi fitur, fitur-fitur akan disimpan dalam berkas CSV dan proses pelabelan fitur untuk setiap karakter akan dilakukan terhadap berkas CSV tersebut.
 	\item \textit{Support Vector Machine} (SVM) digunakan untuk mengklasifikasikan fitur-fitur yang sudah didapatkan ke dalam kelas-kelas dari karakter yang akan dikenali. Metode \textit{SVM} yang digunakan pada penelitian ini berasal dari \textit{library WEKA}.
 \end{enumerate}
@@ -75,22 +75,21 @@
 %		\label{fig:FlowchartTesting}
 %	\end{minipage}
 %\end{adjustbox}
-\noindent Kemudian untuk proses \textit{testing}, seperti terlihat pada gambar \ref{fig:FlowchartGlobal}, terdapat beberapa proses yang sama seperti pada proses \textit{training}. Berikut ini adalah uraian dari \textit{flowchart} bagian kanan pada gambar \ref{fig:FlowchartGlobal} yang dilakukan dalam penelitian ini:
+\noindent Kemudian untuk proses \textit{testing}, seperti terlihat pada Gambar \ref{fig:FlowchartGlobal}, terdapat beberapa proses yang sama seperti pada proses \textit{training}. Berikut ini adalah uraian dari \textit{flowchart} bagian kanan pada Gambar \ref{fig:FlowchartGlobal} yang dilakukan dalam penelitian ini:
 \begin{enumerate}
 	\item Citra pengujian yang digunakan didapatkan dari \textit{dataset} plat nomor kendaraan Universitas Telkom yang bernama \textit{Tel-U Vehicle Data-set V1.0}, penggunaan dari dataset ini sesuai dengan perizinan dari institusi yang bersangkutan. 
 	\item Citra kendaraan akan melalui tahapan deteksi area plat kendaraan untuk mendapatkan citra plat.
 	\item Citra plat yang didapatkan kemudian disegmentasi untuk mendapatkan citra karakter. 
-	\item Citra yang akan menjadi input dari \textit{HOG} adalah citra hasil dari segmentasi karakter pada citra plat kendaraan hasil deteksi lokasi plat nomor kendaraan.
+	\item Citra yang akan menjadi masukan dari \textit{HOG} adalah citra hasil dari segmentasi karakter pada citra plat kendaraan hasil deteksi lokasi plat nomor kendaraan.
 	\item Ukuran dari sel dan blok yang digunakan untuk proses ekstraksi fitur dengan menggunakan \textit{HOG} akan beragam sesuai dengan pengujian yang akan dilakukan.
 	\item Pada tahap \textit{testing} model SVM yang digunakan berasal dari hasil keluaran model SVM pada tahap \textit{training}.
 	\item Hasil keluaran akan berupa sebuah \textit{string} yang menunjukkan kumpulan karakter yang berhasil dikenali oleh sistem.\\
 \end{enumerate}
 
 \section{Analisis Manual}
-\noindent Pada bagian ini dilakukan analisis tahapan proses dengan melakukan perhitungan manual.\\
-
+\noindent Pada bagian ini dilakukan analisis tahapan proses pendeteksian dan pengenalan plat nomor dimulai dari tahapan mempersiapkan \textit{dataset}, mendeteksi lokasi plat nomor, melakukan segmentasi karakter, melakukan ekstraksi fitur dengan \textit{Histogram of Oriented Gradient}, dan melakukan proses latih dengan menggunakan \textit{Support Vector Machine}.
 \subsection{\textit{Dataset}}
-\noindent Citra plat kendaraan yang digunakan sebagai dataset adalah citra plat yang di-\textit{crop} secara manual seperti terlihat pada gambar \ref{fig:ContohCitraPlat}.
+\noindent Citra plat kendaraan yang digunakan sebagai dataset adalah citra plat yang di-\textit{crop} secara manual seperti terlihat pada Gambar \ref{fig:ContohCitraPlat}.
 
 \begin{adjustbox}{width=1\textwidth}
 	\noindent
@@ -101,7 +100,7 @@
 	\end{minipage}
 \end{adjustbox}
 
-\noindent Dari citra plat akan dilakukan tahapan \textit{preprocessing}. Hasil akhir dari tahapan-tahapan tersebut dapat dilihat pada gambar \ref{fig:ContohCitraPlatHasilPreprocessing}.
+\noindent Dari citra plat akan dilakukan tahapan \textit{preprocessing}. Hasil akhir dari tahapan-tahapan tersebut dapat dilihat pada Gambar \ref{fig:ContohCitraPlatHasilPreprocessing}.
 
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
@@ -111,7 +110,7 @@
 	\end{minipage}
 \end{adjustbox}
 
-\noindent Dari citra plat hasil \textit{preprocessing}, berikutnya dilakukan proses segmentasi terhadap citra plat. Segmentasi horizontal bertujuan untuk memisahkan area karakter plat nomor dengan karakter tanggal masa berlaku plat nomor. Sedangkan segmentasi vertikal bertujuan untuk mendapatkan karakter karakter. Hasilnya dapat dilihat pada gambar \ref{fig:CitraPlatHasilSegmentasiHorizontal} dan gambar \ref{fig:CitraPlatHasilSegmentasiVertikal}.
+\noindent Dari citra plat hasil \textit{preprocessing}, berikutnya dilakukan proses segmentasi terhadap citra plat. Segmentasi horizontal bertujuan untuk memisahkan area karakter plat nomor dengan karakter tanggal masa berlaku plat nomor. Sedangkan segmentasi vertikal bertujuan untuk mendapatkan karakter karakter. Hasilnya dapat dilihat pada Gambar \ref{fig:CitraPlatHasilSegmentasiHorizontal} dan Gambar \ref{fig:CitraPlatHasilSegmentasiVertikal}.
 
 \begin{adjustbox}{width=1\textwidth}
 	\noindent
@@ -130,9 +129,9 @@
 	\end{minipage}
 \end{adjustbox}
 
-\noindent Setelah didapatkan karakter-karakter dari plat nomor tersebut, berikutnya dilakukan proses \textit{scaling} dari ukuran seperti pada gambar \ref{fig:CitraPlatHasilSegmentasiVertikal} menjadi ukuran 32 $\times$ 32 piksel. Alasan digunakannya ukuran 32 $\times$ 32 piksel adalah agar ukuran fitur dari \textit{HOG Descriptor} yang dihasilkan tidak terlalu besar. Hasil dari proses \textit{scaling} citra karakter dapat dilihat pada gambar \ref{fig:ContohCitraDatasetPakai}. Citra karakter hasil proses \textit{scaling} itulah yang akan digunakan sebagai data latih.
+\noindent Setelah didapatkan karakter-karakter dari plat nomor tersebut, berikutnya dilakukan proses \textit{scaling} dari ukuran seperti pada Gambar \ref{fig:CitraPlatHasilSegmentasiVertikal} menjadi ukuran 32 $\times$ 32 piksel. Alasan digunakannya ukuran 32 $\times$ 32 piksel adalah agar ukuran fitur dari \textit{HOG Descriptor} yang dihasilkan tidak terlalu besar. Hasil dari proses \textit{scaling} citra karakter dapat dilihat pada Gambar \ref{fig:ContohCitraDatasetPakai}. Citra karakter hasil proses \textit{scaling} itulah yang akan digunakan sebagai data latih.
 
-\noindent Karakter terdiri dari angka 0 sampai dengan 9 dan karakter huruf kapital dari A sampai dengan Z. Untuk setiap karakter akan digunakan citra latih sebanyak tiga sampai dengan enam citra. Terlihat contoh citra karakter yang ditunjukan pada gambar \ref{fig:ContohCitraDatasetPakai} merupakan contoh karakter angka dan huruf kapital yang akan dipakai.
+\noindent Citra sampling memuat karakter terdiri dari angka 0 sampai dengan 9 dan karakter huruf kapital dari A sampai dengan Z. Untuk setiap karakter akan digunakan citra latih sebanyak tiga sampai dengan enam citra, hal ini untuk mengakomodasi beragam kondisi citra karakter sesuai dengan kondisi citra karakter pada plat mobil. Perbedaan dari karakter yang sama bisa disebabkan karena kondisi pencahayaan ketika pengambilan citra, modifikasi pada plat kendaraan misalnya menggunakan \textit{casing} pada dudukan plat, dan posisi kamera ketika pengambilan citra. Terlihat contoh citra karakter yang ditunjukkan pada Gambar \ref{fig:ContohCitraDatasetPakai} merupakan contoh karakter angka dan huruf kapital yang akan dipakai.
 
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
@@ -214,7 +213,7 @@
 \end{enumerate}
 
 \subsubsection{\textit{Hough Transform}}
-\noindent Metode \textit{Hough Transform} yang digunakan adalah untuk identifikasi garis lurus. Dalam ekstraksi fitur \textit{Hough Transform} perlu menspesifikasikan \textit{accumulator space} untuk menyimpan nilai \textit{voting}. Untuk tahapan \textit{Hough Transform} ini akan menggunakan \textit{library} dari \textit{OpenCV} yaitu dengan menggunakan \textit{function} \textit{Imgproc.HoughLines()}. \textit{Function} \textit{Imgproc.HoughLines()} ini memiliki parameter masukan berupa citra biner hasil dari metode \textit{Canny Edge Detection}, \textit{range} sudut yang akan digunakan sebagai $\theta$ untuk membatasi sudut yang akan dicari, dan  nilai rho yang merupakan panjang garis dalam piksel. Spesifikasi \textit{accumulator space} ditentukan berdasarkan ukuran citra input. Berikut adalah algoritme dari metode \textit{Hough Transform} untuk mendapatkan garis lurus:
+\noindent Metode \textit{Hough Transform} yang digunakan adalah untuk identifikasi garis lurus. Dalam ekstraksi fitur \textit{Hough Transform} perlu menspesifikasikan \textit{accumulator space} untuk menyimpan nilai \textit{voting}. Untuk tahapan \textit{Hough Transform} ini akan menggunakan \textit{library} dari \textit{OpenCV} yaitu dengan menggunakan \textit{function} \textit{Imgproc.HoughLines()}. \textit{Function} \textit{Imgproc.HoughLines()} ini memiliki parameter masukan berupa citra biner hasil dari metode \textit{Canny Edge Detection}, \textit{range} sudut yang akan digunakan sebagai $\theta$ untuk membatasi sudut yang akan dicari, dan  nilai rho yang merupakan panjang garis dalam piksel. Spesifikasi \textit{accumulator space} ditentukan berdasarkan ukuran citra masukan. Berikut adalah algoritme dari metode \textit{Hough Transform} untuk mendapatkan garis lurus:
 \begin{enumerate}
 	\item Citra masukan adalah citra biner hasil deteksi tepi pada tahapan sebelumnya.
 	\item Matriks \textit{Accumulator Space} didefinisikan sebagai \textit{array} 2 dimensi dengan sumbu horizontal menunjukkan nilai sudut ($\theta$) yang digunakan dan sumbu vertikal adalah nilai-nilai dari $\rho$.
@@ -258,8 +257,8 @@
 \item Citra masukan adalah citra plat hasil tahapan deteksi plat kendaraan yang sudah dilakukan \textit{preprocessing} menjadi citra biner.
 \item Lakukan segmentasi vertikal untuk mendapatkan batas atas dan batas bawah dari area kandidat karakter.
 \item Lakukan segmentasi horizontal untuk mendapatkan batas kiri dan batas kanan dari setiap citra karakter.
-\item Setiap citra karakter yang didapatkan akan di-\textit{scaling} menjadi ukuran 32 $\times$ 32 piksel. Hal ini bertujuan untuk menjaga konsistensi ukuran citra karakter yang digunakan untuk proses \textit{training} dan proses \textit{testing}. Hasil dari segmentasi seperti yang ditunjukkan pada gambar \ref{fig:OutputSegmentasi} ditambahkan satu piksel lebih untuk setiap batas kiri, kanan, atas, dan bawah dari citra, tujuannya adalah agar bentuk karakter yang didapatkan ketika proses ekstraksi fitur dengan menggunakan metode \textit{Histogram of Oriented Gradient} menjadi lebih baik.
-\item Keluaran dari tahapan ini adalah citra-citra karakter yang terdapat pada plat nomor.
+\item Setiap citra karakter yang didapatkan akan di-\textit{scaling} menjadi ukuran 32 $\times$ 32 piksel. Hal ini bertujuan untuk menjaga konsistensi ukuran citra karakter yang digunakan untuk proses \textit{training} dan proses \textit{testing}. Hasil dari segmentasi seperti yang ditunjukkan pada Gambar \ref{fig:OutputSegmentasi} ditambahkan satu piksel lebih untuk setiap batas kiri, kanan, atas, dan bawah dari citra, tujuannya adalah agar bentuk karakter yang didapatkan ketika proses ekstraksi fitur dengan menggunakan metode \textit{Histogram of Oriented Gradient} menjadi lebih baik.
+\item Keluaran dari tahapan ini adalah citra karakter yang terdapat pada plat nomor.
 \end{enumerate}
 
 \noindent Pada penelitian ini, tahapan segmentasi karakter akan menggunakan \textit{library} dari Java OCR dan \textit{method} atau \textit{function} yang digunakan dapat dilihat pada tabel \ref{tbl:FunctionJavaOCR}.\\
@@ -273,7 +272,7 @@
 \end{adjustbox}\\
 
 \subsection{\textit{Histogram of Oriented Gradient}}
-\noindent Pada proses \textit{Histogram of Oriented Gradients}, masukan untuk proses ini berupa citra yang berasal dari hasil segmentasi. Perhitungan fitur dari metode \textit{Histogram of Oriented Gradient} ini dilakukan per citra karakter hasil segmentasi. Keluaran dari proses ini adalah matriks fitur vektor dari hasil perhitungan \textit{Histogram of Oriented Gradients}. Berikut merupakan langkah-langkah untuk menghitung matriks fitur vektor. Pada gambar dapat dilihat hasil dari proses \textit{resize} dan \textit{crop} citra \textit{grayscale} berukuran 8 $\times$ 4 piksel.
+\noindent Pada proses \textit{Histogram of Oriented Gradients}, masukan untuk proses ini berupa citra yang berasal dari hasil segmentasi. Perhitungan fitur dari metode \textit{Histogram of Oriented Gradient} ini dilakukan per citra karakter hasil segmentasi. Keluaran dari proses ini adalah matriks fitur vektor dari hasil perhitungan \textit{Histogram of Oriented Gradients}. Berikut merupakan langkah-langkah untuk menghitung matriks fitur vektor. Pada Gambar \ref{fig:MatriksCitraHasilPreprocessing} dapat dilihat hasil dari proses \textit{resize} dan \textit{crop} citra \textit{grayscale} berukuran 8 $\times$ 4 piksel.
 
 \begin{table}[H]
 	\centering
@@ -303,7 +302,7 @@
 \end{table}
 
 \begin{enumerate}
-\item Proses pertama adalah untuk menghitung nilai gradien dari posisi vertikal dan horizontal untuk setiap piksel menggunakan persamaan \ref{eq:PersamaanGradienX} dan \ref{eq:PersamaanGradienY}. Contoh perhitungannya untuk piksel koordinat (2,5) dan hasil dari tahap ini dapat dilihat pada gambar \ref{fig:MatriksCitraHasilGradienX} dan \ref{fig:MatriksCitraHasilGradienY} di bawah:
+\item Proses pertama adalah untuk menghitung nilai gradien dari posisi vertikal dan horizontal untuk setiap piksel menggunakan persamaan \ref{eq:PersamaanGradienX} dan \ref{eq:PersamaanGradienY}. Contoh perhitungannya untuk piksel koordinat (2,5) dan hasil dari tahap ini dapat dilihat pada Gambar \ref{fig:MatriksCitraHasilGradienX} dan \ref{fig:MatriksCitraHasilGradienY}:
 \begin{equation*}
 	G_{x}(2,5) = 89 - 89 = 0
 \end{equation*}
@@ -362,7 +361,7 @@
 	\captionof{figure}{Matriks hasil Perhitungan Gradien sumbu Y\\}
 	\label{fig:MatriksCitraHasilGradienY}
 \end{table}
-\item Untuk setiap piksel, hitung \textit{magnitude} gradien dan arah gradien menggunakan persamaaan \ref{eq:PersamaanMagnitude} dan \ref{eq:PersamaanArah}. Contoh perhitungannya untuk piksel koordinat (2,5) dan hasil dari tahap ini dapat dilihat pada gambar \ref{fig:MatriksHasilMagnitude}:
+\item Untuk setiap piksel, hitung \textit{magnitude} gradien dan arah gradien menggunakan persamaaan \ref{eq:PersamaanMagnitude} dan \ref{eq:PersamaanArah}. Contoh perhitungannya untuk piksel koordinat (2,5) dan hasil dari tahap ini dapat dilihat pada Gambar \ref{fig:MatriksHasilMagnitude}:
 \begin{equation*}
 M(2,5) = \sqrt{0^2 + (-37)^2} = 37
 \end{equation*}
@@ -422,10 +421,10 @@ M(2,5) = \sqrt{0^2 + (-37)^2} = 37
 	\label{fig:MatriksHasilPerhitunganArah}
 \end{table}
 \item Kemudian, tentukan ukuran sel, ukuran blok dan jumlah \textit{oriented histogram bins}. Pada penelitian Dalas dan Triggs untuk mendeteksi pejalan kaki sebelumnya, didapat bahwa ukuran sel sebesar 8 $\times$ 8 piksel, ukuran blok sebesar 2 $\times$ 2 ukuran sel dan jumlah bin sebanyak 9 sudah dapat menghasilkan akurasi yang dapat mendeteksi pejalan kaki dengan cukup baik dibandingkan dengan ukuran-ukuran lainnya. Untuk contoh perhitungan analisis kali ini jumlah \textit{oriented histogram bins} yang dipakai sebanyak 4 buah, sehingga didapat nilai sudut setiap \textit{histogram bin} yaitu 180 / 4 = 45. Untuk ukuran sel dipilih sebesar 2 $\times$ 2 piksel dan ukuran blok sebesar 2 $\times$ 2 sel. Untuk setiap blok, terdapat \textit{overlapping} sebesar 50\% dari ukuran blok. Dengan demikian akan didapatkan perhitungan sebagai berikut:
-\begin{itemize}
+\begin{enumerate}[label=\alph*.]
 \item Jumlah sel adalah 8, terdiri dari 4 sel vertikal dan 2 sel horizontal.
 \item Jumlah blok adalah 3, terdiri dari 3 blok vertikal dan 1 blok horizontal.
-\end{itemize}
+\end{enumerate}
 \item Kemudian untuk setiap sel, tentukan perhitungan \textit{Histogram of Oriented Gradient} dengan melakukan \textit{voting} dari arah gradien dan \textit{magnitude} gradien, dimana arah gradien akan menjadi sudut \textit{bin}, dan \textit{magnitude} gradien akan menjadi bobot nilai. Berikut merupakan contoh proses \textit{voting} untuk piksel dengan koordinat (2,5).
 \begin{equation*}
 M(2,5) = 37
@@ -434,7 +433,7 @@ M(2,5) = 37
 \theta(2,5) = 90
 \end{equation*}
 Sehingga untuk \textit{bin} dengan sudut 90 akan mendapat nilai bobot sebesar 37 yang didapatkan dari nilai gradien \textit{magnitude}-nya.
-Lakukan proses tersebut untuk setiap sel sehingga masing-masing sel akan mempunyai \textit{Histogram of Oriented Gradient}. Berikut contoh hasil perhitungan metode \textit{Histogram of Oriented Gradient} pada sel yang terdapat koordinat piksel (2,5) dapat dilihat pada gambar \ref{fig:HasilHOG}.\\
+Lakukan proses tersebut untuk setiap sel sehingga masing-masing sel akan mempunyai \textit{Histogram of Oriented Gradient}. Berikut contoh hasil perhitungan metode \textit{Histogram of Oriented Gradient} pada sel yang terdapat koordinat piksel (2,5) dapat dilihat pada Gambar \ref{fig:HasilHOG}.\\
 \begin{adjustbox}{width=1\textwidth}
 	\noindent\begin{minipage}{\linewidth}
 		\framebox[\textwidth]{\includegraphics[width=12cm]{images/HistogramOfOrientedGradient.PNG}}
@@ -461,7 +460,7 @@ Lakukan proses tersebut untuk setiap sel sehingga masing-masing sel akan mempuny
 	\captionof{figure}{Matriks hasil Perhitungan Histogram untuk seluruh sel\\}
 	\label{fig:MatriksHasilPerhitunganHistogram}
 \end{table}
-Berdasarkan matriks pada gambar \ref{fig:MatriksHasilPerhitunganHistogram}. Elemen matriks yang akan kita gunakan dalam perhitungan normalisasi ini adalah seluruh elemen baris pertama dan baris kedua.
+Berdasarkan matriks pada Gambar \ref{fig:MatriksHasilPerhitunganHistogram}. Elemen matriks yang akan kita gunakan dalam perhitungan normalisasi ini adalah seluruh elemen baris pertama dan baris kedua.
 \begin{equation*}
 L2_{Norm} = \sqrt{87.28^2 + 129.45^2 + \ldots + 0.99^2 + 46.96^2} = 361.428
 \end{equation*}
@@ -471,7 +470,7 @@ Kemudian untuk setiap nilai dari histogram dari sel dalam blok tersebut akan dib
 0.24148 & 0.35815 & 0.2455 & 0.00353 \\
 \end{bmatrix}
 \end{gather*}
-Lakukan proses normalisasi untuk setiap blok dengan menggeser secara horizontal sejauh 1 kali ukuran sel dan secara vertikal sejauh 1 kali ukuran sel sampai blok tersebut sudah berada di bawah kanan dari citra. Kemudian hasil dari proses normalisasi akan disusun menjadi matriks besar dengan jumlah kolom sebesar  \textit{jumlah bin} $\times$ \textit{lebar blok dalam satuan sel} $\times$ \textit{jumlah pergeseran horizontal} dan jumlah baris sebesar \textit{jumlah pergeseran vertikal} $\times$ \textit{tinggi blok dalam satuan sel} , dengan perhitungan tersebut, dalam analisa saat ini didapatkan ukuran matriks sebesar 6 $\times$ 8. Dalam analisa ini, hasil keluaran dari metode \textit{Histogram of Oriented Gradient} ada sebanyak 48 fitur. Di bawah adalah hasil fitur vektor untuk metode \textit{Histogram of Oriented Gradient} setelah melewati proses normalisasi.\\
+Lakukan proses normalisasi untuk setiap blok dengan menggeser secara horizontal sejauh 1 kali ukuran sel dan secara vertikal sejauh 1 kali ukuran sel sampai blok tersebut sudah berada di bawah kanan dari citra. Kemudian hasil dari proses normalisasi akan disusun menjadi matriks besar dengan jumlah kolom sebesar  \textit{jumlah bin} $\times$ \textit{lebar blok dalam satuan sel} $\times$ \textit{jumlah pergeseran horizontal} dan jumlah baris sebesar \textit{jumlah pergeseran vertikal} $\times$ \textit{tinggi blok dalam satuan sel} , dengan perhitungan tersebut, dalam analisis saat ini didapatkan ukuran matriks sebesar 6 $\times$ 8. Dalam analisis ini, hasil keluaran dari metode \textit{Histogram of Oriented Gradient} ada sebanyak 48 fitur. Di bawah adalah hasil fitur vektor untuk metode \textit{Histogram of Oriented Gradient} setelah melewati proses normalisasi.\\
 \begin{table}[H]
 	\centering
 	\begin{small}
